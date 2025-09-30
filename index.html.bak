@@ -4,72 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
-    <title>LazyTimer - Free Online Timer & Countdown | Pomodoro, Cooking, Fitness Timers</title>
-    <meta name="title" content="LazyTimer - Free Online Timer & Countdown | Pomodoro, Cooking, Fitness Timers">
-    <meta name="description" content="Free online timer with beautiful countdown display. Perfect for Pomodoro technique, cooking, workouts, meditation, and study sessions. 50+ preset timers or create custom countdowns.">
-    <meta name="keywords" content="online timer, countdown timer, pomodoro timer, cooking timer, workout timer, study timer, meditation timer, free timer, interval timer, custom timer, web timer, browser timer">
-    <meta name="author" content="LazyTimer">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://lazytimer.com/">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lazytimer.com/">
-    <meta property="og:title" content="LazyTimer - Free Online Timer & Countdown">
-    <meta property="og:description" content="Beautiful, easy-to-use online timer for productivity, cooking, fitness, and meditation. 50+ presets or create custom timers.">
-    <meta property="og:image" content="https://lazytimer.com/stopwatch.png">
-    <meta property="og:site_name" content="LazyTimer">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://lazytimer.com/">
-    <meta name="twitter:title" content="LazyTimer - Free Online Timer & Countdown">
-    <meta name="twitter:description" content="Beautiful, easy-to-use online timer for productivity, cooking, fitness, and meditation. 50+ presets or create custom timers.">
-    <meta name="twitter:image" content="https://lazytimer.com/stopwatch.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "LazyTimer",
-      "url": "https://lazytimer.com",
-      "description": "Free online timer and countdown tool with preset timers for cooking, productivity, fitness, meditation, and more.",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "Pomodoro Timer",
-        "Cooking Timer",
-        "Workout Timer",
-        "Meditation Timer",
-        "Study Timer",
-        "Custom Countdown Timer",
-        "50+ Preset Timers",
-        "Visual Stopwatch Display"
-      ],
-      "screenshot": "https://lazytimer.com/stopwatch.png",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "1247"
-      }
-    }
-    </script>
-    
+    <meta name="description"
+        content="Free online timers for productivity, cooking, fitness, and more. Simple, easy-to-use countdown timers for every task.">
+    <meta name="keywords" content="timer, countdown timer, online timer, pomodoro timer, cooking timer, workout timer">
+    <title>LazyTimer - Simple Online Timers for Every Task</title>
     <style>
         * {
             margin: 0;
@@ -571,49 +509,6 @@
             transform: translateY(-2px);
         }
 
-        .seo-content {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 50px;
-            margin-bottom: 40px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-        }
-
-        .seo-content h2 {
-            font-size: 2.2em;
-            color: #ffffff;
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-        .seo-content h3 {
-            font-size: 1.6em;
-            color: #ffffff;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
-        .seo-content p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 20px;
-        }
-
-        .seo-content ul {
-            margin: 20px 0 20px 30px;
-        }
-
-        .seo-content li {
-            font-size: 1.05em;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 12px;
-        }
-
         .premium-section {
             background: rgba(243, 156, 18, 0.05);
             backdrop-filter: blur(20px);
@@ -779,10 +674,6 @@
             .minute-counter {
                 right: 10%;
             }
-
-            .seo-content {
-                padding: 35px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -800,8 +691,7 @@
             }
 
             .timer-container,
-            .premium-section,
-            .seo-content {
+            .premium-section {
                 padding: 30px 20px;
             }
 
@@ -822,19 +712,6 @@
                 font-size: 1.8em;
                 height: 35px;
             }
-
-            .seo-content h2 {
-                font-size: 1.8em;
-            }
-
-            .seo-content h3 {
-                font-size: 1.3em;
-            }
-
-            .seo-content p,
-            .seo-content li {
-                font-size: 1em;
-            }
         }
     </style>
 </head>
@@ -843,7 +720,7 @@
     <div class="container">
         <header>
             <h1>
-                <div class="logo-icon" role="img" aria-label="LazyTimer logo"></div>
+                <div class="logo-icon"></div>
                 LazyTimer
             </h1>
             <p>Elegant Timers for Every Moment</p>
@@ -851,10 +728,10 @@
 
         <div class="timer-container">
             <div class="stopwatch-container">
-                <img id="stopwatchImg" src="stopwatch.png" alt="Online countdown timer stopwatch with analog display" class="stopwatch-image">
-                <div class="minute-hand hand" id="minuteHand" aria-hidden="true"></div>
-                <div class="second-hand hand" id="secondHand" aria-hidden="true"></div>
-                <div class="minute-counter" aria-label="Minutes elapsed">
+                <img id="stopwatchImg" src="stopwatch.png" alt="Timer" class="stopwatch-image">
+                <div class="minute-hand hand" id="minuteHand"></div>
+                <div class="second-hand hand" id="secondHand"></div>
+                <div class="minute-counter">
                     <div class="minute-counter-label">Minutes</div>
                     <div class="minute-counter-value">
                         <span class="minute-number" id="minuteCounter">0</span>
@@ -865,7 +742,7 @@
             <div class="controls-panel">
                 <div class="timer-selector">
                     <label for="timerSelect">Select a Timer:</label>
-                    <select id="timerSelect" class="timer-select" aria-label="Choose preset timer duration">
+                    <select id="timerSelect" class="timer-select">
                         <option value="">Choose a preset timer...</option>
 
                         <optgroup label="🍳 Cooking & Kitchen">
@@ -959,89 +836,44 @@
                         <div class="time-input-group">
                             <span>Min</span>
                             <input type="number" id="customMinutes" class="time-input" min="0" max="999"
-                                placeholder="00" aria-label="Custom minutes">
+                                placeholder="00">
                         </div>
                         <div class="time-input-group">
                             <span>Sec</span>
                             <input type="number" id="customSeconds" class="time-input" min="0" max="59"
-                                placeholder="00" aria-label="Custom seconds">
+                                placeholder="00">
                         </div>
                         <button class="set-custom-btn" id="setCustomBtn">Set</button>
                     </div>
                 </div>
 
                 <div class="digital-display">
-                    <div class="digital-timer" id="digitalTimer" role="timer" aria-live="polite" aria-atomic="true">
-                        <div class="flip-card" id="minuteTens" aria-hidden="true">
+                    <div class="digital-timer" id="digitalTimer">
+                        <div class="flip-card" id="minuteTens">
                             <div class="flip-card-inner">0</div>
                         </div>
-                        <div class="flip-card" id="minuteOnes" aria-hidden="true">
+                        <div class="flip-card" id="minuteOnes">
                             <div class="flip-card-inner">0</div>
                         </div>
-                        <div class="colon" aria-hidden="true">:</div>
-                        <div class="flip-card" id="secondTens" aria-hidden="true">
+                        <div class="colon">:</div>
+                        <div class="flip-card" id="secondTens">
                             <div class="flip-card-inner">0</div>
                         </div>
-                        <div class="flip-card" id="secondOnes" aria-hidden="true">
+                        <div class="flip-card" id="secondOnes">
                             <div class="flip-card-inner">0</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="controls">
-                    <button class="control-btn start-btn" id="startBtn" aria-label="Start timer">Start</button>
-                    <button class="control-btn pause-btn" id="pauseBtn" aria-label="Pause timer">Pause</button>
-                    <button class="control-btn reset-btn" id="resetBtn" aria-label="Reset timer">Reset</button>
+                    <button class="control-btn start-btn" id="startBtn">Start</button>
+                    <button class="control-btn pause-btn" id="pauseBtn">Pause</button>
+                    <button class="control-btn reset-btn" id="resetBtn">Reset</button>
                 </div>
             </div>
         </div>
 
-        <!-- SEO Content Section -->
-        <article class="seo-content">
-            <h2>Free Online Timer - Perfect for Every Task</h2>
-            <p>
-                LazyTimer is your go-to free online timer and countdown tool, designed to help you manage time effectively for any activity. Whether you need a Pomodoro timer for productivity, a cooking timer for your recipes, a workout timer for fitness routines, or a meditation timer for mindfulness practice, our elegant countdown timer has you covered with over 50 preset options.
-            </p>
-
-            <h3>Why Choose LazyTimer?</h3>
-            <p>
-                Our online countdown timer combines beautiful design with practical functionality. The visual stopwatch display makes time tracking intuitive and engaging, while the variety of preset timers means you can start timing any activity with just one click. No downloads, no registration required - just a simple, reliable browser-based timer that works on any device.
-            </p>
-
-            <h3>Popular Timer Uses</h3>
-            <ul>
-                <li><strong>Pomodoro Timer:</strong> Boost productivity with 25-minute focused work sessions using the popular Pomodoro Technique</li>
-                <li><strong>Cooking Timer:</strong> Perfect timing for pasta, eggs, baking, and all your culinary creations</li>
-                <li><strong>Workout Timer:</strong> Time your HIIT workouts, strength training, cardio sessions, and rest periods</li>
-                <li><strong>Meditation Timer:</strong> Practice mindfulness with guided time intervals for breathing exercises and yoga</li>
-                <li><strong>Study Timer:</strong> Maintain focus during study sessions with structured time blocks</li>
-                <li><strong>Break Reminder:</strong> Set healthy screen break intervals throughout your workday</li>
-            </ul>
-
-            <h3>Key Features</h3>
-            <ul>
-                <li>Clean, distraction-free countdown display</li>
-                <li>50+ professionally curated preset timers for common activities</li>
-                <li>Custom timer option - set any duration from 1 second to 999 minutes</li>
-                <li>Visual analog stopwatch with rotating hands</li>
-                <li>Large digital flip-clock display for easy reading</li>
-                <li>Works perfectly on desktop, tablet, and mobile devices</li>
-                <li>No installation needed - runs directly in your web browser</li>
-                <li>Free to use with no hidden costs</li>
-            </ul>
-
-            <h3>How to Use the Online Timer</h3>
-            <p>
-                Using LazyTimer is incredibly simple. Choose a preset timer from our extensive list organized by category (cooking, productivity, fitness, wellness, study, or daily activities), or create your own custom countdown by entering minutes and seconds. Click Start to begin the countdown, Pause to temporarily stop it, and Reset to return to your original time setting. The timer will alert you when time is up.
-            </p>
-
-            <h3>Perfect for Time Management</h3>
-            <p>
-                Effective time management is crucial for productivity and wellness. LazyTimer helps you implement proven time management techniques like the Pomodoro method, interval training, and scheduled breaks. By visualizing time passing on our elegant stopwatch interface, you become more aware of how you spend your time and can make better decisions about task allocation and breaks.
-            </p>
-        </article>
-
-        <section class="premium-section">
+        <div class="premium-section">
             <h2>⭐ Upgrade to LazyTimer Premium</h2>
             <p>Unlock advanced features for just $4.99/month</p>
 
@@ -1073,7 +905,7 @@
             </div>
 
             <button class="subscribe-btn" id="subscribeBtn">Get Premium Now</button>
-        </section>
+        </div>
 
         <footer>
             <p>&copy; 2025 LazyTimer.com | Elegant Timers for Everyone</p>
