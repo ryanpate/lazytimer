@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>About LazyTimer - Our Mission & Story | Free Online Timer</title>
+    <meta name="title" content="About LazyTimer - Our Mission & Story | Free Online Timer">
+    <meta name="description" content="Learn about LazyTimer's mission to help people manage time better through beautiful, simple online timers. Free countdown tools for productivity, cooking, fitness, and more.">
+    <meta name="keywords" content="about lazytimer, timer app, online countdown, productivity tools, time management">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lazytimer.com/about">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lazytimer.com/about">
+    <meta property="og:title" content="About LazyTimer - Our Mission & Story">
+    <meta property="og:description" content="Learn about LazyTimer's mission to help people manage time better through beautiful, simple online timers.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo-icon::before {
+            content: '';
+            width: 25px;
+            height: 25px;
+            border: 3px solid white;
+            border-radius: 50%;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            transform: rotate(-45deg);
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        nav a.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+        }
+
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .content-section h3 {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .content-section p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 25px;
+        }
+
+        .content-section ul {
+            margin: 25px 0 25px 30px;
+        }
+
+        .content-section li {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(102, 126, 234, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 35px 25px;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .content-section h2 {
+                font-size: 2em;
+            }
+
+            .content-section h3 {
+                font-size: 1.5em;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <div class="logo-icon"></div>
+                LazyTimer
+            </h1>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about" class="active">About</a>
+            <a href="/how-to-use">How to Use</a>
+            <a href="/privacy-policy">Privacy</a>
+            <a href="/terms-of-service">Terms</a>
+        </nav>
+
+        <article class="content-section">
+            <h2>About LazyTimer</h2>
+            
+            <p>
+                LazyTimer was born from a simple observation: most timer apps are either too complicated or too ugly. We believed people deserved better – a timer that's both beautiful to look at and effortless to use.
+            </p>
+
+            <p>
+                In a world filled with distractions and competing priorities, effective time management has never been more important. Whether you're cooking a perfect meal, practicing the Pomodoro technique for work, timing your workout intervals, or meditating for mindfulness, having the right timer tool can make all the difference.
+            </p>
+
+            <h3>Our Mission</h3>
+            <div class="highlight-box">
+                <p style="margin: 0;">
+                    <strong>To help people make the most of their time through elegant, accessible timer tools that anyone can use, anywhere, for free.</strong>
+                </p>
+            </div>
+
+            <p>
+                We believe that good design isn't just about aesthetics – it's about creating tools that disappear into the background, letting you focus on what really matters. That's why LazyTimer features:
+            </p>
+
+            <ul>
+                <li><strong>Zero Learning Curve:</strong> Pick a preset or set a custom time. That's it.</li>
+                <li><strong>Beautiful Interface:</strong> An analog stopwatch display that's both functional and pleasing to watch</li>
+                <li><strong>No Registration Required:</strong> Just visit and start timing. No account needed.</li>
+                <li><strong>Always Free:</strong> Core features will always remain free for everyone</li>
+                <li><strong>Cross-Device:</strong> Works perfectly on desktop, tablet, and mobile</li>
+            </ul>
+
+            <h3>Why "LazyTimer"?</h3>
+            <p>
+                The name might seem ironic for a productivity tool, but it's intentional. We're lazy in the best way possible – we want to remove every unnecessary step between you and starting your timer. No complexity, no clutter, no friction. Just pure, simple timing.
+            </p>
+
+            <p>
+                Being "lazy" about interface design means we've done the hard work so you don't have to. We've curated over 50 preset timers for the most common tasks, organized them intuitively, and made the whole experience as smooth as possible.
+            </p>
+
+            <h3>Our Values</h3>
+            <ul>
+                <li><strong>Simplicity First:</strong> Every feature must justify its existence</li>
+                <li><strong>Privacy Respected:</strong> We don't track your usage or sell your data</li>
+                <li><strong>Accessibility Matters:</strong> Everyone should be able to use our timer</li>
+                <li><strong>Performance Counts:</strong> Fast loading, smooth animations, no lag</li>
+                <li><strong>Always Improving:</strong> We listen to user feedback and iterate constantly</li>
+            </ul>
+
+            <h3>Looking Forward</h3>
+            <p>
+                While LazyTimer started as a simple countdown tool, we're constantly exploring ways to help people manage time better. Our premium features (coming soon) will include interval training timers, productivity tracking, custom alarm sounds, and more – but the core timer will always remain free and fully functional.
+            </p>
+
+            <p>
+                We're building LazyTimer for the long term, not for quick profits. That means listening to our users, respecting privacy, and staying true to our mission of making time management accessible to everyone.
+            </p>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="/" class="cta-button">Try LazyTimer Now</a>
+            </div>
+        </article>
+
+        <footer>
+            <p>&copy; 2025 LazyTimer.com | <a href="/about" style="color: rgba(255,255,255,0.5);">About</a> | <a href="/privacy-policy" style="color: rgba(255,255,255,0.5);">Privacy</a> | <a href="/terms-of-service" style="color: rgba(255,255,255,0.5);">Terms</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>

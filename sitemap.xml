@@ -14,14 +14,36 @@
     </image:image>
   </url>
 
-  <!-- Add future pages here as you create them -->
-  <!-- Example:
+  <!-- About Page -->
   <url>
     <loc>https://lazytimer.com/about</loc>
     <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  -->
+
+  <!-- How to Use Page -->
+  <url>
+    <loc>https://lazytimer.com/how-to-use</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://lazytimer.com/privacy-policy</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://lazytimer.com/terms-of-service</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
 </urlset>

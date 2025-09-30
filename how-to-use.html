@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>How to Use LazyTimer - Complete Guide | Online Timer Instructions</title>
+    <meta name="title" content="How to Use LazyTimer - Complete Guide | Online Timer Instructions">
+    <meta name="description" content="Learn how to use LazyTimer's online countdown timer. Step-by-step guide for preset timers, custom countdowns, Pomodoro technique, and more. Simple timer instructions for everyone.">
+    <meta name="keywords" content="timer instructions, how to use timer, countdown guide, pomodoro timer guide, online timer help">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lazytimer.com/how-to-use">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lazytimer.com/how-to-use">
+    <meta property="og:title" content="How to Use LazyTimer - Complete Guide">
+    <meta property="og:description" content="Step-by-step guide to using LazyTimer's online countdown timer for productivity, cooking, fitness, and more.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo-icon::before {
+            content: '';
+            width: 25px;
+            height: 25px;
+            border: 3px solid white;
+            border-radius: 50%;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            transform: rotate(-45deg);
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        nav a.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+        }
+
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .content-section h3 {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .content-section p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 25px;
+        }
+
+        .content-section ol,
+        .content-section ul {
+            margin: 25px 0 25px 30px;
+        }
+
+        .content-section li {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 15px;
+        }
+
+        .step-box {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .step-box h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .tip-box {
+            background: rgba(39, 174, 96, 0.1);
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .tip-box::before {
+            content: '💡 Tip: ';
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(102, 126, 234, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 35px 25px;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .content-section h2 {
+                font-size: 2em;
+            }
+
+            .content-section h3 {
+                font-size: 1.5em;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <div class="logo-icon"></div>
+                LazyTimer
+            </h1>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/how-to-use" class="active">How to Use</a>
+            <a href="/privacy-policy">Privacy</a>
+            <a href="/terms-of-service">Terms</a>
+        </nav>
+
+        <article class="content-section">
+            <h2>How to Use LazyTimer</h2>
+            
+            <p>
+                LazyTimer is designed to be incredibly simple. Whether you're new to online timers or a productivity pro, you'll be timing your activities in seconds. This guide will walk you through everything you need to know.
+            </p>
+
+            <h3>Quick Start Guide</h3>
+            
+            <div class="step-box">
+                <h4>Step 1: Choose Your Timer</h4>
+                <p>Select from 50+ preset timers organized by category (Cooking, Productivity, Fitness, Wellness, Study, Daily Activities, Breaks) or create your own custom countdown.</p>
+            </div>
+
+            <div class="step-box">
+                <h4>Step 2: Click Start</h4>
+                <p>Press the green "Start" button to begin your countdown. The timer will display on both the analog stopwatch and digital flip clock.</p>
+            </div>
+
+            <div class="step-box">
+                <h4>Step 3: Use the Controls</h4>
+                <p>Use "Pause" to temporarily stop the timer, "Reset" to return to the original time, and "Start" again to resume.</p>
+            </div>
+
+            <h3>Using Preset Timers</h3>
+            <p>
+                Our preset timers are perfect for common activities. Here's how to use them:
+            </p>
+            <ol>
+                <li><strong>Open the dropdown menu</strong> labeled "Select a Timer"</li>
+                <li><strong>Browse categories</strong> like Cooking, Work & Productivity, Fitness, etc.</li>
+                <li><strong>Click your desired timer</strong> (e.g., "Pomodoro - 25 min" or "Hard Boiled Eggs - 4 min")</li>
+                <li><strong>The timer automatically sets</strong> to your chosen duration</li>
+                <li><strong>Click Start</strong> to begin the countdown</li>
+            </ol>
+
+            <div class="tip-box">
+                Premium timers (marked with ⭐) are available with a Premium subscription. These include longer durations perfect for extended work sessions, deep meditation, and marathon workouts.
+            </div>
+
+            <h3>Creating Custom Timers</h3>
+            <p>
+                Need a specific time that's not in our presets? Create a custom timer:
+            </p>
+            <ol>
+                <li><strong>Find "Or Custom"</strong> below the preset dropdown</li>
+                <li><strong>Enter minutes</strong> in the first box (0-999)</li>
+                <li><strong>Enter seconds</strong> in the second box (0-59)</li>
+                <li><strong>Click "Set"</strong> to apply your custom time</li>
+                <li><strong>Click Start</strong> to begin</li>
+            </ol>
+
+            <div class="tip-box">
+                You can set a timer for any duration from 1 second to 999 minutes (over 16 hours)! Perfect for slow cooking, marathon study sessions, or any specialized timing need.
+            </div>
+
+            <h3>Understanding the Timer Display</h3>
+            <p>
+                LazyTimer features two ways to view your countdown:
+            </p>
+            <ul>
+                <li><strong>Digital Flip Clock:</strong> Large, easy-to-read numbers showing minutes and seconds in MM:SS format</li>
+                <li><strong>Analog Stopwatch:</strong> Visual representation with moving hands, including a minute counter badge</li>
+                <li><strong>Minute Counter:</strong> Tracks completed minutes (helpful for longer timers)</li>
+            </ul>
+
+            <h3>Timer Controls Explained</h3>
+            <ul>
+                <li><strong>Start Button (Green):</strong> Begins the countdown. Changes to "Running..." when active</li>
+                <li><strong>Pause Button (Orange):</strong> Temporarily stops the timer without resetting</li>
+                <li><strong>Reset Button (Red):</strong> Returns timer to the original set duration</li>
+            </ul>
+
+            <h3>Popular Use Cases</h3>
+
+            <h4>The Pomodoro Technique for Productivity</h4>
+            <ol>
+                <li>Select "Pomodoro - 25 min" from Work & Productivity</li>
+                <li>Work with complete focus for 25 minutes</li>
+                <li>When timer ends, take a 5-minute break</li>
+                <li>Repeat 4 times, then take a longer 15-30 minute break</li>
+            </ol>
+
+            <h4>Perfect Cooking Times</h4>
+            <ol>
+                <li>Choose your recipe timer (e.g., "Boiled Pasta - 10 min")</li>
+                <li>Start timer when water begins boiling</li>
+                <li>Prepare other ingredients while timer runs</li>
+                <li>Timer alerts you when food is perfectly cooked</li>
+            </ol>
+
+            <h4>Workout Intervals (HIIT Training)</h4>
+            <ol>
+                <li>Use "HIIT Round - 7 min" or set custom intervals</li>
+                <li>Alternate between high-intensity exercise and rest</li>
+                <li>Reset between rounds for consistent timing</li>
+                <li>Track completed minutes to monitor your session</li>
+            </ol>
+
+            <h4>Meditation & Mindfulness</h4>
+            <ol>
+                <li>Select your meditation duration (5, 10, 15, 20, or 30 min)</li>
+                <li>Find a comfortable position</li>
+                <li>Start timer and close your eyes</li>
+                <li>The alert will gently signal when your session is complete</li>
+            </ol>
+
+            <h3>Tips for Maximum Productivity</h3>
+            <ul>
+                <li><strong>Minimize distractions:</strong> Close other tabs and focus solely on your task</li>
+                <li><strong>Use full screen:</strong> Press F11 for distraction-free timing</li>
+                <li><strong>Bookmark common timers:</strong> Save LazyTimer with your favorite duration in your browser</li>
+                <li><strong>Combine with task lists:</strong> Use timer alongside your to-do list for time-boxed productivity</li>
+                <li><strong>Respect the timer:</strong> When it goes off, actually take that break or move to the next task</li>
+            </ul>
+
+            <h3>Keyboard Shortcuts (Coming Soon)</h3>
+            <p>We're working on adding keyboard shortcuts for even faster timer control. Stay tuned for updates!</p>
+
+            <h3>Troubleshooting</h3>
+            <ul>
+                <li><strong>Timer won't start?</strong> Make sure you've set a time greater than 0</li>
+                <li><strong>Can't hear alert?</strong> Check your device volume and browser sound settings</li>
+                <li><strong>Display issues?</strong> Try refreshing the page or clearing your browser cache</li>
+                <li><strong>Premium timer not working?</strong> Premium features require a subscription</li>
+            </ul>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="/" class="cta-button">Start Using LazyTimer</a>
+            </div>
+        </article>
+
+        <footer>
+            <p>&copy; 2025 LazyTimer.com | <a href="/about" style="color: rgba(255,255,255,0.5);">About</a> | <a href="/privacy-policy" style="color: rgba(255,255,255,0.5);">Privacy</a> | <a href="/terms-of-service" style="color: rgba(255,255,255,0.5);">Terms</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
