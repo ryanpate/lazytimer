@@ -391,11 +391,6 @@
             box-shadow: 0 6px 15px rgba(102, 126, 234, 0.5);
         }
 
-        .timer-selector {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
         .timer-selector label {
             display: block;
             color: rgba(255, 255, 255, 0.8);
@@ -823,64 +818,409 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
             header h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-icon::before {
+                width: 20px;
+                height: 20px;
+            }
+
+            header p {
+                font-size: 1em;
             }
 
             nav {
-                margin-bottom: 30px;
+                margin-bottom: 25px;
             }
 
             nav a {
                 display: inline-block;
-                margin: 5px 8px;
-                font-size: 0.95em;
-            }
-
-            .digital-timer {
-                font-size: 3em;
+                margin: 5px 6px;
+                font-size: 0.9em;
+                padding: 6px 12px;
             }
 
             .stopwatch-container {
-                width: 300px;
-                height: 300px;
+                width: 280px;
+                height: 280px;
+                flex-basis: 280px;
             }
 
-            .timer-container,
+            .timer-container {
+                padding: 25px 20px;
+                gap: 30px;
+            }
+
+            .controls-panel {
+                gap: 20px;
+            }
+
+            .timer-selector label {
+                font-size: 0.85em;
+                margin-bottom: 8px;
+            }
+
+            .timer-select {
+                padding: 12px 15px;
+                font-size: 1em;
+            }
+
+            .custom-timer-section label {
+                font-size: 0.7em;
+            }
+
+            .custom-timer-inputs {
+                gap: 6px;
+            }
+
+            .time-input-group span {
+                font-size: 0.55em;
+            }
+
+            .time-input {
+                width: 50px;
+                padding: 8px 2px;
+                font-size: 0.9em;
+            }
+
+            .set-custom-btn {
+                padding: 10px 16px;
+                font-size: 1em;
+            }
+
+            .flip-card {
+                width: 60px;
+                height: 90px;
+            }
+
+            .flip-card-inner {
+                font-size: 3.5em;
+            }
+
+            .colon {
+                font-size: 3.5em;
+            }
+
+            .digital-timer {
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .controls {
+                gap: 12px;
+            }
+
+            .control-btn {
+                padding: 14px 25px;
+                font-size: 0.95em;
+                letter-spacing: 0.5px;
+            }
+
+            .minute-counter {
+                right: 8%;
+                min-width: 40px;
+                padding: 2px 3px;
+            }
+
+            .minute-counter-label {
+                font-size: 0.35em;
+            }
+
+            .minute-counter-value {
+                font-size: 1.2em;
+                height: 20px;
+            }
+
             .premium-section,
             .seo-content {
                 padding: 30px 20px;
             }
 
+            .premium-section h2 {
+                font-size: 2em;
+            }
+
+            .premium-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature {
+                padding: 20px;
+            }
+
+            .subscribe-btn {
+                padding: 16px 35px;
+                font-size: 1.1em;
+            }
+
+            .seo-content h2 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+
+            .seo-content h3 {
+                font-size: 1.4em;
+                margin-top: 30px;
+            }
+
+            .seo-content p {
+                font-size: 1.05em;
+            }
+
+            .seo-content li {
+                font-size: 1em;
+            }
+
+            footer {
+                padding: 25px 15px;
+                font-size: 0.9em;
+            }
+
+            .modal-content {
+                padding: 35px 25px;
+                width: 92%;
+            }
+
+            .modal-content h2 {
+                font-size: 1.7em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .logo-icon::before {
+                width: 18px;
+                height: 18px;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            nav a {
+                font-size: 0.85em;
+                margin: 4px 4px;
+                padding: 5px 10px;
+            }
+
+            .timer-container {
+                padding: 20px 15px;
+                gap: 25px;
+                border-radius: 20px;
+            }
+
+            .stopwatch-container {
+                width: 240px;
+                height: 240px;
+            }
+
+            .timer-selector label {
+                font-size: 0.8em;
+            }
+
+            .timer-select {
+                padding: 10px 12px;
+                font-size: 0.95em;
+            }
+
+            .custom-timer-section {
+                margin-top: 12px;
+                margin-bottom: 12px;
+            }
+
+            .custom-timer-section label {
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .custom-timer-inputs {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .time-input {
+                width: 48px;
+            }
+
+            .set-custom-btn {
+                width: 100%;
+                padding: 12px 20px;
+                margin-top: 8px;
+            }
+
+            .flip-card {
+                width: 50px;
+                height: 75px;
+            }
+
+            .flip-card-inner {
+                font-size: 2.8em;
+            }
+
+            .colon {
+                font-size: 2.8em;
+            }
+
+            .digital-timer {
+                gap: 8px;
+            }
+
+            .controls {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+
             .control-btn {
-                padding: 15px 30px;
+                width: 100%;
+                padding: 16px 20px;
                 font-size: 1em;
             }
 
             .minute-counter {
                 right: 5%;
+                top: 54%;
+                min-width: 35px;
             }
 
             .minute-counter-label {
-                font-size: 0.6em;
+                font-size: 0.3em;
             }
 
             .minute-counter-value {
-                font-size: 1.8em;
-                height: 35px;
+                font-size: 1em;
+                height: 18px;
+            }
+
+            .premium-section {
+                padding: 25px 15px;
+                border-radius: 20px;
+            }
+
+            .premium-section h2 {
+                font-size: 1.6em;
+                margin-bottom: 15px;
+            }
+
+            .premium-features {
+                margin: 20px 0;
+            }
+
+            .feature {
+                padding: 18px;
+            }
+
+            .feature h3 {
+                font-size: 1.15em;
+            }
+
+            .subscribe-btn {
+                padding: 14px 30px;
+                font-size: 1em;
+                letter-spacing: 1px;
+            }
+
+            .seo-content {
+                padding: 25px 15px;
+                border-radius: 20px;
             }
 
             .seo-content h2 {
-                font-size: 1.8em;
+                font-size: 1.5em;
             }
 
             .seo-content h3 {
-                font-size: 1.3em;
+                font-size: 1.2em;
+                margin-top: 25px;
             }
 
             .seo-content p,
             .seo-content li {
-                font-size: 1em;
+                font-size: 0.95em;
+            }
+
+            .seo-content ul {
+                margin-left: 20px;
+            }
+
+            footer {
+                padding: 20px 10px;
+                font-size: 0.85em;
+            }
+
+            footer p {
+                line-height: 1.6;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-content h2 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .modal-content p {
+                font-size: 0.95em;
+            }
+
+            .close-modal {
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .stopwatch-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .flip-card {
+                width: 42px;
+                height: 65px;
+            }
+
+            .flip-card-inner {
+                font-size: 2.3em;
+            }
+
+            .colon {
+                font-size: 2.3em;
+            }
+
+            .minute-counter {
+                right: 3%;
+                padding: 1px 2px;
             }
         }
     </style>
