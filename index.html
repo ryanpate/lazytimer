@@ -99,25 +99,6 @@
             margin: 0 auto;
         }
 
-        /* Ad Container Styles */
-        .ad-container {
-            margin: 20px auto;
-            text-align: center;
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ad-container.top-ad {
-            margin-bottom: 30px;
-        }
-
-        .ad-container.bottom-ad {
-            margin-top: 40px;
-            margin-bottom: 30px;
-        }
-
         header {
             text-align: center;
             color: white;
@@ -191,6 +172,25 @@
             font-weight: 600;
         }
 
+        /* Ad Container Styles */
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-container.top-ad {
+            margin-bottom: 30px;
+        }
+
+        .ad-container.bottom-ad {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
         .timer-container {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -243,111 +243,243 @@
             color: #ffffff;
             font-weight: 700;
             text-align: center;
-        }
-
-        .stopwatch {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            position: relative;
-        }
-
-        .stopwatch-hands {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hand {
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform-origin: bottom center;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
-        }
-
-        .minute-hand {
-            width: 8px;
-            height: 35%;
-            margin-left: -4px;
-            border-radius: 4px 4px 0 0;
-            z-index: 3;
-        }
-
-        .second-hand {
-            width: 6px;
-            height: 40%;
-            margin-left: -3px;
-            background: #667eea;
-            border-radius: 3px 3px 0 0;
-            z-index: 2;
-            box-shadow: 0 0 15px rgba(102, 126, 234, 0.8);
-        }
-
-        .center-dot {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: 3px solid white;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.6);
-        }
-
-        .timer-controls {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .digital-timer {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-            margin-bottom: 20px;
-        }
-
-        .flip-card {
-            width: 120px;
-            height: 150px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
+            font-family: 'Courier New', monospace;
+            height: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4),
-                inset 0 -5px 20px rgba(0, 0, 0, 0.2);
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.3s ease;
+            overflow: visible;
         }
 
-        .flip-card.flipping {
-            animation: flip 0.6s ease-in-out;
+        .minute-number {
+            display: inline-block;
+            transition: transform 0.6s ease-in-out;
         }
 
-        @keyframes flip {
+        .minute-number.flip {
+            animation: flipNumber 0.6s ease-in-out;
+        }
+
+        @keyframes flipNumber {
             0% {
                 transform: rotateX(0deg);
             }
 
             50% {
                 transform: rotateX(90deg);
+                opacity: 0;
+            }
+
+            51% {
+                transform: rotateX(-90deg);
+                opacity: 0;
             }
 
             100% {
                 transform: rotateX(0deg);
+                opacity: 1;
             }
+        }
+
+        .stopwatch-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 43.53%;
+            left: 50%;
+            transform-origin: bottom center;
+            background: #667eea;
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+        }
+
+        .minute-hand {
+            width: 7px;
+            height: 22%;
+            margin-left: -3.5px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            z-index: 101;
+        }
+
+        .second-hand {
+            width: 5px;
+            height: 26%;
+            margin-left: -2.5px;
+            background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+            z-index: 102;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.6);
+        }
+
+        .controls-panel {
+            flex: 1;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .timer-selector {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .custom-timer-section {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 0;
+            background: transparent;
+            border: none;
+        }
+
+        .custom-timer-section label {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75em;
+            margin-right: 8px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .custom-timer-inputs {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .time-input-group {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 3px;
+            align-items: center;
+        }
+
+        .time-input-group span {
+            font-size: 0.6em;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .time-input {
+            width: 55px;
+            padding: 8px 4px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 0.95em;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .time-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 12px rgba(102, 126, 234, 0.4);
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .time-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .set-custom-btn {
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .set-custom-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.5);
+        }
+
+        .timer-selector label {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .timer-select {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .timer-select:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .timer-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .timer-select option {
+            background: #1a1f3a;
+            color: #ffffff;
+            padding: 10px;
+        }
+
+        .timer-select option[data-premium="true"] {
+            color: #f39c12;
+        }
+
+        .digital-display {
+            text-align: center;
+        }
+
+        .digital-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            perspective: 1000px;
+        }
+
+        .flip-card {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 50%, #d0d0d0 50%, #c0c0c0 100%);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
         }
 
         .flip-card::before {
@@ -357,290 +489,250 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            background: #1a1a1a;
+            z-index: 2;
         }
 
         .flip-card-inner {
-            font-size: 6em;
-            font-weight: 700;
-            color: white;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            font-family: 'Courier New', monospace;
-            letter-spacing: -5px;
-        }
-
-        .time-separator {
-            font-size: 5em;
-            color: #667eea;
-            font-weight: 700;
-            text-shadow: 0 4px 10px rgba(102, 126, 234, 0.5);
-        }
-
-        .timer-selection {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .preset-timers {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .preset-timers label {
-            font-size: 1.1em;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-        }
-
-        .preset-timers select {
-            padding: 15px;
-            font-size: 1.1em;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .preset-timers select:hover {
-            border-color: #667eea;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .preset-timers select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-        }
-
-        .preset-timers optgroup {
-            background: #1a1f3a;
-            font-weight: 600;
-            color: #667eea;
-            padding: 10px;
-        }
-
-        .preset-timers option {
-            padding: 10px;
-            background: #0a0e27;
-            color: white;
-        }
-
-        .preset-timers option:hover {
-            background: #667eea;
-        }
-
-        .custom-timer {
+            position: relative;
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
-            gap: 15px;
-        }
-
-        .custom-timer label {
-            font-size: 1.1em;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-            min-width: 100px;
-        }
-
-        .custom-timer input {
-            width: 100px;
-            padding: 12px;
-            font-size: 1.1em;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .custom-timer input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-        }
-
-        .custom-timer button {
-            padding: 12px 30px;
-            font-size: 1.1em;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .custom-timer button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
-        }
-
-        .control-buttons {
-            display: flex;
-            gap: 15px;
             justify-content: center;
-            margin-top: 20px;
+            font-size: 5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .control-buttons button {
-            padding: 18px 40px;
+        .colon {
+            font-size: 5em;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            99% {
+                opacity: 0.3;
+            }
+        }
+
+        .flip-card.flipping .flip-card-inner {
+            animation: flip 0.6s ease-in-out;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            50% {
+                transform: rotateX(-90deg);
+            }
+
+            100% {
+                transform: rotateX(0deg);
+            }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 20px 45px;
             font-size: 1.2em;
             border: none;
-            border-radius: 12px;
+            border-radius: 15px;
             cursor: pointer;
-            font-weight: 600;
             transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
         }
 
-        .control-buttons button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+        .control-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
 
-        #startBtn {
+        .control-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .start-btn {
             background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
             color: white;
-            flex: 2;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
         }
 
-        #startBtn:hover {
-            box-shadow: 0 12px 35px rgba(39, 174, 96, 0.5);
+        .start-btn:hover {
+            box-shadow: 0 12px 35px rgba(39, 174, 96, 0.6);
+            transform: translateY(-2px);
         }
 
-        #pauseBtn {
+        .pause-btn {
             background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
             color: white;
-            flex: 1;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
         }
 
-        #pauseBtn:hover {
-            box-shadow: 0 12px 35px rgba(243, 156, 18, 0.5);
+        .pause-btn:hover {
+            box-shadow: 0 12px 35px rgba(243, 156, 18, 0.6);
+            transform: translateY(-2px);
         }
 
-        #resetBtn {
+        .reset-btn {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
-            flex: 1;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
         }
 
-        #resetBtn:hover {
-            box-shadow: 0 12px 35px rgba(231, 76, 60, 0.5);
+        .reset-btn:hover {
+            box-shadow: 0 12px 35px rgba(231, 76, 60, 0.6);
+            transform: translateY(-2px);
         }
 
-        .features-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .feature-card {
+        .seo-content {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            transition: all 0.3s;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
-            border-color: rgba(102, 126, 234, 0.3);
+        .seo-content h2 {
+            font-size: 2.2em;
+            color: #ffffff;
+            margin-bottom: 25px;
+            font-weight: 500;
         }
 
-        .feature-card h3 {
+        .seo-content h3 {
             font-size: 1.6em;
-            color: #667eea;
+            color: #ffffff;
+            margin-top: 30px;
             margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        .feature-card p {
+        .seo-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .seo-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .seo-content li {
             font-size: 1.05em;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
         }
 
         .premium-section {
-            background: rgba(102, 126, 234, 0.1);
+            background: rgba(243, 156, 18, 0.05);
             backdrop-filter: blur(20px);
-            border: 2px solid rgba(102, 126, 234, 0.3);
+            border: 1px solid rgba(243, 156, 18, 0.2);
+            color: white;
             border-radius: 30px;
-            padding: 60px;
-            margin-bottom: 60px;
+            padding: 50px;
             text-align: center;
-            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.2);
+            margin-bottom: 40px;
+            box-shadow: 0 30px 80px rgba(243, 156, 18, 0.2);
         }
 
         .premium-section h2 {
-            font-size: 2.8em;
-            color: #ffffff;
+            font-size: 2.5em;
             margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .premium-section p {
-            font-size: 1.2em;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 30px;
-            line-height: 1.6;
+            font-weight: 300;
+            letter-spacing: -1px;
         }
 
         .premium-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
-            margin: 40px 0;
+            margin: 30px 0;
         }
 
-        .premium-feature {
+        .feature {
             background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 15px;
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            transition: all 0.3s;
         }
 
-        .premium-feature h4 {
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.2);
+        }
+
+        .feature h3 {
             font-size: 1.3em;
-            color: #667eea;
             margin-bottom: 10px;
+            font-weight: 500;
         }
 
-        .premium-feature p {
-            font-size: 1em;
-            margin: 0;
+        .feature p {
+            opacity: 0.8;
+            font-weight: 300;
+            font-size: 0.95em;
         }
 
         .subscribe-btn {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
             padding: 20px 50px;
             font-size: 1.3em;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
             border: none;
             border-radius: 15px;
             cursor: pointer;
-            font-weight: 700;
+            font-weight: 600;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+            margin-top: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
         }
 
         .subscribe-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 45px rgba(102, 126, 234, 0.7);
+            box-shadow: 0 15px 45px rgba(243, 156, 18, 0.6);
         }
 
         footer {
@@ -648,6 +740,7 @@
             color: rgba(255, 255, 255, 0.5);
             padding: 30px;
             font-weight: 300;
+            letter-spacing: 1px;
         }
 
         footer a {
@@ -655,94 +748,183 @@
         }
 
         footer a:hover {
-            color: #667eea;
+            color: rgba(255, 255, 255, 0.8) !important;
         }
 
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(10px);
-        }
-
-        .modal.active {
-            display: flex;
+            z-index: 1000;
             align-items: center;
             justify-content: center;
         }
 
+        .modal.active {
+            display: flex;
+        }
+
         .modal-content {
-            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            background: rgba(26, 31, 58, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 50px;
             border-radius: 30px;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            max-width: 500px;
+            max-width: 550px;
+            width: 90%;
             text-align: center;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
         }
 
         .modal-content h2 {
-            font-size: 2.5em;
             color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 400;
         }
 
         .modal-content p {
-            font-size: 1.2em;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 15px;
+            font-weight: 300;
+            line-height: 1.6;
         }
 
         .close-modal {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 12px 30px;
-            font-size: 1.1em;
-            border-radius: 10px;
+            background: rgba(231, 76, 60, 0.2);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            color: #e74c3c;
+            padding: 15px 35px;
+            border-radius: 12px;
             cursor: pointer;
             margin-top: 20px;
             transition: all 0.3s;
+            font-weight: 500;
         }
 
         .close-modal:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(231, 76, 60, 0.3);
+            color: white;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1024px) {
             .timer-container {
-                flex-direction: column;
                 padding: 40px;
+                gap: 40px;
+                flex-direction: column;
+                align-items: center;
             }
 
             .stopwatch-container {
                 width: 350px;
                 height: 350px;
+                flex-basis: 350px;
+            }
+
+            .controls-panel {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .minute-counter {
+                right: 10%;
+            }
+
+            .seo-content {
+                padding: 35px;
             }
         }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
+            body {
+                padding: 15px;
             }
 
-            .timer-container {
-                padding: 30px 20px;
+            header h1 {
+                font-size: 2.2em;
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-icon::before {
+                width: 20px;
+                height: 20px;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav {
+                margin-bottom: 25px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 6px;
+                font-size: 0.9em;
+                padding: 6px 12px;
             }
 
             .stopwatch-container {
                 width: 280px;
                 height: 280px;
+                flex-basis: 280px;
+            }
+
+            .timer-container {
+                padding: 25px 20px;
+                gap: 30px;
+            }
+
+            .controls-panel {
+                gap: 20px;
+            }
+
+            .timer-selector label {
+                font-size: 0.85em;
+                margin-bottom: 8px;
+            }
+
+            .timer-select {
+                padding: 12px 15px;
+                font-size: 1em;
+            }
+
+            .custom-timer-section label {
+                font-size: 0.7em;
+            }
+
+            .custom-timer-inputs {
+                gap: 6px;
+            }
+
+            .time-input-group span {
+                font-size: 0.55em;
+            }
+
+            .time-input {
+                width: 50px;
+                padding: 8px 2px;
+                font-size: 0.9em;
+            }
+
+            .set-custom-btn {
+                padding: 10px 16px;
+                font-size: 1em;
             }
 
             .flip-card {
-                width: 70px;
+                width: 60px;
                 height: 90px;
             }
 
@@ -750,30 +932,307 @@
                 font-size: 3.5em;
             }
 
-            .time-separator {
-                font-size: 3em;
+            .colon {
+                font-size: 3.5em;
             }
 
-            .custom-timer {
-                flex-direction: column;
-                align-items: stretch;
+            .digital-timer {
+                gap: 10px;
+                margin-bottom: 20px;
             }
 
-            .control-buttons {
-                flex-direction: column;
+            .controls {
+                gap: 12px;
             }
 
-            .premium-section {
-                padding: 40px 20px;
+            .control-btn {
+                padding: 14px 25px;
+                font-size: 0.95em;
+                letter-spacing: 0.5px;
+            }
+
+            .minute-counter {
+                display: none;
+            }
+
+            .premium-section,
+            .seo-content {
+                padding: 30px 20px;
             }
 
             .premium-section h2 {
                 font-size: 2em;
             }
 
+            .premium-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature {
+                padding: 20px;
+            }
+
+            .subscribe-btn {
+                padding: 16px 35px;
+                font-size: 1.1em;
+            }
+
+            .seo-content h2 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+
+            .seo-content h3 {
+                font-size: 1.4em;
+                margin-top: 30px;
+            }
+
+            .seo-content p {
+                font-size: 1.05em;
+            }
+
+            .seo-content li {
+                font-size: 1em;
+            }
+
+            footer {
+                padding: 25px 15px;
+                font-size: 0.9em;
+            }
+
+            .modal-content {
+                padding: 35px 25px;
+                width: 92%;
+            }
+
+            .modal-content h2 {
+                font-size: 1.7em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .logo-icon::before {
+                width: 18px;
+                height: 18px;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
             nav a {
+                font-size: 0.85em;
+                margin: 4px 4px;
+                padding: 5px 10px;
+            }
+
+            .timer-container {
+                padding: 20px 15px;
+                gap: 25px;
+                border-radius: 20px;
+            }
+
+            .stopwatch-container {
+                width: 240px;
+                height: 240px;
+            }
+
+            .timer-selector label {
+                font-size: 0.8em;
+            }
+
+            .timer-select {
+                padding: 10px 12px;
+                font-size: 0.95em;
+            }
+
+            .custom-timer-section {
+                margin-top: 12px;
+                margin-bottom: 12px;
+            }
+
+            .custom-timer-section label {
                 display: block;
-                margin: 10px 0;
+                margin-bottom: 8px;
+            }
+
+            .custom-timer-inputs {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .time-input {
+                width: 48px;
+            }
+
+            .set-custom-btn {
+                width: 100%;
+                padding: 12px 20px;
+                margin-top: 8px;
+            }
+
+            .flip-card {
+                width: 50px;
+                height: 75px;
+            }
+
+            .flip-card-inner {
+                font-size: 2.8em;
+            }
+
+            .colon {
+                font-size: 2.8em;
+            }
+
+            .digital-timer {
+                gap: 8px;
+            }
+
+            .controls {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+
+            .control-btn {
+                width: 100%;
+                padding: 16px 20px;
+                font-size: 1em;
+            }
+
+            .minute-counter {
+                right: 5%;
+                top: 54%;
+                min-width: 35px;
+            }
+
+            .minute-counter-label {
+                font-size: 0.3em;
+            }
+
+            .minute-counter-value {
+                font-size: 1em;
+                height: 18px;
+            }
+
+            .premium-section {
+                padding: 25px 15px;
+                border-radius: 20px;
+            }
+
+            .premium-section h2 {
+                font-size: 1.6em;
+                margin-bottom: 15px;
+            }
+
+            .premium-features {
+                margin: 20px 0;
+            }
+
+            .feature {
+                padding: 18px;
+            }
+
+            .feature h3 {
+                font-size: 1.15em;
+            }
+
+            .subscribe-btn {
+                padding: 14px 30px;
+                font-size: 1em;
+                letter-spacing: 1px;
+            }
+
+            .seo-content {
+                padding: 25px 15px;
+                border-radius: 20px;
+            }
+
+            .seo-content h2 {
+                font-size: 1.5em;
+            }
+
+            .seo-content h3 {
+                font-size: 1.2em;
+                margin-top: 25px;
+            }
+
+            .seo-content p,
+            .seo-content li {
+                font-size: 0.95em;
+            }
+
+            .seo-content ul {
+                margin-left: 20px;
+            }
+
+            footer {
+                padding: 20px 10px;
+                font-size: 0.85em;
+            }
+
+            footer p {
+                line-height: 1.6;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-content h2 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .modal-content p {
+                font-size: 0.95em;
+            }
+
+            .close-modal {
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .stopwatch-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .flip-card {
+                width: 42px;
+                height: 65px;
+            }
+
+            .flip-card-inner {
+                font-size: 2.3em;
+            }
+
+            .colon {
+                font-size: 2.3em;
+            }
+
+            .minute-counter {
+                right: 3%;
+                padding: 1px 2px;
             }
         }
     </style>
@@ -783,10 +1242,10 @@
     <div class="container">
         <header>
             <h1>
-                <div class="logo-icon"></div>
+                <div class="logo-icon" role="img" aria-label="LazyTimer logo"></div>
                 LazyTimer
             </h1>
-            <p>Beautiful Online Timer for Every Moment</p>
+            <p>Elegant Timers for Every Moment</p>
         </header>
 
         <nav>
@@ -799,12 +1258,8 @@
 
         <!-- Top Banner Ad -->
         <div class="ad-container top-ad">
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-5523870768931777"
-                data-ad-slot="7285922677"
-                data-ad-format="horizontal"
-                data-full-width-responsive="true"></ins>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="7285922677" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
@@ -812,222 +1267,265 @@
 
         <div class="timer-container">
             <div class="stopwatch-container">
-                <div class="minute-counter">
-                    <div class="minute-counter-label">MIN</div>
-                    <div class="minute-counter-value" id="minuteCounter">0</div>
-                </div>
-
-                <img src="stopwatch.png" alt="Stopwatch" class="stopwatch" id="stopwatchImg">
-
-                <div class="stopwatch-hands">
-                    <div class="hand minute-hand" id="minuteHand"></div>
-                    <div class="hand second-hand" id="secondHand"></div>
-                    <div class="center-dot"></div>
+                <img id="stopwatchImg" src="stopwatch.png" alt="Online countdown timer stopwatch with analog display"
+                    class="stopwatch-image">
+                <div class="minute-hand hand" id="minuteHand" aria-hidden="true"></div>
+                <div class="second-hand hand" id="secondHand" aria-hidden="true"></div>
+                <div class="minute-counter" aria-label="Minutes elapsed">
+                    <div class="minute-counter-label">Minutes</div>
+                    <div class="minute-counter-value">
+                        <span class="minute-number" id="minuteCounter">0</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="timer-controls">
-                <div class="digital-timer" id="digitalTimer">
-                    <div class="flip-card" id="minuteTens">
-                        <div class="flip-card-inner">0</div>
-                    </div>
-                    <div class="flip-card" id="minuteOnes">
-                        <div class="flip-card-inner">0</div>
-                    </div>
-                    <div class="time-separator">:</div>
-                    <div class="flip-card" id="secondTens">
-                        <div class="flip-card-inner">0</div>
-                    </div>
-                    <div class="flip-card" id="secondOnes">
-                        <div class="flip-card-inner">0</div>
+            <div class="controls-panel">
+                <div class="timer-selector">
+                    <label for="timerSelect">Select a Timer:</label>
+                    <select id="timerSelect" class="timer-select" aria-label="Choose preset timer duration">
+                        <option value="">Choose a preset timer...</option>
+
+                        <optgroup label="🍳 Cooking & Kitchen">
+                            <option value="180">Soft Boiled Eggs - 3 min</option>
+                            <option value="240">Hard Boiled Eggs - 4 min</option>
+                            <option value="300">Coffee Brewing - 5 min</option>
+                            <option value="420">Steamed Vegetables - 7 min</option>
+                            <option value="480">Rice - 8 min</option>
+                            <option value="600">Boiled Pasta - 10 min</option>
+                            <option value="720">Baked Chicken - 12 min</option>
+                            <option value="900">Pizza - 15 min</option>
+                            <option value="1200">Roasted Vegetables - 20 min</option>
+                            <option value="1500">Slow Cook - 25 min</option>
+                            <option value="1800">Bread Baking - 30 min</option>
+                            <option value="2700" data-premium="true">⭐ Slow Roast - 45 min</option>
+                        </optgroup>
+
+                        <optgroup label="💼 Work & Productivity">
+                            <option value="300">Quick Break - 5 min</option>
+                            <option value="600">Short Focus - 10 min</option>
+                            <option value="900">Quarter Hour - 15 min</option>
+                            <option value="1200">Sprint Work - 20 min</option>
+                            <option value="1500">Pomodoro - 25 min</option>
+                            <option value="1800">Half Hour - 30 min</option>
+                            <option value="2700" data-premium="true">⭐ Deep Focus - 45 min</option>
+                            <option value="3600" data-premium="true">⭐ Power Hour - 60 min</option>
+                            <option value="5400" data-premium="true">⭐ Extended Session - 90 min</option>
+                        </optgroup>
+
+                        <optgroup label="💪 Fitness & Exercise">
+                            <option value="60">Quick Stretch - 1 min</option>
+                            <option value="180">Warm Up - 3 min</option>
+                            <option value="300">Core Workout - 5 min</option>
+                            <option value="420">HIIT Round - 7 min</option>
+                            <option value="600">Quick Cardio - 10 min</option>
+                            <option value="900">Full Body - 15 min</option>
+                            <option value="1200">Strength Training - 20 min</option>
+                            <option value="1500">Cardio Session - 25 min</option>
+                            <option value="1800">Full Workout - 30 min</option>
+                            <option value="2400" data-premium="true">⭐ Extended Workout - 40 min</option>
+                            <option value="3000" data-premium="true">⭐ Long Session - 50 min</option>
+                            <option value="3600" data-premium="true">⭐ Marathon Workout - 60 min</option>
+                        </optgroup>
+
+                        <optgroup label="🧘 Wellness & Meditation">
+                            <option value="180">Quick Breathing - 3 min</option>
+                            <option value="300">Short Meditation - 5 min</option>
+                            <option value="600">Morning Meditation - 10 min</option>
+                            <option value="900">Mindfulness - 15 min</option>
+                            <option value="1200">Deep Relaxation - 20 min</option>
+                            <option value="1800">Yoga Session - 30 min</option>
+                            <option value="2700" data-premium="true">⭐ Extended Meditation - 45 min</option>
+                            <option value="3600" data-premium="true">⭐ Full Yoga Practice - 60 min</option>
+                        </optgroup>
+
+                        <optgroup label="📚 Study & Learning">
+                            <option value="300">Flash Cards - 5 min</option>
+                            <option value="600">Quick Review - 10 min</option>
+                            <option value="900">Focused Reading - 15 min</option>
+                            <option value="1200">Practice Problems - 20 min</option>
+                            <option value="1500">Study Block - 25 min</option>
+                            <option value="1800">Deep Study - 30 min</option>
+                            <option value="2700" data-premium="true">⭐ Extended Study - 45 min</option>
+                            <option value="3600" data-premium="true">⭐ Long Study Session - 60 min</option>
+                        </optgroup>
+
+                        <optgroup label="🏠 Daily Activities">
+                            <option value="300">Quick Shower - 5 min</option>
+                            <option value="420">Skincare Routine - 7 min</option>
+                            <option value="600">Morning Routine - 10 min</option>
+                            <option value="900">Cleaning Sprint - 15 min</option>
+                            <option value="1200">Power Clean - 20 min</option>
+                            <option value="1800">Deep Clean - 30 min</option>
+                        </optgroup>
+
+                        <optgroup label="🎮 Breaks & Rest">
+                            <option value="60">Micro Break - 1 min</option>
+                            <option value="180">Quick Rest - 3 min</option>
+                            <option value="300">Coffee Break - 5 min</option>
+                            <option value="600">Screen Break - 10 min</option>
+                            <option value="900">Lunch Prep - 15 min</option>
+                            <option value="1200">Power Nap - 20 min</option>
+                            <option value="1800">Lunch Break - 30 min</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="custom-timer-section">
+                    <label>Or Custom:</label>
+                    <div class="custom-timer-inputs">
+                        <div class="time-input-group">
+                            <span>Min</span>
+                            <input type="number" id="customMinutes" class="time-input" min="0" max="999"
+                                placeholder="00" aria-label="Custom minutes">
+                        </div>
+                        <div class="time-input-group">
+                            <span>Sec</span>
+                            <input type="number" id="customSeconds" class="time-input" min="0" max="59" placeholder="00"
+                                aria-label="Custom seconds">
+                        </div>
+                        <button class="set-custom-btn" id="setCustomBtn">Set</button>
                     </div>
                 </div>
 
-                <div class="timer-selection">
-                    <div class="preset-timers">
-                        <label for="timerSelect">Select a Timer</label>
-                        <select id="timerSelect">
-                            <option value="">-- Choose Timer --</option>
-
-                            <optgroup label="🍳 Cooking">
-                                <option value="60">Soft Boiled Eggs - 1 min</option>
-                                <option value="180">Medium Boiled Eggs - 3 min</option>
-                                <option value="240">Hard Boiled Eggs - 4 min</option>
-                                <option value="300">Instant Noodles - 5 min</option>
-                                <option value="480">Steamed Vegetables - 8 min</option>
-                                <option value="600">Boiled Pasta - 10 min</option>
-                                <option value="900">Rice Cooker - 15 min</option>
-                                <option value="1200">Baked Potato - 20 min</option>
-                            </optgroup>
-
-                            <optgroup label="💼 Work & Productivity">
-                                <option value="300">Quick Break - 5 min</option>
-                                <option value="600">Short Sprint - 10 min</option>
-                                <option value="900">Deep Work Block - 15 min</option>
-                                <option value="1200">Focus Session - 20 min</option>
-                                <option value="1500">Pomodoro - 25 min</option>
-                                <option value="1800">Extended Focus - 30 min</option>
-                                <option value="2700">Power Hour - 45 min</option>
-                                <option value="3600" data-premium="true">⭐ Deep Focus - 60 min (Premium)</option>
-                                <option value="5400" data-premium="true">⭐ Extended Session - 90 min (Premium)</option>
-                            </optgroup>
-
-                            <optgroup label="💪 Fitness & Exercise">
-                                <option value="30">Quick Stretch - 30 sec</option>
-                                <option value="60">Plank Hold - 1 min</option>
-                                <option value="180">HIIT Rest - 3 min</option>
-                                <option value="300">Warm Up - 5 min</option>
-                                <option value="420">HIIT Round - 7 min</option>
-                                <option value="600">Yoga Flow - 10 min</option>
-                                <option value="900">Quick Workout - 15 min</option>
-                                <option value="1200">Full Routine - 20 min</option>
-                                <option value="1800">Extended Workout - 30 min</option>
-                            </optgroup>
-
-                            <optgroup label="🧘 Wellness & Meditation">
-                                <option value="60">Breathing Exercise - 1 min</option>
-                                <option value="180">Quick Meditation - 3 min</option>
-                                <option value="300">Mindfulness - 5 min</option>
-                                <option value="600">Meditation - 10 min</option>
-                                <option value="900">Deep Meditation - 15 min</option>
-                                <option value="1200">Extended Practice - 20 min</option>
-                                <option value="1800" data-premium="true">⭐ Long Meditation - 30 min (Premium)</option>
-                            </optgroup>
-
-                            <optgroup label="📚 Study & Learning">
-                                <option value="600">Quick Review - 10 min</option>
-                                <option value="900">Study Block - 15 min</option>
-                                <option value="1200">Reading Session - 20 min</option>
-                                <option value="1500">Study Session - 25 min</option>
-                                <option value="1800">Extended Study - 30 min</option>
-                                <option value="2700">Deep Study - 45 min</option>
-                                <option value="3600" data-premium="true">⭐ Marathon Study - 60 min (Premium)</option>
-                            </optgroup>
-
-                            <optgroup label="🏠 Daily Activities">
-                                <option value="120">Teeth Brushing - 2 min</option>
-                                <option value="180">Face Mask - 3 min</option>
-                                <option value="300">Coffee Brew - 5 min</option>
-                                <option value="600">Quick Shower - 10 min</option>
-                                <option value="900">Power Nap - 15 min</option>
-                                <option value="1200">Reading Break - 20 min</option>
-                                <option value="1800">Laundry Cycle - 30 min</option>
-                            </optgroup>
-
-                            <optgroup label="☕ Breaks & Rest">
-                                <option value="60">Micro Break - 1 min</option>
-                                <option value="180">Quick Break - 3 min</option>
-                                <option value="300">Short Break - 5 min</option>
-                                <option value="600">Coffee Break - 10 min</option>
-                                <option value="900">Extended Break - 15 min</option>
-                                <option value="1200">Long Break - 20 min</option>
-                                <option value="1800">Lunch Break - 30 min</option>
-                            </optgroup>
-                        </select>
-                    </div>
-
-                    <div class="custom-timer">
-                        <label>Or Custom:</label>
-                        <input type="number" id="customMinutes" placeholder="Minutes" min="0" max="999">
-                        <input type="number" id="customSeconds" placeholder="Seconds" min="0" max="59">
-                        <button id="setCustomBtn">Set</button>
+                <div class="digital-display">
+                    <div class="digital-timer" id="digitalTimer" role="timer" aria-live="polite" aria-atomic="true">
+                        <div class="flip-card" id="minuteTens" aria-hidden="true">
+                            <div class="flip-card-inner">0</div>
+                        </div>
+                        <div class="flip-card" id="minuteOnes" aria-hidden="true">
+                            <div class="flip-card-inner">0</div>
+                        </div>
+                        <div class="colon" aria-hidden="true">:</div>
+                        <div class="flip-card" id="secondTens" aria-hidden="true">
+                            <div class="flip-card-inner">0</div>
+                        </div>
+                        <div class="flip-card" id="secondOnes" aria-hidden="true">
+                            <div class="flip-card-inner">0</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="control-buttons">
-                    <button id="startBtn">Start</button>
-                    <button id="pauseBtn">Pause</button>
-                    <button id="resetBtn">Reset</button>
+                <div class="controls">
+                    <button class="control-btn start-btn" id="startBtn" aria-label="Start timer">Start</button>
+                    <button class="control-btn pause-btn" id="pauseBtn" aria-label="Pause timer">Pause</button>
+                    <button class="control-btn reset-btn" id="resetBtn" aria-label="Reset timer">Reset</button>
                 </div>
             </div>
         </div>
+
+        <!-- SEO Content Section -->
+        <article class="seo-content">
+            <h2>Free Online Timer - Perfect for Every Task</h2>
+            <p>
+                LazyTimer is your go-to free online timer and countdown tool, designed to help you manage time
+                effectively for any activity. Whether you need a Pomodoro timer for productivity, a cooking timer for
+                your recipes, a workout timer for fitness routines, or a meditation timer for mindfulness practice, our
+                elegant countdown timer has you covered with over 50 preset options.
+            </p>
+
+            <h3>Why Choose LazyTimer?</h3>
+            <p>
+                Our online countdown timer combines beautiful design with practical functionality. The visual stopwatch
+                display makes time tracking intuitive and engaging, while the variety of preset timers means you can
+                start timing any activity with just one click. No downloads, no registration required - just a simple,
+                reliable browser-based timer that works on any device.
+            </p>
+
+            <h3>Popular Timer Uses</h3>
+            <ul>
+                <li><strong>Pomodoro Timer:</strong> Boost productivity with 25-minute focused work sessions using the
+                    popular Pomodoro Technique</li>
+                <li><strong>Cooking Timer:</strong> Perfect timing for pasta, eggs, baking, and all your culinary
+                    creations</li>
+                <li><strong>Workout Timer:</strong> Time your HIIT workouts, strength training, cardio sessions, and
+                    rest periods</li>
+                <li><strong>Meditation Timer:</strong> Practice mindfulness with guided time intervals for breathing
+                    exercises and yoga</li>
+                <li><strong>Study Timer:</strong> Maintain focus during study sessions with structured time blocks</li>
+                <li><strong>Break Reminder:</strong> Set healthy screen break intervals throughout your workday</li>
+            </ul>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Clean, distraction-free countdown display</li>
+                <li>50+ professionally curated preset timers for common activities</li>
+                <li>Custom timer option - set any duration from 1 second to 999 minutes</li>
+                <li>Visual analog stopwatch with rotating hands</li>
+                <li>Large digital flip-clock display for easy reading</li>
+                <li>Works perfectly on desktop, tablet, and mobile devices</li>
+                <li>No installation needed - runs directly in your web browser</li>
+                <li>Free to use with no hidden costs</li>
+            </ul>
+
+            <h3>How to Use the Online Timer</h3>
+            <p>
+                Using LazyTimer is incredibly simple. Choose a preset timer from our extensive list organized by
+                category (cooking, productivity, fitness, wellness, study, or daily activities), or create your own
+                custom countdown by entering minutes and seconds. Click Start to begin the countdown, Pause to
+                temporarily stop it, and Reset to return to your original time setting. The timer will alert you when
+                time is up.
+            </p>
+
+            <h3>Perfect for Time Management</h3>
+            <p>
+                Effective time management is crucial for productivity and wellness. LazyTimer helps you implement proven
+                time management techniques like the Pomodoro method, interval training, and scheduled breaks. By
+                visualizing time passing on our elegant stopwatch interface, you become more aware of how you spend your
+                time and can make better decisions about task allocation and breaks.
+            </p>
+        </article>
 
         <!-- Middle Display Ad -->
         <div class="ad-container">
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-5523870768931777"
-                data-ad-slot="2345678901"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="7285922677" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
 
-        <section class="features-section">
-            <div class="feature-card">
-                <h3>🎯 50+ Presets</h3>
-                <p>From cooking to productivity, fitness to meditation - we've got timers for everything you need.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>⚡ Instant Start</h3>
-                <p>No registration, no downloads, no hassle. Just pick a timer and go.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>🎨 Beautiful Design</h3>
-                <p>Enjoy a stunning analog stopwatch with smooth animations and modern interface.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>📱 Works Everywhere</h3>
-                <p>Perfect on desktop, tablet, or mobile. Your timer goes wherever you go.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>🔒 Privacy First</h3>
-                <p>No tracking, no data collection. Your timer usage stays private.</p>
-            </div>
-
-            <div class="feature-card">
-                <h3>🆓 Always Free</h3>
-                <p>Core features will always remain free for everyone. Timer your way without limits.</p>
-            </div>
-        </section>
-
-        <!-- Bottom Banner Ad -->
-        <div class="ad-container bottom-ad">
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-5523870768931777"
-                data-ad-slot="6571606806"
-                data-ad-format="horizontal"
-                data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-
-        <section class="premium-section" id="premiumSection">
-            <h2>🌟 Upgrade to Premium</h2>
-            <p>Unlock advanced features and take your time management to the next level</p>
+        <section class="premium-section">
+            <h2>⭐ Upgrade to LazyTimer Premium</h2>
+            <p>Unlock advanced features for just $4.99/month</p>
 
             <div class="premium-features">
-                <div class="premium-feature">
-                    <h4>⏱️ Extended Timers</h4>
-                    <p>Access timers up to 3 hours for deep work, long meditations, and marathon sessions</p>
+                <div class="feature">
+                    <h3>🎨 Premium Fonts</h3>
+                    <p>Access 10+ exclusive font styles</p>
                 </div>
-
-                <div class="premium-feature">
-                    <h4>🎵 Custom Sounds</h4>
-                    <p>Choose from relaxing chimes, nature sounds, or upload your own alarm tones</p>
+                <div class="feature">
+                    <h3>⏱️ Custom Timers</h3>
+                    <p>Create unlimited custom timers</p>
                 </div>
-
-                <div class="premium-feature">
-                    <h4>📊 Usage Analytics</h4>
-                    <p>Track your productivity patterns and see how you spend your time</p>
+                <div class="feature">
+                    <h3>🔔 Sound Alerts</h3>
+                    <p>Choose from premium alarm sounds</p>
                 </div>
-
-                <div class="premium-feature">
-                    <h4>🔄 Interval Training</h4>
-                    <p>Create complex workout routines with multiple intervals and rest periods</p>
+                <div class="feature">
+                    <h3>📊 Timer History</h3>
+                    <p>Track your productivity over time</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 Interval Training</h3>
+                    <p>Advanced HIIT and workout timers</p>
+                </div>
+                <div class="feature">
+                    <h3>🚫 Ad-Free</h3>
+                    <p>Enjoy uninterrupted timing</p>
                 </div>
             </div>
 
             <button class="subscribe-btn" id="subscribeBtn">Get Premium Now</button>
         </section>
+
+        <!-- Bottom Banner Ad -->
+        <div class="ad-container bottom-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="6571606806" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
 
         <footer>
             <p>&copy; 2025 LazyTimer.com | <a href="/about"
