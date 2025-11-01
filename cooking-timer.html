@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Cooking Timer - Free Online Kitchen Timer for Recipes</title>
+    <meta name="title" content="Cooking Timer - Free Online Kitchen Timer for Recipes">
+    <meta name="description"
+        content="Free cooking timer with presets for eggs, pasta, rice, baking and more. Perfect timing for all your recipes. Works on any device - no app needed.">
+    <meta name="keywords"
+        content="cooking timer, kitchen timer, egg timer, pasta timer, baking timer, recipe timer, online cooking timer, oven timer">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lazytimer.com/cooking-timer">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lazytimer.com/cooking-timer">
+    <meta property="og:title" content="Cooking Timer - Free Online Kitchen Timer">
+    <meta property="og:description"
+        content="Perfect cooking timer with presets for eggs, pasta, baking, and all your recipes. Free and easy to use.">
+    <meta property="og:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cooking Timer - Free Online Kitchen Timer">
+    <meta name="twitter:description" content="Perfect cooking timer with presets for all your recipes.">
+    <meta name="twitter:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523870768931777"
+        crossorigin="anonymous"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "LazyTimer Cooking Timer",
+      "url": "https://lazytimer.com/cooking-timer",
+      "description": "Free online cooking timer with presets for common recipes including eggs, pasta, rice, baking, and more.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Egg timer presets",
+        "Pasta cooking timer",
+        "Baking timer",
+        "Rice timer",
+        "Custom cooking times",
+        "Audio alerts"
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long should I cook soft boiled eggs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For perfect soft boiled eggs with runny yolks, cook for 6-7 minutes in boiling water. Place eggs in boiling water, set your timer for 6 minutes for very soft yolks or 7 minutes for slightly firmer yolks, then immediately transfer to an ice bath to stop cooking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does pasta take to cook?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most dried pasta takes 8-12 minutes to cook al dente. Spaghetti typically needs 9-10 minutes, penne 11-12 minutes, and angel hair only 4-5 minutes. Always check the package directions and taste test 1-2 minutes before the suggested time, as cooking times vary by brand and altitude."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long to cook rice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "White rice typically takes 15-18 minutes after reaching a boil, while brown rice needs 40-45 minutes. For white rice, bring to a boil, reduce heat to low, cover, and simmer for 15-18 minutes. Let it rest for 5 minutes off heat before fluffing with a fork."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best kitchen timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best kitchen timer is one that's always accessible, easy to set, and provides clear alerts. Online cooking timers work on any device you already have (phone, tablet, computer), require no batteries, and let you set multiple timers for complex recipes. They're free and more convenient than physical kitchen timers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I time multiple dishes cooking at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For multiple dishes, write down when each item needs to go in and come out. Start with the longest-cooking item first, then add others based on their cook times. Our cooking timer helps you track one timing at a time - for complex meals, consider using multiple devices or browser tabs to run separate timers simultaneously."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+        }
+
+        .logo-icon::before {
+            content: '🍳';
+            font-size: 30px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.7;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background: rgba(243, 156, 18, 0.2);
+        }
+
+        nav a.active {
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .stopwatch-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 20px 40px rgba(243, 156, 18, 0.3));
+        }
+
+        .stopwatch-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 43.53%;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .minute-hand {
+            width: 7px;
+            height: 22%;
+            margin-left: -3.5px;
+            background: linear-gradient(180deg, #f39c12 0%, #e67e22 100%);
+            z-index: 101;
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
+        }
+
+        .second-hand {
+            width: 5px;
+            height: 26%;
+            margin-left: -2.5px;
+            background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+            z-index: 102;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.6);
+        }
+
+        .controls-panel {
+            flex: 1;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .cooking-presets {
+            background: rgba(243, 156, 18, 0.1);
+            border: 2px solid rgba(243, 156, 18, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .cooking-presets h3 {
+            color: #f39c12;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .preset-btn {
+            padding: 12px;
+            background: rgba(243, 156, 18, 0.2);
+            border: 1px solid rgba(243, 156, 18, 0.4);
+            border-radius: 8px;
+            color: white;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .preset-btn:hover {
+            background: rgba(243, 156, 18, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .preset-btn.active {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+
+        .digital-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .flip-card {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 50%, #d0d0d0 50%, #c0c0c0 100%);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .flip-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1a1a1a;
+            z-index: 2;
+        }
+
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+        }
+
+        .colon {
+            font-size: 5em;
+            font-weight: 700;
+            color: #ffffff;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 99% { opacity: 0.3; }
+        }
+
+        .flip-card.flipping .flip-card-inner {
+            animation: flip 0.6s ease-in-out;
+        }
+
+        @keyframes flip {
+            0% { transform: rotateX(0deg); }
+            50% { transform: rotateX(-90deg); }
+            100% { transform: rotateX(0deg); }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 18px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+        }
+
+        .pause-btn {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+
+        .seo-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .seo-content h2 {
+            font-size: 2.2em;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .seo-content h3 {
+            font-size: 1.6em;
+            color: #f39c12;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .seo-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .seo-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .seo-content li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
+        }
+
+        .faq-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.4em;
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1024px) {
+            .timer-container {
+                flex-direction: column;
+                padding: 40px;
+            }
+
+            .stopwatch-container {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .stopwatch-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .timer-container {
+                padding: 25px 20px;
+            }
+
+            .flip-card {
+                width: 60px;
+                height: 90px;
+            }
+
+            .flip-card-inner {
+                font-size: 3.5em;
+            }
+
+            .colon {
+                font-size: 3.5em;
+            }
+
+            .preset-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-content, .faq-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <div class="logo-icon"></div>
+                Cooking Timer
+            </h1>
+            <p>Perfect Timing for Every Recipe</p>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/cooking-timer" class="active">Cooking Timer</a>
+            <a href="/pomodoro-timer">Pomodoro Timer</a>
+            <a href="/about">About</a>
+        </nav>
+
+        <div class="ad-container top-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="7285922677" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="timer-container">
+            <div class="stopwatch-container">
+                <img src="stopwatch.png" alt="Cooking timer" class="stopwatch-image">
+                <div class="minute-hand hand" id="minuteHand"></div>
+                <div class="second-hand hand" id="secondHand"></div>
+            </div>
+
+            <div class="controls-panel">
+                <div class="cooking-presets">
+                    <h3>🥚 Eggs & Basics</h3>
+                    <div class="preset-grid">
+                        <button class="preset-btn" data-time="180">Soft Eggs (3min)</button>
+                        <button class="preset-btn" data-time="420">Hard Eggs (7min)</button>
+                        <button class="preset-btn" data-time="240">Poached Eggs (4min)</button>
+                        <button class="preset-btn" data-time="360">Scrambled (6min)</button>
+                    </div>
+                </div>
+
+                <div class="cooking-presets">
+                    <h3>🍝 Pasta & Grains</h3>
+                    <div class="preset-grid">
+                        <button class="preset-btn active" data-time="600">Pasta (10min)</button>
+                        <button class="preset-btn" data-time="1080">Rice (18min)</button>
+                        <button class="preset-btn" data-time="900">Quinoa (15min)</button>
+                        <button class="preset-btn" data-time="720">Couscous (12min)</button>
+                    </div>
+                </div>
+
+                <div class="cooking-presets">
+                    <h3>🥦 Vegetables</h3>
+                    <div class="preset-grid">
+                        <button class="preset-btn" data-time="420">Steamed Veg (7min)</button>
+                        <button class="preset-btn" data-time="1200">Roasted (20min)</button>
+                        <button class="preset-btn" data-time="300">Blanching (5min)</button>
+                        <button class="preset-btn" data-time="900">Baked Potato (15min)</button>
+                    </div>
+                </div>
+
+                <div class="cooking-presets">
+                    <h3>🍰 Baking</h3>
+                    <div class="preset-grid">
+                        <button class="preset-btn" data-time="720">Cookies (12min)</button>
+                        <button class="preset-btn" data-time="900">Pizza (15min)</button>
+                        <button class="preset-btn" data-time="1200">Chicken (20min)</button>
+                        <button class="preset-btn" data-time="1800">Bread (30min)</button>
+                    </div>
+                </div>
+
+                <div class="digital-timer">
+                    <div class="flip-card" id="minuteTens">
+                        <div class="flip-card-inner">1</div>
+                    </div>
+                    <div class="flip-card" id="minuteOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="colon">:</div>
+                    <div class="flip-card" id="secondTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card" id="secondOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn start-btn" id="startBtn">Start</button>
+                    <button class="control-btn pause-btn" id="pauseBtn">Pause</button>
+                    <button class="control-btn reset-btn" id="resetBtn">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <article class="seo-content">
+            <h2>Your Essential Online Cooking Timer</h2>
+            <p>
+                A reliable cooking timer is essential for perfect results in the kitchen. Our free online cooking timer provides quick access to preset times for eggs, pasta, rice, baking, and all your favorite recipes. No app downloads required—works instantly on any device.
+            </p>
+
+            <h3>Popular Cooking Timer Presets</h3>
+            <p>
+                We've included the most commonly needed cooking times for everyday recipes. Soft boiled eggs (3 minutes), hard boiled eggs (7 minutes), pasta (10 minutes), rice (18 minutes), and many more presets help you achieve perfect results every time.
+            </p>
+
+            <h3>Perfect Timing for Common Foods</h3>
+            <ul>
+                <li><strong>Eggs:</strong> 3 minutes for soft boiled, 7 minutes for hard boiled, 4 minutes for poached</li>
+                <li><strong>Pasta:</strong> 8-12 minutes depending on type (check package instructions)</li>
+                <li><strong>Rice:</strong> 18 minutes for white rice, 40-45 minutes for brown rice</li>
+                <li><strong>Vegetables:</strong> 7 minutes for steaming, 20 minutes for roasting</li>
+                <li><strong>Baking:</strong> 12 minutes for cookies, 15 minutes for pizza, 30 minutes for bread</li>
+            </ul>
+
+            <h3>Why Use an Online Kitchen Timer?</h3>
+            <p>
+                Online cooking timers offer advantages over traditional kitchen timers. They're always available on devices you already carry, they never need batteries, and you can set multiple timers by opening several browser tabs. Plus, the large digital display is easy to read across the kitchen.
+            </p>
+
+            <h3>Tips for Better Cooking with Timers</h3>
+            <p>
+                Set your timer as soon as food starts cooking—not when you think to check the time. For boiled foods, start timing when water returns to a boil after adding ingredients. For baking, set the timer for 2-3 minutes less than the recipe suggests, then check and add time if needed. This prevents overcooking.
+            </p>
+        </article>
+
+        <section class="faq-section">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">Cooking Timer FAQ</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How long should I cook soft boiled eggs?</div>
+                <div class="faq-answer">
+                    For perfect soft boiled eggs with runny yolks, cook for 6-7 minutes in boiling water. Place eggs in boiling water, set your timer for 6 minutes for very soft yolks or 7 minutes for slightly firmer yolks, then immediately transfer to an ice bath to stop cooking.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How long does pasta take to cook?</div>
+                <div class="faq-answer">
+                    Most dried pasta takes 8-12 minutes to cook al dente. Spaghetti typically needs 9-10 minutes, penne 11-12 minutes, and angel hair only 4-5 minutes. Always check the package directions and taste test 1-2 minutes before the suggested time.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How long to cook rice?</div>
+                <div class="faq-answer">
+                    White rice typically takes 15-18 minutes after reaching a boil, while brown rice needs 40-45 minutes. For white rice, bring to a boil, reduce heat to low, cover, and simmer for 15-18 minutes. Let it rest for 5 minutes off heat before fluffing.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the best kitchen timer?</div>
+                <div class="faq-answer">
+                    The best kitchen timer is one that's always accessible, easy to set, and provides clear alerts. Online cooking timers work on any device you already have, require no batteries, and are more convenient than physical kitchen timers.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I time multiple dishes cooking at once?</div>
+                <div class="faq-answer">
+                    For multiple dishes, write down when each item needs to go in and come out. Start with the longest-cooking item first, then add others based on their cook times. You can open multiple browser tabs to run separate timers simultaneously.
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-container bottom-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="6571606806" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 LazyTimer.com | <a href="/">All Timers</a> | <a href="/about">About</a> | <a href="/privacy-policy">Privacy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        let timeLeft = 600;
+        let totalTime = 600;
+        let isRunning = false;
+        let timerInterval;
+
+        const buttons = document.querySelectorAll('.preset-btn');
+        const minuteTensCard = document.getElementById('minuteTens');
+        const minuteOnesCard = document.getElementById('minuteOnes');
+        const secondTensCard = document.getElementById('secondTens');
+        const secondOnesCard = document.getElementById('secondOnes');
+        const minuteHand = document.getElementById('minuteHand');
+        const secondHand = document.getElementById('secondHand');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                buttons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const time = parseInt(this.getAttribute('data-time'));
+                pauseTimer();
+                timeLeft = time;
+                totalTime = time;
+                updateDisplay();
+            });
+        });
+
+        function updateFlipCard(card, newValue) {
+            const inner = card.querySelector('.flip-card-inner');
+            if (inner.textContent !== newValue.toString()) {
+                card.classList.add('flipping');
+                setTimeout(() => {
+                    inner.textContent = newValue;
+                    card.classList.remove('flipping');
+                }, 300);
+            }
+        }
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            updateFlipCard(minuteTensCard, Math.floor(minutes / 10));
+            updateFlipCard(minuteOnesCard, minutes % 10);
+            updateFlipCard(secondTensCard, Math.floor(seconds / 10));
+            updateFlipCard(secondOnesCard, seconds % 10);
+
+            const elapsedTime = totalTime - timeLeft;
+            const minuteAngle = (elapsedTime / totalTime) * 360;
+            const secondAngle = ((60 - seconds) / 60) * 360;
+
+            minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+            secondHand.style.transform = `rotate(${secondAngle}deg)`;
+        }
+
+        function startTimer() {
+            if (timeLeft > 0 && !isRunning) {
+                isRunning = true;
+                startBtn.textContent = 'Running...';
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft <= 0) {
+                        pauseTimer();
+                        alert('⏰ Cooking timer complete!');
+                    }
+                }, 1000);
+            }
+        }
+
+        function pauseTimer() {
+            isRunning = false;
+            startBtn.textContent = 'Start';
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            timeLeft = totalTime;
+            updateDisplay();
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        updateDisplay();
+    </script>
+</body>
+
+</html>

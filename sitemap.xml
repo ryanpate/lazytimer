@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
   <!-- Main Homepage -->
   <url>
     <loc>https://lazytimer.com/</loc>
-    <lastmod>2025-09-30</lastmod>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -14,36 +14,60 @@
     </image:image>
   </url>
 
+  <!-- Pomodoro Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/pomodoro-timer</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>Pomodoro Timer</image:title>
+    </image:image>
+  </url>
+
+  <!-- Cooking Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/cooking-timer</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>Cooking Timer</image:title>
+    </image:image>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://lazytimer.com/about</loc>
-    <lastmod>2025-09-30</lastmod>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- How to Use Page -->
   <url>
     <loc>https://lazytimer.com/how-to-use</loc>
-    <lastmod>2025-09-30</lastmod>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- Privacy Policy -->
   <url>
     <loc>https://lazytimer.com/privacy-policy</loc>
-    <lastmod>2025-09-30</lastmod>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
 
   <!-- Terms of Service -->
   <url>
     <loc>https://lazytimer.com/terms-of-service</loc>
-    <lastmod>2025-09-30</lastmod>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
