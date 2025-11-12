@@ -5,36 +5,36 @@
   <!-- Main Homepage -->
   <url>
     <loc>https://lazytimer.com/</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
-      <image:title>LazyTimer Stopwatch</image:title>
+      <image:title>LazyTimer Stopwatch - Best Online Timer 2025</image:title>
     </image:image>
   </url>
 
   <!-- Pomodoro Timer Page -->
   <url>
     <loc>https://lazytimer.com/pomodoro-timer</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
-      <image:title>Pomodoro Timer</image:title>
+      <image:title>Pomodoro Timer 2025 - 25 Minute Focus Timer</image:title>
     </image:image>
   </url>
 
   <!-- Cooking Timer Page -->
   <url>
     <loc>https://lazytimer.com/cooking-timer</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
-      <image:title>Cooking Timer</image:title>
+      <image:title>Cooking Timer 2025 - Kitchen Timer for Perfect Recipes</image:title>
     </image:image>
   </url>
 
