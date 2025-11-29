@@ -38,6 +38,42 @@
     </image:image>
   </url>
 
+  <!-- Workout Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/workout-timer</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>Workout Timer 2025 - Free HIIT and Exercise Interval Timer</image:title>
+    </image:image>
+  </url>
+
+  <!-- Meditation Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/meditation-timer</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>Meditation Timer 2025 - Free Mindfulness and Breathing Timer</image:title>
+    </image:image>
+  </url>
+
+  <!-- Study Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/study-timer</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>Study Timer 2025 - Free Focus Timer for Students</image:title>
+    </image:image>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://lazytimer.com/about</loc>
