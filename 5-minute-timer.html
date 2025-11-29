@@ -413,6 +413,20 @@
             background: rgba(102, 126, 234, 0.5);
         }
 
+        .stop-sound-btn {
+            padding: 10px 15px;
+            background: rgba(231, 76, 60, 0.3);
+            border: 1px solid rgba(231, 76, 60, 0.5);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .stop-sound-btn:hover {
+            background: rgba(231, 76, 60, 0.5);
+        }
+
         .controls {
             display: flex;
             justify-content: center;
@@ -708,6 +722,7 @@
                         <option value="/static/facility-breach-alarm.wav">Facility Alarm</option>
                     </select>
                     <button class="test-sound-btn" id="testSound">Test</button>
+                    <button class="stop-sound-btn" id="stopSound">Stop</button>
                 </div>
 
                 <div class="controls">
@@ -860,6 +875,15 @@
         // Test sound button
         testSoundBtn.addEventListener('click', function() {
             playAlarm(true);
+        });
+
+        // Stop sound button
+        const stopSoundBtn = document.getElementById('stopSound');
+        stopSoundBtn.addEventListener('click', function() {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
         });
 
         function playAlarm(isTest = false) {
