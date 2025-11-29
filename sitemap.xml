@@ -74,6 +74,18 @@
     </image:image>
   </url>
 
+  <!-- 5 Minute Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/5-minute-timer</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>5 Minute Timer 2025 - Free Online Countdown Timer</image:title>
+    </image:image>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://lazytimer.com/about</loc>
