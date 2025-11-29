@@ -23,7 +23,101 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
-    
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523870768931777"
+        crossorigin="anonymous"></script>
+
+    <!-- HowTo Schema for Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Use an Online Timer",
+      "description": "Step-by-step guide to using LazyTimer's online countdown timer for productivity, cooking, fitness, and more.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Choose Your Timer",
+          "text": "Select from 50+ preset timers organized by category (Cooking, Productivity, Fitness, Wellness, Study, Daily Activities, Breaks) or create your own custom countdown."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Click Start",
+          "text": "Press the green Start button to begin your countdown. The timer will display on both the analog stopwatch and digital flip clock."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Use the Controls",
+          "text": "Use Pause to temporarily stop the timer without resetting, Reset to return to the original time, and Start again to resume."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Wait for Alert",
+          "text": "The timer will alert you when your countdown reaches zero. You can then reset and start a new session."
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I set a custom timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To set a custom timer, find the 'Or Custom' section below the preset dropdown. Enter minutes (0-999) in the first box and seconds (0-59) in the second box. Click 'Set' to apply your custom time, then click Start to begin the countdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use multiple timers at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! You can open multiple browser tabs or windows with LazyTimer to run several timers simultaneously. Each tab operates independently, perfect for timing multiple dishes while cooking or managing different tasks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the timer work on mobile phones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, LazyTimer is fully responsive and works perfectly on mobile phones, tablets, and desktop computers. No app download needed - just visit the website in any modern browser."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lazytimer.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "How to Use",
+        "item": "https://lazytimer.com/how-to-use"
+      }]
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -258,16 +352,18 @@
         <header>
             <h1>
                 <div class="logo-icon"></div>
-                LazyTimer
+                How to Use Online Timer
             </h1>
+            <p>Complete Guide to LazyTimer Features</p>
         </header>
 
         <nav>
             <a href="/">Home</a>
-            <a href="/pomodoro-timer">Pomodoro Timer</a>
-            <a href="/cooking-timer">Cooking Timer</a>
-            <a href="/about">About</a>
-            <a href="/how-to-use" class="active">How to Use</a>
+            <a href="/pomodoro-timer">Pomodoro</a>
+            <a href="/study-timer">Study</a>
+            <a href="/workout-timer">Workout</a>
+            <a href="/meditation-timer">Meditation</a>
+            <a href="/cooking-timer">Cooking</a>
         </nav>
 
         <!-- Top Banner Ad -->
