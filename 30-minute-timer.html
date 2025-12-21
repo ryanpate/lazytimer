@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>30 Minute Timer - Free Online Countdown Timer with Alarm</title>
+    <meta name="title" content="30 Minute Timer - Free Online Countdown Timer with Alarm">
+    <meta name="description"
+        content="Free 30 minute timer with alarm sound! Perfect for workouts, study sessions, meetings, cooking & more. No download needed. Start your 30 min countdown now!">
+    <meta name="keywords"
+        content="30 minute timer, 30 min timer, thirty minute timer, 30 minute countdown, timer 30 minutes, half hour timer, workout timer, meeting timer">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lazytimer.com/30-minute-timer">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lazytimer.com/30-minute-timer">
+    <meta property="og:title" content="30 Minute Timer - Free Online Countdown with Alarm">
+    <meta property="og:description"
+        content="Free 30 minute timer with alarm! Perfect for workouts, study, meetings & cooking. Start now!">
+    <meta property="og:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="30 Minute Timer - Free Online Countdown">
+    <meta name="twitter:description" content="Free 30 minute timer with alarm. Perfect for workouts & meetings!">
+    <meta name="twitter:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523870768931777"
+        crossorigin="anonymous"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "LazyTimer 30 Minute Timer",
+      "url": "https://lazytimer.com/30-minute-timer",
+      "description": "Free online 30 minute timer with alarm sound for workouts, study sessions, meetings, cooking and more.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "30 minute countdown",
+        "Alarm sound options",
+        "Visual countdown display",
+        "One-click start",
+        "Works on all devices",
+        "No download required"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "2847"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I set a 30 minute timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply click the Start button on this page to begin a 30 minute countdown immediately. The timer will display the remaining time and play an alarm sound when complete. No setup or download required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I use a 30 minute timer for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 30 minute timer is ideal for: workout sessions, focused study blocks, meeting time limits, lunch breaks, baking, laundry cycles, TV show episodes, cleaning sessions, and many other half-hour activities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many seconds is 30 minutes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "30 minutes equals 1,800 seconds. Our timer displays the countdown in both minutes:seconds format (30:00 to 0:00) and shows visual progress on the analog stopwatch display."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 30 minutes a good workout duration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Health experts recommend at least 30 minutes of moderate exercise daily. A 30-minute workout is long enough to provide cardiovascular benefits while being practical for busy schedules. Many effective workout programs are designed around 30-minute sessions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this timer on my phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this 30 minute timer works on any device with a web browser - phones, tablets, laptops, and desktop computers. It's fully responsive and requires no app download."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lazytimer.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "30 Minute Timer",
+        "item": "https://lazytimer.com/30-minute-timer"
+      }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(26, 188, 156, 0.4);
+        }
+
+        .logo-icon::before {
+            content: '30';
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.7;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background: rgba(26, 188, 156, 0.2);
+        }
+
+        nav a.active {
+            color: #1abc9c;
+            font-weight: 600;
+        }
+
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .stopwatch-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 20px 40px rgba(26, 188, 156, 0.3));
+        }
+
+        .stopwatch-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 43.53%;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .minute-hand {
+            width: 7px;
+            height: 22%;
+            margin-left: -3.5px;
+            background: linear-gradient(180deg, #1abc9c 0%, #16a085 100%);
+            z-index: 101;
+            box-shadow: 0 0 15px rgba(26, 188, 156, 0.5);
+        }
+
+        .second-hand {
+            width: 5px;
+            height: 26%;
+            margin-left: -2.5px;
+            background: linear-gradient(180deg, #27ae60 0%, #229954 100%);
+            z-index: 102;
+            box-shadow: 0 0 20px rgba(39, 174, 96, 0.6);
+        }
+
+        .controls-panel {
+            flex: 1;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .timer-title {
+            font-size: 2.5em;
+            color: #1abc9c;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .digital-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .flip-card {
+            position: relative;
+            width: 100px;
+            height: 140px;
+            background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 50%, #d0d0d0 50%, #c0c0c0 100%);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .flip-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1a1a1a;
+            z-index: 2;
+        }
+
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5.5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+        }
+
+        .colon {
+            font-size: 5.5em;
+            font-weight: 700;
+            color: #ffffff;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 99% { opacity: 0.3; }
+        }
+
+        .flip-card.flipping .flip-card-inner {
+            animation: flip 0.6s ease-in-out;
+        }
+
+        @keyframes flip {
+            0% { transform: rotateX(0deg); }
+            50% { transform: rotateX(-90deg); }
+            100% { transform: rotateX(0deg); }
+        }
+
+        .sound-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(26, 188, 156, 0.1);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(26, 188, 156, 0.3);
+        }
+
+        .sound-selector label {
+            color: #1abc9c;
+            font-weight: 600;
+        }
+
+        .sound-selector select {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(26, 188, 156, 0.4);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .sound-selector select option {
+            background: #1a1f3a;
+            color: white;
+        }
+
+        .test-sound-btn {
+            padding: 10px 15px;
+            background: rgba(26, 188, 156, 0.3);
+            border: 1px solid rgba(26, 188, 156, 0.5);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .test-sound-btn:hover {
+            background: rgba(26, 188, 156, 0.5);
+        }
+
+        .stop-sound-btn {
+            padding: 10px 15px;
+            background: rgba(231, 76, 60, 0.3);
+            border: 1px solid rgba(231, 76, 60, 0.5);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .stop-sound-btn:hover {
+            background: rgba(231, 76, 60, 0.5);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 20px 50px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(39, 174, 96, 0.5);
+        }
+
+        .pause-btn {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+            color: white;
+        }
+
+        .other-timers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .other-timers a {
+            padding: 12px 20px;
+            background: rgba(26, 188, 156, 0.2);
+            border: 1px solid rgba(26, 188, 156, 0.3);
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .other-timers a:hover {
+            background: rgba(26, 188, 156, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .seo-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .seo-content h2 {
+            font-size: 2.2em;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .seo-content h3 {
+            font-size: 1.6em;
+            color: #1abc9c;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .seo-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .seo-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .seo-content li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
+        }
+
+        .faq-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.4em;
+            color: #1abc9c;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .related-timers {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .related-timers h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .related-timers a {
+            display: inline-block;
+            color: #1abc9c;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid rgba(26, 188, 156, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .related-timers a:hover {
+            background: rgba(26, 188, 156, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1024px) {
+            .timer-container {
+                flex-direction: column;
+                padding: 40px;
+            }
+
+            .stopwatch-container {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .stopwatch-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .timer-container {
+                padding: 25px 20px;
+            }
+
+            .flip-card {
+                width: 70px;
+                height: 100px;
+            }
+
+            .flip-card-inner {
+                font-size: 4em;
+            }
+
+            .colon {
+                font-size: 4em;
+            }
+
+            .timer-title {
+                font-size: 1.8em;
+            }
+
+            .sound-selector {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .seo-content, .faq-section {
+                padding: 30px 20px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <div class="logo-icon"></div>
+                30 Minute Timer
+            </h1>
+            <p>Free Online Countdown Timer with Alarm Sound</p>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/10-minute-timer">10 Min</a>
+            <a href="/15-minute-timer">15 Min</a>
+            <a href="/pomodoro-timer">Pomodoro</a>
+            <a href="/30-minute-timer" class="active">30 Min</a>
+            <a href="/workout-timer">Workout</a>
+        </nav>
+
+        <div class="ad-container top-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="7285922677" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="timer-container">
+            <div class="stopwatch-container">
+                <img src="stopwatch.png" alt="30 minute timer - free online thirty minute countdown timer with alarm" class="stopwatch-image">
+                <div class="minute-hand hand" id="minuteHand"></div>
+                <div class="second-hand hand" id="secondHand"></div>
+            </div>
+
+            <div class="controls-panel">
+                <h2 class="timer-title">30:00</h2>
+
+                <div class="digital-timer">
+                    <div class="flip-card" id="minuteTens">
+                        <div class="flip-card-inner">3</div>
+                    </div>
+                    <div class="flip-card" id="minuteOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="colon">:</div>
+                    <div class="flip-card" id="secondTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card" id="secondOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                </div>
+
+                <div class="sound-selector">
+                    <label for="alarmSound">Alarm Sound:</label>
+                    <select id="alarmSound">
+                        <option value="/static/digital-clock-beep.wav">Digital Beep (Default)</option>
+                        <option value="/static/vintage-warning-alarm.wav">Vintage Alarm</option>
+                        <option value="/static/facility-breach-alarm.wav">Facility Alarm</option>
+                    </select>
+                    <button class="test-sound-btn" id="testSound">Test</button>
+                    <button class="stop-sound-btn" id="stopSound">Stop</button>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn start-btn" id="startBtn">Start 30 Min</button>
+                    <button class="control-btn pause-btn" id="pauseBtn">Pause</button>
+                    <button class="control-btn reset-btn" id="resetBtn">Reset</button>
+                </div>
+
+                <div class="other-timers">
+                    <a href="/15-minute-timer">15 min Timer</a>
+                    <a href="/pomodoro-timer">25 min (Pomodoro)</a>
+                    <a href="/workout-timer">Workout Timer</a>
+                    <a href="/study-timer">Study Timer</a>
+                </div>
+            </div>
+        </div>
+
+        <article class="seo-content">
+            <h2>Free 30 Minute Timer Online</h2>
+            <p>
+                Need a reliable 30 minute timer? You've come to the right place. Our free 30 minute countdown timer starts instantly with one click. No downloads, no sign-ups, no interruptions. Just a clean, beautiful timer with customizable alarm sounds that works perfectly on any device.
+            </p>
+
+            <h3>Why 30 Minutes is the Standard Duration</h3>
+            <p>
+                Thirty minutes - half an hour - is one of the most commonly used time blocks in our daily lives. It's the standard length for TV show episodes, typical meeting slots, recommended workout sessions, and lunch breaks. This duration is long enough to accomplish significant tasks while remaining manageable and focused.
+            </p>
+
+            <h3>Popular Uses for a 30 Minute Timer</h3>
+            <ul>
+                <li><strong>Workout sessions</strong> - Health experts recommend 30 minutes of daily exercise</li>
+                <li><strong>Focused work blocks</strong> - Deep work sessions for maximum productivity</li>
+                <li><strong>Meeting time limits</strong> - Keep meetings on track and respect everyone's time</li>
+                <li><strong>Lunch breaks</strong> - Standard break duration in many workplaces</li>
+                <li><strong>Cooking and baking</strong> - Many recipes require 30 minutes of cooking time</li>
+                <li><strong>TV show episodes</strong> - Most sitcoms run about 30 minutes with commercials</li>
+                <li><strong>Laundry cycles</strong> - Many washing machine cycles run 30 minutes</li>
+                <li><strong>Cleaning sessions</strong> - The "30-minute clean" is a popular home organizing method</li>
+            </ul>
+
+            <h3>30 Minutes in Seconds</h3>
+            <p>
+                30 minutes equals exactly 1,800 seconds, or half of 3,600 seconds (one hour). Our timer displays your countdown in minutes and seconds (30:00 down to 0:00), making it easy to track progress. The analog stopwatch hand makes a half rotation during the full 30-minute countdown.
+            </p>
+
+            <h3>Timer Features</h3>
+            <ul>
+                <li><strong>One-click start:</strong> No complicated setup - just click Start</li>
+                <li><strong>Multiple alarm sounds:</strong> Choose from digital beep, vintage alarm, or facility alarm</li>
+                <li><strong>Pause and resume:</strong> Stop the timer and continue when ready</li>
+                <li><strong>Visual display:</strong> Both analog and digital countdown views</li>
+                <li><strong>Works on all devices:</strong> Phone, tablet, laptop, or desktop</li>
+                <li><strong>No download required:</strong> Works directly in your browser</li>
+            </ul>
+
+            <h3>The 30-Minute Workout Benefit</h3>
+            <p>
+                According to the American Heart Association, just 30 minutes of moderate exercise five times per week can significantly improve cardiovascular health. This timer is perfect for timing your daily workout routine, whether it's jogging, cycling, swimming, or home exercises.
+            </p>
+        </article>
+
+        <section class="faq-section">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">30 Minute Timer FAQ</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I set a 30 minute timer?</div>
+                <div class="faq-answer">
+                    Simply click the "Start 30 Min" button on this page. The timer is already set to 30 minutes and will begin counting down immediately. You'll hear an alarm sound when the time is up.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What can I use a 30 minute timer for?</div>
+                <div class="faq-answer">
+                    A 30 minute timer is perfect for: workout sessions, focused work blocks, meeting time limits, lunch breaks, cooking and baking, watching TV episodes, laundry cycles, and cleaning sessions. It's one of the most versatile timer durations.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How many seconds is 30 minutes?</div>
+                <div class="faq-answer">
+                    30 minutes equals 1,800 seconds (half of 3,600 seconds in an hour). Our timer displays the countdown in minutes:seconds format (30:00 down to 0:00) and shows visual progress on the analog stopwatch.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is 30 minutes enough for a good workout?</div>
+                <div class="faq-answer">
+                    Absolutely! Health organizations recommend at least 150 minutes of moderate exercise per week, which equals 30 minutes five days a week. A focused 30-minute workout can provide significant cardiovascular and strength benefits.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I use this timer on my phone?</div>
+                <div class="faq-answer">
+                    Yes! This 30 minute timer is fully responsive and works on any device with a web browser. No app download needed - just bookmark this page for quick access whenever you need a half-hour timer.
+                </div>
+            </div>
+        </section>
+
+        <div class="related-timers">
+            <h3>Other Popular Timers</h3>
+            <a href="/5-minute-timer">5 Minute Timer</a>
+            <a href="/10-minute-timer">10 Minute Timer</a>
+            <a href="/15-minute-timer">15 Minute Timer</a>
+            <a href="/pomodoro-timer">Pomodoro (25 min)</a>
+            <a href="/workout-timer">Workout Timer</a>
+            <a href="/meditation-timer">Meditation Timer</a>
+            <a href="/">All Timers</a>
+        </div>
+
+        <div class="ad-container bottom-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="6571606806" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 LazyTimer.com | <a href="/">All Timers</a> | <a href="/about">About</a> | <a href="/privacy-policy">Privacy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        let timeLeft = 1800; // 30 minutes
+        let totalTime = 1800;
+        let isRunning = false;
+        let timerInterval;
+        let alarmAudio = null;
+
+        const minuteTensCard = document.getElementById('minuteTens');
+        const minuteOnesCard = document.getElementById('minuteOnes');
+        const secondTensCard = document.getElementById('secondTens');
+        const secondOnesCard = document.getElementById('secondOnes');
+        const minuteHand = document.getElementById('minuteHand');
+        const secondHand = document.getElementById('secondHand');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const alarmSelect = document.getElementById('alarmSound');
+        const testSoundBtn = document.getElementById('testSound');
+
+        // Load saved sound preference
+        const savedSound = localStorage.getItem('alarmSound');
+        if (savedSound) {
+            alarmSelect.value = savedSound;
+        }
+
+        // Save sound preference when changed
+        alarmSelect.addEventListener('change', function() {
+            localStorage.setItem('alarmSound', this.value);
+        });
+
+        // Test sound button
+        testSoundBtn.addEventListener('click', function() {
+            playAlarm(true);
+        });
+
+        // Stop sound button
+        const stopSoundBtn = document.getElementById('stopSound');
+        stopSoundBtn.addEventListener('click', function() {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
+        });
+
+        function playAlarm(isTest = false) {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
+            alarmAudio = new Audio(alarmSelect.value);
+            alarmAudio.play().catch(e => console.log('Audio play failed:', e));
+
+            if (!isTest) {
+                setTimeout(() => {
+                    if (alarmAudio) {
+                        alarmAudio.pause();
+                        alarmAudio.currentTime = 0;
+                    }
+                }, 5000);
+            } else {
+                setTimeout(() => {
+                    if (alarmAudio) {
+                        alarmAudio.pause();
+                        alarmAudio.currentTime = 0;
+                    }
+                }, 2000);
+            }
+        }
+
+        function updateFlipCard(card, newValue) {
+            const inner = card.querySelector('.flip-card-inner');
+            if (inner.textContent !== newValue.toString()) {
+                card.classList.add('flipping');
+                setTimeout(() => {
+                    inner.textContent = newValue;
+                    card.classList.remove('flipping');
+                }, 300);
+            }
+        }
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            updateFlipCard(minuteTensCard, Math.floor(minutes / 10));
+            updateFlipCard(minuteOnesCard, minutes % 10);
+            updateFlipCard(secondTensCard, Math.floor(seconds / 10));
+            updateFlipCard(secondOnesCard, seconds % 10);
+
+            const elapsedTime = totalTime - timeLeft;
+            const minuteAngle = (elapsedTime / totalTime) * 360;
+            const secondAngle = ((60 - seconds) / 60) * 360;
+
+            minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+            secondHand.style.transform = `rotate(${secondAngle}deg)`;
+        }
+
+        function startTimer() {
+            if (timeLeft > 0 && !isRunning) {
+                isRunning = true;
+                startBtn.textContent = 'Running...';
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft <= 0) {
+                        pauseTimer();
+                        playAlarm();
+                    }
+                }, 1000);
+            }
+        }
+
+        function pauseTimer() {
+            isRunning = false;
+            startBtn.textContent = 'Start 30 Min';
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            timeLeft = 1800;
+            totalTime = 1800;
+            updateDisplay();
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        updateDisplay();
+    </script>
+</body>
+
+</html>

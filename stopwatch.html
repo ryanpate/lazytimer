@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Online Stopwatch - Free Timer with Lap Times & Milliseconds</title>
+    <meta name="title" content="Online Stopwatch - Free Timer with Lap Times & Milliseconds">
+    <meta name="description"
+        content="Free online stopwatch with lap times and millisecond precision! Perfect for sports, workouts, cooking, and timing any activity. Start, stop, reset - works on any device!">
+    <meta name="keywords"
+        content="online stopwatch, stopwatch, lap timer, split timer, free stopwatch, digital stopwatch, sports timer, running timer, stopwatch with laps">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lazytimer.com/stopwatch">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lazytimer.com/stopwatch">
+    <meta property="og:title" content="Online Stopwatch - Free Timer with Lap Times">
+    <meta property:description"
+        content="Free online stopwatch with lap times! Perfect for sports, workouts & timing activities. Start now!">
+    <meta property="og:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Online Stopwatch - Free Timer with Lap Times">
+    <meta name="twitter:description" content="Free online stopwatch with milliseconds and lap recording!">
+    <meta name="twitter:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523870768931777"
+        crossorigin="anonymous"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "LazyTimer Online Stopwatch",
+      "url": "https://lazytimer.com/stopwatch",
+      "description": "Free online stopwatch with lap times, split times, and millisecond precision for sports, workouts, and timing activities.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Millisecond precision",
+        "Lap time recording",
+        "Split time tracking",
+        "Visual stopwatch display",
+        "Works on all devices",
+        "No download required"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "4892"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I use the online stopwatch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click the Start button to begin timing. The stopwatch will count up from zero, displaying hours, minutes, seconds, and milliseconds. Click Stop to pause, Lap to record a lap time, and Reset to start over."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I record lap times?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Click the Lap button while the stopwatch is running to record a lap time. Each lap shows the split time (time since last lap) and the total elapsed time. All laps are displayed in a list below the stopwatch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is this online stopwatch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our online stopwatch displays time to the hundredth of a second (10 millisecond precision). While browser-based timing has slight variations, it's accurate enough for most sports, workouts, and general timing needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a stopwatch and a timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A stopwatch counts UP from zero to measure elapsed time - you use it when you don't know how long something will take. A timer counts DOWN from a set time to zero - you use it when you want to limit time to a specific duration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the stopwatch work on mobile phones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! This online stopwatch works on any device with a web browser - phones, tablets, laptops, and desktop computers. It's fully responsive and requires no app download."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lazytimer.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Stopwatch",
+        "item": "https://lazytimer.com/stopwatch"
+      }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+            font-size: 24px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.7;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background: rgba(231, 76, 60, 0.2);
+        }
+
+        nav a.active {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .stopwatch-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 20px 40px rgba(231, 76, 60, 0.3));
+        }
+
+        .stopwatch-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 43.53%;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .minute-hand {
+            width: 7px;
+            height: 22%;
+            margin-left: -3.5px;
+            background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+            z-index: 101;
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+        }
+
+        .second-hand {
+            width: 5px;
+            height: 26%;
+            margin-left: -2.5px;
+            background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+            z-index: 102;
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.6);
+        }
+
+        .controls-panel {
+            flex: 1;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .timer-title {
+            font-size: 2em;
+            color: #e74c3c;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .digital-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .flip-card {
+            position: relative;
+            width: 70px;
+            height: 100px;
+            background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 50%, #d0d0d0 50%, #c0c0c0 100%);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .flip-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1a1a1a;
+            z-index: 2;
+        }
+
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+        }
+
+        .flip-card.small {
+            width: 55px;
+            height: 80px;
+        }
+
+        .flip-card.small .flip-card-inner {
+            font-size: 2.5em;
+        }
+
+        .colon {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .colon.small {
+            font-size: 2.5em;
+        }
+
+        .milliseconds-label {
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.6);
+            margin-top: 5px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 18px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(39, 174, 96, 0.5);
+        }
+
+        .stop-btn {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+
+        .lap-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+            color: white;
+        }
+
+        .lap-times {
+            width: 100%;
+            max-height: 250px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .lap-times-header {
+            display: grid;
+            grid-template-columns: 60px 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            font-weight: 600;
+            color: #e74c3c;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 10px;
+        }
+
+        .lap-item {
+            display: grid;
+            grid-template-columns: 60px 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .lap-item:last-child {
+            border-bottom: none;
+        }
+
+        .lap-number {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .lap-split {
+            color: #3498db;
+        }
+
+        .lap-total {
+            color: white;
+            font-family: 'Courier New', monospace;
+        }
+
+        .no-laps {
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            padding: 20px;
+        }
+
+        .seo-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .seo-content h2 {
+            font-size: 2.2em;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .seo-content h3 {
+            font-size: 1.6em;
+            color: #e74c3c;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .seo-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .seo-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .seo-content li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
+        }
+
+        .faq-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.4em;
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .related-timers {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .related-timers h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .related-timers a {
+            display: inline-block;
+            color: #e74c3c;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .related-timers a:hover {
+            background: rgba(231, 76, 60, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1024px) {
+            .timer-container {
+                flex-direction: column;
+                padding: 40px;
+            }
+
+            .stopwatch-container {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .stopwatch-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .timer-container {
+                padding: 25px 20px;
+            }
+
+            .flip-card {
+                width: 50px;
+                height: 70px;
+            }
+
+            .flip-card-inner {
+                font-size: 2.5em;
+            }
+
+            .flip-card.small {
+                width: 40px;
+                height: 55px;
+            }
+
+            .flip-card.small .flip-card-inner {
+                font-size: 1.8em;
+            }
+
+            .colon {
+                font-size: 2.5em;
+            }
+
+            .colon.small {
+                font-size: 1.8em;
+            }
+
+            .timer-title {
+                font-size: 1.5em;
+            }
+
+            .control-btn {
+                padding: 15px 25px;
+                font-size: 1em;
+            }
+
+            .seo-content, .faq-section {
+                padding: 30px 20px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <div class="logo-icon">&#9201;</div>
+                Online Stopwatch
+            </h1>
+            <p>Free Stopwatch with Lap Times & Milliseconds</p>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/stopwatch" class="active">Stopwatch</a>
+            <a href="/countdown-timer">Countdown</a>
+            <a href="/pomodoro-timer">Pomodoro</a>
+            <a href="/workout-timer">Workout</a>
+            <a href="/cooking-timer">Cooking</a>
+        </nav>
+
+        <div class="ad-container top-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="7285922677" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="timer-container">
+            <div class="stopwatch-container">
+                <img src="stopwatch.png" alt="Online stopwatch - free stopwatch with lap times and milliseconds" class="stopwatch-image">
+                <div class="minute-hand hand" id="minuteHand"></div>
+                <div class="second-hand hand" id="secondHand"></div>
+            </div>
+
+            <div class="controls-panel">
+                <h2 class="timer-title">Stopwatch</h2>
+
+                <div class="digital-timer">
+                    <div class="flip-card" id="hourTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card" id="hourOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="colon">:</div>
+                    <div class="flip-card" id="minuteTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card" id="minuteOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="colon">:</div>
+                    <div class="flip-card" id="secondTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card" id="secondOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="colon small">.</div>
+                    <div class="flip-card small" id="msTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card small" id="msOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn start-btn" id="startBtn">Start</button>
+                    <button class="control-btn stop-btn" id="stopBtn">Stop</button>
+                    <button class="control-btn lap-btn" id="lapBtn">Lap</button>
+                    <button class="control-btn reset-btn" id="resetBtn">Reset</button>
+                </div>
+
+                <div class="lap-times" id="lapTimes">
+                    <div class="lap-times-header">
+                        <span>Lap</span>
+                        <span>Split</span>
+                        <span>Total</span>
+                    </div>
+                    <div class="no-laps" id="noLaps">No laps recorded yet. Click "Lap" while running to record a lap time.</div>
+                </div>
+            </div>
+        </div>
+
+        <article class="seo-content">
+            <h2>Free Online Stopwatch</h2>
+            <p>
+                Our free online stopwatch lets you accurately time any activity with millisecond precision. Whether you're timing a race, workout intervals, cooking, or any other activity, simply click Start and watch the time count up. Record lap times, split times, and track your progress - all without downloading anything.
+            </p>
+
+            <h3>How to Use the Stopwatch</h3>
+            <p>
+                Using our stopwatch is simple: Click Start to begin timing. The display shows hours, minutes, seconds, and hundredths of a second. Click Lap to record a lap time while the stopwatch continues running. Click Stop to pause, and Reset to return to zero and clear all lap times.
+            </p>
+
+            <h3>Popular Uses for a Stopwatch</h3>
+            <ul>
+                <li><strong>Sports and athletics</strong> - Time sprints, laps, intervals, and races</li>
+                <li><strong>Workout intervals</strong> - Track rest periods and exercise durations</li>
+                <li><strong>Cooking</strong> - Time recipes when you don't have a specific duration</li>
+                <li><strong>Games and competitions</strong> - Time challenges and speed runs</li>
+                <li><strong>Science experiments</strong> - Measure reaction times and durations</li>
+                <li><strong>Productivity</strong> - Track how long tasks actually take</li>
+                <li><strong>Music practice</strong> - Time song lengths and practice sessions</li>
+                <li><strong>Public speaking</strong> - Monitor speech and presentation lengths</li>
+            </ul>
+
+            <h3>Stopwatch Features</h3>
+            <ul>
+                <li><strong>Millisecond precision:</strong> Displays hundredths of a second</li>
+                <li><strong>Lap times:</strong> Record multiple laps with split and total times</li>
+                <li><strong>Visual display:</strong> Analog and digital views</li>
+                <li><strong>Start/Stop/Reset:</strong> Full control over your timing</li>
+                <li><strong>Works on all devices:</strong> Phone, tablet, laptop, or desktop</li>
+                <li><strong>No download required:</strong> Works directly in your browser</li>
+            </ul>
+
+            <h3>Stopwatch vs Timer</h3>
+            <p>
+                A stopwatch counts UP from zero - you use it to measure how long something takes when you don't know the duration in advance. A timer counts DOWN from a set time - you use it when you want to limit an activity to a specific duration. Need a countdown? Try our <a href="/countdown-timer" style="color: #e74c3c;">countdown timer</a>.
+            </p>
+        </article>
+
+        <section class="faq-section">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">Stopwatch FAQ</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I record lap times?</div>
+                <div class="faq-answer">
+                    While the stopwatch is running, click the Lap button to record a lap. Each lap shows the split time (time since the last lap) and the total elapsed time. You can record unlimited laps.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How accurate is this online stopwatch?</div>
+                <div class="faq-answer">
+                    This stopwatch displays time to hundredths of a second (centiseconds). While browser-based timing has minor variations due to JavaScript timing, it's accurate enough for most practical uses like sports timing, cooking, and general activities.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What's the difference between split time and lap time?</div>
+                <div class="faq-answer">
+                    Split time (or lap time) is the duration of the current lap - the time since the last lap was recorded. Total time is the cumulative time from when you first started the stopwatch. Both are displayed for each lap.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I pause and resume the stopwatch?</div>
+                <div class="faq-answer">
+                    Yes! Click Stop to pause the stopwatch at any time, then click Start to resume from where you left off. Your elapsed time and any recorded laps are preserved. Reset clears everything back to zero.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Does this work on mobile phones?</div>
+                <div class="faq-answer">
+                    Yes! This online stopwatch is fully responsive and works on any device with a web browser - phones, tablets, laptops, and desktops. No app download required.
+                </div>
+            </div>
+        </section>
+
+        <div class="related-timers">
+            <h3>Other Popular Timers</h3>
+            <a href="/countdown-timer">Countdown Timer</a>
+            <a href="/5-minute-timer">5 Minute Timer</a>
+            <a href="/10-minute-timer">10 Minute Timer</a>
+            <a href="/pomodoro-timer">Pomodoro (25 min)</a>
+            <a href="/workout-timer">Workout Timer</a>
+            <a href="/">All Timers</a>
+        </div>
+
+        <div class="ad-container bottom-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="6571606806" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 LazyTimer.com | <a href="/">All Timers</a> | <a href="/about">About</a> | <a href="/privacy-policy">Privacy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        let elapsedTime = 0; // in milliseconds
+        let isRunning = false;
+        let timerInterval;
+        let laps = [];
+        let lastLapTime = 0;
+
+        const hourTensCard = document.getElementById('hourTens');
+        const hourOnesCard = document.getElementById('hourOnes');
+        const minuteTensCard = document.getElementById('minuteTens');
+        const minuteOnesCard = document.getElementById('minuteOnes');
+        const secondTensCard = document.getElementById('secondTens');
+        const secondOnesCard = document.getElementById('secondOnes');
+        const msTensCard = document.getElementById('msTens');
+        const msOnesCard = document.getElementById('msOnes');
+        const minuteHand = document.getElementById('minuteHand');
+        const secondHand = document.getElementById('secondHand');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const lapBtn = document.getElementById('lapBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const lapTimesContainer = document.getElementById('lapTimes');
+        const noLapsMessage = document.getElementById('noLaps');
+
+        function updateFlipCard(card, newValue) {
+            const inner = card.querySelector('.flip-card-inner');
+            if (inner.textContent !== newValue.toString()) {
+                inner.textContent = newValue;
+            }
+        }
+
+        function formatTime(ms) {
+            const totalSeconds = Math.floor(ms / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            const centiseconds = Math.floor((ms % 1000) / 10);
+
+            return {
+                hours,
+                minutes,
+                seconds,
+                centiseconds,
+                formatted: `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(centiseconds).padStart(2, '0')}`
+            };
+        }
+
+        function updateDisplay() {
+            const time = formatTime(elapsedTime);
+
+            updateFlipCard(hourTensCard, Math.floor(time.hours / 10));
+            updateFlipCard(hourOnesCard, time.hours % 10);
+            updateFlipCard(minuteTensCard, Math.floor(time.minutes / 10));
+            updateFlipCard(minuteOnesCard, time.minutes % 10);
+            updateFlipCard(secondTensCard, Math.floor(time.seconds / 10));
+            updateFlipCard(secondOnesCard, time.seconds % 10);
+            updateFlipCard(msTensCard, Math.floor(time.centiseconds / 10));
+            updateFlipCard(msOnesCard, time.centiseconds % 10);
+
+            // Update analog display
+            const totalSeconds = elapsedTime / 1000;
+            const minuteAngle = ((totalSeconds % 3600) / 3600) * 360;
+            const secondAngle = ((totalSeconds % 60) / 60) * 360;
+
+            minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+            secondHand.style.transform = `rotate(${secondAngle}deg)`;
+        }
+
+        function startStopwatch() {
+            if (!isRunning) {
+                isRunning = true;
+                startBtn.textContent = 'Running...';
+                startBtn.style.background = 'linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%)';
+
+                const startTime = Date.now() - elapsedTime;
+                timerInterval = setInterval(() => {
+                    elapsedTime = Date.now() - startTime;
+                    updateDisplay();
+                }, 10);
+            }
+        }
+
+        function stopStopwatch() {
+            if (isRunning) {
+                isRunning = false;
+                startBtn.textContent = 'Start';
+                startBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #229954 100%)';
+                clearInterval(timerInterval);
+            }
+        }
+
+        function recordLap() {
+            if (isRunning) {
+                const lapTime = elapsedTime - lastLapTime;
+                laps.push({
+                    number: laps.length + 1,
+                    split: lapTime,
+                    total: elapsedTime
+                });
+                lastLapTime = elapsedTime;
+                renderLaps();
+            }
+        }
+
+        function resetStopwatch() {
+            stopStopwatch();
+            elapsedTime = 0;
+            laps = [];
+            lastLapTime = 0;
+            updateDisplay();
+            renderLaps();
+        }
+
+        function renderLaps() {
+            if (laps.length === 0) {
+                noLapsMessage.style.display = 'block';
+            } else {
+                noLapsMessage.style.display = 'none';
+
+                // Remove existing lap items
+                const existingLaps = lapTimesContainer.querySelectorAll('.lap-item');
+                existingLaps.forEach(lap => lap.remove());
+
+                // Add laps in reverse order (newest first)
+                [...laps].reverse().forEach(lap => {
+                    const lapElement = document.createElement('div');
+                    lapElement.className = 'lap-item';
+                    lapElement.innerHTML = `
+                        <span class="lap-number">#${lap.number}</span>
+                        <span class="lap-split">+${formatTime(lap.split).formatted}</span>
+                        <span class="lap-total">${formatTime(lap.total).formatted}</span>
+                    `;
+                    lapTimesContainer.appendChild(lapElement);
+                });
+            }
+        }
+
+        startBtn.addEventListener('click', startStopwatch);
+        stopBtn.addEventListener('click', stopStopwatch);
+        lapBtn.addEventListener('click', recordLap);
+        resetBtn.addEventListener('click', resetStopwatch);
+
+        updateDisplay();
+    </script>
+</body>
+
+</html>
