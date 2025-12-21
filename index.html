@@ -687,6 +687,78 @@
             transform: translateY(-2px);
         }
 
+        /* Quick Start Buttons */
+        .quick-start {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .quick-btn {
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: 600;
+            border: 2px solid rgba(102, 126, 234, 0.5);
+            border-radius: 25px;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quick-btn:hover {
+            background: rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .quick-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Keyboard Hints */
+        .keyboard-hints {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .kbd-hint {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85em;
+        }
+
+        .kbd {
+            display: inline-block;
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Hide keyboard hints on mobile/touch devices */
+        @media (max-width: 768px) {
+            .keyboard-hints {
+                display: none;
+            }
+        }
+
+        @media (hover: none) {
+            .keyboard-hints {
+                display: none;
+            }
+        }
+
         .pause-btn {
             background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
             color: white;
@@ -1582,10 +1654,24 @@
                     </div>
                 </div>
 
+                <!-- Quick Start Buttons -->
+                <div class="quick-start">
+                    <button class="quick-btn" data-time="60" aria-label="Start 1 minute timer">1 min</button>
+                    <button class="quick-btn" data-time="300" aria-label="Start 5 minute timer">5 min</button>
+                    <button class="quick-btn" data-time="600" aria-label="Start 10 minute timer">10 min</button>
+                    <button class="quick-btn" data-time="1500" aria-label="Start 25 minute timer">25 min</button>
+                </div>
+
                 <div class="controls">
                     <button class="control-btn start-btn" id="startBtn" aria-label="Start timer">Start</button>
                     <button class="control-btn pause-btn" id="pauseBtn" aria-label="Pause timer">Pause</button>
                     <button class="control-btn reset-btn" id="resetBtn" aria-label="Reset timer">Reset</button>
+                </div>
+
+                <!-- Keyboard Shortcuts Hints (hidden on mobile) -->
+                <div class="keyboard-hints">
+                    <span class="kbd-hint"><kbd class="kbd">Space</kbd> Start/Pause</span>
+                    <span class="kbd-hint"><kbd class="kbd">R</kbd> Reset</span>
                 </div>
 
                 <div class="sound-selector">
@@ -2023,6 +2109,45 @@
         });
 
         updateDisplay();
+
+        // Quick Start Buttons
+        document.querySelectorAll('.quick-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const time = parseInt(this.getAttribute('data-time'));
+                pauseTimer();
+                timeLeft = time;
+                totalTime = time;
+                previousMinuteAngle = 0;
+                completedMinutes = 0;
+                minuteCounter.textContent = '0';
+                timerSelect.value = '';
+                updateDisplay();
+                startTimer();
+            });
+        });
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Don't trigger shortcuts when typing in input fields
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') {
+                return;
+            }
+
+            switch(e.code) {
+                case 'Space':
+                    e.preventDefault();
+                    if (isRunning) {
+                        pauseTimer();
+                    } else {
+                        startTimer();
+                    }
+                    break;
+                case 'KeyR':
+                    e.preventDefault();
+                    resetTimer();
+                    break;
+            }
+        });
     </script>
 </body>
 
