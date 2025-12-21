@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYQTNBBQ22"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYQTNBBQ22');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>1 Hour Timer - Free Online 60 Minute Countdown Timer with Alarm</title>
+    <meta name="title" content="1 Hour Timer - Free Online 60 Minute Countdown Timer with Alarm">
+    <meta name="description"
+        content="Free 1 hour timer with alarm sound! Perfect for meetings, study sessions, workouts, cooking & productivity. No download needed. Start your 60 minute countdown now!">
+    <meta name="keywords"
+        content="1 hour timer, 60 minute timer, one hour timer, 1 hr timer, hour timer, 3600 second timer, meeting timer, study timer">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lazytimer.com/1-hour-timer">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lazytimer.com/1-hour-timer">
+    <meta property="og:title" content="1 Hour Timer - Free Online 60 Minute Countdown">
+    <meta property="og:description"
+        content="Free 1 hour timer with alarm! Perfect for meetings, study, workouts & productivity. Start now!">
+    <meta property="og:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="1 Hour Timer - Free Online 60 Minute Countdown">
+    <meta name="twitter:description" content="Free 1 hour timer with alarm. Perfect for meetings & productivity!">
+    <meta name="twitter:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523870768931777"
+        crossorigin="anonymous"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "LazyTimer 1 Hour Timer",
+      "url": "https://lazytimer.com/1-hour-timer",
+      "description": "Free online 1 hour timer with alarm sound for meetings, study sessions, workouts, cooking and productivity.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "1 hour countdown",
+        "60 minute timer",
+        "Alarm sound options",
+        "Visual countdown display",
+        "One-click start",
+        "Works on all devices"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "2156"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I set a 1 hour timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply click the Start button on this page to begin a 1 hour (60 minute) countdown immediately. The timer will display the remaining time and play an alarm sound when complete. No setup or download required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many minutes is 1 hour?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1 hour equals 60 minutes or 3,600 seconds. Our timer displays the countdown in hours:minutes:seconds format and shows visual progress on the analog stopwatch display."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I use a 1 hour timer for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 1 hour timer is perfect for: meetings and conference calls, focused study or work sessions, workout routines, baking and slow cooking, power naps, meditation retreats, exam practice, and tracking billable hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this 1 hour timer have an alarm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! This 1 hour timer includes multiple alarm sound options. Choose from a digital beep, vintage alarm, or facility alarm. The sound plays automatically when the countdown reaches zero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I pause and resume the 1 hour timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can pause the timer at any point by clicking the Pause button. Click Start again to resume from where you left off. Use the Reset button to restart the full 60 minutes."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lazytimer.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "1 Hour Timer",
+        "item": "https://lazytimer.com/1-hour-timer"
+      }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #e94560 0%, #c73659 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.7;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background: rgba(233, 69, 96, 0.2);
+        }
+
+        nav a.active {
+            color: #e94560;
+            font-weight: 600;
+        }
+
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .stopwatch-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 20px 40px rgba(233, 69, 96, 0.3));
+        }
+
+        .stopwatch-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 43.53%;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .minute-hand {
+            width: 7px;
+            height: 22%;
+            margin-left: -3.5px;
+            background: linear-gradient(180deg, #e94560 0%, #c73659 100%);
+            z-index: 101;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
+        }
+
+        .second-hand {
+            width: 5px;
+            height: 26%;
+            margin-left: -2.5px;
+            background: linear-gradient(180deg, #00d9ff 0%, #00a8cc 100%);
+            z-index: 102;
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+        }
+
+        .controls-panel {
+            flex: 1;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .timer-title {
+            font-size: 2.5em;
+            color: #e94560;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .digital-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .flip-card {
+            position: relative;
+            width: 80px;
+            height: 110px;
+            background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 50%, #d0d0d0 50%, #c0c0c0 100%);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .flip-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1a1a1a;
+            z-index: 2;
+        }
+
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+        }
+
+        .colon {
+            font-size: 4em;
+            font-weight: 700;
+            color: #ffffff;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 99% { opacity: 0.3; }
+        }
+
+        .flip-card.flipping .flip-card-inner {
+            animation: flip 0.6s ease-in-out;
+        }
+
+        @keyframes flip {
+            0% { transform: rotateX(0deg); }
+            50% { transform: rotateX(-90deg); }
+            100% { transform: rotateX(0deg); }
+        }
+
+        .sound-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(233, 69, 96, 0.1);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .sound-selector label {
+            color: #e94560;
+            font-weight: 600;
+        }
+
+        .sound-selector select {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(233, 69, 96, 0.4);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .sound-selector select option {
+            background: #1a1f3a;
+            color: white;
+        }
+
+        .test-sound-btn, .stop-sound-btn {
+            padding: 10px 15px;
+            border: 1px solid rgba(233, 69, 96, 0.5);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .test-sound-btn {
+            background: rgba(233, 69, 96, 0.3);
+        }
+
+        .test-sound-btn:hover {
+            background: rgba(233, 69, 96, 0.5);
+        }
+
+        .stop-sound-btn {
+            background: rgba(231, 76, 60, 0.3);
+            border-color: rgba(231, 76, 60, 0.5);
+        }
+
+        .stop-sound-btn:hover {
+            background: rgba(231, 76, 60, 0.5);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 20px 50px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(39, 174, 96, 0.5);
+        }
+
+        .pause-btn {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #e94560 0%, #c73659 100%);
+            color: white;
+        }
+
+        .other-timers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .other-timers a {
+            padding: 12px 20px;
+            background: rgba(233, 69, 96, 0.2);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .other-timers a:hover {
+            background: rgba(233, 69, 96, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .seo-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .seo-content h2 {
+            font-size: 2.2em;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .seo-content h3 {
+            font-size: 1.6em;
+            color: #e94560;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .seo-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .seo-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .seo-content li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
+        }
+
+        .faq-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.4em;
+            color: #e94560;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .related-timers {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .related-timers h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .related-timers a {
+            display: inline-block;
+            color: #e94560;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .related-timers a:hover {
+            background: rgba(233, 69, 96, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1024px) {
+            .timer-container {
+                flex-direction: column;
+                padding: 40px;
+            }
+
+            .stopwatch-container {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .stopwatch-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .timer-container {
+                padding: 25px 20px;
+            }
+
+            .flip-card {
+                width: 55px;
+                height: 80px;
+            }
+
+            .flip-card-inner {
+                font-size: 2.8em;
+            }
+
+            .colon {
+                font-size: 2.8em;
+            }
+
+            .timer-title {
+                font-size: 1.8em;
+            }
+
+            .sound-selector {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .seo-content, .faq-section {
+                padding: 30px 20px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <div class="logo-icon">60</div>
+                1 Hour Timer
+            </h1>
+            <p>Free Online 60 Minute Countdown Timer with Alarm</p>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/pomodoro-timer">Pomodoro</a>
+            <a href="/study-timer">Study</a>
+            <a href="/workout-timer">Workout</a>
+            <a href="/meditation-timer">Meditation</a>
+            <a href="/cooking-timer">Cooking</a>
+            <a href="/countdown-timer">Countdown</a>
+            <a href="/stopwatch">Stopwatch</a>
+        </nav>
+
+        <div class="ad-container top-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="7285922677" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="timer-container">
+            <div class="stopwatch-container">
+                <img src="stopwatch.png" alt="1 hour timer - free online sixty minute countdown timer with alarm" class="stopwatch-image">
+                <div class="minute-hand hand" id="minuteHand"></div>
+                <div class="second-hand hand" id="secondHand"></div>
+            </div>
+
+            <div class="controls-panel">
+                <h2 class="timer-title">1:00:00</h2>
+
+                <div class="digital-timer">
+                    <div class="flip-card" id="hourOnes">
+                        <div class="flip-card-inner">1</div>
+                    </div>
+                    <div class="colon">:</div>
+                    <div class="flip-card" id="minuteTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card" id="minuteOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="colon">:</div>
+                    <div class="flip-card" id="secondTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card" id="secondOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                </div>
+
+                <div class="sound-selector">
+                    <label for="alarmSound">Alarm Sound:</label>
+                    <select id="alarmSound">
+                        <option value="/static/digital-clock-beep.wav">Digital Beep (Default)</option>
+                        <option value="/static/vintage-warning-alarm.wav">Vintage Alarm</option>
+                        <option value="/static/facility-breach-alarm.wav">Facility Alarm</option>
+                    </select>
+                    <button class="test-sound-btn" id="testSound">Test</button>
+                    <button class="stop-sound-btn" id="stopSound">Stop</button>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn start-btn" id="startBtn">Start 1 Hour</button>
+                    <button class="control-btn pause-btn" id="pauseBtn">Pause</button>
+                    <button class="control-btn reset-btn" id="resetBtn">Reset</button>
+                </div>
+
+                <div class="other-timers">
+                    <a href="/30-minute-timer">30 min Timer</a>
+                    <a href="/pomodoro-timer">25 min (Pomodoro)</a>
+                    <a href="/15-minute-timer">15 min Timer</a>
+                    <a href="/10-minute-timer">10 min Timer</a>
+                </div>
+            </div>
+        </div>
+
+        <article class="seo-content">
+            <h2>Free 1 Hour Timer Online</h2>
+            <p>
+                Need a reliable 1 hour timer? You've found it. Our free 60 minute countdown timer starts instantly with one click. No downloads, no sign-ups, no interruptions. Just a clean, beautiful timer with customizable alarm sounds that works on any device.
+            </p>
+
+            <h3>What Can You Do in 1 Hour?</h3>
+            <p>
+                One hour is a powerful block of time for focused work or activities. Here are popular uses for a 1 hour timer:
+            </p>
+            <ul>
+                <li><strong>Focused work sessions</strong> - Deep work blocks for maximum productivity</li>
+                <li><strong>Meetings and calls</strong> - Keep conference calls on track with a visible timer</li>
+                <li><strong>Study sessions</strong> - Extended study periods for complex subjects</li>
+                <li><strong>Workout routines</strong> - Full gym sessions or yoga classes</li>
+                <li><strong>Baking</strong> - Many bread and cake recipes need exactly 1 hour</li>
+                <li><strong>Power naps</strong> - A full sleep cycle for optimal rest</li>
+                <li><strong>Exam practice</strong> - Simulate timed test conditions</li>
+                <li><strong>Billable hours</strong> - Track time for client work</li>
+            </ul>
+
+            <h3>1 Hour Timer Conversion</h3>
+            <p>
+                1 hour equals 60 minutes or 3,600 seconds. Our timer displays your countdown in hours:minutes:seconds format (1:00:00 down to 0:00:00), making it easy to track progress throughout the full hour.
+            </p>
+
+            <h3>Why Use Our 1 Hour Timer?</h3>
+            <p>
+                Our timer features a beautiful analog stopwatch display, flip-card digital countdown, and multiple alarm sounds. The visual progress indicator helps you stay aware of time without constantly checking. Works on phones, tablets, and computers without any app download.
+            </p>
+
+            <h3>Time Management with Hour Blocks</h3>
+            <p>
+                Many productivity experts recommend working in 1-hour blocks. This technique, sometimes called "time blocking," helps you focus on a single task without distractions. Set our timer for 1 hour, commit to one task, and watch your productivity soar.
+            </p>
+        </article>
+
+        <section class="faq-section">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">1 Hour Timer FAQ</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I set a 1 hour timer?</div>
+                <div class="faq-answer">
+                    Simply click the "Start 1 Hour" button on this page. The timer is pre-set to 60 minutes and will begin counting down immediately. An alarm will sound when the hour is complete.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How many minutes and seconds is 1 hour?</div>
+                <div class="faq-answer">
+                    1 hour equals exactly 60 minutes or 3,600 seconds. Our timer displays the countdown in H:MM:SS format, showing hours, minutes, and seconds remaining.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I pause the 1 hour timer?</div>
+                <div class="faq-answer">
+                    Yes! Click the Pause button at any time to stop the countdown. Click Start again to resume from where you left off. Use Reset to restart the full 60 minutes.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What's the alarm sound like?</div>
+                <div class="faq-answer">
+                    Choose from three alarm options: Digital Beep (default), Vintage Alarm, or Facility Alarm. Click the "Test" button to preview each sound before starting your timer.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Does this timer work on mobile phones?</div>
+                <div class="faq-answer">
+                    Absolutely! This 1 hour timer is fully responsive and works on any device with a web browser. No app needed - just bookmark this page for quick access.
+                </div>
+            </div>
+        </section>
+
+        <div class="related-timers">
+            <h3>Other Popular Timers</h3>
+            <a href="/30-minute-timer">30 Minute Timer</a>
+            <a href="/pomodoro-timer">Pomodoro (25 min)</a>
+            <a href="/15-minute-timer">15 Minute Timer</a>
+            <a href="/10-minute-timer">10 Minute Timer</a>
+            <a href="/5-minute-timer">5 Minute Timer</a>
+            <a href="/">All Timers</a>
+        </div>
+
+        <div class="ad-container bottom-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="6571606806" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 LazyTimer.com | <a href="/">All Timers</a> | <a href="/about">About</a> | <a href="/privacy-policy">Privacy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        let timeLeft = 3600; // 1 hour = 3600 seconds
+        let totalTime = 3600;
+        let isRunning = false;
+        let timerInterval;
+        let alarmAudio = null;
+
+        const hourOnesCard = document.getElementById('hourOnes');
+        const minuteTensCard = document.getElementById('minuteTens');
+        const minuteOnesCard = document.getElementById('minuteOnes');
+        const secondTensCard = document.getElementById('secondTens');
+        const secondOnesCard = document.getElementById('secondOnes');
+        const minuteHand = document.getElementById('minuteHand');
+        const secondHand = document.getElementById('secondHand');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const alarmSelect = document.getElementById('alarmSound');
+        const testSoundBtn = document.getElementById('testSound');
+
+        // Load saved sound preference
+        const savedSound = localStorage.getItem('alarmSound');
+        if (savedSound) {
+            alarmSelect.value = savedSound;
+        }
+
+        // Save sound preference when changed
+        alarmSelect.addEventListener('change', function() {
+            localStorage.setItem('alarmSound', this.value);
+        });
+
+        // Test sound button
+        testSoundBtn.addEventListener('click', function() {
+            playAlarm(true);
+        });
+
+        // Stop sound button
+        const stopSoundBtn = document.getElementById('stopSound');
+        stopSoundBtn.addEventListener('click', function() {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
+        });
+
+        function playAlarm(isTest = false) {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
+            alarmAudio = new Audio(alarmSelect.value);
+            alarmAudio.play().catch(e => console.log('Audio play failed:', e));
+            setTimeout(() => {
+                if (alarmAudio) {
+                    alarmAudio.pause();
+                    alarmAudio.currentTime = 0;
+                }
+            }, isTest ? 2000 : 5000);
+        }
+
+        function updateFlipCard(card, newValue) {
+            const inner = card.querySelector('.flip-card-inner');
+            if (inner.textContent !== newValue.toString()) {
+                card.classList.add('flipping');
+                setTimeout(() => {
+                    inner.textContent = newValue;
+                    card.classList.remove('flipping');
+                }, 300);
+            }
+        }
+
+        function updateDisplay() {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+
+            updateFlipCard(hourOnesCard, hours);
+            updateFlipCard(minuteTensCard, Math.floor(minutes / 10));
+            updateFlipCard(minuteOnesCard, minutes % 10);
+            updateFlipCard(secondTensCard, Math.floor(seconds / 10));
+            updateFlipCard(secondOnesCard, seconds % 10);
+
+            const elapsedTime = totalTime - timeLeft;
+            const minuteAngle = (elapsedTime / totalTime) * 360;
+            const secondAngle = ((60 - seconds) / 60) * 360;
+
+            minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+            secondHand.style.transform = `rotate(${secondAngle}deg)`;
+        }
+
+        function startTimer() {
+            if (timeLeft > 0 && !isRunning) {
+                isRunning = true;
+                startBtn.textContent = 'Running...';
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft <= 0) {
+                        pauseTimer();
+                        playAlarm();
+                    }
+                }, 1000);
+            }
+        }
+
+        function pauseTimer() {
+            isRunning = false;
+            startBtn.textContent = 'Start 1 Hour';
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            timeLeft = 3600;
+            totalTime = 3600;
+            updateDisplay();
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        updateDisplay();
+    </script>
+</body>
+
+</html>

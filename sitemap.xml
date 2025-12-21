@@ -146,6 +146,42 @@
     </image:image>
   </url>
 
+  <!-- 1 Hour Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/1-hour-timer</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>1 Hour Timer 2025 - Free 60 Minute Countdown Timer</image:title>
+    </image:image>
+  </url>
+
+  <!-- Sleep Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/sleep-timer</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>Sleep Timer 2025 - Free Online Nap and Power Nap Timer</image:title>
+    </image:image>
+  </url>
+
+  <!-- Egg Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/egg-timer</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>Egg Timer 2025 - Free Timer for Perfect Boiled Eggs</image:title>
+    </image:image>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://lazytimer.com/about</loc>

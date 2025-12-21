@@ -24,19 +24,27 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 ├── meditation-timer.html   # Meditation/mindfulness timer landing page
 ├── workout-timer.html      # HIIT/fitness timer landing page
 ├── study-timer.html        # Study/homework timer landing page
-├── 5-minute-timer.html     # Quick 5-minute timer (long-tail keyword page)
+├── 5-minute-timer.html     # Quick 5-minute timer
+├── 10-minute-timer.html    # 10-minute timer (teal theme)
+├── 15-minute-timer.html    # 15-minute timer (purple theme)
+├── 30-minute-timer.html    # 30-minute timer (coral theme)
+├── 1-hour-timer.html       # 1-hour/60-minute timer (red/blue theme)
+├── countdown-timer.html    # General countdown timer
+├── stopwatch.html          # Stopwatch/lap timer
+├── sleep-timer.html        # Sleep/nap timer (purple theme)
+├── egg-timer.html          # Egg cooking timer (orange theme)
 ├── about.html              # About page
 ├── how-to-use.html         # Usage instructions
 ├── privacy-policy.html     # Privacy policy
 ├── terms-of-service.html   # Terms of service
 ├── stopwatch.png           # Analog stopwatch image used in timer UI
 ├── ads.txt                 # Google AdSense verification
-├── sitemap.xml             # SEO sitemap (needs update with new pages)
+├── sitemap.xml             # SEO sitemap (updated with all pages)
 ├── robots.txt              # Search engine crawler directives
 ├── CLAUDE.md               # This file
 ├── SEO_IMPROVEMENTS.md     # SEO changes documentation
 ├── backup/                 # Old versions of HTML files
-└── static/                 # Static assets (ads.txt copy)
+└── static/                 # Static assets (ads.txt copy, alarm sounds)
 ```
 
 ## Key Features & Implementation
@@ -165,9 +173,11 @@ Since this is a static site with no build process:
 
 - **Audio alerts**: `playAlarm()` function with selectable alarm sounds (all pages)
 - **Sound preference**: Saved to localStorage, persists across sessions
-- **7 Landing pages**: Homepage, Pomodoro, Cooking, Meditation, Workout, Study, 5-minute
+- **15 Landing pages**: Homepage, Pomodoro, Cooking, Meditation, Workout, Study, 5-min, 10-min, 15-min, 30-min, 1-hour, Countdown, Stopwatch, Sleep, Egg Timer
 - **Analog + Digital display**: Stopwatch with rotating hands + flip-clock digits
 - **50+ presets**: Organized by category (cooking, work, fitness, etc.)
+- **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
+- **Standardized navigation**: All pages share consistent nav (Home, Pomodoro, Study, Workout, Meditation, Cooking, Countdown, Stopwatch)
 
 ## SEO Strategy & Implementation
 
@@ -231,30 +241,27 @@ The path to meaningful AdSense revenue requires: **More traffic → More pagevie
 
 ### 1.1 Landing Pages Status
 
-**Completed pages** (7 total):
+**All landing pages completed** (15 total):
 
 | Page | Target Keywords | Search Volume | Status |
 |------|----------------|---------------|--------|
 | `index.html` | "online timer", "countdown timer", "free timer" | 40K/mo | ✅ Live |
 | `pomodoro-timer.html` | "pomodoro timer", "25 minute timer", "focus timer" | 27K/mo | ✅ Live |
-| `cooking-timer.html` | "cooking timer", "kitchen timer", "egg timer" | 15K/mo | ✅ Live |
+| `cooking-timer.html` | "cooking timer", "kitchen timer" | 15K/mo | ✅ Live |
 | `workout-timer.html` | "workout timer", "HIIT timer", "gym timer" | 22K/mo | ✅ Live |
 | `meditation-timer.html` | "meditation timer", "zen timer", "mindfulness timer" | 18K/mo | ✅ Live |
 | `study-timer.html` | "study timer", "homework timer", "exam timer" | 14K/mo | ✅ Live |
 | `5-minute-timer.html` | "5 minute timer" | 45K/mo | ✅ Live |
+| `10-minute-timer.html` | "10 minute timer" | 40K/mo | ✅ Live |
+| `15-minute-timer.html` | "15 minute timer" | 22K/mo | ✅ Live |
+| `30-minute-timer.html` | "30 minute timer" | 18K/mo | ✅ Live |
+| `1-hour-timer.html` | "1 hour timer", "60 minute timer" | 15K/mo | ✅ Live |
+| `countdown-timer.html` | "countdown timer", "event countdown" | 33K/mo | ✅ Live |
+| `stopwatch.html` | "online stopwatch", "lap timer" | 28K/mo | ✅ Live |
+| `sleep-timer.html` | "sleep timer", "nap timer", "power nap timer" | 12K/mo | ✅ Live |
+| `egg-timer.html` | "egg timer", "3 minute timer", "boiled egg timer" | 9K/mo | ✅ Live |
 
-**Still needed** (high-value opportunities):
-
-| Page | Target Keywords | Search Volume | Priority |
-|------|----------------|---------------|----------|
-| `10-minute-timer.html` | "10 minute timer" | 40K/mo | HIGH |
-| `15-minute-timer.html` | "15 minute timer" | 22K/mo | HIGH |
-| `30-minute-timer.html` | "30 minute timer" | 18K/mo | HIGH |
-| `1-hour-timer.html` | "1 hour timer", "60 minute timer" | 15K/mo | HIGH |
-| `countdown-timer.html` | "countdown timer", "event countdown" | 33K/mo | HIGH |
-| `stopwatch.html` | "online stopwatch", "lap timer" | 28K/mo | HIGH |
-| `sleep-timer.html` | "sleep timer", "nap timer" | 12K/mo | MEDIUM |
-| `egg-timer.html` | "egg timer", "3 minute timer" | 9K/mo | MEDIUM |
+**Total estimated search volume**: ~340K/mo (combined keywords)
 
 **Implementation per page**:
 - Unique H1 matching primary keyword
@@ -596,15 +603,22 @@ This data informs which landing pages to prioritize.
 4. ❌ Optimize ad placement (review current state)
 5. ❌ Add Google Analytics 4 custom events for timer tracking
 
-### Phase 2: Landing Pages ✅ MOSTLY COMPLETE
-1. ✅ `workout-timer.html` - created
-2. ✅ `meditation-timer.html` - created
-3. ✅ `study-timer.html` - created
-4. ✅ `5-minute-timer.html` - created
-5. ❌ `stopwatch.html` - still needed (28K/mo searches)
-6. ❌ `countdown-timer.html` - still needed (33K/mo searches)
-7. ❌ `10-minute-timer.html` - still needed (40K/mo searches)
-8. ✅ sitemap.xml updated with all new pages
+### Phase 2: Landing Pages ✅ COMPLETE
+1. ✅ `workout-timer.html` - live
+2. ✅ `meditation-timer.html` - live
+3. ✅ `study-timer.html` - live
+4. ✅ `5-minute-timer.html` - live
+5. ✅ `10-minute-timer.html` - live (40K/mo searches)
+6. ✅ `15-minute-timer.html` - live (22K/mo searches)
+7. ✅ `30-minute-timer.html` - live (18K/mo searches)
+8. ✅ `countdown-timer.html` - live (33K/mo searches)
+9. ✅ `stopwatch.html` - live (28K/mo searches)
+10. ✅ `1-hour-timer.html` - live (15K/mo searches)
+11. ✅ `sleep-timer.html` - live (12K/mo searches)
+12. ✅ `egg-timer.html` - live (9K/mo searches)
+13. ✅ sitemap.xml updated with all 15 pages
+14. ✅ Google Analytics 4 added to all pages
+15. ✅ Standardized navigation across all pages
 
 ### Phase 3: Advanced Features (Weeks 4-6)
 1. Timer persistence (localStorage)

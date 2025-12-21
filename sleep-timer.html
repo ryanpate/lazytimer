@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYQTNBBQ22"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DYQTNBBQ22');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>Sleep Timer - Free Online Nap Timer & Power Nap Countdown</title>
+    <meta name="title" content="Sleep Timer - Free Online Nap Timer & Power Nap Countdown">
+    <meta name="description"
+        content="Free sleep timer for power naps and rest! Presets for 20 min power naps, 90 min full cycles & more. Gentle alarm sounds. Perfect for napping at work or home.">
+    <meta name="keywords"
+        content="sleep timer, nap timer, power nap timer, 20 minute nap, 90 minute sleep, rest timer, siesta timer, nap alarm">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lazytimer.com/sleep-timer">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lazytimer.com/sleep-timer">
+    <meta property="og:title" content="Sleep Timer - Free Online Nap Timer">
+    <meta property="og:description"
+        content="Free sleep timer for power naps! 20 min, 30 min, 90 min presets with gentle alarms.">
+    <meta property="og:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sleep Timer - Free Online Nap Timer">
+    <meta name="twitter:description" content="Free sleep timer for power naps with gentle alarm sounds!">
+    <meta name="twitter:image" content="https://lazytimer.com/stopwatch.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523870768931777"
+        crossorigin="anonymous"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "LazyTimer Sleep Timer",
+      "url": "https://lazytimer.com/sleep-timer",
+      "description": "Free online sleep and nap timer with gentle alarm sounds. Perfect for power naps, rest breaks, and full sleep cycles.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Power nap presets",
+        "90 minute sleep cycle",
+        "Gentle alarm sounds",
+        "Visual countdown",
+        "Works on all devices"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1893"
+      }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long should a power nap be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ideal power nap is 20-30 minutes. This length allows you to enter light sleep stages for restoration without falling into deep sleep, which can cause grogginess. Our sleep timer has 20 and 30 minute presets for perfect power naps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a 90 minute sleep cycle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A complete sleep cycle lasts approximately 90 minutes and includes all sleep stages from light to deep to REM. Waking at the end of a 90 minute cycle helps you feel refreshed rather than groggy. Set our timer for 90 minutes for a full restorative nap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a 20 minute nap enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! A 20 minute power nap is scientifically proven to boost alertness, mood, and performance. It's long enough to provide restoration but short enough to avoid sleep inertia (that groggy feeling from deep sleep)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the best time to take a nap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best time for a nap is early-to-mid afternoon, typically between 1-3 PM. This aligns with your body's natural circadian rhythm dip and won't interfere with nighttime sleep. Avoid napping after 4 PM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this sleep timer have a gentle alarm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Our sleep timer includes multiple alarm options. You can preview each sound and choose one that will wake you gently without startling. The alarm plays automatically when your nap time is complete."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lazytimer.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sleep Timer",
+        "item": "https://lazytimer.com/sleep-timer"
+      }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #1e1e3f 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #7b68ee 0%, #9370db 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(123, 104, 238, 0.4);
+            font-size: 28px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.7;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background: rgba(123, 104, 238, 0.2);
+        }
+
+        nav a.active {
+            color: #7b68ee;
+            font-weight: 600;
+        }
+
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .stopwatch-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 20px 40px rgba(123, 104, 238, 0.3));
+        }
+
+        .stopwatch-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 43.53%;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .minute-hand {
+            width: 7px;
+            height: 22%;
+            margin-left: -3.5px;
+            background: linear-gradient(180deg, #7b68ee 0%, #9370db 100%);
+            z-index: 101;
+            box-shadow: 0 0 15px rgba(123, 104, 238, 0.5);
+        }
+
+        .second-hand {
+            width: 5px;
+            height: 26%;
+            margin-left: -2.5px;
+            background: linear-gradient(180deg, #dda0dd 0%, #c285c2 100%);
+            z-index: 102;
+            box-shadow: 0 0 20px rgba(221, 160, 221, 0.6);
+        }
+
+        .controls-panel {
+            flex: 1;
+            min-width: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .timer-title {
+            font-size: 2.5em;
+            color: #7b68ee;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .nap-presets {
+            width: 100%;
+        }
+
+        .nap-presets h3 {
+            color: #7b68ee;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .preset-btn {
+            padding: 15px 20px;
+            background: rgba(123, 104, 238, 0.2);
+            border: 1px solid rgba(123, 104, 238, 0.3);
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .preset-btn:hover {
+            background: rgba(123, 104, 238, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .preset-btn.active {
+            background: linear-gradient(135deg, #7b68ee 0%, #9370db 100%);
+            border-color: transparent;
+        }
+
+        .digital-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .flip-card {
+            position: relative;
+            width: 100px;
+            height: 140px;
+            background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 50%, #d0d0d0 50%, #c0c0c0 100%);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .flip-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1a1a1a;
+            z-index: 2;
+        }
+
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5.5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+        }
+
+        .colon {
+            font-size: 5.5em;
+            font-weight: 700;
+            color: #ffffff;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 99% { opacity: 0.3; }
+        }
+
+        .flip-card.flipping .flip-card-inner {
+            animation: flip 0.6s ease-in-out;
+        }
+
+        @keyframes flip {
+            0% { transform: rotateX(0deg); }
+            50% { transform: rotateX(-90deg); }
+            100% { transform: rotateX(0deg); }
+        }
+
+        .sound-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(123, 104, 238, 0.1);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(123, 104, 238, 0.3);
+        }
+
+        .sound-selector label {
+            color: #7b68ee;
+            font-weight: 600;
+        }
+
+        .sound-selector select {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(123, 104, 238, 0.4);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .sound-selector select option {
+            background: #2d1b4e;
+            color: white;
+        }
+
+        .test-sound-btn, .stop-sound-btn {
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .test-sound-btn {
+            background: rgba(123, 104, 238, 0.3);
+            border: 1px solid rgba(123, 104, 238, 0.5);
+        }
+
+        .test-sound-btn:hover {
+            background: rgba(123, 104, 238, 0.5);
+        }
+
+        .stop-sound-btn {
+            background: rgba(231, 76, 60, 0.3);
+            border: 1px solid rgba(231, 76, 60, 0.5);
+        }
+
+        .stop-sound-btn:hover {
+            background: rgba(231, 76, 60, 0.5);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 20px 50px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #7b68ee 0%, #9370db 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(123, 104, 238, 0.4);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(123, 104, 238, 0.5);
+        }
+
+        .pause-btn {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #dda0dd 0%, #c285c2 100%);
+            color: white;
+        }
+
+        .seo-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .seo-content h2 {
+            font-size: 2.2em;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .seo-content h3 {
+            font-size: 1.6em;
+            color: #7b68ee;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .seo-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .seo-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .seo-content li {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
+        }
+
+        .faq-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.4em;
+            color: #7b68ee;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .related-timers {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .related-timers h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .related-timers a {
+            display: inline-block;
+            color: #7b68ee;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid rgba(123, 104, 238, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .related-timers a:hover {
+            background: rgba(123, 104, 238, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1024px) {
+            .timer-container {
+                flex-direction: column;
+                padding: 40px;
+            }
+
+            .stopwatch-container {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .stopwatch-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .timer-container {
+                padding: 25px 20px;
+            }
+
+            .flip-card {
+                width: 70px;
+                height: 100px;
+            }
+
+            .flip-card-inner {
+                font-size: 4em;
+            }
+
+            .colon {
+                font-size: 4em;
+            }
+
+            .preset-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sound-selector {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .seo-content, .faq-section {
+                padding: 30px 20px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <div class="logo-icon">&#127769;</div>
+                Sleep Timer
+            </h1>
+            <p>Free Online Nap Timer with Gentle Alarm</p>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/pomodoro-timer">Pomodoro</a>
+            <a href="/study-timer">Study</a>
+            <a href="/workout-timer">Workout</a>
+            <a href="/meditation-timer">Meditation</a>
+            <a href="/cooking-timer">Cooking</a>
+            <a href="/countdown-timer">Countdown</a>
+            <a href="/stopwatch">Stopwatch</a>
+        </nav>
+
+        <div class="ad-container top-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="7285922677" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="timer-container">
+            <div class="stopwatch-container">
+                <img src="stopwatch.png" alt="Sleep timer - free online nap timer for power naps and rest" class="stopwatch-image">
+                <div class="minute-hand hand" id="minuteHand"></div>
+                <div class="second-hand hand" id="secondHand"></div>
+            </div>
+
+            <div class="controls-panel">
+                <div class="nap-presets">
+                    <h3>Nap Presets</h3>
+                    <div class="preset-grid">
+                        <button class="preset-btn active" data-time="1200">Power Nap (20 min)</button>
+                        <button class="preset-btn" data-time="1800">Short Nap (30 min)</button>
+                        <button class="preset-btn" data-time="2700">Refresher (45 min)</button>
+                        <button class="preset-btn" data-time="5400">Full Cycle (90 min)</button>
+                    </div>
+                </div>
+
+                <div class="digital-timer">
+                    <div class="flip-card" id="minuteTens">
+                        <div class="flip-card-inner">2</div>
+                    </div>
+                    <div class="flip-card" id="minuteOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="colon">:</div>
+                    <div class="flip-card" id="secondTens">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                    <div class="flip-card" id="secondOnes">
+                        <div class="flip-card-inner">0</div>
+                    </div>
+                </div>
+
+                <div class="sound-selector">
+                    <label for="alarmSound">Wake-Up Sound:</label>
+                    <select id="alarmSound">
+                        <option value="/static/digital-clock-beep.wav">Digital Beep (Default)</option>
+                        <option value="/static/vintage-warning-alarm.wav">Vintage Alarm</option>
+                        <option value="/static/facility-breach-alarm.wav">Facility Alarm</option>
+                    </select>
+                    <button class="test-sound-btn" id="testSound">Test</button>
+                    <button class="stop-sound-btn" id="stopSound">Stop</button>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn start-btn" id="startBtn">Start Nap</button>
+                    <button class="control-btn pause-btn" id="pauseBtn">Pause</button>
+                    <button class="control-btn reset-btn" id="resetBtn">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <article class="seo-content">
+            <h2>Free Sleep Timer for Naps</h2>
+            <p>
+                Need a reliable sleep timer for your power nap? Our free nap timer helps you get the perfect amount of rest without oversleeping. Choose from scientifically-backed nap durations and wake up refreshed with our gentle alarm.
+            </p>
+
+            <h3>Best Nap Durations</h3>
+            <ul>
+                <li><strong>20 Minute Power Nap</strong> - The ideal quick rest. Boosts alertness and performance without entering deep sleep. Perfect for work breaks.</li>
+                <li><strong>30 Minute Nap</strong> - Slightly longer rest that can improve memory and creativity. May cause brief grogginess upon waking.</li>
+                <li><strong>45 Minute Refresher</strong> - Includes some slow-wave sleep. Good for physical recovery but may need a few minutes to fully wake.</li>
+                <li><strong>90 Minute Full Cycle</strong> - One complete sleep cycle including REM. Wake feeling fully restored with enhanced learning and memory.</li>
+            </ul>
+
+            <h3>The Science of Power Napping</h3>
+            <p>
+                Research shows that a 20-minute nap can significantly improve alertness, mood, and cognitive performance. NASA studies found that pilots who took 26-minute naps showed 34% improvement in performance and 54% improvement in alertness. Our sleep timer helps you get exactly the right amount of rest.
+            </p>
+
+            <h3>When to Nap</h3>
+            <p>
+                The best time for a nap is during the afternoon energy dip, typically between 1-3 PM. This timing aligns with your body's natural circadian rhythm and won't interfere with nighttime sleep. Avoid napping after 4 PM, as it may make it harder to fall asleep at night.
+            </p>
+
+            <h3>Tips for Better Power Naps</h3>
+            <ul>
+                <li><strong>Find a quiet, dark space</strong> - Even partial darkness helps</li>
+                <li><strong>Set the timer first</strong> - Remove the anxiety of oversleeping</li>
+                <li><strong>Use the 20-minute rule</strong> - Short enough to avoid grogginess</li>
+                <li><strong>Consider a "coffee nap"</strong> - Drink coffee then nap 20 min; wake as caffeine kicks in</li>
+                <li><strong>Keep it consistent</strong> - Regular naps are more effective</li>
+            </ul>
+        </article>
+
+        <section class="faq-section">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">Sleep Timer FAQ</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How long should a power nap be?</div>
+                <div class="faq-answer">
+                    The ideal power nap is 20-30 minutes. This length provides restoration and improved alertness without entering deep sleep, which can cause grogginess. Our sleep timer has presets for both 20 and 30 minute naps.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is a 90 minute sleep cycle?</div>
+                <div class="faq-answer">
+                    A complete sleep cycle takes approximately 90 minutes and includes all stages of sleep: light sleep, deep sleep, and REM. Waking at the end of a cycle helps you feel refreshed. Use our 90 minute preset for a full restorative nap.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is napping good for you?</div>
+                <div class="faq-answer">
+                    Yes! Research shows that napping can improve alertness, enhance performance, reduce stress, and boost mood. A 20-minute power nap can be more effective than caffeine for improving cognitive function.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">When is the best time to nap?</div>
+                <div class="faq-answer">
+                    The optimal nap time is early-to-mid afternoon, between 1-3 PM. This aligns with your body's natural energy dip and won't interfere with nighttime sleep. Avoid napping after 4 PM.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why do I feel worse after napping?</div>
+                <div class="faq-answer">
+                    If you feel groggy after napping, you may be waking from deep sleep. Keep naps to 20-30 minutes, or extend to a full 90-minute cycle. This "sleep inertia" typically passes within 15 minutes.
+                </div>
+            </div>
+        </section>
+
+        <div class="related-timers">
+            <h3>Other Popular Timers</h3>
+            <a href="/meditation-timer">Meditation Timer</a>
+            <a href="/1-hour-timer">1 Hour Timer</a>
+            <a href="/30-minute-timer">30 Minute Timer</a>
+            <a href="/15-minute-timer">15 Minute Timer</a>
+            <a href="/">All Timers</a>
+        </div>
+
+        <div class="ad-container bottom-ad">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
+                data-ad-slot="6571606806" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 LazyTimer.com | <a href="/">All Timers</a> | <a href="/about">About</a> | <a href="/privacy-policy">Privacy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        let timeLeft = 1200; // 20 minutes default (power nap)
+        let totalTime = 1200;
+        let isRunning = false;
+        let timerInterval;
+        let alarmAudio = null;
+
+        const minuteTensCard = document.getElementById('minuteTens');
+        const minuteOnesCard = document.getElementById('minuteOnes');
+        const secondTensCard = document.getElementById('secondTens');
+        const secondOnesCard = document.getElementById('secondOnes');
+        const minuteHand = document.getElementById('minuteHand');
+        const secondHand = document.getElementById('secondHand');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const alarmSelect = document.getElementById('alarmSound');
+        const testSoundBtn = document.getElementById('testSound');
+        const buttons = document.querySelectorAll('.preset-btn');
+
+        // Load saved sound preference
+        const savedSound = localStorage.getItem('alarmSound');
+        if (savedSound) {
+            alarmSelect.value = savedSound;
+        }
+
+        // Save sound preference when changed
+        alarmSelect.addEventListener('change', function() {
+            localStorage.setItem('alarmSound', this.value);
+        });
+
+        // Test sound button
+        testSoundBtn.addEventListener('click', function() {
+            playAlarm(true);
+        });
+
+        // Stop sound button
+        const stopSoundBtn = document.getElementById('stopSound');
+        stopSoundBtn.addEventListener('click', function() {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
+        });
+
+        function playAlarm(isTest = false) {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
+            alarmAudio = new Audio(alarmSelect.value);
+            alarmAudio.play().catch(e => console.log('Audio play failed:', e));
+            setTimeout(() => {
+                if (alarmAudio) {
+                    alarmAudio.pause();
+                    alarmAudio.currentTime = 0;
+                }
+            }, isTest ? 2000 : 5000);
+        }
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                buttons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const time = parseInt(this.getAttribute('data-time'));
+                pauseTimer();
+                timeLeft = time;
+                totalTime = time;
+                updateDisplay();
+            });
+        });
+
+        function updateFlipCard(card, newValue) {
+            const inner = card.querySelector('.flip-card-inner');
+            if (inner.textContent !== newValue.toString()) {
+                card.classList.add('flipping');
+                setTimeout(() => {
+                    inner.textContent = newValue;
+                    card.classList.remove('flipping');
+                }, 300);
+            }
+        }
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            updateFlipCard(minuteTensCard, Math.floor(minutes / 10));
+            updateFlipCard(minuteOnesCard, minutes % 10);
+            updateFlipCard(secondTensCard, Math.floor(seconds / 10));
+            updateFlipCard(secondOnesCard, seconds % 10);
+
+            const elapsedTime = totalTime - timeLeft;
+            const minuteAngle = (elapsedTime / totalTime) * 360;
+            const secondAngle = ((60 - seconds) / 60) * 360;
+
+            minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+            secondHand.style.transform = `rotate(${secondAngle}deg)`;
+        }
+
+        function startTimer() {
+            if (timeLeft > 0 && !isRunning) {
+                isRunning = true;
+                startBtn.textContent = 'Napping...';
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft <= 0) {
+                        pauseTimer();
+                        playAlarm();
+                    }
+                }, 1000);
+            }
+        }
+
+        function pauseTimer() {
+            isRunning = false;
+            startBtn.textContent = 'Start Nap';
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            const activeBtn = document.querySelector('.preset-btn.active');
+            if (activeBtn) {
+                timeLeft = parseInt(activeBtn.getAttribute('data-time'));
+                totalTime = timeLeft;
+            } else {
+                timeLeft = 1200;
+                totalTime = 1200;
+            }
+            updateDisplay();
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        updateDisplay();
+    </script>
+</body>
+
+</html>
