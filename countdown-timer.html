@@ -815,6 +815,7 @@
             padding: 20px;
             margin: 0;
             max-width: 100%;
+            align-items: center;
         }
 
         body.fullscreen-mode .stopwatch-container {
@@ -823,7 +824,18 @@
         }
 
         body.fullscreen-mode .controls-panel {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             min-width: auto;
+            width: 100%;
+            flex: none;
+        }
+
+        body.fullscreen-mode .digital-display {
+            display: block !important;
+            margin: 30px 0;
         }
 
         body.fullscreen-mode .digital-timer {
