@@ -1026,6 +1026,198 @@
             box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
         }
 
+        /* Fullscreen Mode */
+        .fullscreen-btn {
+            padding: 10px 20px;
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid rgba(231, 76, 60, 0.4);
+            border-radius: 10px;
+            color: #e74c3c;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 15px auto 0;
+        }
+
+        .fullscreen-btn:hover {
+            background: rgba(231, 76, 60, 0.3);
+            border-color: #e74c3c;
+            transform: translateY(-2px);
+        }
+
+        .fullscreen-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .exit-fullscreen-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background: rgba(231, 76, 60, 0.9);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 10001;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .exit-fullscreen-btn:hover {
+            background: rgba(231, 76, 60, 1);
+            transform: scale(1.05);
+        }
+
+        body.fullscreen-mode {
+            background: #1a0a0a;
+            overflow: hidden;
+        }
+
+        body.fullscreen-mode .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        body.fullscreen-mode header,
+        body.fullscreen-mode nav,
+        body.fullscreen-mode .nav-toggle,
+        body.fullscreen-mode .nav-overlay,
+        body.fullscreen-mode .ad-container,
+        body.fullscreen-mode .seo-content,
+        body.fullscreen-mode .premium-section,
+        body.fullscreen-mode footer,
+        body.fullscreen-mode .timer-selector,
+        body.fullscreen-mode .custom-timer-section,
+        body.fullscreen-mode .sound-selector,
+        body.fullscreen-mode .fullscreen-btn {
+            display: none !important;
+        }
+
+        body.fullscreen-mode .exit-fullscreen-btn {
+            display: flex;
+        }
+
+        body.fullscreen-mode .timer-container {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            max-width: 100%;
+            width: 100%;
+            flex-direction: column;
+            padding: 20px;
+            margin: 0;
+        }
+
+        body.fullscreen-mode .stopwatch-container {
+            width: 350px;
+            height: 350px;
+            flex-basis: 350px;
+        }
+
+        body.fullscreen-mode .flip-card {
+            width: 100px;
+            height: 150px;
+        }
+
+        body.fullscreen-mode .flip-card-inner {
+            font-size: 6em;
+        }
+
+        body.fullscreen-mode .colon {
+            font-size: 6em;
+        }
+
+        body.fullscreen-mode .digital-timer {
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        body.fullscreen-mode .controls {
+            gap: 30px;
+        }
+
+        body.fullscreen-mode .control-btn {
+            padding: 25px 60px;
+            font-size: 1.4em;
+        }
+
+        body.fullscreen-mode .quick-start {
+            margin-bottom: 30px;
+        }
+
+        body.fullscreen-mode .quick-btn {
+            padding: 15px 25px;
+            font-size: 1.1em;
+        }
+
+        body.fullscreen-mode .keyboard-hints {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            body.fullscreen-mode .stopwatch-container {
+                width: 250px;
+                height: 250px;
+            }
+            body.fullscreen-mode .flip-card {
+                width: 60px;
+                height: 90px;
+            }
+            body.fullscreen-mode .flip-card-inner {
+                font-size: 3.5em;
+            }
+            body.fullscreen-mode .colon {
+                font-size: 3.5em;
+            }
+            body.fullscreen-mode .control-btn {
+                padding: 18px 40px;
+                font-size: 1.1em;
+            }
+            body.fullscreen-mode .keyboard-hints {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body.fullscreen-mode .stopwatch-container {
+                width: 200px;
+                height: 200px;
+            }
+            body.fullscreen-mode .flip-card {
+                width: 50px;
+                height: 75px;
+            }
+            body.fullscreen-mode .flip-card-inner {
+                font-size: 2.8em;
+            }
+            body.fullscreen-mode .colon {
+                font-size: 2.8em;
+            }
+            body.fullscreen-mode .control-btn {
+                padding: 15px 30px;
+                font-size: 1em;
+            }
+            body.fullscreen-mode .quick-btn {
+                padding: 10px 16px;
+                font-size: 0.9em;
+            }
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 8px;
@@ -1149,6 +1341,14 @@
 </head>
 
 <body>
+    <!-- Exit Fullscreen Button (visible only in fullscreen mode) -->
+    <button class="exit-fullscreen-btn" id="exitFullscreenBtn" aria-label="Exit fullscreen mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>
+        </svg>
+        Exit Fullscreen (F)
+    </button>
+
     <div class="container">
         <!-- Screen Reader Announcements -->
         <div id="srAnnouncements" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
@@ -1247,6 +1447,7 @@
                 <div class="keyboard-hints">
                     <span class="kbd-hint"><kbd class="kbd">Space</kbd> Start/Pause</span>
                     <span class="kbd-hint"><kbd class="kbd">R</kbd> Reset</span>
+                    <span class="kbd-hint"><kbd class="kbd">F</kbd> Fullscreen</span>
                 </div>
                 </div>
 
@@ -1260,6 +1461,14 @@
                     <button class="test-sound-btn" id="testSound">Test</button>
                     <button class="stop-sound-btn" id="stopSound">Stop</button>
                 </div>
+
+                <!-- Fullscreen Button -->
+                <button class="fullscreen-btn" id="fullscreenBtn" aria-label="Enter fullscreen mode">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                    </svg>
+                    Fullscreen Mode
+                </button>
             </div>
         </div>
 
@@ -1622,6 +1831,16 @@
                     e.preventDefault();
                     resetTimer();
                     break;
+                case 'KeyF':
+                    e.preventDefault();
+                    toggleFullscreen();
+                    break;
+                case 'Escape':
+                    if (document.body.classList.contains('fullscreen-mode')) {
+                        e.preventDefault();
+                        toggleFullscreen();
+                    }
+                    break;
             }
         });
 
@@ -1650,6 +1869,39 @@
                     toggleNav();
                 }
             });
+        });
+
+        // Fullscreen Mode
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
+
+        function toggleFullscreen() {
+            document.body.classList.toggle('fullscreen-mode');
+            const isFullscreen = document.body.classList.contains('fullscreen-mode');
+            if (isFullscreen) {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen().catch(err => {
+                        console.log('Fullscreen API not available:', err);
+                    });
+                }
+                announce('Fullscreen mode enabled. Press F or Escape to exit.');
+            } else {
+                if (document.fullscreenElement && document.exitFullscreen) {
+                    document.exitFullscreen().catch(err => {
+                        console.log('Exit fullscreen failed:', err);
+                    });
+                }
+                announce('Fullscreen mode disabled.');
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+        exitFullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement && document.body.classList.contains('fullscreen-mode')) {
+                document.body.classList.remove('fullscreen-mode');
+            }
         });
     </script>
 </body>

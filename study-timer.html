@@ -900,10 +900,161 @@
                 padding: 30px 20px;
             }
         }
+
+        /* Fullscreen Mode Styles */
+        .fullscreen-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 15px 25px;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .fullscreen-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        .exit-fullscreen-btn {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: rgba(52, 152, 219, 0.9);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 10001;
+            transition: all 0.3s;
+        }
+
+        .exit-fullscreen-btn:hover {
+            background: rgba(52, 152, 219, 1);
+        }
+
+        body.fullscreen-mode {
+            background: #0a0e27;
+            overflow: hidden;
+        }
+
+        body.fullscreen-mode .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        body.fullscreen-mode header,
+        body.fullscreen-mode nav,
+        body.fullscreen-mode .nav-toggle,
+        body.fullscreen-mode .nav-overlay,
+        body.fullscreen-mode .ad-container,
+        body.fullscreen-mode .seo-content,
+        body.fullscreen-mode .faq-section,
+        body.fullscreen-mode .related-timers,
+        body.fullscreen-mode footer,
+        body.fullscreen-mode .study-presets,
+        body.fullscreen-mode .quick-start,
+        body.fullscreen-mode .sound-selector,
+        body.fullscreen-mode .keyboard-hints,
+        body.fullscreen-mode .fullscreen-btn {
+            display: none !important;
+        }
+
+        body.fullscreen-mode .exit-fullscreen-btn {
+            display: block;
+        }
+
+        body.fullscreen-mode .timer-container {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            margin: 0;
+            padding: 40px;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        body.fullscreen-mode .stopwatch-container {
+            width: 500px;
+            height: 500px;
+        }
+
+        body.fullscreen-mode .controls-panel {
+            min-width: auto;
+        }
+
+        body.fullscreen-mode .digital-timer {
+            margin: 30px 0;
+        }
+
+        body.fullscreen-mode .flip-card {
+            width: 100px;
+            height: 150px;
+        }
+
+        body.fullscreen-mode .flip-card-inner {
+            font-size: 6em;
+        }
+
+        body.fullscreen-mode .colon {
+            font-size: 6em;
+        }
+
+        body.fullscreen-mode .controls {
+            margin-top: 20px;
+        }
+
+        body.fullscreen-mode .control-btn {
+            padding: 20px 50px;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            body.fullscreen-mode .stopwatch-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            body.fullscreen-mode .flip-card {
+                width: 60px;
+                height: 90px;
+            }
+
+            body.fullscreen-mode .flip-card-inner {
+                font-size: 3.5em;
+            }
+
+            body.fullscreen-mode .colon {
+                font-size: 3.5em;
+            }
+
+            body.fullscreen-mode .control-btn {
+                padding: 15px 30px;
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <button class="exit-fullscreen-btn" id="exitFullscreenBtn">Exit Fullscreen</button>
     <div class="container">
         <!-- Screen Reader Announcements -->
         <div id="srAnnouncements" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
@@ -1023,6 +1174,7 @@
                 <div class="keyboard-hints">
                     <span class="kbd-hint"><kbd class="kbd">Space</kbd> Start/Pause</span>
                     <span class="kbd-hint"><kbd class="kbd">R</kbd> Reset</span>
+                    <span class="kbd-hint"><kbd class="kbd">F</kbd> Fullscreen</span>
                 </div>
 
                 <div class="sound-selector">
@@ -1035,6 +1187,13 @@
                     <button class="test-sound-btn" id="testSound">Test</button>
                     <button class="stop-sound-btn" id="stopSound">Stop</button>
                 </div>
+
+                <button class="fullscreen-btn" id="fullscreenBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                    </svg>
+                    Fullscreen Mode
+                </button>
             </div>
         </div>
 
@@ -1361,6 +1520,16 @@
                     e.preventDefault();
                     resetTimer();
                     break;
+                case 'KeyF':
+                    e.preventDefault();
+                    toggleFullscreen();
+                    break;
+                case 'Escape':
+                    if (document.body.classList.contains('fullscreen-mode')) {
+                        e.preventDefault();
+                        toggleFullscreen();
+                    }
+                    break;
             }
         });
 
@@ -1390,6 +1559,22 @@
                 }
             });
         });
+
+        // Fullscreen Mode
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
+
+        function toggleFullscreen() {
+            document.body.classList.toggle('fullscreen-mode');
+            if (document.body.classList.contains('fullscreen-mode')) {
+                announce('Fullscreen mode enabled. Press Escape or F to exit.');
+            } else {
+                announce('Fullscreen mode disabled.');
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+        exitFullscreenBtn.addEventListener('click', toggleFullscreen);
     </script>
 </body>
 

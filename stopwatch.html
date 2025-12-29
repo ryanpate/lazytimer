@@ -919,10 +919,205 @@
                 padding: 1px 2px;
             }
         }
+
+        /* Fullscreen Mode Styles */
+        .fullscreen-btn {
+            padding: 12px 24px;
+            font-size: 1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+            margin-top: 10px;
+        }
+
+        .fullscreen-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(231, 76, 60, 0.4);
+        }
+
+        .exit-fullscreen-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            font-size: 1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+            z-index: 10001;
+            display: none;
+        }
+
+        .exit-fullscreen-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(231, 76, 60, 0.4);
+        }
+
+        body.fullscreen-mode {
+            background: #0a0e27;
+            overflow: hidden;
+        }
+
+        body.fullscreen-mode .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        body.fullscreen-mode header,
+        body.fullscreen-mode nav,
+        body.fullscreen-mode .nav-toggle,
+        body.fullscreen-mode .nav-overlay,
+        body.fullscreen-mode .ad-container,
+        body.fullscreen-mode .seo-content,
+        body.fullscreen-mode .faq-section,
+        body.fullscreen-mode .related-timers,
+        body.fullscreen-mode footer,
+        body.fullscreen-mode .fullscreen-btn,
+        body.fullscreen-mode .lap-times,
+        body.fullscreen-mode .keyboard-hints {
+            display: none !important;
+        }
+
+        body.fullscreen-mode .exit-fullscreen-btn {
+            display: block;
+        }
+
+        body.fullscreen-mode .timer-container {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            margin: 0;
+            padding: 20px;
+            max-width: 100%;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        body.fullscreen-mode .stopwatch-container {
+            width: 400px;
+            height: 400px;
+        }
+
+        body.fullscreen-mode .controls-panel {
+            min-width: auto;
+        }
+
+        body.fullscreen-mode .timer-title {
+            display: none;
+        }
+
+        body.fullscreen-mode .digital-timer {
+            margin: 10px 0;
+        }
+
+        body.fullscreen-mode .flip-card {
+            width: 80px;
+            height: 110px;
+        }
+
+        body.fullscreen-mode .flip-card-inner {
+            font-size: 4em;
+        }
+
+        body.fullscreen-mode .flip-card.small {
+            width: 60px;
+            height: 88px;
+        }
+
+        body.fullscreen-mode .flip-card.small .flip-card-inner {
+            font-size: 3em;
+        }
+
+        body.fullscreen-mode .colon {
+            font-size: 4em;
+        }
+
+        body.fullscreen-mode .colon.small {
+            font-size: 3em;
+        }
+
+        @media (max-width: 768px) {
+            body.fullscreen-mode .stopwatch-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            body.fullscreen-mode .flip-card {
+                width: 50px;
+                height: 75px;
+            }
+
+            body.fullscreen-mode .flip-card-inner {
+                font-size: 2.8em;
+            }
+
+            body.fullscreen-mode .flip-card.small {
+                width: 40px;
+                height: 60px;
+            }
+
+            body.fullscreen-mode .flip-card.small .flip-card-inner {
+                font-size: 2em;
+            }
+
+            body.fullscreen-mode .colon {
+                font-size: 2.8em;
+            }
+
+            body.fullscreen-mode .colon.small {
+                font-size: 2em;
+            }
+        }
+
+        .keyboard-hints {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding: 10px;
+        }
+
+        .keyboard-hint {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85em;
+        }
+
+        .keyboard-hint kbd {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .keyboard-hints {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <button class="exit-fullscreen-btn" id="exitFullscreenBtn">Exit Fullscreen</button>
     <div class="container">
         <!-- Screen Reader Announcements -->
         <div id="srAnnouncements" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
@@ -1005,6 +1200,15 @@
                     <button class="control-btn stop-btn" id="stopBtn">Stop</button>
                     <button class="control-btn lap-btn" id="lapBtn">Lap</button>
                     <button class="control-btn reset-btn" id="resetBtn">Reset</button>
+                </div>
+
+                <button class="fullscreen-btn" id="fullscreenBtn">Fullscreen Mode</button>
+
+                <div class="keyboard-hints">
+                    <span class="keyboard-hint"><kbd>Space</kbd> Start/Stop</span>
+                    <span class="keyboard-hint"><kbd>R</kbd> Reset</span>
+                    <span class="keyboard-hint"><kbd>L</kbd> Lap</span>
+                    <span class="keyboard-hint"><kbd>F</kbd> Fullscreen</span>
                 </div>
 
                 <div class="lap-times" id="lapTimes">
@@ -1283,6 +1487,14 @@
             } else if (e.code === 'KeyL') {
                 e.preventDefault();
                 recordLap();
+            } else if (e.code === 'KeyF') {
+                e.preventDefault();
+                toggleFullscreen();
+            } else if (e.code === 'Escape') {
+                if (document.body.classList.contains('fullscreen-mode')) {
+                    e.preventDefault();
+                    toggleFullscreen();
+                }
             }
         });
 
@@ -1340,6 +1552,22 @@
                 }
             });
         });
+
+        // Fullscreen Mode
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
+
+        function toggleFullscreen() {
+            document.body.classList.toggle('fullscreen-mode');
+            if (document.body.classList.contains('fullscreen-mode')) {
+                announce('Fullscreen mode enabled. Press Escape or click Exit Fullscreen to exit.');
+            } else {
+                announce('Fullscreen mode disabled.');
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+        exitFullscreenBtn.addEventListener('click', toggleFullscreen);
     </script>
 </body>
 

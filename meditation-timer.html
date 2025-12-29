@@ -1022,10 +1022,175 @@
                 font-size: 0.85em;
             }
         }
+
+        /* Fullscreen Mode Styles */
+        .fullscreen-btn {
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: 600;
+            border: 2px solid rgba(155, 89, 182, 0.5);
+            border-radius: 25px;
+            background: rgba(155, 89, 182, 0.1);
+            color: #9b59b6;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .fullscreen-btn:hover {
+            background: rgba(155, 89, 182, 0.3);
+            border-color: #9b59b6;
+            transform: translateY(-2px);
+        }
+
+        .exit-fullscreen-btn {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: 600;
+            border: 2px solid rgba(155, 89, 182, 0.5);
+            border-radius: 25px;
+            background: rgba(155, 89, 182, 0.2);
+            color: #9b59b6;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10001;
+        }
+
+        .exit-fullscreen-btn:hover {
+            background: rgba(155, 89, 182, 0.4);
+            border-color: #9b59b6;
+        }
+
+        body.fullscreen-mode {
+            background: #0a0e27;
+            overflow: hidden;
+        }
+
+        body.fullscreen-mode .container {
+            display: none;
+        }
+
+        body.fullscreen-mode .exit-fullscreen-btn {
+            display: block;
+        }
+
+        body.fullscreen-mode .fullscreen-timer-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10000;
+        }
+
+        .fullscreen-timer-display {
+            display: none;
+        }
+
+        .fullscreen-timer-display .stopwatch-container {
+            width: 500px;
+            height: 500px;
+            margin-bottom: 40px;
+        }
+
+        .fullscreen-timer-display .digital-timer {
+            margin-bottom: 40px;
+        }
+
+        .fullscreen-timer-display .flip-card {
+            width: 120px;
+            height: 180px;
+        }
+
+        .fullscreen-timer-display .flip-card-inner {
+            font-size: 7em;
+        }
+
+        .fullscreen-timer-display .colon {
+            font-size: 7em;
+        }
+
+        .fullscreen-timer-display .controls {
+            display: flex;
+            gap: 20px;
+        }
+
+        .fullscreen-timer-display .control-btn {
+            padding: 20px 50px;
+            font-size: 1.3em;
+        }
+
+        @media (max-width: 768px) {
+            .fullscreen-timer-display .stopwatch-container {
+                width: 280px;
+                height: 280px;
+                margin-bottom: 20px;
+            }
+
+            .fullscreen-timer-display .flip-card {
+                width: 60px;
+                height: 90px;
+            }
+
+            .fullscreen-timer-display .flip-card-inner {
+                font-size: 3.5em;
+            }
+
+            .fullscreen-timer-display .colon {
+                font-size: 3.5em;
+            }
+
+            .fullscreen-timer-display .control-btn {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <button class="exit-fullscreen-btn" id="exitFullscreenBtn">Exit Fullscreen</button>
+
+    <div class="fullscreen-timer-display" id="fullscreenTimerDisplay">
+        <div class="stopwatch-container">
+            <img src="stopwatch.png" alt="Meditation timer fullscreen" class="stopwatch-image">
+            <div class="minute-hand hand" id="fsMinuteHand"></div>
+            <div class="second-hand hand" id="fsSecondHand"></div>
+        </div>
+        <div class="digital-timer">
+            <div class="flip-card" id="fsMinuteTens">
+                <div class="flip-card-inner">1</div>
+            </div>
+            <div class="flip-card" id="fsMinuteOnes">
+                <div class="flip-card-inner">0</div>
+            </div>
+            <div class="colon">:</div>
+            <div class="flip-card" id="fsSecondTens">
+                <div class="flip-card-inner">0</div>
+            </div>
+            <div class="flip-card" id="fsSecondOnes">
+                <div class="flip-card-inner">0</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="control-btn start-btn" id="fsStartBtn">Start</button>
+            <button class="control-btn pause-btn" id="fsPauseBtn">Pause</button>
+            <button class="control-btn reset-btn" id="fsResetBtn">Reset</button>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Screen Reader Announcements -->
         <div id="srAnnouncements" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
@@ -1145,6 +1310,7 @@
                 <div class="keyboard-hints">
                     <span class="kbd-hint"><kbd class="kbd">Space</kbd> Start/Pause</span>
                     <span class="kbd-hint"><kbd class="kbd">R</kbd> Reset</span>
+                    <span class="kbd-hint"><kbd class="kbd">F</kbd> Fullscreen</span>
                 </div>
 
                 <div class="sound-selector">
@@ -1157,6 +1323,8 @@
                     <button class="test-sound-btn" id="testSound">Test</button>
                     <button class="stop-sound-btn" id="stopSound">Stop</button>
                 </div>
+
+                <button class="fullscreen-btn" id="fullscreenBtn">Enter Fullscreen</button>
             </div>
         </div>
 
@@ -1484,6 +1652,16 @@
                     e.preventDefault();
                     resetTimer();
                     break;
+                case 'KeyF':
+                    e.preventDefault();
+                    toggleFullscreen();
+                    break;
+                case 'Escape':
+                    if (document.body.classList.contains('fullscreen-mode')) {
+                        e.preventDefault();
+                        toggleFullscreen();
+                    }
+                    break;
             }
         });
 
@@ -1513,6 +1691,56 @@
                 }
             });
         });
+
+        // Fullscreen Mode
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
+        const fsMinuteHand = document.getElementById('fsMinuteHand');
+        const fsSecondHand = document.getElementById('fsSecondHand');
+        const fsMinuteTensCard = document.getElementById('fsMinuteTens');
+        const fsMinuteOnesCard = document.getElementById('fsMinuteOnes');
+        const fsSecondTensCard = document.getElementById('fsSecondTens');
+        const fsSecondOnesCard = document.getElementById('fsSecondOnes');
+        const fsStartBtn = document.getElementById('fsStartBtn');
+        const fsPauseBtn = document.getElementById('fsPauseBtn');
+        const fsResetBtn = document.getElementById('fsResetBtn');
+
+        function updateFullscreenDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            updateFlipCard(fsMinuteTensCard, Math.floor(minutes / 10));
+            updateFlipCard(fsMinuteOnesCard, minutes % 10);
+            updateFlipCard(fsSecondTensCard, Math.floor(seconds / 10));
+            updateFlipCard(fsSecondOnesCard, seconds % 10);
+
+            const elapsedTime = totalTime - timeLeft;
+            const minuteAngle = (elapsedTime / totalTime) * 360;
+            const secondAngle = ((60 - seconds) / 60) * 360;
+
+            fsMinuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+            fsSecondHand.style.transform = `rotate(${secondAngle}deg)`;
+        }
+
+        // Override updateDisplay to also update fullscreen display
+        const originalUpdateDisplay = updateDisplay;
+        updateDisplay = function() {
+            originalUpdateDisplay();
+            updateFullscreenDisplay();
+        };
+
+        function toggleFullscreen() {
+            document.body.classList.toggle('fullscreen-mode');
+            if (document.body.classList.contains('fullscreen-mode')) {
+                updateFullscreenDisplay();
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+        exitFullscreenBtn.addEventListener('click', toggleFullscreen);
+        fsStartBtn.addEventListener('click', startTimer);
+        fsPauseBtn.addEventListener('click', pauseTimer);
+        fsResetBtn.addEventListener('click', resetTimer);
     </script>
 </body>
 
