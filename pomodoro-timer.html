@@ -316,6 +316,35 @@
             filter: drop-shadow(0 20px 40px rgba(231, 76, 60, 0.3));
         }
 
+        /* Progress Ring */
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 94%;
+            height: 94%;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 50;
+        }
+        .progress-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+        .progress-ring-circle {
+            fill: none;
+            stroke: #27ae60;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.3s ease, stroke 0.5s ease;
+        }
+        .progress-ring-bg { fill: none; stroke: rgba(255, 255, 255, 0.1); stroke-width: 8; }
+        .progress-ring.warning .progress-ring-circle { stroke: #f39c12; }
+        .progress-ring.danger .progress-ring-circle { stroke: #e74c3c; }
+        .progress-ring.danger.pulse .progress-ring-circle { animation: pulse-ring 1s ease-in-out infinite; }
+        @keyframes pulse-ring {
+            0%, 100% { opacity: 1; stroke-width: 8; }
+            50% { opacity: 0.6; stroke-width: 12; }
+        }
+
         .minute-counter {
             position: absolute;
             right: 36%;
@@ -940,6 +969,12 @@
         <div class="timer-container">
             <div class="stopwatch-container">
                 <img src="stopwatch.png" alt="Pomodoro timer 2025 - free 25 minute focus timer for productivity and study sessions with visual countdown display" class="stopwatch-image">
+                <div class="progress-ring" id="progressRing">
+                    <svg viewBox="0 0 200 200">
+                        <circle class="progress-ring-bg" cx="100" cy="100" r="90"></circle>
+                        <circle class="progress-ring-circle" id="progressCircle" cx="100" cy="100" r="90"></circle>
+                    </svg>
+                </div>
                 <div class="minute-hand hand" id="minuteHand" aria-hidden="true"></div>
                 <div class="second-hand hand" id="secondHand" aria-hidden="true"></div>
                 <div class="minute-counter" aria-label="Minutes elapsed">
@@ -1126,6 +1161,69 @@
         const presetButtons = document.querySelectorAll('.preset-btn');
         const alarmSelect = document.getElementById('alarmSound');
         const testSoundBtn = document.getElementById('testSound');
+        const progressRing = document.getElementById('progressRing');
+        const progressCircle = document.getElementById('progressCircle');
+        const originalTitle = document.title;
+
+        // Progress ring setup
+        const radius = 90;
+        const circumference = 2 * Math.PI * radius;
+        progressCircle.style.strokeDasharray = circumference;
+        progressCircle.style.strokeDashoffset = 0;
+
+        function updateTabTitle() {
+            if (timeLeft > 0 && totalTime > 0) {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.title = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} - Pomodoro`;
+            } else {
+                document.title = originalTitle;
+            }
+        }
+
+        function updateProgressRing() {
+            if (totalTime <= 0) return;
+            const progress = timeLeft / totalTime;
+            progressCircle.style.strokeDashoffset = circumference * (1 - progress);
+            progressRing.classList.remove('warning', 'danger', 'pulse');
+            if (progress <= 0.1) {
+                progressRing.classList.add('danger');
+                if (timeLeft <= 10) progressRing.classList.add('pulse');
+            } else if (progress <= 0.3) {
+                progressRing.classList.add('warning');
+            }
+        }
+
+        function saveTimerState() {
+            if (isRunning && timeLeft > 0) {
+                localStorage.setItem('lazyTimerState', JSON.stringify({
+                    timeLeft, totalTime, timestamp: Date.now(), isRunning, page: 'pomodoro'
+                }));
+            } else {
+                localStorage.removeItem('lazyTimerState');
+            }
+        }
+
+        function restoreTimerState() {
+            const saved = localStorage.getItem('lazyTimerState');
+            if (saved) {
+                try {
+                    const state = JSON.parse(saved);
+                    if (state.page !== 'pomodoro') return false;
+                    const elapsed = Math.floor((Date.now() - state.timestamp) / 1000);
+                    const remainingTime = state.timeLeft - elapsed;
+                    if (elapsed < 3600 && remainingTime > 0 && state.isRunning) {
+                        timeLeft = remainingTime;
+                        totalTime = state.totalTime;
+                        updateDisplay();
+                        startTimer();
+                        return true;
+                    }
+                } catch (e) {}
+                localStorage.removeItem('lazyTimerState');
+            }
+            return false;
+        }
 
         // Load saved sound preference
         const savedSound = localStorage.getItem('alarmSound');
@@ -1234,6 +1332,8 @@
 
             minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
             secondHand.style.transform = `rotate(${secondAngle}deg)`;
+            updateProgressRing();
+            updateTabTitle();
         }
 
         function startTimer() {
@@ -1245,10 +1345,12 @@
                 timerInterval = setInterval(() => {
                     timeLeft--;
                     updateDisplay();
+                    saveTimerState();
 
                     if (timeLeft <= 0) {
                         pauseTimer();
                         playAlarm();
+                        document.title = '⏰ Timer Complete!';
                     }
                 }, 1000);
             }
@@ -1259,6 +1361,7 @@
             startBtn.textContent = 'Start';
             startBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #229954 100%)';
             clearInterval(timerInterval);
+            localStorage.removeItem('lazyTimerState');
         }
 
         function resetTimer() {
@@ -1267,6 +1370,7 @@
             completedMinutes = 0;
             minuteCounter.textContent = '0';
             updateDisplay();
+            document.title = originalTitle;
         }
 
         startBtn.addEventListener('click', startTimer);
@@ -1303,6 +1407,9 @@
                     break;
             }
         });
+
+        // Restore timer state on page load
+        restoreTimerState();
     </script>
 </body>
 

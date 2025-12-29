@@ -260,6 +260,35 @@
             filter: drop-shadow(0 20px 40px rgba(244, 164, 96, 0.3));
         }
 
+        /* Progress Ring */
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 94%;
+            height: 94%;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 50;
+        }
+        .progress-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+        .progress-ring-circle {
+            fill: none;
+            stroke: #27ae60;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.3s ease, stroke 0.5s ease;
+        }
+        .progress-ring-bg { fill: none; stroke: rgba(255, 255, 255, 0.1); stroke-width: 8; }
+        .progress-ring.warning .progress-ring-circle { stroke: #f39c12; }
+        .progress-ring.danger .progress-ring-circle { stroke: #e74c3c; }
+        .progress-ring.danger.pulse .progress-ring-circle { animation: pulse-ring 1s ease-in-out infinite; }
+        @keyframes pulse-ring {
+            0%, 100% { opacity: 1; stroke-width: 8; }
+            50% { opacity: 0.6; stroke-width: 12; }
+        }
+
         .stopwatch-image {
             width: 100%;
             height: 100%;
@@ -753,6 +782,13 @@
         <div class="timer-container">
             <div class="stopwatch-container">
                 <img src="stopwatch.png" alt="Egg timer 2025 - free online timer for perfect soft, medium, and hard boiled eggs" class="stopwatch-image">
+                <div class="progress-ring" id="progressRing">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="progress-ring-bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="progress-ring-circle" cx="50" cy="50" r="45"
+                                stroke-dasharray="282.7" stroke-dashoffset="0" id="progressCircle"></circle>
+                    </svg>
+                </div>
                 <div class="minute-hand hand" id="minuteHand"></div>
                 <div class="second-hand hand" id="secondHand"></div>
             </div>
@@ -942,6 +978,8 @@
         let isRunning = false;
         let timerInterval;
         let alarmAudio = null;
+        const originalTitle = document.title;
+        const STORAGE_KEY = 'lazyTimer_egg';
 
         const buttons = document.querySelectorAll('.preset-btn');
         const minuteTensCard = document.getElementById('minuteTens');
@@ -955,6 +993,8 @@
         const resetBtn = document.getElementById('resetBtn');
         const alarmSelect = document.getElementById('alarmSound');
         const testSoundBtn = document.getElementById('testSound');
+        const progressRing = document.getElementById('progressRing');
+        const progressCircle = document.getElementById('progressCircle');
 
         // Load saved sound preference
         const savedSound = localStorage.getItem('alarmSound');
@@ -1019,6 +1059,70 @@
             }
         }
 
+        function updateTabTitle() {
+            if (timeLeft <= 0) {
+                document.title = "Eggs Ready! - Egg Timer";
+            } else {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.title = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} - Egg Timer`;
+            }
+        }
+
+        function updateProgressRing() {
+            const circumference = 282.7; // 2 * PI * 45
+            const progress = totalTime > 0 ? timeLeft / totalTime : 1;
+            const offset = circumference * (1 - progress);
+            progressCircle.style.strokeDashoffset = offset;
+
+            // Update color based on time remaining
+            progressRing.classList.remove('warning', 'danger', 'pulse');
+            if (timeLeft <= 10 && timeLeft > 0) {
+                progressRing.classList.add('danger', 'pulse');
+            } else if (timeLeft <= 30) {
+                progressRing.classList.add('danger');
+            } else if (timeLeft <= 60) {
+                progressRing.classList.add('warning');
+            }
+        }
+
+        function saveTimerState() {
+            const state = {
+                timeLeft: timeLeft,
+                totalTime: totalTime,
+                isRunning: isRunning,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        }
+
+        function restoreTimerState() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                try {
+                    const state = JSON.parse(saved);
+                    const elapsed = Math.floor((Date.now() - state.timestamp) / 1000);
+                    // Only restore if within 60 minutes
+                    if (elapsed < 3600) {
+                        if (state.isRunning) {
+                            timeLeft = Math.max(0, state.timeLeft - elapsed);
+                            totalTime = state.totalTime;
+                            if (timeLeft > 0) {
+                                updateDisplay();
+                                startTimer();
+                            }
+                        } else {
+                            timeLeft = state.timeLeft;
+                            totalTime = state.totalTime;
+                            updateDisplay();
+                        }
+                    }
+                } catch (e) {
+                    console.log('Failed to restore timer state');
+                }
+            }
+        }
+
         function updateDisplay() {
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
@@ -1034,6 +1138,9 @@
 
             minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
             secondHand.style.transform = `rotate(${secondAngle}deg)`;
+
+            updateTabTitle();
+            updateProgressRing();
         }
 
         function startTimer() {
@@ -1043,11 +1150,14 @@
                 timerInterval = setInterval(() => {
                     timeLeft--;
                     updateDisplay();
+                    saveTimerState();
                     if (timeLeft <= 0) {
                         pauseTimer();
                         playAlarm();
+                        localStorage.removeItem(STORAGE_KEY);
                     }
                 }, 1000);
+                saveTimerState();
             }
         }
 
@@ -1055,19 +1165,42 @@
             isRunning = false;
             startBtn.textContent = 'Start';
             clearInterval(timerInterval);
+            document.title = originalTitle;
+            saveTimerState();
         }
 
         function resetTimer() {
             pauseTimer();
             timeLeft = totalTime;
             updateDisplay();
+            document.title = originalTitle;
+            localStorage.removeItem(STORAGE_KEY);
         }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ignore if user is typing in an input field
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+            if (e.code === 'Space') {
+                e.preventDefault();
+                if (isRunning) {
+                    pauseTimer();
+                } else {
+                    startTimer();
+                }
+            } else if (e.code === 'KeyR') {
+                e.preventDefault();
+                resetTimer();
+            }
+        });
 
         startBtn.addEventListener('click', startTimer);
         pauseBtn.addEventListener('click', pauseTimer);
         resetBtn.addEventListener('click', resetTimer);
 
         updateDisplay();
+        restoreTimerState();
     </script>
 </body>
 

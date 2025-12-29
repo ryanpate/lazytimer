@@ -850,6 +850,7 @@
         let timerInterval;
         let laps = [];
         let lastLapTime = 0;
+        const originalTitle = document.title;
 
         const hourTensCard = document.getElementById('hourTens');
         const hourOnesCard = document.getElementById('hourOnes');
@@ -872,6 +873,19 @@
             const inner = card.querySelector('.flip-card-inner');
             if (inner.textContent !== newValue.toString()) {
                 inner.textContent = newValue;
+            }
+        }
+
+        function updateTabTitle() {
+            if (elapsedTime === 0) {
+                document.title = originalTitle;
+            } else {
+                const time = formatTime(elapsedTime);
+                if (time.hours > 0) {
+                    document.title = `${String(time.hours).padStart(2, '0')}:${String(time.minutes).padStart(2, '0')}:${String(time.seconds).padStart(2, '0')} - Stopwatch`;
+                } else {
+                    document.title = `${String(time.minutes).padStart(2, '0')}:${String(time.seconds).padStart(2, '0')}.${String(time.centiseconds).padStart(2, '0')} - Stopwatch`;
+                }
             }
         }
 
@@ -910,6 +924,8 @@
 
             minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
             secondHand.style.transform = `rotate(${secondAngle}deg)`;
+
+            updateTabTitle();
         }
 
         function startStopwatch() {
@@ -955,7 +971,29 @@
             lastLapTime = 0;
             updateDisplay();
             renderLaps();
+            document.title = originalTitle;
         }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ignore if user is typing in an input field
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+            if (e.code === 'Space') {
+                e.preventDefault();
+                if (isRunning) {
+                    stopStopwatch();
+                } else {
+                    startStopwatch();
+                }
+            } else if (e.code === 'KeyR') {
+                e.preventDefault();
+                resetStopwatch();
+            } else if (e.code === 'KeyL') {
+                e.preventDefault();
+                recordLap();
+            }
+        });
 
         function renderLaps() {
             if (laps.length === 0) {

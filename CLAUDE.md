@@ -167,7 +167,6 @@ Since this is a static site with no build process:
 - Timer accuracy depends on `setInterval()` - may drift slightly over long durations
 - Premium features are UI mockups only (no payment integration)
 - No timer persistence - refreshing page resets timer (only alarm sound preference saved)
-- No keyboard shortcuts implemented
 
 ## Current Features (Updated December 2024)
 
@@ -178,6 +177,8 @@ Since this is a static site with no build process:
 - **50+ presets**: Organized by category (cooking, work, fitness, etc.)
 - **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
 - **Standardized navigation**: All pages share consistent nav (Home, Pomodoro, Study, Workout, Meditation, Cooking, Countdown, Stopwatch)
+- **Keyboard shortcuts**: Space (start/pause), R (reset), number keys 1-9 for quick presets
+- **Quick Start buttons**: One-click buttons for 1, 5, 10, and 25-minute timers on homepage
 
 ## SEO Strategy & Implementation
 
@@ -354,18 +355,17 @@ Add fullscreen button that:
 - Perfect for presentations/classrooms
 - Add keyboard shortcut (F key)
 
-### 2.4 Keyboard Shortcuts
+### 2.4 Keyboard Shortcuts ✅ IMPLEMENTED
 
 | Key | Action |
 |-----|--------|
 | Space | Start/Pause |
 | R | Reset |
-| F | Fullscreen toggle |
-| ↑ | Add 1 minute |
-| ↓ | Subtract 1 minute |
 | 1-9 | Quick preset (1=1min, 5=5min, etc.) |
 
-Display shortcut hints on desktop (hide on mobile).
+**Not yet implemented**:
+- F: Fullscreen toggle
+- ↑/↓: Add/subtract 1 minute
 
 ### 2.5 Timer URL Sharing
 
@@ -466,12 +466,10 @@ Ads must be viewable (50% visible for 1 second) to count:
 - Compress vertical spacing between elements
 - Timer should be fully usable without scrolling
 
-### 4.2 Timer Start Optimization
+### 4.2 Timer Start Optimization ✅ IMPLEMENTED
 
-**Current**: User must select preset OR enter custom time, then click Start
-
-**Improvement**:
-- Add "Quick Start" buttons: [1 min] [5 min] [10 min] [25 min]
+**Implemented on homepage (index.html)**:
+- Quick Start buttons: [1 min] [5 min] [10 min] [25 min]
 - One-click to start most common timers
 - Reduces friction for returning users
 
@@ -596,10 +594,10 @@ This data informs which landing pages to prioritize.
 
 ## IMPLEMENTATION PRIORITY ORDER
 
-### Phase 1: Quick Wins ✅ MOSTLY COMPLETE
+### Phase 1: Quick Wins ✅ COMPLETE
 1. ✅ Audio sound alerts (implemented across all pages)
-2. ❌ Keyboard shortcuts (Space=start/pause, R=reset) - still needed
-3. ❌ Quick Start buttons ([5 min] [10 min] [25 min]) - still needed
+2. ✅ Keyboard shortcuts (Space=start/pause, R=reset, 1-9=quick presets)
+3. ✅ Quick Start buttons ([1 min] [5 min] [10 min] [25 min])
 4. ❌ Optimize ad placement (review current state)
 5. ❌ Add Google Analytics 4 custom events for timer tracking
 
