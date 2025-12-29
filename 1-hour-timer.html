@@ -43,6 +43,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="LazyTimer">
+    <link rel="apple-touch-icon" href="/stopwatch.png">
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5523870768931777"
         crossorigin="anonymous"></script>
@@ -1825,6 +1833,19 @@
 
         // Load timer from URL on page load
         loadTimerFromUrl();
+
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('LazyTimer: Service Worker registered', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('LazyTimer: Service Worker registration failed', error);
+                    });
+            });
+        }
     </script>
 </body>
 
