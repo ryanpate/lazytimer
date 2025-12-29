@@ -423,57 +423,6 @@
             filter: drop-shadow(0 20px 40px rgba(102, 126, 234, 0.3));
         }
 
-        /* Progress Ring */
-        .progress-ring {
-            position: absolute;
-            top: 47%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 78%;
-            height: 78%;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 50;
-        }
-
-        .progress-ring svg {
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-        }
-
-        .progress-ring-circle {
-            fill: none;
-            stroke: #27ae60;
-            stroke-width: 6;
-            stroke-linecap: round;
-            transition: stroke-dashoffset 0.3s ease, stroke 0.5s ease;
-        }
-
-        .progress-ring-bg {
-            fill: none;
-            stroke: rgba(255, 255, 255, 0.08);
-            stroke-width: 6;
-        }
-
-        /* Progress color states */
-        .progress-ring.warning .progress-ring-circle {
-            stroke: #f39c12;
-        }
-
-        .progress-ring.danger .progress-ring-circle {
-            stroke: #e74c3c;
-        }
-
-        .progress-ring.danger.pulse .progress-ring-circle {
-            animation: pulse-ring 1s ease-in-out infinite;
-        }
-
-        @keyframes pulse-ring {
-            0%, 100% { opacity: 1; stroke-width: 6; }
-            50% { opacity: 0.6; stroke-width: 10; }
-        }
-
         .minute-counter {
             position: absolute;
             right: 36%;
@@ -1710,12 +1659,6 @@
             <div class="stopwatch-container">
                 <img id="stopwatchImg" src="stopwatch.png" alt="Free online timer 2025 - countdown timer stopwatch with visual analog display for Pomodoro, cooking, and productivity"
                     class="stopwatch-image">
-                <div class="progress-ring" id="progressRing">
-                    <svg viewBox="0 0 200 200">
-                        <circle class="progress-ring-bg" cx="100" cy="100" r="90"></circle>
-                        <circle class="progress-ring-circle" id="progressCircle" cx="100" cy="100" r="90"></circle>
-                    </svg>
-                </div>
                 <div class="minute-hand hand" id="minuteHand" aria-hidden="true"></div>
                 <div class="second-hand hand" id="secondHand" aria-hidden="true"></div>
                 <div class="minute-counter" aria-label="Minutes elapsed">
@@ -2111,8 +2054,6 @@
         const setCustomBtn = document.getElementById('setCustomBtn');
         const alarmSelect = document.getElementById('alarmSound');
         const testSoundBtn = document.getElementById('testSound');
-        const progressRing = document.getElementById('progressRing');
-        const progressCircle = document.getElementById('progressCircle');
         const originalTitle = document.title;
         const srAnnouncements = document.getElementById('srAnnouncements');
 
@@ -2124,12 +2065,6 @@
             }, 50);
         }
 
-        // Progress ring setup
-        const radius = 90;
-        const circumference = 2 * Math.PI * radius;
-        progressCircle.style.strokeDasharray = circumference;
-        progressCircle.style.strokeDashoffset = 0;
-
         // Update browser tab title
         function updateTabTitle() {
             if (timeLeft > 0 && totalTime > 0) {
@@ -2139,30 +2074,6 @@
                 document.title = `${timeStr} - LazyTimer`;
             } else {
                 document.title = originalTitle;
-            }
-        }
-
-        // Update progress ring
-        function updateProgressRing() {
-            if (totalTime <= 0) {
-                progressCircle.style.strokeDashoffset = 0;
-                progressRing.className = 'progress-ring';
-                return;
-            }
-
-            const progress = timeLeft / totalTime;
-            const offset = circumference * (1 - progress);
-            progressCircle.style.strokeDashoffset = offset;
-
-            // Color transitions based on remaining time
-            progressRing.classList.remove('warning', 'danger', 'pulse');
-            if (progress <= 0.1) {
-                progressRing.classList.add('danger');
-                if (timeLeft <= 10) {
-                    progressRing.classList.add('pulse');
-                }
-            } else if (progress <= 0.3) {
-                progressRing.classList.add('warning');
             }
         }
 
@@ -2299,8 +2210,7 @@
             minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
             secondHand.style.transform = `rotate(${secondAngle}deg)`;
 
-            // Update progress ring and tab title
-            updateProgressRing();
+            // Update tab title
             updateTabTitle();
         }
 

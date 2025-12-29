@@ -378,35 +378,6 @@
             filter: drop-shadow(0 20px 40px rgba(244, 164, 96, 0.3));
         }
 
-        /* Progress Ring */
-        .progress-ring {
-            position: absolute;
-            top: 47%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 78%;
-            height: 78%;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 50;
-        }
-        .progress-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-        .progress-ring-circle {
-            fill: none;
-            stroke: #27ae60;
-            stroke-width: 6;
-            stroke-linecap: round;
-            transition: stroke-dashoffset 0.3s ease, stroke 0.5s ease;
-        }
-        .progress-ring-bg { fill: none; stroke: rgba(255, 255, 255, 0.08); stroke-width: 6; }
-        .progress-ring.warning .progress-ring-circle { stroke: #f39c12; }
-        .progress-ring.danger .progress-ring-circle { stroke: #e74c3c; }
-        .progress-ring.danger.pulse .progress-ring-circle { animation: pulse-ring 1s ease-in-out infinite; }
-        @keyframes pulse-ring {
-            0%, 100% { opacity: 1; stroke-width: 6; }
-            50% { opacity: 0.6; stroke-width: 10; }
-        }
-
         .stopwatch-image {
             width: 100%;
             height: 100%;
@@ -973,13 +944,6 @@
         <div class="timer-container">
             <div class="stopwatch-container">
                 <img src="stopwatch.png" alt="Egg timer 2025 - free online timer for perfect soft, medium, and hard boiled eggs" class="stopwatch-image">
-                <div class="progress-ring" id="progressRing">
-                    <svg viewBox="0 0 100 100">
-                        <circle class="progress-ring-bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="progress-ring-circle" cx="50" cy="50" r="45"
-                                stroke-dasharray="282.7" stroke-dashoffset="0" id="progressCircle"></circle>
-                    </svg>
-                </div>
                 <div class="minute-hand hand" id="minuteHand"></div>
                 <div class="second-hand hand" id="secondHand"></div>
             </div>
@@ -1194,8 +1158,6 @@
         const resetBtn = document.getElementById('resetBtn');
         const alarmSelect = document.getElementById('alarmSound');
         const testSoundBtn = document.getElementById('testSound');
-        const progressRing = document.getElementById('progressRing');
-        const progressCircle = document.getElementById('progressCircle');
 
         // Load saved sound preference
         const savedSound = localStorage.getItem('alarmSound');
@@ -1270,23 +1232,6 @@
             }
         }
 
-        function updateProgressRing() {
-            const circumference = 282.7; // 2 * PI * 45
-            const progress = totalTime > 0 ? timeLeft / totalTime : 1;
-            const offset = circumference * (1 - progress);
-            progressCircle.style.strokeDashoffset = offset;
-
-            // Update color based on time remaining
-            progressRing.classList.remove('warning', 'danger', 'pulse');
-            if (timeLeft <= 10 && timeLeft > 0) {
-                progressRing.classList.add('danger', 'pulse');
-            } else if (timeLeft <= 30) {
-                progressRing.classList.add('danger');
-            } else if (timeLeft <= 60) {
-                progressRing.classList.add('warning');
-            }
-        }
-
         function saveTimerState() {
             const state = {
                 timeLeft: timeLeft,
@@ -1340,8 +1285,8 @@
             minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
             secondHand.style.transform = `rotate(${secondAngle}deg)`;
 
+            // Update tab title
             updateTabTitle();
-            updateProgressRing();
         }
 
         function startTimer() {
