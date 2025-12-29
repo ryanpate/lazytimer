@@ -182,6 +182,18 @@
     </image:image>
   </url>
 
+  <!-- 45 Minute Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/45-minute-timer</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>45 Minute Timer 2025 - Free Online Countdown Timer</image:title>
+    </image:image>
+  </url>
+
   <!-- Countdown Timer Page -->
   <url>
     <loc>https://lazytimer.com/countdown-timer</loc>
