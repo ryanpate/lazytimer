@@ -1063,12 +1063,205 @@
                 display: none;
             }
         }
+
+        /* Share Button */
+        .share-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0f3460 0%, #e94560 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(15, 52, 96, 0.4);
+        }
+
+        /* Share Modal */
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .share-modal.active {
+            display: flex;
+        }
+
+        .share-modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .share-modal-content h3 {
+            color: #ffffff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .share-modal-content .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.8em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .share-modal-content .close-modal:hover {
+            color: #e94560;
+        }
+
+        .share-url-container {
+            display: flex;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .share-url-container input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1em;
+        }
+
+        .copy-btn {
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #e94560 0%, #c73659 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        }
+
+        .share-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .social-btn.twitter {
+            background: #1DA1F2;
+        }
+
+        .social-btn.twitter:hover {
+            box-shadow: 0 5px 15px rgba(29, 161, 242, 0.4);
+        }
+
+        .social-btn.facebook {
+            background: #4267B2;
+        }
+
+        .social-btn.facebook:hover {
+            box-shadow: 0 5px 15px rgba(66, 103, 178, 0.4);
+        }
+
+        @media (max-width: 480px) {
+            .share-modal-content {
+                padding: 25px 20px;
+            }
+
+            .share-url-container {
+                flex-direction: column;
+            }
+
+            .share-social {
+                flex-direction: column;
+            }
+
+            .social-btn {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- Exit Fullscreen Button (outside container for fullscreen mode) -->
     <button class="exit-fullscreen-btn" id="exitFullscreenBtn">Exit Fullscreen (Esc)</button>
+
+    <!-- Share Modal -->
+    <div class="share-modal" id="shareModal">
+        <div class="share-modal-content">
+            <button class="close-modal" id="closeShareModal">&times;</button>
+            <h3>Share This Timer</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 10px;">Share the current timer with others:</p>
+            <div class="share-url-container">
+                <input type="text" id="shareUrl" readonly>
+                <button class="copy-btn" id="copyShareUrl">Copy</button>
+            </div>
+            <div class="share-social">
+                <button class="social-btn twitter" id="shareTwitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    Twitter
+                </button>
+                <button class="social-btn facebook" id="shareFacebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Facebook
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <!-- Screen Reader Announcements -->
@@ -1153,6 +1346,17 @@
                         <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
                     </svg>
                     Fullscreen Mode
+                </button>
+
+                <button class="share-btn" id="shareBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                    Share Timer
                 </button>
 
                 <div class="controls">
@@ -1526,6 +1730,101 @@
 
         fullscreenBtn.addEventListener('click', toggleFullscreen);
         exitFullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Share functionality
+        const shareBtn = document.getElementById('shareBtn');
+        const shareModal = document.getElementById('shareModal');
+        const closeShareModal = document.getElementById('closeShareModal');
+        const shareUrlInput = document.getElementById('shareUrl');
+        const copyShareUrlBtn = document.getElementById('copyShareUrl');
+        const shareTwitterBtn = document.getElementById('shareTwitter');
+        const shareFacebookBtn = document.getElementById('shareFacebook');
+
+        function formatTimeForShare(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const mins = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            if (hours > 0) {
+                return `${hours}h ${mins}m ${secs}s`;
+            } else if (mins > 0) {
+                return `${mins}m ${secs}s`;
+            } else {
+                return `${secs}s`;
+            }
+        }
+
+        function generateShareUrl() {
+            const baseUrl = window.location.origin + window.location.pathname;
+            return `${baseUrl}?t=${totalTime}`;
+        }
+
+        function openShareModal() {
+            const url = generateShareUrl();
+            shareUrlInput.value = url;
+            shareModal.classList.add('active');
+        }
+
+        function closeShareModalFn() {
+            shareModal.classList.remove('active');
+            copyShareUrlBtn.textContent = 'Copy';
+            copyShareUrlBtn.classList.remove('copied');
+        }
+
+        function copyShareUrl() {
+            shareUrlInput.select();
+            shareUrlInput.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(shareUrlInput.value).then(() => {
+                copyShareUrlBtn.textContent = 'Copied!';
+                copyShareUrlBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyShareUrlBtn.textContent = 'Copy';
+                    copyShareUrlBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                document.execCommand('copy');
+                copyShareUrlBtn.textContent = 'Copied!';
+                copyShareUrlBtn.classList.add('copied');
+            });
+        }
+
+        function shareOnTwitter() {
+            const url = generateShareUrl();
+            const timeText = formatTimeForShare(totalTime);
+            const text = `Check out this ${timeText} timer on LazyTimer!`;
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank', 'width=550,height=420');
+        }
+
+        function shareOnFacebook() {
+            const url = generateShareUrl();
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(facebookUrl, '_blank', 'width=550,height=420');
+        }
+
+        function loadTimerFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const timeParam = urlParams.get('t');
+            if (timeParam) {
+                const seconds = parseInt(timeParam, 10);
+                if (!isNaN(seconds) && seconds > 0 && seconds <= 86400) {
+                    timeLeft = seconds;
+                    totalTime = seconds;
+                    updateDisplay();
+                }
+            }
+        }
+
+        shareBtn.addEventListener('click', openShareModal);
+        closeShareModal.addEventListener('click', closeShareModalFn);
+        shareModal.addEventListener('click', (e) => {
+            if (e.target === shareModal) closeShareModalFn();
+        });
+        copyShareUrlBtn.addEventListener('click', copyShareUrl);
+        shareTwitterBtn.addEventListener('click', shareOnTwitter);
+        shareFacebookBtn.addEventListener('click', shareOnFacebook);
+
+        // Load timer from URL on page load
+        loadTimerFromUrl();
     </script>
 </body>
 

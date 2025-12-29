@@ -1096,6 +1096,196 @@
                 font-size: 1.1em;
             }
         }
+
+        /* Share Timer Styles */
+        .share-btn {
+            padding: 10px 20px;
+            background: rgba(243, 156, 18, 0.2);
+            border: 2px solid rgba(243, 156, 18, 0.4);
+            border-radius: 10px;
+            color: #f39c12;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px auto 0;
+        }
+
+        .share-btn:hover {
+            background: rgba(243, 156, 18, 0.3);
+            border-color: #f39c12;
+            transform: translateY(-2px);
+        }
+
+        .share-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-modal.active {
+            display: flex;
+        }
+
+        .share-modal-content {
+            background: rgba(26, 31, 58, 0.98);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .share-modal-content h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .share-url-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .share-url-input {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(243, 156, 18, 0.1);
+            border: 2px solid rgba(243, 156, 18, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.9em;
+            font-family: 'Courier New', monospace;
+        }
+
+        .share-url-input:focus {
+            outline: none;
+            border-color: #f39c12;
+        }
+
+        .copy-btn {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        }
+
+        .share-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .social-btn.twitter {
+            background: #1da1f2;
+        }
+
+        .social-btn.twitter:hover {
+            box-shadow: 0 5px 15px rgba(29, 161, 242, 0.4);
+        }
+
+        .social-btn.facebook {
+            background: #4267b2;
+        }
+
+        .social-btn.facebook:hover {
+            box-shadow: 0 5px 15px rgba(66, 103, 178, 0.4);
+        }
+
+        .social-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .close-share-modal {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-share-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .share-timer-info {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .share-modal-content {
+                padding: 20px;
+            }
+
+            .share-url-container {
+                flex-direction: column;
+            }
+
+            .share-social {
+                flex-direction: column;
+            }
+
+            .social-btn {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -1235,6 +1425,18 @@
                 </div>
 
                 <button class="fullscreen-btn" id="fullscreenBtn">Enter Fullscreen</button>
+
+                <!-- Share Button -->
+                <button class="share-btn" id="shareBtn" aria-label="Share this timer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="5" r="3"/>
+                        <circle cx="6" cy="12" r="3"/>
+                        <circle cx="18" cy="19" r="3"/>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                    </svg>
+                    Share Timer
+                </button>
             </div>
         </div>
 
@@ -1319,6 +1521,33 @@
         <footer>
             <p>&copy; 2025 LazyTimer.com | <a href="/">All Timers</a> | <a href="/about">About</a> | <a href="/privacy-policy">Privacy</a></p>
         </footer>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="share-modal" id="shareModal">
+        <div class="share-modal-content">
+            <h3>Share This Timer</h3>
+            <p class="share-timer-info" id="shareTimerInfo">Share a 10 minute timer</p>
+            <div class="share-url-container">
+                <input type="text" class="share-url-input" id="shareUrlInput" readonly>
+                <button class="copy-btn" id="copyBtn">Copy</button>
+            </div>
+            <div class="share-social">
+                <button class="social-btn twitter" id="shareTwitter">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    Post on X
+                </button>
+                <button class="social-btn facebook" id="shareFacebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Share
+                </button>
+            </div>
+            <button class="close-share-modal" id="closeShareModal">Close</button>
+        </div>
     </div>
 
     <script>
@@ -1603,6 +1832,126 @@
 
         fullscreenBtn.addEventListener('click', toggleFullscreen);
         exitFullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Share Timer Functionality
+        const shareBtn = document.getElementById('shareBtn');
+        const shareModal = document.getElementById('shareModal');
+        const shareUrlInput = document.getElementById('shareUrlInput');
+        const shareTimerInfo = document.getElementById('shareTimerInfo');
+        const copyBtn = document.getElementById('copyBtn');
+        const closeShareModal = document.getElementById('closeShareModal');
+        const shareTwitter = document.getElementById('shareTwitter');
+        const shareFacebook = document.getElementById('shareFacebook');
+
+        // Format time for display
+        function formatTimeForShare(seconds) {
+            if (seconds >= 3600) {
+                const hours = Math.floor(seconds / 3600);
+                const mins = Math.floor((seconds % 3600) / 60);
+                return mins > 0 ? `${hours} hour ${mins} minute` : `${hours} hour`;
+            } else if (seconds >= 60) {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                return secs > 0 ? `${mins} minute ${secs} second` : `${mins} minute`;
+            } else {
+                return `${seconds} second`;
+            }
+        }
+
+        // Generate shareable URL
+        function generateShareUrl() {
+            const time = totalTime || 0;
+            if (time <= 0) return window.location.origin + window.location.pathname;
+            return `${window.location.origin}${window.location.pathname}?t=${time}`;
+        }
+
+        // Open share modal
+        function openShareModal() {
+            const time = totalTime || 0;
+            const url = generateShareUrl();
+            shareUrlInput.value = url;
+            shareTimerInfo.textContent = time > 0
+                ? `Share a ${formatTimeForShare(time)} cooking timer`
+                : 'Share this cooking timer';
+            shareModal.classList.add('active');
+            copyBtn.textContent = 'Copy';
+            copyBtn.classList.remove('copied');
+        }
+
+        // Close share modal
+        function closeShareModalFn() {
+            shareModal.classList.remove('active');
+        }
+
+        // Copy URL to clipboard
+        async function copyShareUrl() {
+            try {
+                await navigator.clipboard.writeText(shareUrlInput.value);
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                announce('Link copied to clipboard');
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                // Fallback for older browsers
+                shareUrlInput.select();
+                document.execCommand('copy');
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+            }
+        }
+
+        // Share on Twitter/X
+        function shareOnTwitter() {
+            const time = totalTime || 0;
+            const text = `I'm using LazyTimer's Cooking Timer for my ${formatTimeForShare(time)} countdown! Perfect for recipes. Try it free:`;
+            const url = generateShareUrl();
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank', 'width=550,height=420');
+        }
+
+        // Share on Facebook
+        function shareOnFacebook() {
+            const url = generateShareUrl();
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(facebookUrl, '_blank', 'width=550,height=420');
+        }
+
+        // Event listeners for share functionality
+        shareBtn.addEventListener('click', openShareModal);
+        closeShareModal.addEventListener('click', closeShareModalFn);
+        copyBtn.addEventListener('click', copyShareUrl);
+        shareTwitter.addEventListener('click', shareOnTwitter);
+        shareFacebook.addEventListener('click', shareOnFacebook);
+
+        // Close modal when clicking outside
+        shareModal.addEventListener('click', (e) => {
+            if (e.target === shareModal) {
+                closeShareModalFn();
+            }
+        });
+
+        // Parse URL parameters on page load
+        function loadTimerFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const timeParam = urlParams.get('t');
+
+            if (timeParam) {
+                const time = parseInt(timeParam);
+                if (time > 0 && time <= 86400) { // Max 24 hours
+                    timeLeft = time;
+                    totalTime = time;
+                    buttons.forEach(b => b.classList.remove('active'));
+                    updateDisplay();
+                    announce(`Timer set to ${formatTimeForShare(time)} from shared link`);
+                }
+            }
+        }
+
+        // Load timer from URL if present (after other initializations)
+        loadTimerFromUrl();
     </script>
 </body>
 

@@ -1157,6 +1157,176 @@
                 font-size: 1.1em;
             }
         }
+
+        /* Share Button Styles */
+        .share-btn {
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: 600;
+            border: 2px solid rgba(155, 89, 182, 0.5);
+            border-radius: 25px;
+            background: rgba(155, 89, 182, 0.1);
+            color: #9b59b6;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .share-btn:hover {
+            background: rgba(155, 89, 182, 0.3);
+            border-color: #9b59b6;
+            transform: translateY(-2px);
+        }
+
+        /* Share Modal Styles */
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10002;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-modal.active {
+            display: flex;
+        }
+
+        .share-modal-content {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            border: 1px solid rgba(155, 89, 182, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .share-modal-content h3 {
+            color: #9b59b6;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .share-modal-content .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .share-modal-content .close-modal:hover {
+            color: #9b59b6;
+        }
+
+        .share-url-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .share-url-container input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid rgba(155, 89, 182, 0.4);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 0.95em;
+        }
+
+        .copy-btn {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(155, 89, 182, 0.4);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        }
+
+        .share-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .social-btn.twitter {
+            background: #1DA1F2;
+        }
+
+        .social-btn.twitter:hover {
+            box-shadow: 0 5px 20px rgba(29, 161, 242, 0.4);
+        }
+
+        .social-btn.facebook {
+            background: #4267B2;
+        }
+
+        .social-btn.facebook:hover {
+            box-shadow: 0 5px 20px rgba(66, 103, 178, 0.4);
+        }
+
+        @media (max-width: 480px) {
+            .share-modal-content {
+                padding: 25px 20px;
+            }
+
+            .share-url-container {
+                flex-direction: column;
+            }
+
+            .share-social {
+                flex-direction: column;
+            }
+
+            .social-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -1188,6 +1358,22 @@
             <button class="control-btn start-btn" id="fsStartBtn">Start</button>
             <button class="control-btn pause-btn" id="fsPauseBtn">Pause</button>
             <button class="control-btn reset-btn" id="fsResetBtn">Reset</button>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="share-modal" id="shareModal">
+        <div class="share-modal-content">
+            <button class="close-modal" id="closeShareModal">&times;</button>
+            <h3>Share This Timer</h3>
+            <div class="share-url-container">
+                <input type="text" id="shareUrl" readonly>
+                <button class="copy-btn" id="copyUrlBtn">Copy</button>
+            </div>
+            <div class="share-social">
+                <button class="social-btn twitter" id="shareTwitter">Twitter</button>
+                <button class="social-btn facebook" id="shareFacebook">Facebook</button>
+            </div>
         </div>
     </div>
 
@@ -1325,6 +1511,7 @@
                 </div>
 
                 <button class="fullscreen-btn" id="fullscreenBtn">Enter Fullscreen</button>
+                <button class="share-btn" id="shareBtn">Share Timer</button>
             </div>
         </div>
 
@@ -1741,6 +1928,107 @@
         fsStartBtn.addEventListener('click', startTimer);
         fsPauseBtn.addEventListener('click', pauseTimer);
         fsResetBtn.addEventListener('click', resetTimer);
+
+        // Share functionality
+        const shareBtn = document.getElementById('shareBtn');
+        const shareModal = document.getElementById('shareModal');
+        const closeShareModal = document.getElementById('closeShareModal');
+        const shareUrlInput = document.getElementById('shareUrl');
+        const copyUrlBtn = document.getElementById('copyUrlBtn');
+        const shareTwitterBtn = document.getElementById('shareTwitter');
+        const shareFacebookBtn = document.getElementById('shareFacebook');
+
+        function formatTimeForShare(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            if (secs === 0) {
+                return mins + ' minute' + (mins !== 1 ? 's' : '');
+            }
+            return mins + ':' + String(secs).padStart(2, '0');
+        }
+
+        function generateShareUrl() {
+            const baseUrl = window.location.origin + window.location.pathname;
+            return baseUrl + '?t=' + totalTime;
+        }
+
+        function openShareModal() {
+            const url = generateShareUrl();
+            shareUrlInput.value = url;
+            shareModal.classList.add('active');
+        }
+
+        function closeShareModalFn() {
+            shareModal.classList.remove('active');
+            copyUrlBtn.textContent = 'Copy';
+            copyUrlBtn.classList.remove('copied');
+        }
+
+        function copyShareUrl() {
+            shareUrlInput.select();
+            shareUrlInput.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(shareUrlInput.value).then(() => {
+                copyUrlBtn.textContent = 'Copied!';
+                copyUrlBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyUrlBtn.textContent = 'Copy';
+                    copyUrlBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                document.execCommand('copy');
+                copyUrlBtn.textContent = 'Copied!';
+                copyUrlBtn.classList.add('copied');
+            });
+        }
+
+        function shareOnTwitter() {
+            const url = generateShareUrl();
+            const timeText = formatTimeForShare(totalTime);
+            const text = 'Meditate with me! ' + timeText + ' meditation timer';
+            const twitterUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text);
+            window.open(twitterUrl, '_blank', 'width=550,height=420');
+        }
+
+        function shareOnFacebook() {
+            const url = generateShareUrl();
+            const facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+            window.open(facebookUrl, '_blank', 'width=550,height=420');
+        }
+
+        function loadTimerFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const timeParam = urlParams.get('t');
+            if (timeParam) {
+                const seconds = parseInt(timeParam, 10);
+                if (!isNaN(seconds) && seconds > 0 && seconds <= 86400) {
+                    timeLeft = seconds;
+                    totalTime = seconds;
+                    buttons.forEach(b => b.classList.remove('active'));
+                    buttons.forEach(b => {
+                        if (parseInt(b.getAttribute('data-time')) === seconds) {
+                            b.classList.add('active');
+                        }
+                    });
+                    updateDisplay();
+                }
+            }
+        }
+
+        shareBtn.addEventListener('click', openShareModal);
+        closeShareModal.addEventListener('click', closeShareModalFn);
+        copyUrlBtn.addEventListener('click', copyShareUrl);
+        shareTwitterBtn.addEventListener('click', shareOnTwitter);
+        shareFacebookBtn.addEventListener('click', shareOnFacebook);
+
+        // Close modal when clicking outside
+        shareModal.addEventListener('click', function(e) {
+            if (e.target === shareModal) {
+                closeShareModalFn();
+            }
+        });
+
+        // Load timer from URL on page load
+        loadTimerFromUrl();
     </script>
 </body>
 

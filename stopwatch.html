@@ -986,6 +986,7 @@
         body.fullscreen-mode .related-timers,
         body.fullscreen-mode footer,
         body.fullscreen-mode .fullscreen-btn,
+        body.fullscreen-mode .share-btn,
         body.fullscreen-mode .lap-times,
         body.fullscreen-mode .keyboard-hints {
             display: none !important;
@@ -1113,6 +1114,207 @@
                 display: none;
             }
         }
+
+        /* Share Button */
+        .share-btn {
+            padding: 10px 20px;
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid rgba(231, 76, 60, 0.4);
+            border-radius: 10px;
+            color: #e74c3c;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 15px auto 0;
+        }
+
+        .share-btn:hover {
+            background: rgba(231, 76, 60, 0.3);
+            border-color: #e74c3c;
+            transform: translateY(-2px);
+        }
+
+        .share-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Share Modal */
+        .share-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .share-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .share-modal-content {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .share-modal-content h3 {
+            color: #ffffff;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .share-timer-info {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .share-url-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .share-url-input {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 0.95em;
+            outline: none;
+        }
+
+        .share-url-input:focus {
+            border-color: #e74c3c;
+        }
+
+        .copy-btn {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 80px;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+        }
+
+        .share-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .social-btn.twitter {
+            background: #000000;
+        }
+
+        .social-btn.twitter:hover {
+            background: #333333;
+            transform: translateY(-2px);
+        }
+
+        .social-btn.facebook {
+            background: #1877f2;
+        }
+
+        .social-btn.facebook:hover {
+            background: #166fe5;
+            transform: translateY(-2px);
+        }
+
+        .close-share-modal {
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-share-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .share-modal-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .share-url-container {
+                flex-direction: column;
+            }
+
+            .copy-btn {
+                width: 100%;
+            }
+
+            .share-social {
+                flex-direction: column;
+            }
+
+            .social-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -1204,6 +1406,14 @@
 
                 <button class="fullscreen-btn" id="fullscreenBtn">Fullscreen Mode</button>
 
+                <button class="share-btn" id="shareBtn" aria-label="Share this stopwatch">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                    </svg>
+                    Share Stopwatch
+                </button>
+
                 <div class="keyboard-hints">
                     <span class="keyboard-hint"><kbd>Space</kbd> Start/Stop</span>
                     <span class="keyboard-hint"><kbd>R</kbd> Reset</span>
@@ -1219,6 +1429,29 @@
                     </div>
                     <div class="no-laps" id="noLaps">No laps recorded yet. Click "Lap" while running to record a lap time.</div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Share Modal -->
+        <div class="share-modal" id="shareModal">
+            <div class="share-modal-content">
+                <h3>Share This Stopwatch</h3>
+                <p class="share-timer-info" id="shareTimerInfo">Share this free online stopwatch with others</p>
+                <div class="share-url-container">
+                    <input type="text" class="share-url-input" id="shareUrlInput" readonly>
+                    <button class="copy-btn" id="copyBtn">Copy</button>
+                </div>
+                <div class="share-social">
+                    <button class="social-btn twitter" id="shareTwitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        Post on X
+                    </button>
+                    <button class="social-btn facebook" id="shareFacebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Share
+                    </button>
+                </div>
+                <button class="close-share-modal" id="closeShareModal">Close</button>
             </div>
         </div>
 
@@ -1568,6 +1801,133 @@
 
         fullscreenBtn.addEventListener('click', toggleFullscreen);
         exitFullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Share Functionality
+        const shareBtn = document.getElementById('shareBtn');
+        const shareModal = document.getElementById('shareModal');
+        const shareUrlInput = document.getElementById('shareUrlInput');
+        const shareTimerInfo = document.getElementById('shareTimerInfo');
+        const copyBtn = document.getElementById('copyBtn');
+        const closeShareModal = document.getElementById('closeShareModal');
+        const shareTwitter = document.getElementById('shareTwitter');
+        const shareFacebook = document.getElementById('shareFacebook');
+
+        function formatTimeForShare(ms) {
+            const time = formatTime(ms);
+            if (time.hours > 0) {
+                if (time.minutes > 0) {
+                    return `${time.hours} hour${time.hours > 1 ? 's' : ''} ${time.minutes} minute${time.minutes > 1 ? 's' : ''}`;
+                }
+                return `${time.hours} hour${time.hours > 1 ? 's' : ''}`;
+            } else if (time.minutes > 0) {
+                if (time.seconds > 0) {
+                    return `${time.minutes} minute${time.minutes > 1 ? 's' : ''} ${time.seconds} second${time.seconds > 1 ? 's' : ''}`;
+                }
+                return `${time.minutes} minute${time.minutes > 1 ? 's' : ''}`;
+            } else {
+                return `${time.seconds}.${String(time.centiseconds).padStart(2, '0')} seconds`;
+            }
+        }
+
+        function generateShareUrl() {
+            const baseUrl = window.location.origin + window.location.pathname;
+            // Stopwatch shares the page link; optionally include elapsed time
+            if (elapsedTime > 0) {
+                return `${baseUrl}?elapsed=${elapsedTime}`;
+            }
+            return baseUrl;
+        }
+
+        function openShareModal() {
+            const url = generateShareUrl();
+            shareUrlInput.value = url;
+            if (elapsedTime > 0) {
+                const timeDisplay = formatTimeForShare(elapsedTime);
+                shareTimerInfo.textContent = `Share this stopwatch (elapsed: ${timeDisplay})`;
+            } else {
+                shareTimerInfo.textContent = 'Share this free online stopwatch with others';
+            }
+            shareModal.classList.add('active');
+            copyBtn.textContent = 'Copy';
+            copyBtn.classList.remove('copied');
+        }
+
+        function closeShareModalFn() {
+            shareModal.classList.remove('active');
+        }
+
+        function copyShareUrl() {
+            shareUrlInput.select();
+            shareUrlInput.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(shareUrlInput.value).then(() => {
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                // Fallback for older browsers
+                document.execCommand('copy');
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+            });
+        }
+
+        function shareOnTwitter() {
+            const url = generateShareUrl();
+            let text;
+            if (elapsedTime > 0) {
+                const timeDisplay = formatTimeForShare(elapsedTime);
+                text = `I timed ${timeDisplay} with this free online stopwatch! Check it out:`;
+            } else {
+                text = `Check out this free online stopwatch with lap times and millisecond precision!`;
+            }
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank', 'width=550,height=420');
+        }
+
+        function shareOnFacebook() {
+            const url = generateShareUrl();
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(facebookUrl, '_blank', 'width=550,height=420');
+        }
+
+        function loadTimerFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const elapsedParam = urlParams.get('elapsed');
+            if (elapsedParam) {
+                const ms = parseInt(elapsedParam);
+                if (!isNaN(ms) && ms > 0) {
+                    elapsedTime = ms;
+                    updateDisplay();
+                }
+            }
+        }
+
+        // Share button event listeners
+        shareBtn.addEventListener('click', openShareModal);
+        closeShareModal.addEventListener('click', closeShareModalFn);
+        copyBtn.addEventListener('click', copyShareUrl);
+        shareTwitter.addEventListener('click', shareOnTwitter);
+        shareFacebook.addEventListener('click', shareOnFacebook);
+
+        // Close modal when clicking outside
+        shareModal.addEventListener('click', function(e) {
+            if (e.target === shareModal) {
+                closeShareModalFn();
+            }
+        });
+
+        // Close modal with Escape key (add to existing keydown handler)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && shareModal.classList.contains('active')) {
+                closeShareModalFn();
+            }
+        });
+
+        // Load timer from URL on page load
+        loadTimerFromUrl();
     </script>
 </body>
 
