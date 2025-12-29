@@ -146,6 +146,30 @@
     </image:image>
   </url>
 
+  <!-- 20 Minute Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/20-minute-timer</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>20 Minute Timer 2025 - Free Online Countdown Timer</image:title>
+    </image:image>
+  </url>
+
+  <!-- 25 Minute Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/25-minute-timer</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>25 Minute Timer 2025 - Free Pomodoro Countdown Timer</image:title>
+    </image:image>
+  </url>
+
   <!-- 30 Minute Timer Page -->
   <url>
     <loc>https://lazytimer.com/30-minute-timer</loc>
