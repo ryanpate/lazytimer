@@ -316,6 +316,49 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .theme-toggle svg {
+            width: 22px;
+            height: 22px;
+            fill: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover svg {
+            transform: rotate(15deg);
+        }
+
+        .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        .theme-toggle .moon-icon {
+            display: block;
+        }
+
         .nav-overlay {
             display: none;
             position: fixed;
@@ -1997,6 +2040,269 @@
                 justify-content: center;
             }
         }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background: #f5f7fa;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 50%, #f0f2f5 100%);
+            color: #2d3748;
+        }
+
+        body.light-mode header {
+            color: #2d3748;
+        }
+
+        body.light-mode header h1 {
+            color: #1a202c;
+        }
+
+        body.light-mode header p {
+            opacity: 0.8;
+        }
+
+        body.light-mode nav a {
+            color: rgba(45, 55, 72, 0.7);
+        }
+
+        body.light-mode nav a:hover {
+            color: #1a202c;
+            background: rgba(102, 126, 234, 0.15);
+        }
+
+        body.light-mode nav a.active {
+            color: #667eea;
+        }
+
+        body.light-mode .nav-toggle span {
+            background: #2d3748;
+        }
+
+        body.light-mode .theme-toggle {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        body.light-mode .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.25);
+        }
+
+        body.light-mode .theme-toggle svg {
+            fill: #2d3748;
+        }
+
+        body.light-mode .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        body.light-mode .theme-toggle .moon-icon {
+            display: none;
+        }
+
+        body.light-mode .timer-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .controls-panel {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .timer-select,
+        body.light-mode .time-input {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #2d3748;
+        }
+
+        body.light-mode .timer-select:focus,
+        body.light-mode .time-input:focus {
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        body.light-mode .control-btn {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #2d3748;
+        }
+
+        body.light-mode .control-btn:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.25);
+        }
+
+        body.light-mode .control-btn.start {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            border-color: transparent;
+            color: white;
+        }
+
+        body.light-mode .control-btn.start:hover {
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+        }
+
+        body.light-mode .quick-btn {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: rgba(102, 126, 234, 0.3);
+            color: #667eea;
+        }
+
+        body.light-mode .quick-btn:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        body.light-mode .flip-card-inner {
+            background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+            color: #1a202c;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .colon {
+            color: #4a5568;
+        }
+
+        body.light-mode .keyboard-hints {
+            color: rgba(45, 55, 72, 0.6);
+        }
+
+        body.light-mode .keyboard-hints kbd {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #4a5568;
+        }
+
+        body.light-mode .sound-selector label {
+            color: rgba(45, 55, 72, 0.8);
+        }
+
+        body.light-mode .sound-selector select {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #2d3748;
+        }
+
+        body.light-mode .test-sound-btn,
+        body.light-mode .fullscreen-btn {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #4a5568;
+        }
+
+        body.light-mode .test-sound-btn:hover,
+        body.light-mode .fullscreen-btn:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.25);
+            color: #2d3748;
+        }
+
+        body.light-mode .share-btn {
+            background: rgba(29, 161, 242, 0.1);
+            border-color: rgba(29, 161, 242, 0.3);
+        }
+
+        body.light-mode .share-btn:hover {
+            background: rgba(29, 161, 242, 0.2);
+        }
+
+        body.light-mode .seo-content {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .seo-content h2,
+        body.light-mode .seo-content h3 {
+            color: #1a202c;
+        }
+
+        body.light-mode .seo-content p,
+        body.light-mode .seo-content li {
+            color: #4a5568;
+        }
+
+        body.light-mode footer {
+            color: rgba(45, 55, 72, 0.7);
+        }
+
+        body.light-mode footer a {
+            color: #667eea;
+        }
+
+        /* Light mode mobile nav */
+        @media (max-width: 768px) {
+            body.light-mode nav {
+                background: linear-gradient(180deg, #f5f7fa 0%, #e4e8ed 100%);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+            }
+
+            body.light-mode nav a:hover,
+            body.light-mode nav a.active {
+                background: rgba(102, 126, 234, 0.15);
+            }
+
+            body.light-mode .nav-overlay {
+                background: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        /* Light mode fullscreen */
+        body.light-mode.fullscreen-mode {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+
+        body.light-mode .exit-fullscreen-btn {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+            color: #2d3748;
+        }
+
+        body.light-mode .exit-fullscreen-btn:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Light mode share modal */
+        body.light-mode .share-modal {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        body.light-mode .share-modal-content {
+            background: #fff;
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        body.light-mode .share-modal-content h3 {
+            color: #1a202c;
+        }
+
+        body.light-mode .share-timer-info {
+            color: #4a5568;
+        }
+
+        body.light-mode .share-url-input {
+            background: #f7fafc;
+            border-color: #e2e8f0;
+            color: #2d3748;
+        }
+
+        body.light-mode .copy-url-btn {
+            background: #667eea;
+            color: white;
+        }
+
+        body.light-mode .close-share-modal {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #4a5568;
+        }
+
+        body.light-mode .close-share-modal:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: #2d3748;
+        }
     </style>
 </head>
 
@@ -2014,6 +2320,24 @@
         <div id="srAnnouncements" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
 
         <header>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                <!-- Moon icon (shown in dark mode - click to switch to light) -->
+                <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <!-- Sun icon (shown in light mode - click to switch to dark) -->
+                <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
             <h1>
                 <div class="logo-icon" role="img" aria-label="LazyTimer logo"></div>
                 Free Online Timer
@@ -3008,6 +3332,57 @@
 
         // Load timer from URL if present (after other initializations)
         loadTimerFromUrl();
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+        // Initialize theme based on localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('lazyTimerTheme');
+            if (savedTheme) {
+                if (savedTheme === 'light') {
+                    document.body.classList.add('light-mode');
+                    if (themeColorMeta) themeColorMeta.setAttribute('content', '#f5f7fa');
+                }
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.body.classList.add('light-mode');
+                if (themeColorMeta) themeColorMeta.setAttribute('content', '#f5f7fa');
+            }
+        }
+
+        // Toggle theme on button click
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('lazyTimerTheme', isLight ? 'light' : 'dark');
+            if (themeColorMeta) {
+                themeColorMeta.setAttribute('content', isLight ? '#f5f7fa' : '#667eea');
+            }
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+
+        // Listen for system theme changes
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+                // Only auto-switch if user hasn't set a preference
+                if (!localStorage.getItem('lazyTimerTheme')) {
+                    if (e.matches) {
+                        document.body.classList.add('light-mode');
+                        if (themeColorMeta) themeColorMeta.setAttribute('content', '#f5f7fa');
+                    } else {
+                        document.body.classList.remove('light-mode');
+                        if (themeColorMeta) themeColorMeta.setAttribute('content', '#667eea');
+                    }
+                }
+            });
+        }
+
+        // Initialize theme on page load
+        initTheme();
 
         // Register Service Worker for PWA
         if ('serviceWorker' in navigator) {

@@ -329,6 +329,41 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .theme-toggle svg {
+            width: 22px;
+            height: 22px;
+            fill: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover svg { transform: rotate(15deg); }
+        .theme-toggle .sun-icon { display: none; }
+        .theme-toggle .moon-icon { display: block; }
+
         .nav-overlay {
             display: none;
             position: fixed;
@@ -1229,6 +1264,199 @@
                 padding: 30px 20px;
             }
         }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background: #f5f5f5;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #e8e8e8 100%);
+            color: #333;
+        }
+
+        body.light-mode .theme-toggle {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        body.light-mode .theme-toggle svg {
+            fill: #333;
+        }
+
+        body.light-mode .theme-toggle .sun-icon { display: block; }
+        body.light-mode .theme-toggle .moon-icon { display: none; }
+
+        body.light-mode header h1 {
+            color: #333;
+        }
+
+        body.light-mode header p {
+            color: #666;
+        }
+
+        body.light-mode nav a {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        body.light-mode nav a:hover {
+            color: #333;
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        body.light-mode nav a.active {
+            color: #e74c3c;
+        }
+
+        body.light-mode .nav-toggle span {
+            background: #333;
+        }
+
+        body.light-mode nav {
+            background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+        }
+
+        body.light-mode .timer-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        body.light-mode .workout-presets {
+            background: rgba(231, 76, 60, 0.05);
+            border-color: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .preset-btn {
+            background: rgba(231, 76, 60, 0.1);
+            border-color: rgba(231, 76, 60, 0.3);
+            color: #333;
+        }
+
+        body.light-mode .preset-btn:hover {
+            background: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .preset-btn.active {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+
+        body.light-mode .colon {
+            color: #333;
+        }
+
+        body.light-mode .quick-btn {
+            background: rgba(231, 76, 60, 0.05);
+            border-color: rgba(231, 76, 60, 0.3);
+            color: #c0392b;
+        }
+
+        body.light-mode .quick-btn:hover {
+            background: rgba(231, 76, 60, 0.15);
+        }
+
+        body.light-mode .keyboard-hints .kbd-hint {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode .keyboard-hints .kbd {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.1);
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        body.light-mode .sound-selector {
+            background: rgba(231, 76, 60, 0.05);
+            border-color: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .sound-selector select {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(231, 76, 60, 0.3);
+            color: #333;
+        }
+
+        body.light-mode .sound-selector select option {
+            background: #fff;
+            color: #333;
+        }
+
+        body.light-mode .fullscreen-btn,
+        body.light-mode .share-btn {
+            background: rgba(231, 76, 60, 0.05);
+        }
+
+        body.light-mode .seo-content,
+        body.light-mode .faq-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .seo-content h2,
+        body.light-mode .faq-section h2 {
+            color: #333;
+        }
+
+        body.light-mode .seo-content p,
+        body.light-mode .seo-content li,
+        body.light-mode .faq-answer {
+            color: #555;
+        }
+
+        body.light-mode .faq-item {
+            border-bottom-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .related-timers {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .related-timers h3 {
+            color: #333;
+        }
+
+        body.light-mode .related-timers a {
+            border-color: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .related-timers a:hover {
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        body.light-mode footer {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode footer a {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode .share-modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            border-color: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .share-modal-content p {
+            color: #666;
+        }
+
+        body.light-mode .share-url-container input {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(231, 76, 60, 0.2);
+            color: #333;
+        }
+
+        body.light-mode .exit-fullscreen-btn {
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        body.light-mode.fullscreen-mode {
+            background: #f5f5f5;
+        }
     </style>
 </head>
 
@@ -1273,6 +1501,24 @@
         <div id="srAnnouncements" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
 
         <header>
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+
             <h1>
                 <div class="logo-icon"></div>
                 Workout Timer
@@ -1906,6 +2152,47 @@
 
         // Load timer from URL on page load
         loadTimerFromUrl();
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+
+        function setTheme(isDark) {
+            if (isDark) {
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme preference or respect system preference
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme === 'dark');
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                setTheme(false);
+            }
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', function() {
+            const isDark = document.body.classList.contains('light-mode');
+            setTheme(isDark);
+        });
+
+        // Listen for system theme changes
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('theme')) {
+                    setTheme(!e.matches);
+                }
+            });
+        }
+
+        // Load theme on page load
+        loadTheme();
 
         // Register Service Worker for PWA
         if ('serviceWorker' in navigator) {

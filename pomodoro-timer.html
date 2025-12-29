@@ -328,6 +328,49 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .theme-toggle svg {
+            width: 22px;
+            height: 22px;
+            fill: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover svg {
+            transform: rotate(15deg);
+        }
+
+        .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        .theme-toggle .moon-icon {
+            display: block;
+        }
+
         .nav-overlay {
             display: none;
             position: fixed;
@@ -1546,6 +1589,251 @@
                 justify-content: center;
             }
         }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background: #f5f7fa;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 50%, #f0f2f5 100%);
+            color: #2d3748;
+        }
+
+        body.light-mode .theme-toggle {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        body.light-mode .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.25);
+        }
+
+        body.light-mode .theme-toggle svg {
+            fill: #2d3748;
+        }
+
+        body.light-mode .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        body.light-mode .theme-toggle .moon-icon {
+            display: none;
+        }
+
+        body.light-mode header h1 {
+            color: #1a202c;
+        }
+
+        body.light-mode header p {
+            color: #4a5568;
+            opacity: 1;
+        }
+
+        body.light-mode nav a {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        body.light-mode nav a:hover {
+            color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        body.light-mode nav a.active {
+            color: #e74c3c;
+        }
+
+        body.light-mode .timer-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        body.light-mode .pomodoro-presets {
+            background: rgba(231, 76, 60, 0.05);
+            border-color: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .preset-btn {
+            background: rgba(231, 76, 60, 0.1);
+            border-color: rgba(231, 76, 60, 0.3);
+            color: #2d3748;
+        }
+
+        body.light-mode .preset-btn:hover {
+            background: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .preset-btn.active {
+            color: white;
+        }
+
+        body.light-mode .session-label {
+            color: #c0392b;
+        }
+
+        body.light-mode .flip-card-inner {
+            color: #1a1a1a;
+        }
+
+        body.light-mode .colon {
+            color: #2d3748;
+            text-shadow: none;
+        }
+
+        body.light-mode .quick-btn {
+            background: rgba(231, 76, 60, 0.08);
+            border-color: rgba(231, 76, 60, 0.4);
+            color: #c0392b;
+        }
+
+        body.light-mode .quick-btn:hover {
+            background: rgba(231, 76, 60, 0.15);
+        }
+
+        body.light-mode .kbd-hint {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode .kbd {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        body.light-mode .sound-selector {
+            background: rgba(231, 76, 60, 0.05);
+            border-color: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .sound-selector label {
+            color: #4a5568;
+        }
+
+        body.light-mode .sound-selector select {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(231, 76, 60, 0.3);
+            color: #2d3748;
+        }
+
+        body.light-mode .sound-selector select option {
+            background: #ffffff;
+            color: #2d3748;
+        }
+
+        body.light-mode .fullscreen-btn,
+        body.light-mode .share-btn {
+            background: rgba(231, 76, 60, 0.08);
+            border-color: rgba(231, 76, 60, 0.4);
+            color: #c0392b;
+        }
+
+        body.light-mode .fullscreen-btn:hover,
+        body.light-mode .share-btn:hover {
+            background: rgba(231, 76, 60, 0.15);
+        }
+
+        body.light-mode .seo-content,
+        body.light-mode .faq-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .seo-content h2,
+        body.light-mode .seo-content h3 {
+            color: #1a202c;
+        }
+
+        body.light-mode .seo-content p,
+        body.light-mode .seo-content li {
+            color: #4a5568;
+        }
+
+        body.light-mode .faq-section h2 {
+            color: #1a202c !important;
+        }
+
+        body.light-mode .faq-item {
+            border-bottom-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .faq-question {
+            color: #c0392b;
+        }
+
+        body.light-mode .faq-answer {
+            color: #4a5568;
+        }
+
+        body.light-mode footer {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode footer a {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode footer a:hover {
+            color: rgba(0, 0, 0, 0.8) !important;
+        }
+
+        body.light-mode .share-modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+            border-color: rgba(231, 76, 60, 0.2);
+        }
+
+        body.light-mode .share-modal-content h3 {
+            color: #1a202c;
+        }
+
+        body.light-mode .share-timer-info {
+            color: #4a5568;
+        }
+
+        body.light-mode .share-url-input {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(231, 76, 60, 0.2);
+            color: #2d3748;
+        }
+
+        body.light-mode .close-share-modal {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.15);
+            color: #4a5568;
+        }
+
+        body.light-mode .close-share-modal:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: #2d3748;
+        }
+
+        /* Light Mode Mobile Nav */
+        @media (max-width: 768px) {
+            body.light-mode nav {
+                background: linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+            }
+
+            body.light-mode nav a:hover,
+            body.light-mode nav a.active {
+                background: rgba(231, 76, 60, 0.1);
+            }
+
+            body.light-mode .nav-toggle span {
+                background: #2d3748;
+            }
+        }
+
+        /* Light Mode Fullscreen */
+        body.light-mode.fullscreen-mode {
+            background: #f5f7fa;
+        }
+
+        body.light-mode.fullscreen-mode .exit-fullscreen-btn {
+            background: rgba(231, 76, 60, 0.9);
+        }
+
+        body.light-mode.fullscreen-mode .exit-fullscreen-btn:hover {
+            background: rgba(231, 76, 60, 1);
+        }
     </style>
 </head>
 
@@ -1563,6 +1851,22 @@
         <div id="srAnnouncements" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
 
         <header>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
             <h1>
                 <div class="logo-icon" role="img" aria-label="Pomodoro Timer"></div>
                 Pomodoro Timer
@@ -2283,6 +2587,52 @@
 
         // Load timer from URL on page load
         loadTimerFromUrl();
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('lazyTimerTheme');
+            if (savedTheme) {
+                if (savedTheme === 'light') {
+                    document.body.classList.add('light-mode');
+                    if (themeColorMeta) themeColorMeta.setAttribute('content', '#f5f7fa');
+                }
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.body.classList.add('light-mode');
+                if (themeColorMeta) themeColorMeta.setAttribute('content', '#f5f7fa');
+            }
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('lazyTimerTheme', isLight ? 'light' : 'dark');
+            if (themeColorMeta) {
+                themeColorMeta.setAttribute('content', isLight ? '#f5f7fa' : '#667eea');
+            }
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+                if (!localStorage.getItem('lazyTimerTheme')) {
+                    if (e.matches) {
+                        document.body.classList.add('light-mode');
+                        if (themeColorMeta) themeColorMeta.setAttribute('content', '#f5f7fa');
+                    } else {
+                        document.body.classList.remove('light-mode');
+                        if (themeColorMeta) themeColorMeta.setAttribute('content', '#667eea');
+                    }
+                }
+            });
+        }
+
+        initTheme();
 
         // Register Service Worker for PWA
         if ('serviceWorker' in navigator) {

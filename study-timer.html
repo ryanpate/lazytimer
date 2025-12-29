@@ -329,6 +329,41 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .theme-toggle svg {
+            width: 22px;
+            height: 22px;
+            fill: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover svg { transform: rotate(15deg); }
+        .theme-toggle .sun-icon { display: none; }
+        .theme-toggle .moon-icon { display: block; }
+
         .nav-overlay {
             display: none;
             position: fixed;
@@ -1192,6 +1227,226 @@
                 font-size: 1em;
             }
         }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background: #f5f7fa;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 50%, #dde1e6 100%);
+            color: #333;
+        }
+
+        body.light-mode .theme-toggle {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        body.light-mode .theme-toggle svg {
+            fill: #333;
+        }
+
+        body.light-mode .theme-toggle .sun-icon { display: block; }
+        body.light-mode .theme-toggle .moon-icon { display: none; }
+
+        body.light-mode header h1 {
+            color: #1a1a2e;
+        }
+
+        body.light-mode header p {
+            color: #555;
+        }
+
+        body.light-mode nav a {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        body.light-mode nav a:hover {
+            color: #2980b9;
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        body.light-mode nav a.active {
+            color: #2980b9;
+        }
+
+        body.light-mode .nav-toggle span {
+            background: #333;
+        }
+
+        body.light-mode nav {
+            background: linear-gradient(180deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+
+        body.light-mode .timer-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .study-presets {
+            background: rgba(52, 152, 219, 0.05);
+            border-color: rgba(52, 152, 219, 0.2);
+        }
+
+        body.light-mode .study-presets h3 {
+            color: #2980b9;
+        }
+
+        body.light-mode .preset-btn {
+            background: rgba(52, 152, 219, 0.1);
+            border-color: rgba(52, 152, 219, 0.3);
+            color: #333;
+        }
+
+        body.light-mode .preset-btn:hover {
+            background: rgba(52, 152, 219, 0.2);
+        }
+
+        body.light-mode .preset-btn.active {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+        }
+
+        body.light-mode .colon {
+            color: #333;
+        }
+
+        body.light-mode .quick-btn {
+            border-color: rgba(52, 152, 219, 0.4);
+            background: rgba(52, 152, 219, 0.05);
+            color: #2980b9;
+        }
+
+        body.light-mode .quick-btn:hover {
+            background: rgba(52, 152, 219, 0.15);
+        }
+
+        body.light-mode .kbd-hint {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode .kbd {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.1);
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        body.light-mode .sound-selector {
+            background: rgba(52, 152, 219, 0.05);
+            border-color: rgba(52, 152, 219, 0.2);
+        }
+
+        body.light-mode .sound-selector select {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(52, 152, 219, 0.3);
+            color: #333;
+        }
+
+        body.light-mode .sound-selector select option {
+            background: #fff;
+            color: #333;
+        }
+
+        body.light-mode .test-sound-btn,
+        body.light-mode .stop-sound-btn {
+            background: rgba(52, 152, 219, 0.1);
+            border-color: rgba(52, 152, 219, 0.3);
+            color: #2980b9;
+        }
+
+        body.light-mode .test-sound-btn:hover,
+        body.light-mode .stop-sound-btn:hover {
+            background: rgba(52, 152, 219, 0.2);
+        }
+
+        body.light-mode .seo-content,
+        body.light-mode .faq-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .seo-content h2,
+        body.light-mode .faq-section h2 {
+            color: #1a1a2e;
+        }
+
+        body.light-mode .seo-content h3,
+        body.light-mode .faq-question {
+            color: #2980b9;
+        }
+
+        body.light-mode .seo-content p,
+        body.light-mode .seo-content li,
+        body.light-mode .faq-answer {
+            color: #444;
+        }
+
+        body.light-mode .faq-item {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .related-timers {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .related-timers h3 {
+            color: #1a1a2e;
+        }
+
+        body.light-mode .related-timers a {
+            color: #2980b9;
+            border-color: rgba(52, 152, 219, 0.2);
+        }
+
+        body.light-mode .related-timers a:hover {
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        body.light-mode footer {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode footer a {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode .share-modal-content {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            border-color: rgba(52, 152, 219, 0.2);
+        }
+
+        body.light-mode .share-modal-content h3 {
+            color: #2980b9;
+        }
+
+        body.light-mode .share-url-container input {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(52, 152, 219, 0.3);
+            color: #333;
+        }
+
+        body.light-mode .close-modal-btn {
+            background: rgba(52, 152, 219, 0.1);
+            border-color: rgba(52, 152, 219, 0.3);
+            color: #333;
+        }
+
+        body.light-mode .close-modal-btn:hover {
+            background: rgba(52, 152, 219, 0.2);
+        }
+
+        body.light-mode .exit-fullscreen-btn {
+            background: rgba(52, 152, 219, 0.9);
+        }
+
+        body.light-mode.fullscreen-mode {
+            background: #f5f7fa;
+        }
     </style>
 </head>
 
@@ -1202,6 +1457,22 @@
         <div id="srAnnouncements" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
 
         <header>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                <svg class="moon-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <svg class="sun-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
             <h1>
                 <div class="logo-icon"></div>
                 Study Timer
@@ -1831,6 +2102,39 @@
 
         // Load timer from URL on page load
         loadTimerFromUrl();
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+
+        function setTheme(theme) {
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme preference or check system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            setTheme('light');
+        }
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'light' : 'dark');
+            }
+        });
+
+        themeToggle.addEventListener('click', () => {
+            const isLight = document.body.classList.contains('light-mode');
+            setTheme(isLight ? 'dark' : 'light');
+        });
 
         // Register Service Worker for PWA
         if ('serviceWorker' in navigator) {
