@@ -33,6 +33,7 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 ├── stopwatch.html          # Stopwatch/lap timer
 ├── sleep-timer.html        # Sleep/nap timer (purple theme)
 ├── egg-timer.html          # Egg cooking timer (orange theme)
+├── breathing-timer.html    # Breathing exercise timer (teal theme) - 4-7-8, Box Breathing
 ├── about.html              # About page
 ├── how-to-use.html         # Usage instructions
 ├── privacy-policy.html     # Privacy policy
@@ -172,7 +173,7 @@ Since this is a static site with no build process:
 
 - **Audio alerts**: `playAlarm()` function with selectable alarm sounds (all pages)
 - **Sound preference**: Saved to localStorage, persists across sessions
-- **15 Landing pages**: Homepage, Pomodoro, Cooking, Meditation, Workout, Study, 5-min, 10-min, 15-min, 30-min, 1-hour, Countdown, Stopwatch, Sleep, Egg Timer
+- **16 Landing pages**: Homepage, Pomodoro, Cooking, Meditation, Workout, Study, 5-min, 10-min, 15-min, 30-min, 1-hour, Countdown, Stopwatch, Sleep, Egg Timer, Breathing Timer
 - **Analog + Digital display**: Stopwatch with rotating hands + flip-clock digits
 - **50+ presets**: Organized by category (cooking, work, fitness, etc.)
 - **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
@@ -261,8 +262,9 @@ The path to meaningful AdSense revenue requires: **More traffic → More pagevie
 | `stopwatch.html` | "online stopwatch", "lap timer" | 28K/mo | ✅ Live |
 | `sleep-timer.html` | "sleep timer", "nap timer", "power nap timer" | 12K/mo | ✅ Live |
 | `egg-timer.html` | "egg timer", "3 minute timer", "boiled egg timer" | 9K/mo | ✅ Live |
+| `breathing-timer.html` | "breathing timer", "4-7-8 breathing", "box breathing timer" | 8K/mo | ✅ Live |
 
-**Total estimated search volume**: ~340K/mo (combined keywords)
+**Total estimated search volume**: ~348K/mo (combined keywords)
 
 **Implementation per page**:
 - Unique H1 matching primary keyword
@@ -614,8 +616,9 @@ This data informs which landing pages to prioritize.
 10. ✅ `1-hour-timer.html` - live (15K/mo searches)
 11. ✅ `sleep-timer.html` - live (12K/mo searches)
 12. ✅ `egg-timer.html` - live (9K/mo searches)
-13. ✅ sitemap.xml updated with all 15 pages
-14. ✅ Google Analytics 4 added to all pages
+13. ✅ `breathing-timer.html` - live (8K/mo searches) - targets "breathing timer", "4-7-8 breathing", "box breathing"
+14. ✅ sitemap.xml updated with all 16 pages
+15. ✅ Google Analytics 4 added to all pages
 15. ✅ Standardized navigation across all pages
 
 ### Phase 3: Advanced Features (Weeks 4-6)
