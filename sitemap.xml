@@ -110,6 +110,18 @@
     </image:image>
   </url>
 
+  <!-- 7 Minute Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/7-minute-timer</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>7 Minute Timer 2025 - Free 7 Minute Workout Timer</image:title>
+    </image:image>
+  </url>
+
   <!-- 5 Minute Timer Page -->
   <url>
     <loc>https://lazytimer.com/5-minute-timer</loc>
