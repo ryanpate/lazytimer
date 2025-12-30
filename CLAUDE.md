@@ -28,6 +28,8 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 ├── 10-minute-timer.html    # 10-minute timer (teal theme)
 ├── 15-minute-timer.html    # 15-minute timer (purple theme)
 ├── 30-minute-timer.html    # 30-minute timer (coral theme)
+├── 40-minute-timer.html    # 40-minute timer (orange theme) - targets "40 minute timer" keyword
+├── 50-minute-timer.html    # 50-minute timer (purple theme) - targets "50 minute timer" keyword
 ├── 1-hour-timer.html       # 1-hour/60-minute timer (red/blue theme)
 ├── countdown-timer.html    # General countdown timer
 ├── stopwatch.html          # Stopwatch/lap timer
@@ -244,7 +246,7 @@ The path to meaningful AdSense revenue requires: **More traffic → More pagevie
 
 ### 1.1 Landing Pages Status
 
-**All landing pages completed** (15 total):
+**All landing pages completed** (19 total):
 
 | Page | Target Keywords | Search Volume | Status |
 |------|----------------|---------------|--------|
@@ -258,6 +260,8 @@ The path to meaningful AdSense revenue requires: **More traffic → More pagevie
 | `10-minute-timer.html` | "10 minute timer" | 40K/mo | ✅ Live |
 | `15-minute-timer.html` | "15 minute timer" | 22K/mo | ✅ Live |
 | `30-minute-timer.html` | "30 minute timer" | 18K/mo | ✅ Live |
+| `40-minute-timer.html` | "40 minute timer", "forty minute timer" | 6K/mo | ✅ Live |
+| `50-minute-timer.html` | "50 minute timer", "fifty minute timer" | 5K/mo | ✅ Live |
 | `1-hour-timer.html` | "1 hour timer", "60 minute timer" | 15K/mo | ✅ Live |
 | `countdown-timer.html` | "countdown timer", "event countdown" | 33K/mo | ✅ Live |
 | `stopwatch.html` | "online stopwatch", "lap timer" | 28K/mo | ✅ Live |
@@ -266,7 +270,7 @@ The path to meaningful AdSense revenue requires: **More traffic → More pagevie
 | `breathing-timer.html` | "breathing timer", "4-7-8 breathing", "box breathing timer" | 8K/mo | ✅ Live |
 | `60-minute-timer.html` | "60 minute timer", "sixty minute timer", "60 min timer" | 12K/mo | ✅ Live |
 
-**Total estimated search volume**: ~360K/mo (combined keywords)
+**Total estimated search volume**: ~371K/mo (combined keywords)
 
 **Implementation per page**:
 - Unique H1 matching primary keyword

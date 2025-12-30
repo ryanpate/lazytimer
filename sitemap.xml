@@ -218,6 +218,18 @@
     </image:image>
   </url>
 
+  <!-- 40 Minute Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/40-minute-timer</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>40 Minute Timer 2025 - Free Forty Minute Countdown Timer</image:title>
+    </image:image>
+  </url>
+
   <!-- 45 Minute Timer Page -->
   <url>
     <loc>https://lazytimer.com/45-minute-timer</loc>
@@ -227,6 +239,18 @@
     <image:image>
       <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
       <image:title>45 Minute Timer 2025 - Free Online Countdown Timer</image:title>
+    </image:image>
+  </url>
+
+  <!-- 50 Minute Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/50-minute-timer</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>50 Minute Timer 2025 - Free Fifty Minute Countdown Timer</image:title>
     </image:image>
   </url>
 
