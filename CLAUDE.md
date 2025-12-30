@@ -34,6 +34,7 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 ├── sleep-timer.html        # Sleep/nap timer (purple theme)
 ├── egg-timer.html          # Egg cooking timer (orange theme)
 ├── breathing-timer.html    # Breathing exercise timer (teal theme) - 4-7-8, Box Breathing
+├── 60-minute-timer.html    # 60 minute timer (blue theme) - targets "60 minute timer" keyword
 ├── about.html              # About page
 ├── how-to-use.html         # Usage instructions
 ├── privacy-policy.html     # Privacy policy
@@ -173,7 +174,7 @@ Since this is a static site with no build process:
 
 - **Audio alerts**: `playAlarm()` function with selectable alarm sounds (all pages)
 - **Sound preference**: Saved to localStorage, persists across sessions
-- **16 Landing pages**: Homepage, Pomodoro, Cooking, Meditation, Workout, Study, 5-min, 10-min, 15-min, 30-min, 1-hour, Countdown, Stopwatch, Sleep, Egg Timer, Breathing Timer
+- **17 Landing pages**: Homepage, Pomodoro, Cooking, Meditation, Workout, Study, 5-min, 10-min, 15-min, 30-min, 1-hour, 60-min, Countdown, Stopwatch, Sleep, Egg Timer, Breathing Timer
 - **Analog + Digital display**: Stopwatch with rotating hands + flip-clock digits
 - **50+ presets**: Organized by category (cooking, work, fitness, etc.)
 - **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
@@ -263,8 +264,9 @@ The path to meaningful AdSense revenue requires: **More traffic → More pagevie
 | `sleep-timer.html` | "sleep timer", "nap timer", "power nap timer" | 12K/mo | ✅ Live |
 | `egg-timer.html` | "egg timer", "3 minute timer", "boiled egg timer" | 9K/mo | ✅ Live |
 | `breathing-timer.html` | "breathing timer", "4-7-8 breathing", "box breathing timer" | 8K/mo | ✅ Live |
+| `60-minute-timer.html` | "60 minute timer", "sixty minute timer", "60 min timer" | 12K/mo | ✅ Live |
 
-**Total estimated search volume**: ~348K/mo (combined keywords)
+**Total estimated search volume**: ~360K/mo (combined keywords)
 
 **Implementation per page**:
 - Unique H1 matching primary keyword
@@ -617,7 +619,8 @@ This data informs which landing pages to prioritize.
 11. ✅ `sleep-timer.html` - live (12K/mo searches)
 12. ✅ `egg-timer.html` - live (9K/mo searches)
 13. ✅ `breathing-timer.html` - live (8K/mo searches) - targets "breathing timer", "4-7-8 breathing", "box breathing"
-14. ✅ sitemap.xml updated with all 16 pages
+14. ✅ `60-minute-timer.html` - live (12K/mo searches) - targets "60 minute timer", "sixty minute timer"
+15. ✅ sitemap.xml updated with all 17 pages
 15. ✅ Google Analytics 4 added to all pages
 15. ✅ Standardized navigation across all pages
 

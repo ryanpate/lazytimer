@@ -266,6 +266,18 @@
     </image:image>
   </url>
 
+  <!-- 60 Minute Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/60-minute-timer</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>60 Minute Timer 2025 - Free Sixty Minute Countdown Timer</image:title>
+    </image:image>
+  </url>
+
   <!-- 90 Minute Timer Page -->
   <url>
     <loc>https://lazytimer.com/90-minute-timer</loc>
