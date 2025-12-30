@@ -379,6 +379,46 @@
             justify-content: center;
         }
 
+        /* Anchor Ad - Sticky Bottom */
+        .anchor-ad {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 8px 0;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .anchor-ad-close {
+            position: absolute;
+            top: -12px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            background: #667eea;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .anchor-ad-close:hover {
+            background: #764ba2;
+        }
+
+        body.has-anchor-ad {
+            padding-bottom: 100px;
+        }
+
         .timer-container {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -1177,7 +1217,7 @@
 
         <div class="ad-container bottom-ad">
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5523870768931777"
-                data-ad-slot="6571606806" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+                data-ad-slot="6571606806" data-ad-format="horizontal" data-full-width-responsive="true" loading="lazy"></ins>
             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
@@ -1502,6 +1542,33 @@
                 navigator.serviceWorker.register('/sw.js').catch(error => console.log('SW registration failed', error));
             });
         }
+
+        // Anchor Ad Management
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('has-anchor-ad');
+
+            const closeBtn = document.querySelector('.anchor-ad-close');
+            const anchorAd = document.querySelector('.anchor-ad');
+
+            if (closeBtn && anchorAd) {
+                closeBtn.addEventListener('click', function() {
+                    anchorAd.style.display = 'none';
+                    document.body.classList.remove('has-anchor-ad');
+                });
+            }
+        });
     </script>
+
+    <!-- Anchor Ad - High Viewability Sticky Bottom -->
+    <div class="anchor-ad" id="anchorAd">
+        <button class="anchor-ad-close" aria-label="Close ad">&#215;</button>
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:320px;height:50px"
+            data-ad-client="ca-pub-5523870768931777"
+            data-ad-slot="7285922677"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 </body>
 </html>
