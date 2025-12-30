@@ -266,6 +266,18 @@
     </image:image>
   </url>
 
+  <!-- All Timers Hub Page -->
+  <url>
+    <loc>https://lazytimer.com/all-timers</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>All Online Timers - Complete List of Free Countdown Timers</image:title>
+    </image:image>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://lazytimer.com/about</loc>
