@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v3.0 - PWA install prompt
-const CACHE_NAME = 'lazytimer-v3';
+// LazyTimer Service Worker v4.0 - PWA prompt on all pages
+const CACHE_NAME = 'lazytimer-v4';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
