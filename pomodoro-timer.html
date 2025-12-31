@@ -1084,18 +1084,20 @@
             }
 
             .quick-start {
-                gap: 8px;
-                margin: 8px 0;
+                gap: 10px;
+                margin: 10px 0;
             }
 
             .quick-btn {
-                padding: 8px 12px;
-                font-size: 0.85em;
+                padding: 12px 18px;
+                font-size: 0.95em;
+                min-height: 44px;
             }
 
             .control-btn {
-                padding: 12px 20px;
-                font-size: 0.95em;
+                padding: 16px 28px;
+                font-size: 1.05em;
+                min-height: 50px;
             }
 
             .preset-buttons {
@@ -1110,6 +1112,21 @@
             .minute-counter {
                 display: none;
             }
+        }
+
+        /* Touch feedback for mobile */
+        .quick-btn:active {
+            transform: scale(0.96);
+            background: rgba(231, 76, 60, 0.5);
+        }
+
+        .control-btn:active {
+            transform: scale(0.97);
+        }
+
+        .start-btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.5);
         }
 
         .sound-selector {
