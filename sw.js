@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v1.0
-const CACHE_NAME = 'lazytimer-v1';
+// LazyTimer Service Worker v2.0 - Updated nav
+const CACHE_NAME = 'lazytimer-v2';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
@@ -10,15 +10,31 @@ const STATIC_ASSETS = [
   '/meditation-timer.html',
   '/workout-timer.html',
   '/study-timer.html',
+  '/breathing-timer.html',
+  '/1-minute-timer.html',
+  '/2-minute-timer.html',
+  '/3-minute-timer.html',
+  '/4-minute-timer.html',
   '/5-minute-timer.html',
+  '/7-minute-timer.html',
+  '/8-minute-timer.html',
   '/10-minute-timer.html',
   '/15-minute-timer.html',
+  '/20-minute-timer.html',
+  '/25-minute-timer.html',
   '/30-minute-timer.html',
+  '/40-minute-timer.html',
+  '/45-minute-timer.html',
+  '/50-minute-timer.html',
+  '/60-minute-timer.html',
+  '/90-minute-timer.html',
   '/1-hour-timer.html',
+  '/2-hour-timer.html',
   '/countdown-timer.html',
   '/stopwatch.html',
   '/sleep-timer.html',
   '/egg-timer.html',
+  '/all-timers.html',
   '/stopwatch.png',
   '/static/digital-clock-beep.wav',
   '/static/vintage-warning-alarm.wav',
