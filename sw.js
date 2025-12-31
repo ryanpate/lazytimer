@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v2.0 - Updated nav
-const CACHE_NAME = 'lazytimer-v2';
+// LazyTimer Service Worker v3.0 - PWA install prompt
+const CACHE_NAME = 'lazytimer-v3';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
@@ -36,6 +36,7 @@ const STATIC_ASSETS = [
   '/egg-timer.html',
   '/all-timers.html',
   '/stopwatch.png',
+  '/icon-192.png',
   '/static/digital-clock-beep.wav',
   '/static/vintage-warning-alarm.wav',
   '/static/facility-breach-alarm.wav'

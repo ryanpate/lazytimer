@@ -2558,10 +2558,248 @@
             background: rgba(0, 0, 0, 0.1);
             color: #2d3748;
         }
+
+        /* PWA Install Banner */
+        .pwa-install-banner {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            gap: 16px;
+            max-width: 90%;
+            width: 400px;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .pwa-install-banner.show {
+            display: flex;
+        }
+
+        .pwa-install-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .pwa-install-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .pwa-install-content {
+            flex: 1;
+        }
+
+        .pwa-install-content h4 {
+            margin: 0 0 4px 0;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        .pwa-install-content p {
+            margin: 0;
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        .pwa-install-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .pwa-install-btn {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pwa-install-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .pwa-dismiss-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pwa-dismiss-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* iOS Install Instructions Modal */
+        .ios-install-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .ios-install-modal.show {
+            display: flex;
+        }
+
+        .ios-install-content {
+            background: linear-gradient(180deg, #1a1f3a 0%, #0f1419 100%);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 360px;
+            text-align: center;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .ios-install-content h3 {
+            margin: 0 0 20px 0;
+            font-size: 1.3em;
+            color: white;
+        }
+
+        .ios-install-steps {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .ios-install-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95em;
+        }
+
+        .ios-install-step svg {
+            width: 24px;
+            height: 24px;
+            fill: #667eea;
+            flex-shrink: 0;
+        }
+
+        .ios-close-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .ios-close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 480px) {
+            .pwa-install-banner {
+                bottom: 70px;
+                padding: 14px 16px;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            .pwa-install-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .pwa-install-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .pwa-install-actions {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- PWA Install Banner -->
+    <div class="pwa-install-banner" id="pwaInstallBanner">
+        <div class="pwa-install-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 6h2v2h-2V8zm0 4h2v6h-2v-6z"/></svg>
+        </div>
+        <div class="pwa-install-content">
+            <h4>Install LazyTimer</h4>
+            <p>Add to your home screen for quick access</p>
+        </div>
+        <div class="pwa-install-actions">
+            <button class="pwa-install-btn" id="pwaInstallBtn">Install</button>
+            <button class="pwa-dismiss-btn" id="pwaDismissBtn">Later</button>
+        </div>
+    </div>
+
+    <!-- iOS Install Instructions Modal -->
+    <div class="ios-install-modal" id="iosInstallModal">
+        <div class="ios-install-content">
+            <h3>Add LazyTimer to Home Screen</h3>
+            <div class="ios-install-steps">
+                <div class="ios-install-step">
+                    <svg viewBox="0 0 24 24"><path d="M16 5l-1.42 1.42-1.59-1.59V16h-2V4.83L9.42 6.42 8 5l4-4 4 4zm4 5v11c0 1.1-.9 2-2 2H6c-1.11 0-2-.9-2-2V10c0-1.11.89-2 2-2h3v2H6v11h12V10h-3V8h3c1.1 0 2 .89 2 2z"/></svg>
+                    <span>Tap the <strong>Share</strong> button in Safari</span>
+                </div>
+                <div class="ios-install-step">
+                    <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    <span>Scroll and tap <strong>"Add to Home Screen"</strong></span>
+                </div>
+                <div class="ios-install-step">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <span>Tap <strong>"Add"</strong> to confirm</span>
+                </div>
+            </div>
+            <button class="ios-close-btn" id="iosCloseBtn">Got it!</button>
+        </div>
+    </div>
+
     <!-- Exit Fullscreen Button (visible only in fullscreen mode) -->
     <button class="exit-fullscreen-btn" id="exitFullscreenBtn" aria-label="Exit fullscreen mode">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3753,6 +3991,115 @@
                 });
             }
         });
+    </script>
+
+    <!-- PWA Install Prompt Script -->
+    <script>
+        (function() {
+            let deferredPrompt;
+            const banner = document.getElementById('pwaInstallBanner');
+            const installBtn = document.getElementById('pwaInstallBtn');
+            const dismissBtn = document.getElementById('pwaDismissBtn');
+            const iosModal = document.getElementById('iosInstallModal');
+            const iosCloseBtn = document.getElementById('iosCloseBtn');
+
+            // Check if already installed or dismissed
+            const isInstalled = window.matchMedia('(display-mode: standalone)').matches
+                             || window.navigator.standalone === true;
+            const isDismissed = localStorage.getItem('pwaInstallDismissed');
+            const dismissedTime = localStorage.getItem('pwaInstallDismissedTime');
+
+            // Show banner again after 7 days
+            const sevenDays = 7 * 24 * 60 * 60 * 1000;
+            const canShowAgain = !dismissedTime || (Date.now() - parseInt(dismissedTime)) > sevenDays;
+
+            if (isInstalled || (isDismissed && !canShowAgain)) {
+                return;
+            }
+
+            // Detect iOS
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+            // For iOS Safari - show after user interaction
+            if (isIOS && isSafari) {
+                let interactionCount = 0;
+                const showIOSPrompt = () => {
+                    interactionCount++;
+                    if (interactionCount >= 2) { // After 2 interactions
+                        document.removeEventListener('click', showIOSPrompt);
+                        setTimeout(() => {
+                            banner.classList.add('show');
+                        }, 2000);
+                    }
+                };
+                document.addEventListener('click', showIOSPrompt);
+
+                // iOS Install button shows instructions modal
+                installBtn.addEventListener('click', () => {
+                    banner.classList.remove('show');
+                    iosModal.classList.add('show');
+                });
+
+                iosCloseBtn.addEventListener('click', () => {
+                    iosModal.classList.remove('show');
+                    localStorage.setItem('pwaInstallDismissed', 'true');
+                    localStorage.setItem('pwaInstallDismissedTime', Date.now().toString());
+                });
+
+                // Close modal on backdrop click
+                iosModal.addEventListener('click', (e) => {
+                    if (e.target === iosModal) {
+                        iosModal.classList.remove('show');
+                    }
+                });
+            }
+
+            // For Android/Chrome - use beforeinstallprompt
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+
+                // Show banner after user has interacted
+                let interactionCount = 0;
+                const showPrompt = () => {
+                    interactionCount++;
+                    if (interactionCount >= 2) {
+                        document.removeEventListener('click', showPrompt);
+                        setTimeout(() => {
+                            banner.classList.add('show');
+                        }, 2000);
+                    }
+                };
+                document.addEventListener('click', showPrompt);
+            });
+
+            // Install button click
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    if (outcome === 'accepted') {
+                        console.log('PWA installed');
+                    }
+                    deferredPrompt = null;
+                    banner.classList.remove('show');
+                }
+            });
+
+            // Dismiss button click
+            dismissBtn.addEventListener('click', () => {
+                banner.classList.remove('show');
+                localStorage.setItem('pwaInstallDismissed', 'true');
+                localStorage.setItem('pwaInstallDismissedTime', Date.now().toString());
+            });
+
+            // Hide banner when app is installed
+            window.addEventListener('appinstalled', () => {
+                banner.classList.remove('show');
+                console.log('LazyTimer installed!');
+            });
+        })();
     </script>
 
     <!-- Anchor Ad - High Viewability Sticky Bottom -->
