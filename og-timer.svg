@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27"/>
+      <stop offset="50%" style="stop-color:#1a1f3a"/>
+      <stop offset="100%" style="stop-color:#0f1419"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="url(#accent)" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="250" fill="url(#accent)" opacity="0.08"/>
+
+  <!-- Timer icon -->
+  <g transform="translate(150, 180)">
+    <circle cx="120" cy="120" r="110" fill="none" stroke="url(#accent)" stroke-width="8"/>
+    <circle cx="120" cy="120" r="90" fill="rgba(102,126,234,0.1)"/>
+    <line x1="120" y1="120" x2="120" y2="60" stroke="#667eea" stroke-width="6" stroke-linecap="round"/>
+    <line x1="120" y1="120" x2="170" y2="120" stroke="#764ba2" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="120" cy="120" r="8" fill="#667eea"/>
+  </g>
+
+  <!-- Main text -->
+  <text x="420" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Free Online Timer</text>
+  <text x="420" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="rgba(255,255,255,0.7)">50+ Presets | One-Click Start | Loud Alarms</text>
+
+  <!-- CTA button -->
+  <rect x="420" y="400" width="280" height="60" rx="30" fill="url(#accent)"/>
+  <text x="475" y="442" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Start Timer Now</text>
+
+  <!-- Brand -->
+  <text x="1050" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="rgba(255,255,255,0.5)">lazytimer.com</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="50%" style="stop-color:#152238"/>
+      <stop offset="100%" style="stop-color:#0d1a2d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="url(#accent)" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="250" fill="url(#accent)" opacity="0.08"/>
+
+  <!-- Book/Study icon -->
+  <g transform="translate(150, 165)">
+    <!-- Open book -->
+    <path d="M60 50 Q120 30 180 50 L180 200 Q120 180 60 200 Z" fill="rgba(52,152,219,0.3)" stroke="#3498db" stroke-width="4"/>
+    <path d="M180 50 Q240 30 300 50 L300 200 Q240 180 180 200 Z" fill="rgba(52,152,219,0.3)" stroke="#3498db" stroke-width="4"/>
+    <line x1="180" y1="50" x2="180" y2="200" stroke="#3498db" stroke-width="3"/>
+    <!-- Timer on book -->
+    <circle cx="180" cy="125" r="50" fill="rgba(52,152,219,0.2)" stroke="#3498db" stroke-width="3"/>
+    <text x="180" y="135" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#3498db" text-anchor="middle">25:00</text>
+  </g>
+
+  <!-- Main text -->
+  <text x="420" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Study Timer</text>
+  <text x="420" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="rgba(255,255,255,0.7)">Pomodoro Mode | Focus Sessions | Ace Exams</text>
+
+  <!-- CTA button -->
+  <rect x="420" y="400" width="300" height="60" rx="30" fill="url(#accent)"/>
+  <text x="485" y="442" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Start Studying Now</text>
+
+  <!-- Brand -->
+  <text x="1050" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="rgba(255,255,255,0.5)">lazytimer.com</text>
+</svg>

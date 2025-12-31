@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a0a"/>
+      <stop offset="50%" style="stop-color:#2d1515"/>
+      <stop offset="100%" style="stop-color:#1a0f0f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#c0392b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="url(#accent)" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="250" fill="url(#accent)" opacity="0.08"/>
+
+  <!-- Tomato/Pomodoro icon -->
+  <g transform="translate(150, 170)">
+    <ellipse cx="120" cy="130" rx="100" ry="95" fill="url(#accent)"/>
+    <ellipse cx="120" cy="130" rx="85" ry="80" fill="rgba(231,76,60,0.8)"/>
+    <path d="M110 50 Q120 20 130 50" fill="none" stroke="#27ae60" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="120" cy="55" rx="20" ry="10" fill="#27ae60"/>
+    <!-- 25:00 display -->
+    <text x="120" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="#ffffff" text-anchor="middle">25:00</text>
+  </g>
+
+  <!-- Main text -->
+  <text x="420" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Pomodoro Timer</text>
+  <text x="420" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="rgba(255,255,255,0.7)">25 Min Focus | 5 Min Break | Stay Productive</text>
+
+  <!-- CTA button -->
+  <rect x="420" y="400" width="320" height="60" rx="30" fill="url(#accent)"/>
+  <text x="475" y="442" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Start Pomodoro Now</text>
+
+  <!-- Brand -->
+  <text x="1050" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="rgba(255,255,255,0.5)">lazytimer.com</text>
+</svg>
