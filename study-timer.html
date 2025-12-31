@@ -316,31 +316,136 @@
             opacity: 0.7;
             font-weight: 300;
             letter-spacing: 1px;
-        }
-
+        }        /* Main Navigation */
         nav {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
             margin-bottom: 40px;
+            flex-wrap: wrap;
         }
 
-        nav a {
+        nav > a, .nav-dropdown {
+            position: relative;
+        }
+
+        nav > a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
+            font-size: 1em;
             transition: all 0.3s;
-            padding: 8px 16px;
+            padding: 10px 16px;
             border-radius: 8px;
         }
 
-        nav a:hover {
+        nav > a:hover {
             color: #ffffff;
-            background: rgba(52, 152, 219, 0.2);
+            background: rgba(102, 126, 234, 0.2);
         }
 
-        nav a.active {
-            color: #3498db;
+        nav > a.active {
+            color: #667eea;
             font-weight: 600;
+        }
+
+        /* Dropdown Trigger */
+        .nav-dropdown-trigger {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 1em;
+            transition: all 0.3s;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .nav-dropdown-trigger:hover {
+            color: #ffffff;
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .nav-dropdown-trigger svg {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+            transition: transform 0.3s;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-trigger svg,
+        .nav-dropdown.active .nav-dropdown-trigger svg {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Menu */
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #1a1f3a 0%, #0f1419 100%);
+            border-radius: 12px;
+            padding: 12px;
+            min-width: 200px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: grid;
+            gap: 4px;
+        }
+
+        .nav-dropdown-menu.wide {
+            min-width: 320px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .nav-dropdown-menu.extra-wide {
+            min-width: 400px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown.active .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-dropdown-menu a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-dropdown-menu a:hover {
+            color: #ffffff;
+            background: rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-dropdown-menu a.active {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.15);
+        }
+
+        .nav-dropdown-label {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 14px 4px;
+            grid-column: 1 / -1;
         }
 
         /* Mobile Navigation */
@@ -427,7 +532,7 @@
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
+                @media (max-width: 768px) {
             .nav-toggle {
                 display: block;
                 position: absolute;
@@ -438,35 +543,98 @@
             nav {
                 position: fixed;
                 top: 0;
-                right: -280px;
-                width: 280px;
+                right: -300px;
+                width: 300px;
                 height: 100vh;
                 background: linear-gradient(180deg, #1a1f3a 0%, #0a0e27 100%);
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                padding: 80px 20px 40px;
+                align-items: stretch;
+                padding: 70px 15px 40px;
                 margin: 0;
                 z-index: 1000;
                 transition: right 0.3s ease;
                 box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+                overflow-y: auto;
+                gap: 2px;
             }
 
             nav.active {
                 right: 0;
             }
 
-            nav a {
+            nav > a {
                 display: block;
-                margin: 8px 0;
-                padding: 15px 20px;
-                font-size: 1.1em;
+                margin: 0;
+                padding: 14px 16px;
+                font-size: 1em;
                 text-align: left;
-                border-radius: 10px;
+                border-radius: 8px;
             }
 
-            nav a:hover, nav a.active {
-                background: rgba(52, 152, 219, 0.2);
+            nav > a:hover, nav > a.active {
+                background: rgba(102, 126, 234, 0.2);
+            }
+
+            /* Mobile Dropdown */
+            .nav-dropdown {
+                width: 100%;
+            }
+
+            .nav-dropdown-trigger {
+                width: 100%;
+                padding: 14px 16px;
+                justify-content: space-between;
+                font-size: 1em;
+            }
+
+            .nav-dropdown-menu {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                max-height: 0;
+                overflow: hidden;
+                padding: 0;
+                margin: 0;
+                border: none;
+                box-shadow: none;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+            }
+
+            .nav-dropdown.active .nav-dropdown-menu {
+                max-height: 500px;
+                padding: 8px;
+                margin-top: 4px;
+            }
+
+            .nav-dropdown-menu.wide,
+            .nav-dropdown-menu.extra-wide {
+                min-width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-dropdown-menu a {
+                padding: 10px 12px;
+                font-size: 0.9em;
+            }
+
+            .nav-dropdown-label {
+                padding: 6px 12px 2px;
+                font-size: 0.7em;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-menu {
+                max-height: 0;
+                padding: 0;
+            }
+
+            .nav-dropdown:hover.active .nav-dropdown-menu {
+                max-height: 500px;
+                padding: 8px;
             }
 
             .nav-overlay.active {
@@ -1597,20 +1765,79 @@
             </button>
         </header>
 
-        <div class="nav-overlay" id="navOverlay"></div>
+                <div class="nav-overlay" id="navOverlay"></div>
         <nav id="mainNav">
             <a href="/">Home</a>
-            <a href="/pomodoro-timer">Pomodoro</a>
-            <a href="/study-timer" class="active">Study</a>
-            <a href="/workout-timer">Workout</a>
-            <a href="/meditation-timer">Meditation</a>
-            <a href="/cooking-timer">Cooking</a>
-            <a href="/breathing-timer">Breathing</a>
-            <a href="/sleep-timer">Sleep</a>
-            <a href="/egg-timer">Egg</a>
-            <a href="/countdown-timer">Countdown</a>
-            <a href="/stopwatch">Stopwatch</a>
-            <a href="/all-timers">All Timers</a>
+
+            <!-- Quick Timers Dropdown -->
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger">
+                    Quick Timers
+                    <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="nav-dropdown-menu extra-wide">
+                    <a href="/1-minute-timer">1 Minute</a>
+                    <a href="/2-minute-timer">2 Minutes</a>
+                    <a href="/3-minute-timer">3 Minutes</a>
+                    <a href="/4-minute-timer">4 Minutes</a>
+                    <a href="/5-minute-timer">5 Minutes</a>
+                    <a href="/7-minute-timer">7 Minutes</a>
+                    <a href="/8-minute-timer">8 Minutes</a>
+                    <a href="/10-minute-timer">10 Minutes</a>
+                    <a href="/15-minute-timer">15 Minutes</a>
+                    <a href="/20-minute-timer">20 Minutes</a>
+                    <a href="/25-minute-timer">25 Minutes</a>
+                    <a href="/30-minute-timer">30 Minutes</a>
+                    <a href="/40-minute-timer">40 Minutes</a>
+                    <a href="/45-minute-timer">45 Minutes</a>
+                    <a href="/50-minute-timer">50 Minutes</a>
+                    <a href="/60-minute-timer">60 Minutes</a>
+                    <a href="/90-minute-timer">90 Minutes</a>
+                </div>
+            </div>
+
+            <!-- Hour Timers Dropdown -->
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger">
+                    Hour Timers
+                    <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/1-hour-timer">1 Hour</a>
+                    <a href="/2-hour-timer">2 Hours</a>
+                </div>
+            </div>
+
+            <!-- Activities Dropdown -->
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger">
+                    Activities
+                    <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="nav-dropdown-menu wide">
+                    <a href="/pomodoro-timer">Pomodoro</a>
+                    <a href="/study-timer" class="active">Study</a>
+                    <a href="/workout-timer">Workout</a>
+                    <a href="/meditation-timer">Meditation</a>
+                    <a href="/cooking-timer">Cooking</a>
+                    <a href="/breathing-timer">Breathing</a>
+                    <a href="/sleep-timer">Sleep</a>
+                    <a href="/egg-timer">Egg Timer</a>
+                </div>
+            </div>
+
+            <!-- Tools Dropdown -->
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger">
+                    Tools
+                    <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/countdown-timer">Countdown</a>
+                    <a href="/stopwatch">Stopwatch</a>
+                    <a href="/all-timers">All Timers</a>
+                </div>
+            </div>
         </nav>
 
         <div class="ad-container top-ad">
@@ -2232,15 +2459,34 @@
         const mainNav = document.getElementById('mainNav');
         const navOverlay = document.getElementById('navOverlay');
 
-        function toggleNav() {
+                function toggleNav() {
             navToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
             navOverlay.classList.toggle('active');
             document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            // Close all dropdowns when closing nav
+            if (!mainNav.classList.contains('active')) {
+                mainNav.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
+            }
         }
 
         navToggle.addEventListener('click', toggleNav);
         navOverlay.addEventListener('click', toggleNav);
+        // Mobile Dropdown Toggle
+        mainNav.querySelectorAll('.nav-dropdown-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = trigger.parentElement;
+                    const isOpen = dropdown.classList.contains('active');
+                    // Close other dropdowns
+                    mainNav.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
+                    // Toggle this one
+                    if (!isOpen) dropdown.classList.add('active');
+                }
+            });
+        });
+
 
         // Close nav when clicking a link
         mainNav.querySelectorAll('a').forEach(link => {
