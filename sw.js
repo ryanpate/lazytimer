@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v7.0 - Added Tabata, HIIT, and Classroom timers
-const CACHE_NAME = 'lazytimer-v7';
+// LazyTimer Service Worker v8.0 - Added Tabata, HIIT, Classroom, and Presentation timers
+const CACHE_NAME = 'lazytimer-v8';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
@@ -12,6 +12,7 @@ const STATIC_ASSETS = [
   '/tabata-timer.html',
   '/hiit-timer.html',
   '/classroom-timer.html',
+  '/presentation-timer.html',
   '/study-timer.html',
   '/breathing-timer.html',
   '/1-minute-timer.html',
