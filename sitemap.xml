@@ -50,6 +50,18 @@
     </image:image>
   </url>
 
+  <!-- Tabata Timer Page -->
+  <url>
+    <loc>https://lazytimer.com/tabata-timer</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
+      <image:title>Tabata Timer 2025 - Free 20/10 Interval Workout Timer</image:title>
+    </image:image>
+  </url>
+
   <!-- Meditation Timer Page -->
   <url>
     <loc>https://lazytimer.com/meditation-timer</loc>

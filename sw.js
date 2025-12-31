@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v4.0 - PWA prompt on all pages
-const CACHE_NAME = 'lazytimer-v4';
+// LazyTimer Service Worker v5.0 - Added Tabata timer
+const CACHE_NAME = 'lazytimer-v5';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
@@ -9,6 +9,7 @@ const STATIC_ASSETS = [
   '/cooking-timer.html',
   '/meditation-timer.html',
   '/workout-timer.html',
+  '/tabata-timer.html',
   '/study-timer.html',
   '/breathing-timer.html',
   '/1-minute-timer.html',
