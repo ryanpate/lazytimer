@@ -19,28 +19,50 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 ```
 /
 ├── index.html              # Main timer application (homepage)
+├── all-timers.html         # Hub page linking to all timer types
 ├── pomodoro-timer.html     # Dedicated Pomodoro timer landing page
 ├── cooking-timer.html      # Dedicated cooking timer landing page
 ├── meditation-timer.html   # Meditation/mindfulness timer landing page
 ├── workout-timer.html      # HIIT/fitness timer landing page
 ├── study-timer.html        # Study/homework timer landing page
-├── 5-minute-timer.html     # Quick 5-minute timer
-├── 10-minute-timer.html    # 10-minute timer (teal theme)
-├── 15-minute-timer.html    # 15-minute timer (purple theme)
-├── 30-minute-timer.html    # 30-minute timer (coral theme)
-├── 40-minute-timer.html    # 40-minute timer (orange theme) - targets "40 minute timer" keyword
-├── 50-minute-timer.html    # 50-minute timer (purple theme) - targets "50 minute timer" keyword
-├── 1-hour-timer.html       # 1-hour/60-minute timer (red/blue theme)
 ├── countdown-timer.html    # General countdown timer
 ├── stopwatch.html          # Stopwatch/lap timer
 ├── sleep-timer.html        # Sleep/nap timer (purple theme)
 ├── egg-timer.html          # Egg cooking timer (orange theme)
 ├── breathing-timer.html    # Breathing exercise timer (teal theme) - 4-7-8, Box Breathing
-├── 60-minute-timer.html    # 60 minute timer (blue theme) - targets "60 minute timer" keyword
+├── hiit-timer.html         # HIIT interval timer
+├── tabata-timer.html       # Tabata workout timer (20s work/10s rest)
+├── classroom-timer.html    # Classroom/teacher timer
+├── presentation-timer.html # Presentation/speaker timer
+│
+├── # Time-based timer pages
+├── 1-minute-timer.html     # 1 minute timer
+├── 2-minute-timer.html     # 2 minute timer
+├── 3-minute-timer.html     # 3 minute timer
+├── 4-minute-timer.html     # 4 minute timer
+├── 5-minute-timer.html     # 5 minute timer
+├── 7-minute-timer.html     # 7 minute timer
+├── 8-minute-timer.html     # 8 minute timer
+├── 10-minute-timer.html    # 10 minute timer (teal theme)
+├── 15-minute-timer.html    # 15 minute timer (purple theme)
+├── 20-minute-timer.html    # 20 minute timer
+├── 25-minute-timer.html    # 25 minute timer (Pomodoro)
+├── 30-minute-timer.html    # 30 minute timer (coral theme)
+├── 40-minute-timer.html    # 40 minute timer (orange theme)
+├── 45-minute-timer.html    # 45 minute timer
+├── 50-minute-timer.html    # 50 minute timer (purple theme)
+├── 60-minute-timer.html    # 60 minute timer (blue theme)
+├── 1-hour-timer.html       # 1 hour timer (alias for 60-min)
+├── 90-minute-timer.html    # 90 minute timer
+├── 2-hour-timer.html       # 2 hour timer
+│
+├── # Informational pages
 ├── about.html              # About page
 ├── how-to-use.html         # Usage instructions
 ├── privacy-policy.html     # Privacy policy
 ├── terms-of-service.html   # Terms of service
+│
+├── # Assets & Config
 ├── stopwatch.png           # Analog stopwatch image used in timer UI
 ├── ads.txt                 # Google AdSense verification
 ├── sitemap.xml             # SEO sitemap (updated with all pages)
@@ -50,6 +72,8 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 ├── backup/                 # Old versions of HTML files
 └── static/                 # Static assets (ads.txt copy, alarm sounds)
 ```
+
+**Total: 40 HTML pages**
 
 ## Key Features & Implementation
 
@@ -172,11 +196,11 @@ Since this is a static site with no build process:
 - Premium features are UI mockups only (no payment integration)
 - No timer persistence - refreshing page resets timer (only alarm sound preference saved)
 
-## Current Features (Updated December 2024)
+## Current Features (Updated January 2025)
 
 - **Audio alerts**: `playAlarm()` function with selectable alarm sounds (all pages)
 - **Sound preference**: Saved to localStorage, persists across sessions
-- **17 Landing pages**: Homepage, Pomodoro, Cooking, Meditation, Workout, Study, 5-min, 10-min, 15-min, 30-min, 1-hour, 60-min, Countdown, Stopwatch, Sleep, Egg Timer, Breathing Timer
+- **40 Landing pages**: See File Structure for complete list including specialty timers (HIIT, Tabata, Classroom, Presentation) and time-based timers (1-90 minutes, 2 hours)
 - **Analog + Digital display**: Stopwatch with rotating hands + flip-clock digits
 - **50+ presets**: Organized by category (cooking, work, fitness, etc.)
 - **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
@@ -246,31 +270,51 @@ The path to meaningful AdSense revenue requires: **More traffic → More pagevie
 
 ### 1.1 Landing Pages Status
 
-**All landing pages completed** (19 total):
+**All landing pages completed** (40 total):
 
 | Page | Target Keywords | Search Volume | Status |
 |------|----------------|---------------|--------|
 | `index.html` | "online timer", "countdown timer", "free timer" | 40K/mo | ✅ Live |
+| `all-timers.html` | "timers", "online timers", "timer collection" | 5K/mo | ✅ Live |
 | `pomodoro-timer.html` | "pomodoro timer", "25 minute timer", "focus timer" | 27K/mo | ✅ Live |
 | `cooking-timer.html` | "cooking timer", "kitchen timer" | 15K/mo | ✅ Live |
-| `workout-timer.html` | "workout timer", "HIIT timer", "gym timer" | 22K/mo | ✅ Live |
+| `workout-timer.html` | "workout timer", "gym timer" | 22K/mo | ✅ Live |
 | `meditation-timer.html` | "meditation timer", "zen timer", "mindfulness timer" | 18K/mo | ✅ Live |
 | `study-timer.html` | "study timer", "homework timer", "exam timer" | 14K/mo | ✅ Live |
-| `5-minute-timer.html` | "5 minute timer" | 45K/mo | ✅ Live |
-| `10-minute-timer.html` | "10 minute timer" | 40K/mo | ✅ Live |
-| `15-minute-timer.html` | "15 minute timer" | 22K/mo | ✅ Live |
-| `30-minute-timer.html` | "30 minute timer" | 18K/mo | ✅ Live |
-| `40-minute-timer.html` | "40 minute timer", "forty minute timer" | 6K/mo | ✅ Live |
-| `50-minute-timer.html` | "50 minute timer", "fifty minute timer" | 5K/mo | ✅ Live |
-| `1-hour-timer.html` | "1 hour timer", "60 minute timer" | 15K/mo | ✅ Live |
 | `countdown-timer.html` | "countdown timer", "event countdown" | 33K/mo | ✅ Live |
 | `stopwatch.html` | "online stopwatch", "lap timer" | 28K/mo | ✅ Live |
 | `sleep-timer.html` | "sleep timer", "nap timer", "power nap timer" | 12K/mo | ✅ Live |
-| `egg-timer.html` | "egg timer", "3 minute timer", "boiled egg timer" | 9K/mo | ✅ Live |
-| `breathing-timer.html` | "breathing timer", "4-7-8 breathing", "box breathing timer" | 8K/mo | ✅ Live |
-| `60-minute-timer.html` | "60 minute timer", "sixty minute timer", "60 min timer" | 12K/mo | ✅ Live |
+| `egg-timer.html` | "egg timer", "boiled egg timer" | 9K/mo | ✅ Live |
+| `breathing-timer.html` | "breathing timer", "4-7-8 breathing", "box breathing" | 8K/mo | ✅ Live |
+| `hiit-timer.html` | "HIIT timer", "interval timer", "high intensity timer" | 15K/mo | ✅ Live |
+| `tabata-timer.html` | "tabata timer", "20 10 timer", "tabata workout" | 12K/mo | ✅ Live |
+| `classroom-timer.html` | "classroom timer", "teacher timer", "school timer" | 8K/mo | ✅ Live |
+| `presentation-timer.html` | "presentation timer", "speaker timer", "meeting timer" | 6K/mo | ✅ Live |
+| `1-minute-timer.html` | "1 minute timer", "one minute timer" | 35K/mo | ✅ Live |
+| `2-minute-timer.html` | "2 minute timer", "two minute timer" | 25K/mo | ✅ Live |
+| `3-minute-timer.html` | "3 minute timer", "three minute timer" | 30K/mo | ✅ Live |
+| `4-minute-timer.html` | "4 minute timer", "four minute timer" | 8K/mo | ✅ Live |
+| `5-minute-timer.html` | "5 minute timer", "five minute timer" | 45K/mo | ✅ Live |
+| `7-minute-timer.html` | "7 minute timer", "seven minute timer" | 10K/mo | ✅ Live |
+| `8-minute-timer.html` | "8 minute timer", "eight minute timer" | 6K/mo | ✅ Live |
+| `10-minute-timer.html` | "10 minute timer", "ten minute timer" | 40K/mo | ✅ Live |
+| `15-minute-timer.html` | "15 minute timer", "fifteen minute timer" | 22K/mo | ✅ Live |
+| `20-minute-timer.html` | "20 minute timer", "twenty minute timer" | 18K/mo | ✅ Live |
+| `25-minute-timer.html` | "25 minute timer", "pomodoro timer" | 15K/mo | ✅ Live |
+| `30-minute-timer.html` | "30 minute timer", "half hour timer" | 18K/mo | ✅ Live |
+| `40-minute-timer.html` | "40 minute timer", "forty minute timer" | 6K/mo | ✅ Live |
+| `45-minute-timer.html` | "45 minute timer", "forty five minute timer" | 8K/mo | ✅ Live |
+| `50-minute-timer.html` | "50 minute timer", "fifty minute timer" | 5K/mo | ✅ Live |
+| `60-minute-timer.html` | "60 minute timer", "sixty minute timer" | 12K/mo | ✅ Live |
+| `1-hour-timer.html` | "1 hour timer", "one hour timer" | 15K/mo | ✅ Live |
+| `90-minute-timer.html` | "90 minute timer", "1.5 hour timer" | 5K/mo | ✅ Live |
+| `2-hour-timer.html` | "2 hour timer", "two hour timer" | 8K/mo | ✅ Live |
+| `about.html` | - | - | ✅ Live |
+| `how-to-use.html` | - | - | ✅ Live |
+| `privacy-policy.html` | - | - | ✅ Live |
+| `terms-of-service.html` | - | - | ✅ Live |
 
-**Total estimated search volume**: ~371K/mo (combined keywords)
+**Total estimated search volume**: ~620K/mo (combined keywords)
 
 **Implementation per page**:
 - Unique H1 matching primary keyword
@@ -688,3 +732,191 @@ This data informs which landing pages to prioritize.
 - Average session duration > 2 minutes
 - Pages per session > 1.5
 - AdSense RPM > $1.50
+
+---
+
+## TODO: Google Search Console Indexing
+
+Submit these URLs for indexing in Google Search Console. Check off as completed.
+
+### Timer Pages (Priority - High Search Volume)
+- [ ] `https://lazytimer.com/`
+- [ ] `https://lazytimer.com/all-timers.html`
+- [ ] `https://lazytimer.com/pomodoro-timer.html`
+- [ ] `https://lazytimer.com/cooking-timer.html`
+- [ ] `https://lazytimer.com/workout-timer.html`
+- [ ] `https://lazytimer.com/meditation-timer.html`
+- [ ] `https://lazytimer.com/study-timer.html`
+- [ ] `https://lazytimer.com/countdown-timer.html`
+- [ ] `https://lazytimer.com/stopwatch.html`
+- [ ] `https://lazytimer.com/sleep-timer.html`
+- [ ] `https://lazytimer.com/egg-timer.html`
+- [ ] `https://lazytimer.com/breathing-timer.html`
+- [ ] `https://lazytimer.com/hiit-timer.html`
+- [ ] `https://lazytimer.com/tabata-timer.html`
+- [ ] `https://lazytimer.com/classroom-timer.html`
+- [ ] `https://lazytimer.com/presentation-timer.html`
+
+### Time-Based Timers (High Volume)
+- [ ] `https://lazytimer.com/1-minute-timer.html`
+- [ ] `https://lazytimer.com/2-minute-timer.html`
+- [ ] `https://lazytimer.com/3-minute-timer.html`
+- [ ] `https://lazytimer.com/4-minute-timer.html`
+- [ ] `https://lazytimer.com/5-minute-timer.html`
+- [ ] `https://lazytimer.com/7-minute-timer.html`
+- [ ] `https://lazytimer.com/8-minute-timer.html`
+- [ ] `https://lazytimer.com/10-minute-timer.html`
+- [ ] `https://lazytimer.com/15-minute-timer.html`
+- [ ] `https://lazytimer.com/20-minute-timer.html`
+- [ ] `https://lazytimer.com/25-minute-timer.html`
+- [ ] `https://lazytimer.com/30-minute-timer.html`
+- [ ] `https://lazytimer.com/40-minute-timer.html`
+- [ ] `https://lazytimer.com/45-minute-timer.html`
+- [ ] `https://lazytimer.com/50-minute-timer.html`
+- [ ] `https://lazytimer.com/60-minute-timer.html`
+- [ ] `https://lazytimer.com/1-hour-timer.html`
+- [ ] `https://lazytimer.com/90-minute-timer.html`
+- [ ] `https://lazytimer.com/2-hour-timer.html`
+
+### Informational Pages (Lower Priority)
+- [ ] `https://lazytimer.com/about.html`
+- [ ] `https://lazytimer.com/how-to-use.html`
+- [ ] `https://lazytimer.com/privacy-policy.html`
+- [ ] `https://lazytimer.com/terms-of-service.html`
+
+**Total URLs to submit: 40**
+
+**Note**: Google Search Console has a daily quota for indexing requests. Submit highest-volume pages first (5-minute, 10-minute, 3-minute, 1-minute timers have highest search volume).
+
+---
+
+## TODO: SEO Improvements (January 2025 Analysis)
+
+Based on GSC and GA4 data analysis. Current state: 11/40 pages indexed, 4 clicks/week, ~97 daily users.
+
+### PRIORITY 1: Indexing (10x Revenue Impact)
+Submit these NOT-YET-INDEXED high-volume pages first:
+- [ ] `https://lazytimer.com/10-minute-timer` (40K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/3-minute-timer` (30K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/countdown-timer` (33K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/stopwatch` (28K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/cooking-timer` (15K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/1-minute-timer` (35K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/2-minute-timer` (25K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/15-minute-timer` (22K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/20-minute-timer` (18K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/30-minute-timer` (18K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/hiit-timer` (15K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/tabata-timer` (12K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/sleep-timer` (12K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/egg-timer` (9K/mo searches) - NOT in GSC
+- [ ] `https://lazytimer.com/breathing-timer` (8K/mo searches) - NOT in GSC
+
+### PRIORITY 2: Optimize Study Timer (Current Winner - 155 pageviews)
+- [ ] Add long-tail content: "study timer for exams", "homework timer", "focus timer for ADHD"
+- [ ] Add internal links FROM study-timer TO: 25-minute-timer, 50-minute-timer, pomodoro-timer
+- [ ] Create "Timer for Students" subsection with exam/homework use cases
+- [ ] Add testimonials/social proof section
+
+### PRIORITY 3: Fix Breathing Timer Rankings (Position 45-73)
+Current queries getting impressions but not clicks:
+- "breathing timer" - position 51.5
+- "breath timer" - position 52.5
+- "deep breathing timer" - position 46
+- "breathing exercise timer" - position 56
+
+Actions:
+- [ ] Expand breathing-timer.html content (target 2000+ words)
+- [ ] Add specific sections for "4-7-8 breathing timer" (lower competition)
+- [ ] Add "box breathing timer" section
+- [ ] Add internal link from meditation-timer → breathing-timer
+- [ ] Add HowTo schema for breathing exercises
+
+### PRIORITY 4: Add BreadcrumbList Schema (Improves CTR)
+Add to all pages:
+- [x] index.html ✅
+- [x] study-timer.html ✅
+- [x] pomodoro-timer.html ✅
+- [ ] cooking-timer.html
+- [x] workout-timer.html ✅
+- [ ] meditation-timer.html
+- [ ] breathing-timer.html
+- [x] countdown-timer.html ✅
+- [x] stopwatch.html ✅
+- [x] 5-minute-timer.html ✅
+- [x] 10-minute-timer.html ✅
+- [x] 15-minute-timer.html ✅
+- [x] 30-minute-timer.html ✅
+- [ ] All remaining time-based timer pages
+
+### PRIORITY 5: Internal Linking Strategy
+Add contextual links between related pages:
+- [ ] study-timer → pomodoro-timer ("Try our Pomodoro Timer")
+- [ ] study-timer → 25-minute-timer ("25 minute study sessions")
+- [ ] study-timer → 50-minute-timer ("class period timer")
+- [ ] workout-timer → hiit-timer ("HIIT interval training")
+- [ ] workout-timer → tabata-timer ("Tabata workouts")
+- [ ] cooking-timer → egg-timer ("perfect boiled eggs")
+- [ ] meditation-timer → breathing-timer ("breathing exercises")
+- [ ] all-timers → ensure links to ALL pages
+
+### PRIORITY 6: Technical Fixes
+- [ ] Standardize all titles to 2026 (some show 2025, some 2026)
+- [ ] Add unique Open Graph images per page (improve social sharing)
+- [ ] Submit sitemap to Bing Webmaster Tools (diversify traffic)
+- [ ] Add hreflang tags for EN (US/GB/AU) audiences
+
+### PRIORITY 7: Long-Tail Keyword Optimization
+Add these phrases to existing content:
+- [ ] "5 minute timer with alarm sound" → 5-minute-timer.html
+- [ ] "5 minute timer for kids" → 5-minute-timer.html
+- [ ] "5 minute classroom timer" → 5-minute-timer.html OR classroom-timer.html
+- [ ] "10 minute meditation timer" → 10-minute-timer.html OR meditation-timer.html
+- [ ] "timer for cooking eggs" → egg-timer.html
+- [ ] "workout timer with rest periods" → workout-timer.html
+
+### PRIORITY 8: Content Expansion
+- [ ] Add FAQ section to breathing-timer (target featured snippets)
+- [ ] Add "use cases" section to high-traffic pages
+- [ ] Add comparison content: "Pomodoro vs 50-10 method" on study-timer
+- [ ] Add seasonal content: "New Year's countdown timer" (timely)
+
+---
+
+## Current Performance Snapshot (Jan 1, 2026)
+
+### Google Analytics (Dec 4-31, 2025)
+| Metric | Value |
+|--------|-------|
+| Total Active Users (30-day) | 464 |
+| Peak Daily Users | 97 |
+| Organic Search Sessions | 420 (74%) |
+| Direct Sessions | 103 (18%) |
+| Top Country | US (162 users) |
+| Top Page | study-timer (155 views) |
+
+### Google Search Console (Dec 24-30, 2025)
+| Metric | Value |
+|--------|-------|
+| Total Clicks | 4 |
+| Total Impressions | 30 |
+| Average CTR | 13.3% |
+| Average Position | 23.4 |
+| Pages Indexed | 11 of 40 |
+| Desktop Clicks | 4 |
+| Mobile Clicks | 0 |
+
+### Key Issues Identified
+1. **29 pages NOT indexed** - biggest blocker to growth
+2. **Mobile: 0 clicks** - need to investigate mobile experience
+3. **Breathing timer position 45-73** - appearing but not ranking
+4. **GA shows 420 organic sessions vs GSC 4 clicks** - traffic source discrepancy
+
+### Revenue Projections
+| Timeline | Daily Users | Monthly Pageviews | Est. Revenue |
+|----------|-------------|-------------------|--------------|
+| Current | 97 | 700 | $1-2 |
+| Month 1 (indexed) | 200 | 3,000 | $5-10 |
+| Month 3 | 500 | 10,000 | $20-40 |
+| Month 6 | 1,500 | 30,000 | $60-120 |
+| Month 12 | 5,000 | 100,000 | $200-400 |
