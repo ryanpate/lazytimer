@@ -812,13 +812,13 @@ Submit these NOT-YET-INDEXED high-volume pages first:
 - [ ] `https://lazytimer.com/egg-timer` (9K/mo searches) - NOT in GSC
 - [ ] `https://lazytimer.com/breathing-timer` (8K/mo searches) - NOT in GSC
 
-### PRIORITY 2: Optimize Study Timer (Current Winner - 155 pageviews)
-- [ ] Add long-tail content: "study timer for exams", "homework timer", "focus timer for ADHD"
-- [ ] Add internal links FROM study-timer TO: 25-minute-timer, 50-minute-timer, pomodoro-timer
-- [ ] Create "Timer for Students" subsection with exam/homework use cases
+### PRIORITY 2: Optimize Study Timer (Current Winner - 155 pageviews) ✅ COMPLETED
+- [x] Add long-tail content: "study timer for exams", "homework timer", "focus timer for ADHD" ✅
+- [x] Add internal links FROM study-timer TO: 25-minute-timer, 50-minute-timer, pomodoro-timer ✅
+- [x] Create "Timer for Students" subsection with exam/homework use cases ✅
 - [ ] Add testimonials/social proof section
 
-### PRIORITY 3: Fix Breathing Timer Rankings (Position 45-73)
+### PRIORITY 3: Fix Breathing Timer Rankings (Position 45-73) ✅ COMPLETED
 Current queries getting impressions but not clicks:
 - "breathing timer" - position 51.5
 - "breath timer" - position 52.5
@@ -826,42 +826,29 @@ Current queries getting impressions but not clicks:
 - "breathing exercise timer" - position 56
 
 Actions:
-- [ ] Expand breathing-timer.html content (target 2000+ words)
-- [ ] Add specific sections for "4-7-8 breathing timer" (lower competition)
-- [ ] Add "box breathing timer" section
-- [ ] Add internal link from meditation-timer → breathing-timer
-- [ ] Add HowTo schema for breathing exercises
+- [x] Expand breathing-timer.html content (target 2000+ words) ✅
+- [x] Add specific sections for "4-7-8 breathing timer" (H2 section added) ✅
+- [x] Add "box breathing timer" section (H2 section added) ✅
+- [x] Add internal link from meditation-timer → breathing-timer ✅
+- [x] Add HowTo schema for breathing exercises ✅
 
-### PRIORITY 4: Add BreadcrumbList Schema (Improves CTR)
-Add to all pages:
-- [x] index.html ✅
-- [x] study-timer.html ✅
-- [x] pomodoro-timer.html ✅
-- [ ] cooking-timer.html
-- [x] workout-timer.html ✅
-- [ ] meditation-timer.html
-- [ ] breathing-timer.html
-- [x] countdown-timer.html ✅
-- [x] stopwatch.html ✅
-- [x] 5-minute-timer.html ✅
-- [x] 10-minute-timer.html ✅
-- [x] 15-minute-timer.html ✅
-- [x] 30-minute-timer.html ✅
-- [ ] All remaining time-based timer pages
+### PRIORITY 4: Add BreadcrumbList Schema (Improves CTR) ✅ COMPLETED
+All 39 pages now have BreadcrumbList schema ✅
 
-### PRIORITY 5: Internal Linking Strategy
+### PRIORITY 5: Internal Linking Strategy ✅ COMPLETED
 Add contextual links between related pages:
-- [ ] study-timer → pomodoro-timer ("Try our Pomodoro Timer")
-- [ ] study-timer → 25-minute-timer ("25 minute study sessions")
-- [ ] study-timer → 50-minute-timer ("class period timer")
-- [ ] workout-timer → hiit-timer ("HIIT interval training")
-- [ ] workout-timer → tabata-timer ("Tabata workouts")
-- [ ] cooking-timer → egg-timer ("perfect boiled eggs")
-- [ ] meditation-timer → breathing-timer ("breathing exercises")
-- [ ] all-timers → ensure links to ALL pages
+- [x] study-timer → pomodoro-timer ✅
+- [x] study-timer → 25-minute-timer ✅
+- [x] study-timer → 50-minute-timer ✅
+- [x] workout-timer → hiit-timer ✅
+- [x] workout-timer → tabata-timer ✅
+- [x] cooking-timer → egg-timer ✅
+- [x] meditation-timer → breathing-timer ✅
+- [x] pomodoro-timer → breathing-timer, meditation-timer ✅
+- [x] all-timers → links to all pages ✅
 
 ### PRIORITY 6: Technical Fixes
-- [ ] Standardize all titles to 2026 (some show 2025, some 2026)
+- [x] Standardize all titles/footers to 2026 ✅
 - [ ] Add unique Open Graph images per page (improve social sharing)
 - [ ] Submit sitemap to Bing Webmaster Tools (diversify traffic)
 - [ ] Add hreflang tags for EN (US/GB/AU) audiences
