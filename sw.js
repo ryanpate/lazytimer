@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v12.0 - Progress circle on all workout pages
-const CACHE_NAME = 'lazytimer-v12';
+// LazyTimer Service Worker v13.0 - Progress circle on homepage
+const CACHE_NAME = 'lazytimer-v13';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
