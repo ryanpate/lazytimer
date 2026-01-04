@@ -1922,6 +1922,319 @@
                 justify-content: center;
             }
         }
+
+        /* ===== INTERVAL TRAINING STYLES ===== */
+
+        /* Phase Indicator */
+        .phase-indicator {
+            text-align: center;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .phase-label {
+            font-size: 3em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            transition: all 0.5s ease;
+            color: #888;
+        }
+
+        .interval-counter {
+            font-size: 1.4em;
+            margin-top: 10px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        #currentIntervalNum {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        /* Phase-specific colors with pulse animations */
+        .phase-indicator.work {
+            background: rgba(231, 76, 60, 0.2);
+            border-color: rgba(231, 76, 60, 0.5);
+            animation: pulse-work 1s infinite;
+        }
+
+        .phase-indicator.work .phase-label {
+            color: #e74c3c;
+            text-shadow: 0 0 30px rgba(231, 76, 60, 0.6);
+        }
+
+        .phase-indicator.rest {
+            background: rgba(46, 204, 113, 0.2);
+            border-color: rgba(46, 204, 113, 0.5);
+            animation: pulse-rest 2s infinite;
+        }
+
+        .phase-indicator.rest .phase-label {
+            color: #2ecc71;
+            text-shadow: 0 0 30px rgba(46, 204, 113, 0.6);
+        }
+
+        .phase-indicator.complete {
+            background: rgba(155, 89, 182, 0.2);
+            border-color: rgba(155, 89, 182, 0.5);
+        }
+
+        .phase-indicator.complete .phase-label {
+            color: #9b59b6;
+            text-shadow: 0 0 30px rgba(155, 89, 182, 0.6);
+        }
+
+        @keyframes pulse-work {
+            0%, 100% { box-shadow: 0 0 20px rgba(231, 76, 60, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(231, 76, 60, 0.6); }
+        }
+
+        @keyframes pulse-rest {
+            0%, 100% { box-shadow: 0 0 15px rgba(46, 204, 113, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(46, 204, 113, 0.4); }
+        }
+
+        /* Stopwatch hand colors for phases */
+        .stopwatch-container.work .minute-hand {
+            background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%) !important;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.8) !important;
+        }
+
+        .stopwatch-container.work .second-hand {
+            background: linear-gradient(180deg, #f39c12 0%, #e67e22 100%) !important;
+        }
+
+        .stopwatch-container.rest .minute-hand {
+            background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%) !important;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.8) !important;
+        }
+
+        .stopwatch-container.rest .second-hand {
+            background: linear-gradient(180deg, #3498db 0%, #2980b9 100%) !important;
+        }
+
+        /* Interval Configuration Panel */
+        .interval-config {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .interval-config h3 {
+            color: #e74c3c;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slider-group {
+            margin-bottom: 18px;
+        }
+
+        .slider-group label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .slider-label {
+            font-weight: 600;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .work-slider .slider-label { color: #e74c3c; }
+        .rest-slider .slider-label { color: #2ecc71; }
+        .intervals-slider .slider-label { color: #f39c12; }
+
+        .slider-value {
+            font-weight: 700;
+            font-size: 1.1em;
+            min-width: 50px;
+            text-align: right;
+            color: #fff;
+        }
+
+        .slider-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .slider-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.5em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .slider-btn:active { transform: scale(0.95); }
+
+        .work-slider .slider-btn:hover { border-color: #e74c3c; color: #e74c3c; }
+        .rest-slider .slider-btn:hover { border-color: #2ecc71; color: #2ecc71; }
+        .intervals-slider .slider-btn:hover { border-color: #f39c12; color: #f39c12; }
+
+        /* Custom Range Slider */
+        .slider {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .slider.work::-webkit-slider-thumb {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+        }
+
+        .slider.rest::-webkit-slider-thumb {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+        }
+
+        .slider.intervals::-webkit-slider-thumb {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            box-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+        }
+
+        .slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+        /* Firefox slider thumb */
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .slider.work::-moz-range-thumb { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .slider.rest::-moz-range-thumb { background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); }
+        .slider.intervals::-moz-range-thumb { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+
+        /* Total Workout Time Display */
+        .total-time-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .total-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95em;
+        }
+
+        .total-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #f39c12;
+        }
+
+        /* Preset Shortcuts */
+        .preset-shortcuts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .preset-shortcut {
+            padding: 10px 18px;
+            border-radius: 25px;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            background: rgba(231, 76, 60, 0.1);
+            color: #e74c3c;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .preset-shortcut:hover {
+            background: rgba(231, 76, 60, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .preset-shortcut.active {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            border-color: #e74c3c;
+        }
+
+        /* Responsive adjustments for interval trainer */
+        @media (max-width: 768px) {
+            .phase-label { font-size: 2.2em; }
+            .interval-counter { font-size: 1.2em; }
+            .slider-btn { width: 40px; height: 40px; font-size: 1.3em; }
+            .interval-config { padding: 15px; }
+            .preset-shortcuts { gap: 8px; }
+            .preset-shortcut { padding: 8px 14px; font-size: 0.85em; }
+        }
+
+        @media (max-width: 480px) {
+            .phase-indicator { padding: 15px; }
+            .phase-label { font-size: 1.8em; letter-spacing: 2px; }
+            .interval-counter { font-size: 1em; }
+            .slider-btn { width: 36px; height: 36px; font-size: 1.2em; }
+            .slider::-webkit-slider-thumb { width: 20px; height: 20px; }
+            .total-value { font-size: 1.3em; }
+        }
+
+        /* Fullscreen mode adjustments */
+        body.fullscreen-mode .phase-indicator {
+            margin-bottom: 30px;
+            padding: 30px;
+        }
+
+        body.fullscreen-mode .phase-label { font-size: 4em; }
+        body.fullscreen-mode .interval-counter { font-size: 2em; }
     </style>
 </head>
 
@@ -2131,44 +2444,71 @@
             </div>
 
             <div class="controls-panel">
-                <div class="workout-presets">
-                    <h3>HIIT Intervals</h3>
-                    <div class="preset-grid">
-                        <button class="preset-btn" data-time="20">Work (20s)</button>
-                        <button class="preset-btn" data-time="30">Work (30s)</button>
-                        <button class="preset-btn" data-time="45">Work (45s)</button>
-                        <button class="preset-btn" data-time="60">Work (60s)</button>
+                <!-- Phase Indicator -->
+                <div class="phase-indicator" id="phaseIndicator" aria-live="polite">
+                    <div class="phase-label" id="phaseLabel">READY</div>
+                    <div class="interval-counter">
+                        Round <span id="currentIntervalNum">0</span> / <span id="totalIntervalsNum">8</span>
                     </div>
                 </div>
 
-                <div class="workout-presets">
-                    <h3>Rest Periods</h3>
-                    <div class="preset-grid">
-                        <button class="preset-btn" data-time="10">Rest (10s)</button>
-                        <button class="preset-btn" data-time="15">Rest (15s)</button>
-                        <button class="preset-btn" data-time="30">Rest (30s)</button>
-                        <button class="preset-btn" data-time="60">Rest (60s)</button>
+                <!-- Interval Configuration -->
+                <div class="interval-config" id="intervalConfig">
+                    <h3>Customize Your Intervals</h3>
+
+                    <!-- Work Time Slider -->
+                    <div class="slider-group work-slider">
+                        <label>
+                            <span class="slider-label">Work Time</span>
+                            <span class="slider-value" id="workValue">20s</span>
+                        </label>
+                        <div class="slider-controls">
+                            <button class="slider-btn minus" data-target="workSlider" data-step="-5" aria-label="Decrease work time">−</button>
+                            <input type="range" id="workSlider" min="5" max="120" value="20" step="5" class="slider work">
+                            <button class="slider-btn plus" data-target="workSlider" data-step="5" aria-label="Increase work time">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Rest Time Slider -->
+                    <div class="slider-group rest-slider">
+                        <label>
+                            <span class="slider-label">Rest Time</span>
+                            <span class="slider-value" id="restValue">10s</span>
+                        </label>
+                        <div class="slider-controls">
+                            <button class="slider-btn minus" data-target="restSlider" data-step="-5" aria-label="Decrease rest time">−</button>
+                            <input type="range" id="restSlider" min="5" max="120" value="10" step="5" class="slider rest">
+                            <button class="slider-btn plus" data-target="restSlider" data-step="5" aria-label="Increase rest time">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Intervals Slider -->
+                    <div class="slider-group intervals-slider">
+                        <label>
+                            <span class="slider-label">Rounds</span>
+                            <span class="slider-value" id="intervalsValue">8</span>
+                        </label>
+                        <div class="slider-controls">
+                            <button class="slider-btn minus" data-target="intervalsSlider" data-step="-1" aria-label="Decrease rounds">−</button>
+                            <input type="range" id="intervalsSlider" min="1" max="20" value="8" step="1" class="slider intervals">
+                            <button class="slider-btn plus" data-target="intervalsSlider" data-step="1" aria-label="Increase rounds">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Total Workout Time -->
+                    <div class="total-time-display">
+                        <span class="total-label">Total Workout:</span>
+                        <span class="total-value" id="totalWorkoutTime">4:00</span>
                     </div>
                 </div>
 
-                <div class="workout-presets">
-                    <h3>Full Workouts</h3>
-                    <div class="preset-grid">
-                        <button class="preset-btn active" data-time="240">Tabata (4min)</button>
-                        <button class="preset-btn" data-time="420">HIIT Round (7min)</button>
-                        <button class="preset-btn" data-time="600">Circuit (10min)</button>
-                        <button class="preset-btn" data-time="1200">Full Session (20min)</button>
-                    </div>
-                </div>
-
-                <div class="workout-presets">
-                    <h3>Strength Training Rest</h3>
-                    <div class="preset-grid">
-                        <button class="preset-btn" data-time="60">Light Rest (1min)</button>
-                        <button class="preset-btn" data-time="90">Moderate (90s)</button>
-                        <button class="preset-btn" data-time="120">Heavy Sets (2min)</button>
-                        <button class="preset-btn" data-time="180">Max Effort (3min)</button>
-                    </div>
+                <!-- Preset Shortcuts -->
+                <div class="preset-shortcuts">
+                    <button class="preset-shortcut" data-preset="beginner">Beginner</button>
+                    <button class="preset-shortcut active" data-preset="tabata">Tabata</button>
+                    <button class="preset-shortcut" data-preset="standard">30/30</button>
+                    <button class="preset-shortcut" data-preset="advanced">Advanced</button>
+                    <button class="preset-shortcut" data-preset="sprint">Sprint</button>
                 </div>
 
                 <div class="digital-timer">
@@ -2185,14 +2525,6 @@
                     <div class="flip-card" id="secondOnes">
                         <div class="flip-card-inner">0</div>
                     </div>
-                </div>
-
-                <!-- Quick Start Buttons -->
-                <div class="quick-start">
-                    <button class="quick-btn" data-time="30" aria-label="30 second interval">30 sec</button>
-                    <button class="quick-btn" data-time="60" aria-label="1 minute interval">1 min</button>
-                    <button class="quick-btn" data-time="180" aria-label="3 minute interval">3 min</button>
-                    <button class="quick-btn" data-time="300" aria-label="5 minute interval">5 min</button>
                 </div>
 
                 <div class="controls">
@@ -2392,13 +2724,27 @@
     </div>
 
     <script>
-        let timeLeft = 240;
-        let totalTime = 240;
+        // ===== INTERVAL TRAINING STATE =====
+        let workDuration = 20;      // Work interval in seconds (5-120)
+        let restDuration = 10;      // Rest interval in seconds (5-120)
+        let totalIntervals = 8;     // Number of work/rest rounds (1-20)
+        let currentPhase = 'IDLE';  // IDLE, WORK, REST, COMPLETE
+        let currentInterval = 0;    // Current round number
+        let phaseTimeLeft = 0;      // Time remaining in current phase
         let isRunning = false;
         let timerInterval;
         let alarmAudio = null;
 
-        const buttons = document.querySelectorAll('.preset-btn');
+        // Preset profiles
+        const INTERVAL_PRESETS = {
+            tabata: { work: 20, rest: 10, intervals: 8 },
+            beginner: { work: 20, rest: 40, intervals: 8 },
+            standard: { work: 30, rest: 30, intervals: 10 },
+            advanced: { work: 40, rest: 20, intervals: 12 },
+            sprint: { work: 30, rest: 90, intervals: 6 }
+        };
+
+        // DOM Elements
         const minuteTensCard = document.getElementById('minuteTens');
         const minuteOnesCard = document.getElementById('minuteOnes');
         const secondTensCard = document.getElementById('secondTens');
@@ -2410,107 +2756,190 @@
         const resetBtn = document.getElementById('resetBtn');
         const alarmSelect = document.getElementById('alarmSound');
         const testSoundBtn = document.getElementById('testSound');
+        const phaseIndicator = document.getElementById('phaseIndicator');
+        const phaseLabel = document.getElementById('phaseLabel');
+        const currentIntervalNum = document.getElementById('currentIntervalNum');
+        const totalIntervalsNum = document.getElementById('totalIntervalsNum');
+        const stopwatchContainer = document.querySelector('.stopwatch-container');
         const originalTitle = document.title;
         const srAnnouncements = document.getElementById('srAnnouncements');
 
+        // Slider elements
+        const workSlider = document.getElementById('workSlider');
+        const restSlider = document.getElementById('restSlider');
+        const intervalsSlider = document.getElementById('intervalsSlider');
+        const workValue = document.getElementById('workValue');
+        const restValue = document.getElementById('restValue');
+        const intervalsValue = document.getElementById('intervalsValue');
+        const totalWorkoutTime = document.getElementById('totalWorkoutTime');
+
         // Screen reader announcement helper
         function announce(message) {
-            srAnnouncements.textContent = '';
-            setTimeout(() => {
-                srAnnouncements.textContent = message;
-            }, 50);
-        }
-
-        function updateTabTitle() {
-            if (isRunning || timeLeft < totalTime) {
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                document.title = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} - HIIT Timer`;
-            } else {
-                document.title = originalTitle;
+            if (srAnnouncements) {
+                srAnnouncements.textContent = '';
+                setTimeout(() => {
+                    srAnnouncements.textContent = message;
+                }, 50);
             }
         }
 
-        function saveTimerState() {
-            localStorage.setItem('workoutTimer', JSON.stringify({
-                timeLeft: timeLeft,
-                totalTime: totalTime,
-                isRunning: isRunning,
-                timestamp: Date.now()
-            }));
+        // ===== PHASE TRANSITION LOGIC =====
+        function transitionTo(newPhase) {
+            currentPhase = newPhase;
+            updatePhaseIndicator();
+            updateStopwatchColors();
+            playPhaseSound(newPhase);
+
+            if (newPhase === 'WORK') {
+                phaseTimeLeft = workDuration;
+                announce(`Work phase started! Round ${currentInterval} of ${totalIntervals}. ${workDuration} seconds.`);
+            } else if (newPhase === 'REST') {
+                phaseTimeLeft = restDuration;
+                announce(`Rest phase. ${restDuration} seconds. Next round: ${currentInterval + 1}`);
+            } else if (newPhase === 'COMPLETE') {
+                announce(`Workout complete! You finished ${totalIntervals} rounds.`);
+            }
+
+            updateDisplay();
         }
 
-        function restoreTimerState() {
-            const saved = localStorage.getItem('workoutTimer');
-            if (saved) {
-                const state = JSON.parse(saved);
-                const elapsed = Math.floor((Date.now() - state.timestamp) / 1000);
-                if (state.isRunning && elapsed < 3600) { // Within 1 hour
-                    const remaining = state.timeLeft - elapsed;
-                    if (remaining > 0) {
-                        timeLeft = remaining;
-                        totalTime = state.totalTime;
-                        updateDisplay();
-                        startTimer();
-                        return;
+        function updatePhaseIndicator() {
+            phaseIndicator.classList.remove('work', 'rest', 'complete');
+
+            switch (currentPhase) {
+                case 'IDLE':
+                    phaseLabel.textContent = 'READY';
+                    currentIntervalNum.textContent = '0';
+                    break;
+                case 'WORK':
+                    phaseIndicator.classList.add('work');
+                    phaseLabel.textContent = 'WORK!';
+                    currentIntervalNum.textContent = currentInterval;
+                    break;
+                case 'REST':
+                    phaseIndicator.classList.add('rest');
+                    phaseLabel.textContent = 'REST';
+                    currentIntervalNum.textContent = currentInterval;
+                    break;
+                case 'COMPLETE':
+                    phaseIndicator.classList.add('complete');
+                    phaseLabel.textContent = 'DONE!';
+                    currentIntervalNum.textContent = totalIntervals;
+                    break;
+            }
+            totalIntervalsNum.textContent = totalIntervals;
+        }
+
+        function updateStopwatchColors() {
+            stopwatchContainer.classList.remove('work', 'rest');
+            if (currentPhase === 'WORK') {
+                stopwatchContainer.classList.add('work');
+            } else if (currentPhase === 'REST') {
+                stopwatchContainer.classList.add('rest');
+            }
+        }
+
+        function playPhaseSound(phase) {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
+
+            let duration = 1000;
+            if (phase === 'WORK' || phase === 'REST') {
+                // Short beep for phase transitions
+                alarmAudio = new Audio(alarmSelect.value);
+                alarmAudio.play().catch(e => console.log('Audio play failed:', e));
+                setTimeout(() => {
+                    if (alarmAudio) {
+                        alarmAudio.pause();
+                        alarmAudio.currentTime = 0;
                     }
+                }, duration);
+            } else if (phase === 'COMPLETE') {
+                // Longer alarm for workout complete
+                alarmAudio = new Audio(alarmSelect.value);
+                alarmAudio.play().catch(e => console.log('Audio play failed:', e));
+                setTimeout(() => {
+                    if (alarmAudio) {
+                        alarmAudio.pause();
+                        alarmAudio.currentTime = 0;
+                    }
+                }, 3000);
+            }
+        }
+
+        // ===== TIMER FUNCTIONS =====
+        function startTimer() {
+            if (currentPhase === 'IDLE' || currentPhase === 'COMPLETE') {
+                currentInterval = 1;
+                transitionTo('WORK');
+            }
+
+            if (!isRunning && phaseTimeLeft > 0) {
+                isRunning = true;
+                startBtn.textContent = 'Running...';
+                timerInterval = setInterval(tick, 1000);
+                saveIntervalState();
+            }
+        }
+
+        function tick() {
+            phaseTimeLeft--;
+            updateDisplay();
+            saveIntervalState();
+
+            if (phaseTimeLeft <= 0) {
+                handlePhaseComplete();
+            }
+        }
+
+        function handlePhaseComplete() {
+            if (currentPhase === 'WORK') {
+                if (currentInterval >= totalIntervals) {
+                    workoutComplete();
+                } else {
+                    transitionTo('REST');
                 }
-                localStorage.removeItem('workoutTimer');
+            } else if (currentPhase === 'REST') {
+                currentInterval++;
+                transitionTo('WORK');
             }
         }
 
-        // Load saved sound preference
-        const savedSound = localStorage.getItem('alarmSound');
-        if (savedSound) {
-            alarmSelect.value = savedSound;
+        function workoutComplete() {
+            isRunning = false;
+            clearInterval(timerInterval);
+            transitionTo('COMPLETE');
+            startBtn.textContent = 'Restart';
+            localStorage.removeItem('hiitIntervalState');
         }
 
-        // Save sound preference when changed
-        alarmSelect.addEventListener('change', function() {
-            localStorage.setItem('alarmSound', this.value);
-        });
-
-        // Test sound button
-        testSoundBtn.addEventListener('click', function() {
-            playAlarm(true);
-        });
-
-        // Stop sound button
-        const stopSoundBtn = document.getElementById('stopSound');
-        stopSoundBtn.addEventListener('click', function() {
-            if (alarmAudio) {
-                alarmAudio.pause();
-                alarmAudio.currentTime = 0;
+        function pauseTimer() {
+            if (isRunning) {
+                isRunning = false;
+                clearInterval(timerInterval);
+                startBtn.textContent = 'Resume';
+                announce(`Paused: ${currentPhase} phase, ${phaseTimeLeft} seconds remaining`);
             }
-        });
-
-        function playAlarm(isTest = false) {
-            if (alarmAudio) {
-                alarmAudio.pause();
-                alarmAudio.currentTime = 0;
-            }
-            alarmAudio = new Audio(alarmSelect.value);
-            alarmAudio.play().catch(e => console.log('Audio play failed:', e));
-            setTimeout(() => {
-                if (alarmAudio) {
-                    alarmAudio.pause();
-                    alarmAudio.currentTime = 0;
-                }
-            }, isTest ? 2000 : 5000);
         }
 
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                buttons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const time = parseInt(this.getAttribute('data-time'));
-                pauseTimer();
-                timeLeft = time;
-                totalTime = time;
-                updateDisplay();
-            });
-        });
+        function resetTimer() {
+            isRunning = false;
+            clearInterval(timerInterval);
+            currentPhase = 'IDLE';
+            currentInterval = 0;
+            phaseTimeLeft = workDuration;
+            startBtn.textContent = 'Start';
 
+            updatePhaseIndicator();
+            updateStopwatchColors();
+            updateDisplay();
+            localStorage.removeItem('hiitIntervalState');
+            announce('Timer reset');
+        }
+
+        // ===== DISPLAY UPDATES =====
         function updateFlipCard(card, newValue) {
             const inner = card.querySelector('.flip-card-inner');
             if (inner.textContent !== newValue.toString()) {
@@ -2523,86 +2952,230 @@
         }
 
         function updateDisplay() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
+            const displayTime = currentPhase === 'IDLE' ? workDuration : phaseTimeLeft;
+            const minutes = Math.floor(displayTime / 60);
+            const seconds = displayTime % 60;
 
             updateFlipCard(minuteTensCard, Math.floor(minutes / 10));
             updateFlipCard(minuteOnesCard, minutes % 10);
             updateFlipCard(secondTensCard, Math.floor(seconds / 10));
             updateFlipCard(secondOnesCard, seconds % 10);
 
-            const elapsedTime = totalTime - timeLeft;
-            const minuteAngle = (elapsedTime / totalTime) * 360;
+            // Analog clock shows progress through CURRENT phase
+            const phaseDuration = currentPhase === 'REST' ? restDuration : workDuration;
+            const elapsedInPhase = phaseDuration - (currentPhase === 'IDLE' ? phaseDuration : phaseTimeLeft);
+            const minuteAngle = (elapsedInPhase / phaseDuration) * 360;
             const secondAngle = ((60 - seconds) / 60) * 360;
 
             minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
             secondHand.style.transform = `rotate(${secondAngle}deg)`;
 
-            // Update tab title
             updateTabTitle();
         }
 
-        function startTimer() {
-            if (timeLeft > 0 && !isRunning) {
-                isRunning = true;
-                startBtn.textContent = 'Running...';
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                announce(`Timer started: ${minutes} minutes ${seconds} seconds remaining`);
-                timerInterval = setInterval(() => {
-                    timeLeft--;
+        function updateTabTitle() {
+            if (isRunning) {
+                const minutes = Math.floor(phaseTimeLeft / 60);
+                const seconds = phaseTimeLeft % 60;
+                const phaseEmoji = currentPhase === 'WORK' ? '💪' : '😮‍💨';
+                document.title = `${phaseEmoji} ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} - ${currentPhase} (${currentInterval}/${totalIntervals})`;
+            } else if (currentPhase === 'COMPLETE') {
+                document.title = '✅ Workout Complete! - HIIT Timer';
+            } else {
+                document.title = originalTitle;
+            }
+        }
+
+        // ===== SLIDER CONTROLS =====
+        function formatTime(seconds) {
+            if (seconds >= 60) {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                return secs > 0 ? `${mins}:${String(secs).padStart(2, '0')}` : `${mins}:00`;
+            }
+            return `${seconds}s`;
+        }
+
+        function updateSliderDisplays() {
+            workValue.textContent = formatTime(workDuration);
+            restValue.textContent = formatTime(restDuration);
+            intervalsValue.textContent = totalIntervals;
+            totalIntervalsNum.textContent = totalIntervals;
+
+            const total = (workDuration + restDuration) * totalIntervals;
+            const mins = Math.floor(total / 60);
+            const secs = total % 60;
+            totalWorkoutTime.textContent = secs > 0 ? `${mins}:${String(secs).padStart(2, '0')}` : `${mins}:00`;
+        }
+
+        function initializeSliders() {
+            // Slider input handlers
+            workSlider.addEventListener('input', (e) => {
+                workDuration = parseInt(e.target.value);
+                updateSliderDisplays();
+                if (currentPhase === 'IDLE') {
+                    phaseTimeLeft = workDuration;
                     updateDisplay();
-                    saveTimerState();
-                    if (timeLeft <= 0) {
-                        pauseTimer();
-                        playAlarm();
-                        announce('Timer complete!');
+                }
+            });
+
+            restSlider.addEventListener('input', (e) => {
+                restDuration = parseInt(e.target.value);
+                updateSliderDisplays();
+            });
+
+            intervalsSlider.addEventListener('input', (e) => {
+                totalIntervals = parseInt(e.target.value);
+                updateSliderDisplays();
+                updatePhaseIndicator();
+            });
+
+            // Plus/minus button handlers
+            document.querySelectorAll('.slider-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-target');
+                    const step = parseInt(btn.getAttribute('data-step'));
+                    const slider = document.getElementById(targetId);
+
+                    if (slider) {
+                        let newValue = parseInt(slider.value) + step;
+                        newValue = Math.max(parseInt(slider.min), Math.min(parseInt(slider.max), newValue));
+                        slider.value = newValue;
+                        slider.dispatchEvent(new Event('input'));
                     }
-                }, 1000);
+                });
+            });
+        }
+
+        // ===== PRESET SHORTCUTS =====
+        function initializePresetShortcuts() {
+            document.querySelectorAll('.preset-shortcut').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const presetName = btn.getAttribute('data-preset');
+                    const preset = INTERVAL_PRESETS[presetName];
+
+                    if (preset) {
+                        workDuration = preset.work;
+                        restDuration = preset.rest;
+                        totalIntervals = preset.intervals;
+
+                        // Update sliders
+                        workSlider.value = workDuration;
+                        restSlider.value = restDuration;
+                        intervalsSlider.value = totalIntervals;
+
+                        updateSliderDisplays();
+
+                        // Update active state
+                        document.querySelectorAll('.preset-shortcut').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // Reset if timer was running
+                        if (currentPhase !== 'IDLE') {
+                            resetTimer();
+                        } else {
+                            phaseTimeLeft = workDuration;
+                            updateDisplay();
+                        }
+                    }
+                });
+            });
+        }
+
+        // ===== STATE PERSISTENCE =====
+        function saveIntervalState() {
+            localStorage.setItem('hiitIntervalState', JSON.stringify({
+                workDuration,
+                restDuration,
+                totalIntervals,
+                currentPhase,
+                currentInterval,
+                phaseTimeLeft,
+                isRunning,
+                timestamp: Date.now()
+            }));
+        }
+
+        function restoreIntervalState() {
+            const saved = localStorage.getItem('hiitIntervalState');
+            if (saved) {
+                try {
+                    const state = JSON.parse(saved);
+                    const elapsed = Math.floor((Date.now() - state.timestamp) / 1000);
+
+                    if (state.isRunning && elapsed < 3600) {
+                        workDuration = state.workDuration;
+                        restDuration = state.restDuration;
+                        totalIntervals = state.totalIntervals;
+                        currentInterval = state.currentInterval;
+                        currentPhase = state.currentPhase;
+
+                        let remaining = state.phaseTimeLeft - elapsed;
+
+                        if (remaining > 0) {
+                            phaseTimeLeft = remaining;
+
+                            // Update sliders
+                            workSlider.value = workDuration;
+                            restSlider.value = restDuration;
+                            intervalsSlider.value = totalIntervals;
+                            updateSliderDisplays();
+
+                            updatePhaseIndicator();
+                            updateStopwatchColors();
+                            updateDisplay();
+
+                            isRunning = true;
+                            startBtn.textContent = 'Running...';
+                            timerInterval = setInterval(tick, 1000);
+                            return true;
+                        }
+                    }
+                } catch (e) {
+                    console.log('Could not restore interval state');
+                }
+                localStorage.removeItem('hiitIntervalState');
             }
+            return false;
         }
 
-        function pauseTimer() {
-            const wasRunning = isRunning;
-            isRunning = false;
-            startBtn.textContent = 'Start';
-            clearInterval(timerInterval);
-            localStorage.removeItem('workoutTimer');
-            if (wasRunning && timeLeft > 0) {
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                announce(`Timer paused: ${minutes} minutes ${seconds} seconds remaining`);
+        // ===== SOUND CONTROLS =====
+        const savedSound = localStorage.getItem('alarmSound');
+        if (savedSound) {
+            alarmSelect.value = savedSound;
+        }
+
+        alarmSelect.addEventListener('change', function() {
+            localStorage.setItem('alarmSound', this.value);
+        });
+
+        testSoundBtn.addEventListener('click', function() {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
             }
-        }
+            alarmAudio = new Audio(alarmSelect.value);
+            alarmAudio.play().catch(e => console.log('Audio play failed:', e));
+            setTimeout(() => {
+                if (alarmAudio) {
+                    alarmAudio.pause();
+                    alarmAudio.currentTime = 0;
+                }
+            }, 2000);
+        });
 
-        function resetTimer() {
-            pauseTimer();
-            timeLeft = totalTime;
-            updateDisplay();
-            document.title = originalTitle;
-            const minutes = Math.floor(totalTime / 60);
-            const seconds = totalTime % 60;
-            announce(`Timer reset to ${minutes} minutes ${seconds} seconds`);
-        }
+        const stopSoundBtn = document.getElementById('stopSound');
+        stopSoundBtn.addEventListener('click', function() {
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+            }
+        });
 
+        // ===== EVENT LISTENERS =====
         startBtn.addEventListener('click', startTimer);
         pauseBtn.addEventListener('click', pauseTimer);
         resetBtn.addEventListener('click', resetTimer);
-
-        updateDisplay();
-
-        // Quick Start Buttons
-        document.querySelectorAll('.quick-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const time = parseInt(this.getAttribute('data-time'));
-                buttons.forEach(b => b.classList.remove('active'));
-                pauseTimer();
-                timeLeft = time;
-                totalTime = time;
-                updateDisplay();
-                startTimer();
-            });
-        });
 
         // Keyboard Shortcuts
         document.addEventListener('keydown', function(e) {
@@ -2631,8 +3204,16 @@
             }
         });
 
-        // Restore timer state on page load
-        restoreTimerState();
+        // ===== INITIALIZATION =====
+        initializeSliders();
+        initializePresetShortcuts();
+        updateSliderDisplays();
+        phaseTimeLeft = workDuration;
+        updatePhaseIndicator();
+        updateDisplay();
+
+        // Try to restore previous state
+        restoreIntervalState();
 
         // Mobile Navigation Toggle
         const navToggle = document.getElementById('navToggle');
