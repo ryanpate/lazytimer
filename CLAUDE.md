@@ -77,23 +77,27 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 
 ## Key Features & Implementation
 
-### Timer Functionality (index.html)
+### Timer Functionality
 
-The timer is implemented entirely in vanilla JavaScript with three main components:
+The timer is implemented entirely in vanilla JavaScript with these main components:
 
-1. **Visual Analog Stopwatch**: CSS-positioned hands that rotate using `transform: rotate()` to show elapsed time
+1. **SVG Progress Circle** (New - on key pages): Modern progress ring using `stroke-dasharray` animation
+   - Circumference: `2 * Math.PI * 160 = 1005.3`
+   - Progress: `strokeDashoffset = circumference * (1 - progress)`
+   - Color states: running, warning, critical, complete
+   - Implemented on: index, pomodoro, study, meditation, hiit, workout, tabata
+
+2. **Visual Analog Stopwatch** (Legacy - remaining pages): CSS-positioned hands that rotate
    - Minute hand: Rotates based on `(elapsedTime / totalTime) * 360`
    - Second hand: Rotates based on `((60 - seconds) / 60) * 360`
-   - Located at `index.html:1579-1642`
 
-2. **Digital Flip Clock Display**: Four flip cards showing MM:SS with animation
-   - Each digit animates independently with flip effect
-   - Located at `index.html:1392-1404`
+3. **Digital Time Display**: Shows MM:SS format
+   - Progress circle pages: Simple text inside `.time-display`
+   - Legacy pages: Flip cards with animation
 
-3. **Preset Timer System**: 50+ categorized preset timers organized in optgroups
+4. **Preset Timer System**: 50+ categorized preset timers organized in optgroups
    - Categories: Cooking & Kitchen, Work & Productivity, Fitness & Exercise, Wellness & Meditation, Study & Learning, Daily Activities, Breaks & Rest
    - Premium timers marked with `data-premium="true"` attribute
-   - Located at `index.html:1288-1369`
 
 ### Styling & Design
 
@@ -181,6 +185,13 @@ Since this is a static site with no build process:
 4. Format: `<option value="SECONDS">Name - X min</option>`
 
 ### Changing timer appearance
+
+**For pages with Progress Circle (index, pomodoro, study, meditation, hiit, workout, tabata)**:
+1. Locate `.progress-timer` and `.progress-ring-fill` styles
+2. Modify theme colors in the color state classes (`.running`, `.warning`, `.critical`, `.complete`)
+3. Update `timerStatus` text in `updateTimerState()` JavaScript function
+
+**For legacy pages with Stopwatch**:
 1. Locate stopwatch container styles (`.stopwatch-container`)
 2. Modify hand styles (`.minute-hand`, `.second-hand`)
 3. Adjust positioning for `.minute-counter` if needed
@@ -196,12 +207,13 @@ Since this is a static site with no build process:
 - Premium features are UI mockups only (no payment integration)
 - No timer persistence - refreshing page resets timer (only alarm sound preference saved)
 
-## Current Features (Updated January 2025)
+## Current Features (Updated January 2026)
 
 - **Audio alerts**: `playAlarm()` function with selectable alarm sounds (all pages)
 - **Sound preference**: Saved to localStorage, persists across sessions
 - **40 Landing pages**: See File Structure for complete list including specialty timers (HIIT, Tabata, Classroom, Presentation) and time-based timers (1-90 minutes, 2 hours)
-- **Analog + Digital display**: Stopwatch with rotating hands + flip-clock digits
+- **SVG Progress Circle**: Modern progress ring timer on key pages (see Progress Circle Status below)
+- **Analog + Digital display**: Legacy stopwatch with rotating hands on remaining pages
 - **50+ presets**: Organized by category (cooking, work, fitness, etc.)
 - **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
 - **Standardized navigation**: All pages share consistent nav (Home, Pomodoro, Study, Workout, Meditation, Cooking, Countdown, Stopwatch)
@@ -914,34 +926,51 @@ Add these phrases to existing content:
 
 ### PRIORITY 1: Progress Circle Timer (Replace Stopwatch)
 
-**Status**: In Progress - Prototyping on hiit-timer.html
+**Status**: In Progress - Core pages complete, remaining pages pending
 
-Replace the analog stopwatch with rotating hands with a modern SVG progress circle:
+Replace the analog stopwatch with rotating hands with a modern SVG progress circle.
 
-| Current (Stopwatch) | New (Progress Circle) |
-|---------------------|----------------------|
-| Rotating hands often inaccurate | Precise visual representation |
-| Complex CSS positioning | Simple SVG stroke-dasharray animation |
-| Hard to read at a glance | Instantly shows % complete |
-| Doesn't integrate with phases | Circle color changes for WORK/REST |
-| Requires stopwatch.png image | Pure SVG, no image dependency |
+#### Progress Circle Implementation Status
+
+| Page | Status | Theme Color | Service Worker |
+|------|--------|-------------|----------------|
+| `index.html` | ✅ Complete | Purple (#667eea) | v13 |
+| `pomodoro-timer.html` | ✅ Complete | Red (#e74c3c) | v14 |
+| `study-timer.html` | ✅ Complete | Blue (#3498db) | v15 |
+| `meditation-timer.html` | ✅ Complete | Purple (#9b59b6) | v16 |
+| `hiit-timer.html` | ✅ Complete | Red (#e74c3c) | v12 |
+| `workout-timer.html` | ✅ Complete | Red (#e74c3c) | v12 |
+| `tabata-timer.html` | ✅ Complete | Red (#e74c3c) | v12 |
+| `cooking-timer.html` | ❌ Pending | - | - |
+| `countdown-timer.html` | ❌ Pending | - | - |
+| `stopwatch.html` | ❌ Pending | - | - |
+| `sleep-timer.html` | ❌ Pending | - | - |
+| `egg-timer.html` | ❌ Pending | - | - |
+| `breathing-timer.html` | ❌ Pending | - | - |
+| `classroom-timer.html` | ❌ Pending | - | - |
+| `presentation-timer.html` | ❌ Pending | - | - |
+| Time-based timers (1-90min, 2hr) | ❌ Pending | - | - |
+
+**Current Service Worker Version**: v16
 
 **Implementation Details**:
 ```html
-<svg class="progress-ring" width="300" height="300">
-  <circle class="progress-ring-bg" cx="150" cy="150" r="140" />
-  <circle class="progress-ring-fill" cx="150" cy="150" r="140"
-          stroke-dasharray="879.6" stroke-dashoffset="0" />
+<svg class="progress-ring" width="350" height="350" viewBox="0 0 350 350">
+  <circle class="progress-ring-bg" cx="175" cy="175" r="160" />
+  <circle class="progress-ring-fill" cx="175" cy="175" r="160"
+          stroke-dasharray="1005.3" stroke-dashoffset="0" />
 </svg>
 ```
 
-**Progress calculation**: `strokeDashoffset = circumference * (1 - progress)`
+**Progress calculation**: `strokeDashoffset = CIRCUMFERENCE * (1 - progress)` where `CIRCUMFERENCE = 2 * Math.PI * 160 = 1005.3`
 
-**Phase colors**:
-- IDLE: Gray (#6c757d)
-- WORK: Red (#e74c3c) with pulse animation
-- REST: Green (#2ecc71) with slower pulse
-- COMPLETE: Purple (#9b59b6)
+**Color states** (vary by page theme):
+- READY: Gray (rgba(255,255,255,0.6))
+- Running: Theme color (e.g., #e74c3c for Pomodoro)
+- Warning (25% remaining): Orange (#f39c12)
+- Critical (10% remaining): Red (#e74c3c) with pulse animation
+- Complete: Green (#2ecc71)
+- Break/Rest: Secondary color (e.g., blue for Pomodoro breaks)
 
 ### PRIORITY 2: Reduce Control Clutter
 
