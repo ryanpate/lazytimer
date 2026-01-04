@@ -726,13 +726,13 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 60px;
+            padding: 40px;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
             margin-bottom: 40px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 60px;
+            gap: 30px;
         }
 
         /* ===== PROGRESS CIRCLE TIMER ===== */
@@ -858,11 +858,11 @@
         }
 
         .controls-panel {
-            flex: 1;
-            min-width: 350px;
+            width: 100%;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
 
         .workout-presets {
@@ -1065,8 +1065,8 @@
             .progress-timer { width: 300px; height: 300px; }
             .progress-ring { width: 300px; height: 300px; }
             .time-display { font-size: 4em; }
-            .timer-container { padding: 15px; gap: 15px; }
-            .controls-panel { gap: 12px; }
+            .timer-container { padding: 20px; gap: 20px; }
+            .controls-panel { gap: 15px; max-width: 100%; }
             .flip-card { width: 45px; height: 68px; }
             .flip-card-inner { font-size: 2.5em; }
             .colon { font-size: 2.5em; }
@@ -1453,9 +1453,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-width: auto;
             width: 100%;
-            flex: none;
+            max-width: 600px;
         }
 
         body.fullscreen-mode .digital-display {

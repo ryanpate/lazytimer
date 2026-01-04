@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v10.0 - Progress circle timer on HIIT page
-const CACHE_NAME = 'lazytimer-v10';
+// LazyTimer Service Worker v11.0 - Progress circle moved to top
+const CACHE_NAME = 'lazytimer-v11';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
