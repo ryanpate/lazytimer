@@ -949,6 +949,7 @@ Replace the analog stopwatch with rotating hands with a modern SVG progress circ
 | `breathing-timer.html` | ✅ Complete | Teal (#00b894) | - |
 | `classroom-timer.html` | ✅ Complete | Blue (#3498db) | - |
 | `presentation-timer.html` | ✅ Complete | Purple (#667eea) | - |
+| `5-minute-timer.html` | ✅ Complete | Purple (#667eea) | - |
 | Time-based timers (1-90min, 2hr) | ❌ Pending | - | - |
 
 **Current Service Worker Version**: v16
