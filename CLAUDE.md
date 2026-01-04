@@ -740,21 +740,21 @@ This data informs which landing pages to prioritize.
 Submit these URLs for indexing in Google Search Console. Check off as completed.
 
 ### Timer Pages (Priority - High Search Volume)
-- [ ] `https://lazytimer.com/`
-- [ ] `https://lazytimer.com/all-timers.html`
-- [ ] `https://lazytimer.com/pomodoro-timer.html`
-- [ ] `https://lazytimer.com/cooking-timer.html`
-- [ ] `https://lazytimer.com/workout-timer.html`
-- [ ] `https://lazytimer.com/meditation-timer.html`
-- [ ] `https://lazytimer.com/study-timer.html`
-- [ ] `https://lazytimer.com/countdown-timer.html`
-- [ ] `https://lazytimer.com/stopwatch.html`
-- [ ] `https://lazytimer.com/sleep-timer.html`
-- [ ] `https://lazytimer.com/egg-timer.html`
-- [ ] `https://lazytimer.com/breathing-timer.html`
-- [ ] `https://lazytimer.com/hiit-timer.html`
-- [ ] `https://lazytimer.com/tabata-timer.html`
-- [ ] `https://lazytimer.com/classroom-timer.html`
+- [x] `https://lazytimer.com/` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/all-timers.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/pomodoro-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/cooking-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/workout-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/meditation-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/study-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/countdown-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/stopwatch.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/sleep-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/egg-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/breathing-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/hiit-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/tabata-timer.html` ✅ Submitted Jan 3, 2026
+- [x] `https://lazytimer.com/classroom-timer.html` ✅ Submitted Jan 3, 2026
 - [ ] `https://lazytimer.com/presentation-timer.html`
 
 ### Time-Based Timers (High Volume)
@@ -784,7 +784,7 @@ Submit these URLs for indexing in Google Search Console. Check off as completed.
 - [ ] `https://lazytimer.com/privacy-policy.html`
 - [ ] `https://lazytimer.com/terms-of-service.html`
 
-**Total URLs to submit: 40**
+**Total URLs: 40** | **Submitted: 15** | **Remaining: 25**
 
 **Note**: Google Search Console has a daily quota for indexing requests. Submit highest-volume pages first (5-minute, 10-minute, 3-minute, 1-minute timers have highest search volume).
 
@@ -907,3 +907,123 @@ Add these phrases to existing content:
 | Month 3 | 500 | 10,000 | $20-40 |
 | Month 6 | 1,500 | 30,000 | $60-120 |
 | Month 12 | 5,000 | 100,000 | $200-400 |
+
+---
+
+## UI/UX Improvement Roadmap (January 2026)
+
+### PRIORITY 1: Progress Circle Timer (Replace Stopwatch)
+
+**Status**: In Progress - Prototyping on hiit-timer.html
+
+Replace the analog stopwatch with rotating hands with a modern SVG progress circle:
+
+| Current (Stopwatch) | New (Progress Circle) |
+|---------------------|----------------------|
+| Rotating hands often inaccurate | Precise visual representation |
+| Complex CSS positioning | Simple SVG stroke-dasharray animation |
+| Hard to read at a glance | Instantly shows % complete |
+| Doesn't integrate with phases | Circle color changes for WORK/REST |
+| Requires stopwatch.png image | Pure SVG, no image dependency |
+
+**Implementation Details**:
+```html
+<svg class="progress-ring" width="300" height="300">
+  <circle class="progress-ring-bg" cx="150" cy="150" r="140" />
+  <circle class="progress-ring-fill" cx="150" cy="150" r="140"
+          stroke-dasharray="879.6" stroke-dashoffset="0" />
+</svg>
+```
+
+**Progress calculation**: `strokeDashoffset = circumference * (1 - progress)`
+
+**Phase colors**:
+- IDLE: Gray (#6c757d)
+- WORK: Red (#e74c3c) with pulse animation
+- REST: Green (#2ecc71) with slower pulse
+- COMPLETE: Purple (#9b59b6)
+
+### PRIORITY 2: Reduce Control Clutter
+
+**Problem**: Too many input methods compete (dropdown + custom inputs + quick buttons + sliders)
+
+**Solution**:
+- Use quick-start buttons as primary input method
+- Hide "Custom Time" in expandable panel
+- Consolidate sound controls into single icon with popover
+- Group related controls with clear visual separation
+
+### PRIORITY 3: Simplify Navigation
+
+**Problem**: Multi-level dropdowns with 40+ timer links overwhelm users
+
+**Solution**:
+- Reduce main nav to: Home, Popular Timers, All Timers, About
+- Move full timer list to `/all-timers.html`
+- Use simpler category grouping
+
+### PRIORITY 4: Improve Mobile Timer Size
+
+**Problem**: Flip cards shrink to 35x52px on small screens - hard to read during workouts
+
+**Solution**:
+- Progress circle scales better than stopwatch
+- Minimum 48px font for digital time on mobile
+- Phase label integrated inside progress circle
+- Touch-friendly button sizes (minimum 44x44px)
+
+### PRIORITY 5: Integrate Phase Indicator into Timer
+
+**Problem**: Phase indicator is separate from timer display
+
+**Solution**:
+- Put WORK/REST label inside the progress circle
+- Round counter below the time
+- Unified visual hierarchy
+
+### PRIORITY 6: Collapse SEO Content
+
+**Problem**: 2000+ words of content creates scroll fatigue
+
+**Solution**:
+- Use accordion/collapsible sections
+- "Read More" expansion for detailed content
+- Keep timer above the fold
+
+### PRIORITY 7: Remove Duplicate Elements
+
+**Remove**:
+- Analog stopwatch and rotating hands
+- Minute counter badge (redundant with digital display)
+- Excessive navigation options
+
+**Keep**:
+- Digital flip clock display (or simplified digital time)
+- Progress circle (new)
+- Essential controls only
+
+---
+
+## Visual Hierarchy Target
+
+```
+┌─────────────────────────────────┐
+│  Minimal Nav (Logo + 4 links)   │
+├─────────────────────────────────┤
+│                                 │
+│      ╭─────────────────╮        │
+│      │     WORK        │        │
+│      │                 │        │
+│      │    25:00        │        │  ← Progress Circle
+│      │                 │        │     with time in center
+│      │  Round 3 of 8   │        │
+│      ╰─────────────────╯        │
+│                                 │
+│   [Start]  [Pause]  [Reset]     │  ← Primary controls
+│                                 │
+│   [1m] [5m] [10m] [25m] [⚙️]    │  ← Quick presets + settings
+│                                 │
+├─────────────────────────────────┤
+│  ▼ About This Timer (collapsed) │  ← SEO content hidden
+└─────────────────────────────────┘
+```
