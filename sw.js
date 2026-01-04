@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v15.0 - Progress circle on study timer
-const CACHE_NAME = 'lazytimer-v15';
+// LazyTimer Service Worker v16.0 - Progress circle on meditation timer
+const CACHE_NAME = 'lazytimer-v16';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
