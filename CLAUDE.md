@@ -945,7 +945,7 @@ Replace the analog stopwatch with rotating hands with a modern SVG progress circ
 | `countdown-timer.html` | ✅ Complete | Purple (#667eea) | - |
 | `stopwatch.html` | ✅ Complete | Red (#e74c3c) | - |
 | `sleep-timer.html` | ✅ Complete | Purple (#7b68ee) | - |
-| `egg-timer.html` | ❌ Pending | - | - |
+| `egg-timer.html` | ✅ Complete | Orange (#e67e22) | - |
 | `breathing-timer.html` | ❌ Pending | - | - |
 | `classroom-timer.html` | ❌ Pending | - | - |
 | `presentation-timer.html` | ❌ Pending | - | - |
