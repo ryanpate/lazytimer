@@ -1,5 +1,5 @@
-// LazyTimer Service Worker v9.0 - Added interval training to workout timers
-const CACHE_NAME = 'lazytimer-v9';
+// LazyTimer Service Worker v10.0 - Progress circle timer on HIIT page
+const CACHE_NAME = 'lazytimer-v10';
 
 // Assets to cache for offline use
 const STATIC_ASSETS = [
