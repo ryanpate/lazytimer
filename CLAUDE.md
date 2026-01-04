@@ -941,9 +941,9 @@ Replace the analog stopwatch with rotating hands with a modern SVG progress circ
 | `hiit-timer.html` | ✅ Complete | Red (#e74c3c) | v12 |
 | `workout-timer.html` | ✅ Complete | Red (#e74c3c) | v12 |
 | `tabata-timer.html` | ✅ Complete | Red (#e74c3c) | v12 |
-| `cooking-timer.html` | ❌ Pending | - | - |
-| `countdown-timer.html` | ❌ Pending | - | - |
-| `stopwatch.html` | ❌ Pending | - | - |
+| `cooking-timer.html` | ✅ Complete | Orange (#f39c12) | - |
+| `countdown-timer.html` | ✅ Complete | Purple (#667eea) | - |
+| `stopwatch.html` | ✅ Complete | Red (#e74c3c) | - |
 | `sleep-timer.html` | ❌ Pending | - | - |
 | `egg-timer.html` | ❌ Pending | - | - |
 | `breathing-timer.html` | ❌ Pending | - | - |

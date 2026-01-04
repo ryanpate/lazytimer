@@ -727,6 +727,93 @@
             box-shadow: 0 0 20px rgba(52, 152, 219, 0.6);
         }
 
+        /* Progress Circle Timer */
+        .progress-timer {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+            filter: drop-shadow(0 10px 30px rgba(231, 76, 60, 0.3));
+        }
+
+        .progress-ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 12;
+        }
+
+        .progress-ring-fill {
+            fill: none;
+            stroke: #e74c3c;
+            stroke-width: 12;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.05s linear, stroke 0.5s ease;
+        }
+
+        .timer-content {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .timer-status {
+            font-size: 1.2em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .time-display {
+            font-size: 4em;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            line-height: 1;
+        }
+
+        .time-display-ms {
+            font-size: 1.5em;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 5px;
+        }
+
+        /* Progress ring color states */
+        .progress-timer.running .progress-ring-fill {
+            stroke: #e74c3c;
+        }
+
+        .progress-timer.running {
+            animation: ring-pulse-red 2s infinite;
+        }
+
+        .progress-timer.paused .progress-ring-fill {
+            stroke: #f39c12;
+        }
+
+        .progress-timer.stopped .progress-ring-fill {
+            stroke: rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes ring-pulse-red {
+            0%, 100% { filter: drop-shadow(0 10px 30px rgba(231, 76, 60, 0.3)); }
+            50% { filter: drop-shadow(0 10px 40px rgba(231, 76, 60, 0.5)); }
+        }
+
         .controls-panel {
             flex: 1;
             min-width: 350px;
@@ -1023,9 +1110,18 @@
                 padding: 40px;
             }
 
-            .stopwatch-container {
-                width: 350px;
-                height: 350px;
+            .progress-timer {
+                width: 320px;
+                height: 320px;
+            }
+
+            .progress-ring {
+                width: 320px;
+                height: 320px;
+            }
+
+            .time-display {
+                font-size: 3.5em;
             }
         }
 
@@ -1048,9 +1144,26 @@
                 display: none;
             }
 
-            .stopwatch-container {
-                width: 200px;
-                height: 200px;
+            .progress-timer {
+                width: 260px;
+                height: 260px;
+            }
+
+            .progress-ring {
+                width: 260px;
+                height: 260px;
+            }
+
+            .time-display {
+                font-size: 2.8em;
+            }
+
+            .time-display-ms {
+                font-size: 1.2em;
+            }
+
+            .timer-status {
+                font-size: 1em;
             }
 
             .timer-container {
@@ -1117,9 +1230,26 @@
                 margin-bottom: 8px;
             }
 
-            .stopwatch-container {
-                width: 160px;
-                height: 160px;
+            .progress-timer {
+                width: 200px;
+                height: 200px;
+            }
+
+            .progress-ring {
+                width: 200px;
+                height: 200px;
+            }
+
+            .time-display {
+                font-size: 2em;
+            }
+
+            .time-display-ms {
+                font-size: 1em;
+            }
+
+            .timer-status {
+                font-size: 0.9em;
             }
 
             .timer-container {
@@ -1323,9 +1453,26 @@
             gap: 30px;
         }
 
-        body.fullscreen-mode .stopwatch-container {
+        body.fullscreen-mode .progress-timer {
             width: 400px;
             height: 400px;
+        }
+
+        body.fullscreen-mode .progress-ring {
+            width: 400px;
+            height: 400px;
+        }
+
+        body.fullscreen-mode .time-display {
+            font-size: 4.5em;
+        }
+
+        body.fullscreen-mode .time-display-ms {
+            font-size: 1.8em;
+        }
+
+        body.fullscreen-mode .timer-status {
+            font-size: 1.4em;
         }
 
         body.fullscreen-mode .controls-panel {
@@ -1378,9 +1525,26 @@
         }
 
         @media (max-width: 768px) {
-            body.fullscreen-mode .stopwatch-container {
-                width: 250px;
-                height: 250px;
+            body.fullscreen-mode .progress-timer {
+                width: 280px;
+                height: 280px;
+            }
+
+            body.fullscreen-mode .progress-ring {
+                width: 280px;
+                height: 280px;
+            }
+
+            body.fullscreen-mode .time-display {
+                font-size: 2.8em;
+            }
+
+            body.fullscreen-mode .time-display-ms {
+                font-size: 1.3em;
+            }
+
+            body.fullscreen-mode .timer-status {
+                font-size: 1em;
             }
 
             body.fullscreen-mode .flip-card {
@@ -2128,13 +2292,17 @@
         </div>
 
         <div class="timer-container">
-            <div class="stopwatch-container">
-                <picture>
-                    <source srcset="stopwatch.webp" type="image/webp">
-                    <img src="stopwatch.png" alt="Online stopwatch - free stopwatch with lap times and milliseconds" class="stopwatch-image" width="512" height="512">
-                </picture>
-                <div class="minute-hand hand" id="minuteHand"></div>
-                <div class="second-hand hand" id="secondHand"></div>
+            <div class="progress-timer" id="progressTimer">
+                <svg class="progress-ring" width="350" height="350" viewBox="0 0 350 350" aria-hidden="true">
+                    <circle class="progress-ring-bg" cx="175" cy="175" r="160" />
+                    <circle class="progress-ring-fill" id="progressRing" cx="175" cy="175" r="160"
+                            stroke-dasharray="1005.3" stroke-dashoffset="1005.3" />
+                </svg>
+                <div class="timer-content">
+                    <div class="timer-status" id="timerStatus">READY</div>
+                    <div class="time-display" id="timeDisplay">00:00:00</div>
+                    <div class="time-display-ms" id="timeDisplayMs">.00</div>
+                </div>
             </div>
 
             <div class="controls-panel">
@@ -2522,8 +2690,12 @@
         const secondOnesCard = document.getElementById('secondOnes');
         const msTensCard = document.getElementById('msTens');
         const msOnesCard = document.getElementById('msOnes');
-        const minuteHand = document.getElementById('minuteHand');
-        const secondHand = document.getElementById('secondHand');
+        const progressTimer = document.getElementById('progressTimer');
+        const progressRing = document.getElementById('progressRing');
+        const timerStatus = document.getElementById('timerStatus');
+        const timeDisplay = document.getElementById('timeDisplay');
+        const timeDisplayMs = document.getElementById('timeDisplayMs');
+        const CIRCUMFERENCE = 2 * Math.PI * 160; // 1005.3
         const startBtn = document.getElementById('startBtn');
         const stopBtn = document.getElementById('stopBtn');
         const lapBtn = document.getElementById('lapBtn');
@@ -2567,6 +2739,27 @@
             };
         }
 
+        function updateProgressRing(progress) {
+            // Progress is 0 to 1, represents the current second within a minute
+            const offset = CIRCUMFERENCE * (1 - progress);
+            progressRing.style.strokeDashoffset = offset;
+        }
+
+        function updateTimerState() {
+            progressTimer.classList.remove('running', 'paused', 'stopped');
+
+            if (isRunning) {
+                progressTimer.classList.add('running');
+                timerStatus.textContent = 'RUNNING';
+            } else if (elapsedTime > 0) {
+                progressTimer.classList.add('paused');
+                timerStatus.textContent = 'PAUSED';
+            } else {
+                progressTimer.classList.add('stopped');
+                timerStatus.textContent = 'READY';
+            }
+        }
+
         function updateDisplay() {
             const time = formatTime(elapsedTime);
 
@@ -2579,13 +2772,17 @@
             updateFlipCard(msTensCard, Math.floor(time.centiseconds / 10));
             updateFlipCard(msOnesCard, time.centiseconds % 10);
 
-            // Update analog display
+            // Update progress ring (shows current second within the minute)
             const totalSeconds = elapsedTime / 1000;
-            const minuteAngle = ((totalSeconds % 3600) / 3600) * 360;
-            const secondAngle = ((totalSeconds % 60) / 60) * 360;
+            const secondProgress = (totalSeconds % 60) / 60;
+            updateProgressRing(secondProgress);
 
-            minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
-            secondHand.style.transform = `rotate(${secondAngle}deg)`;
+            // Update time display in progress circle
+            timeDisplay.textContent = `${String(time.hours).padStart(2, '0')}:${String(time.minutes).padStart(2, '0')}:${String(time.seconds).padStart(2, '0')}`;
+            timeDisplayMs.textContent = `.${String(time.centiseconds).padStart(2, '0')}`;
+
+            // Update timer state (colors, status)
+            updateTimerState();
 
             updateTabTitle();
         }
