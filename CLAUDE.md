@@ -749,74 +749,46 @@ This data informs which landing pages to prioritize.
 
 ## TODO: Google Search Console Indexing
 
-Submit these URLs for indexing in Google Search Console. Check off as completed.
+**Status**: 20/40 URLs submitted | **Remaining: 20**
 
-### Timer Pages (Priority - High Search Volume)
-- [x] `https://lazytimer.com/` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/all-timers.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/pomodoro-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/cooking-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/workout-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/meditation-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/study-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/countdown-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/stopwatch.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/sleep-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/egg-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/breathing-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/hiit-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/tabata-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/classroom-timer.html` ✅ Submitted Jan 3, 2026
-- [x] `https://lazytimer.com/presentation-timer.html` ✅ Submitted Jan 4, 2026
+Submit these remaining URLs for indexing (ordered by search volume priority):
 
-### Time-Based Timers (High Volume)
-- [x] `https://lazytimer.com/1-minute-timer.html` ✅ Submitted Jan 4, 2026
-- [x] `https://lazytimer.com/2-minute-timer.html` ✅ Submitted Jan 4, 2026
-- [x] `https://lazytimer.com/3-minute-timer.html` ✅ Submitted Jan 4, 2026
-- [ ] `https://lazytimer.com/4-minute-timer.html`
-- [ ] `https://lazytimer.com/5-minute-timer.html`
-- [ ] `https://lazytimer.com/7-minute-timer.html`
-- [ ] `https://lazytimer.com/8-minute-timer.html`
-- [ ] `https://lazytimer.com/10-minute-timer.html`
-- [ ] `https://lazytimer.com/15-minute-timer.html`
-- [ ] `https://lazytimer.com/20-minute-timer.html`
-- [ ] `https://lazytimer.com/25-minute-timer.html`
-- [ ] `https://lazytimer.com/30-minute-timer.html`
-- [ ] `https://lazytimer.com/40-minute-timer.html`
-- [ ] `https://lazytimer.com/45-minute-timer.html`
-- [ ] `https://lazytimer.com/50-minute-timer.html`
-- [ ] `https://lazytimer.com/60-minute-timer.html`
-- [ ] `https://lazytimer.com/1-hour-timer.html`
-- [ ] `https://lazytimer.com/90-minute-timer.html`
-- [ ] `https://lazytimer.com/2-hour-timer.html`
+### Time-Based Timers (16 remaining)
+- [ ] `https://lazytimer.com/5-minute-timer.html` (45K/mo)
+- [ ] `https://lazytimer.com/10-minute-timer.html` (40K/mo)
+- [ ] `https://lazytimer.com/15-minute-timer.html` (22K/mo)
+- [ ] `https://lazytimer.com/20-minute-timer.html` (18K/mo)
+- [ ] `https://lazytimer.com/30-minute-timer.html` (18K/mo)
+- [ ] `https://lazytimer.com/25-minute-timer.html` (15K/mo)
+- [ ] `https://lazytimer.com/60-minute-timer.html` (12K/mo)
+- [ ] `https://lazytimer.com/1-hour-timer.html` (15K/mo)
+- [ ] `https://lazytimer.com/45-minute-timer.html` (8K/mo)
+- [ ] `https://lazytimer.com/4-minute-timer.html` (8K/mo)
+- [ ] `https://lazytimer.com/7-minute-timer.html` (10K/mo)
+- [ ] `https://lazytimer.com/8-minute-timer.html` (6K/mo)
+- [ ] `https://lazytimer.com/40-minute-timer.html` (6K/mo)
+- [ ] `https://lazytimer.com/50-minute-timer.html` (5K/mo)
+- [ ] `https://lazytimer.com/90-minute-timer.html` (5K/mo)
+- [ ] `https://lazytimer.com/2-hour-timer.html` (8K/mo)
 
-### Informational Pages (Lower Priority)
+### Informational Pages (4 remaining)
 - [ ] `https://lazytimer.com/about.html`
 - [ ] `https://lazytimer.com/how-to-use.html`
 - [ ] `https://lazytimer.com/privacy-policy.html`
 - [ ] `https://lazytimer.com/terms-of-service.html`
 
-**Total URLs: 40** | **Submitted: 19** | **Remaining: 21**
-
-**Note**: Google Search Console has a daily quota for indexing requests. Submit highest-volume pages first.
-
-**Next priority** (by search volume):
-1. `5-minute-timer.html` (45K/mo)
-2. `10-minute-timer.html` (40K/mo)
-3. `15-minute-timer.html` (22K/mo)
-4. `20-minute-timer.html` (18K/mo)
-5. `30-minute-timer.html` (18K/mo)
+**Note**: Google Search Console has a daily quota for indexing requests. Submit highest-volume pages first (5-min, 10-min, 15-min).
 
 ---
 
 ## TODO: SEO Improvements (January 2026)
 
-Based on GSC and GA4 data analysis. Current state: 19/40 pages submitted to GSC, ~97 daily users.
+Based on GSC and GA4 data analysis. Current state: 20/40 pages submitted to GSC, ~97 daily users.
 
 ### PRIORITY 1: Indexing ✅ IN PROGRESS
 See "TODO: Google Search Console Indexing" section above for current status.
-- 19/40 URLs submitted
-- 21 remaining (time-based timers + informational pages)
+- 20/40 URLs submitted
+- 20 remaining (16 time-based timers + 4 informational pages)
 - Next priority: 5-minute (45K/mo), 10-minute (40K/mo), 15-minute (22K/mo)
 
 ### PRIORITY 2: Optimize Study Timer (Current Winner - 155 pageviews) ✅ COMPLETED
