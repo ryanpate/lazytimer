@@ -953,7 +953,7 @@ Replace the analog stopwatch with rotating hands with a modern SVG progress circ
 | `7-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
 | `8-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
 | `15-minute-timer.html` | ✅ Complete | Purple (#667eea) | - |
-| `20-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `20-minute-timer.html` | ✅ Complete | Purple (#667eea) | - |
 | `25-minute-timer.html` | ❌ Pending | Red (#e74c3c) | - |
 | `30-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
 | `40-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
@@ -964,7 +964,7 @@ Replace the analog stopwatch with rotating hands with a modern SVG progress circ
 | `90-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
 | `2-hour-timer.html` | ❌ Pending | Purple (#667eea) | - |
 
-**Progress**: 18/34 pages complete (16 remaining)
+**Progress**: 19/34 pages complete (15 remaining)
 
 **Current Service Worker Version**: v16
 
