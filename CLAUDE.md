@@ -809,27 +809,15 @@ Submit these URLs for indexing in Google Search Console. Check off as completed.
 
 ---
 
-## TODO: SEO Improvements (January 2025 Analysis)
+## TODO: SEO Improvements (January 2026)
 
-Based on GSC and GA4 data analysis. Current state: 11/40 pages indexed, 4 clicks/week, ~97 daily users.
+Based on GSC and GA4 data analysis. Current state: 19/40 pages submitted to GSC, ~97 daily users.
 
-### PRIORITY 1: Indexing (10x Revenue Impact)
-Submit these NOT-YET-INDEXED high-volume pages first:
-- [ ] `https://lazytimer.com/10-minute-timer` (40K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/3-minute-timer` (30K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/countdown-timer` (33K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/stopwatch` (28K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/cooking-timer` (15K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/1-minute-timer` (35K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/2-minute-timer` (25K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/15-minute-timer` (22K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/20-minute-timer` (18K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/30-minute-timer` (18K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/hiit-timer` (15K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/tabata-timer` (12K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/sleep-timer` (12K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/egg-timer` (9K/mo searches) - NOT in GSC
-- [ ] `https://lazytimer.com/breathing-timer` (8K/mo searches) - NOT in GSC
+### PRIORITY 1: Indexing ✅ IN PROGRESS
+See "TODO: Google Search Console Indexing" section above for current status.
+- 19/40 URLs submitted
+- 21 remaining (time-based timers + informational pages)
+- Next priority: 5-minute (45K/mo), 10-minute (40K/mo), 15-minute (22K/mo)
 
 ### PRIORITY 2: Optimize Study Timer (Current Winner - 155 pageviews) ✅ COMPLETED
 - [x] Add long-tail content: "study timer for exams", "homework timer", "focus timer for ADHD" ✅
