@@ -767,12 +767,12 @@ Submit these URLs for indexing in Google Search Console. Check off as completed.
 - [x] `https://lazytimer.com/hiit-timer.html` ✅ Submitted Jan 3, 2026
 - [x] `https://lazytimer.com/tabata-timer.html` ✅ Submitted Jan 3, 2026
 - [x] `https://lazytimer.com/classroom-timer.html` ✅ Submitted Jan 3, 2026
-- [ ] `https://lazytimer.com/presentation-timer.html`
+- [x] `https://lazytimer.com/presentation-timer.html` ✅ Submitted Jan 4, 2026
 
 ### Time-Based Timers (High Volume)
-- [ ] `https://lazytimer.com/1-minute-timer.html`
-- [ ] `https://lazytimer.com/2-minute-timer.html`
-- [ ] `https://lazytimer.com/3-minute-timer.html`
+- [x] `https://lazytimer.com/1-minute-timer.html` ✅ Submitted Jan 4, 2026
+- [x] `https://lazytimer.com/2-minute-timer.html` ✅ Submitted Jan 4, 2026
+- [x] `https://lazytimer.com/3-minute-timer.html` ✅ Submitted Jan 4, 2026
 - [ ] `https://lazytimer.com/4-minute-timer.html`
 - [ ] `https://lazytimer.com/5-minute-timer.html`
 - [ ] `https://lazytimer.com/7-minute-timer.html`
@@ -796,9 +796,16 @@ Submit these URLs for indexing in Google Search Console. Check off as completed.
 - [ ] `https://lazytimer.com/privacy-policy.html`
 - [ ] `https://lazytimer.com/terms-of-service.html`
 
-**Total URLs: 40** | **Submitted: 15** | **Remaining: 25**
+**Total URLs: 40** | **Submitted: 19** | **Remaining: 21**
 
-**Note**: Google Search Console has a daily quota for indexing requests. Submit highest-volume pages first (5-minute, 10-minute, 3-minute, 1-minute timers have highest search volume).
+**Note**: Google Search Console has a daily quota for indexing requests. Submit highest-volume pages first.
+
+**Next priority** (by search volume):
+1. `5-minute-timer.html` (45K/mo)
+2. `10-minute-timer.html` (40K/mo)
+3. `15-minute-timer.html` (22K/mo)
+4. `20-minute-timer.html` (18K/mo)
+5. `30-minute-timer.html` (18K/mo)
 
 ---
 
