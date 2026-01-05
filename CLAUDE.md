@@ -946,7 +946,25 @@ Replace the analog stopwatch with rotating hands with a modern SVG progress circ
 | `presentation-timer.html` | ✅ Complete | Purple (#667eea) | - |
 | `5-minute-timer.html` | ✅ Complete | Purple (#667eea) | - |
 | `10-minute-timer.html` | ✅ Complete | Purple (#667eea) | - |
-| Time-based timers (1-90min, 2hr) | ❌ Pending | - | - |
+| `1-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `2-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `3-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `4-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `7-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `8-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `15-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `20-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `25-minute-timer.html` | ❌ Pending | Red (#e74c3c) | - |
+| `30-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `40-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `45-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `50-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `60-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `1-hour-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `90-minute-timer.html` | ❌ Pending | Purple (#667eea) | - |
+| `2-hour-timer.html` | ❌ Pending | Purple (#667eea) | - |
+
+**Progress**: 17/34 pages complete (17 remaining)
 
 **Current Service Worker Version**: v16
 
