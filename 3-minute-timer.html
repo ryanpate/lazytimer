@@ -617,6 +617,7 @@
         }
 
         .timer-container {
+            min-height: 400px;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -630,44 +631,103 @@
             gap: 60px;
         }
 
-        .stopwatch-container {
+        /* Progress Circle Timer */
+        .progress-timer {
+            aspect-ratio: 1;
             position: relative;
-            width: 450px;
-            height: 450px;
-            flex-shrink: 0;
-            filter: drop-shadow(0 20px 40px rgba(243, 156, 18, 0.3));
+            width: 350px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .stopwatch-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .hand {
+        .progress-ring {
             position: absolute;
-            bottom: 43.53%;
+            top: 0;
+            left: 0;
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 12;
+        }
+
+        .progress-ring-fill {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.6);
+            stroke-width: 12;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.3s ease, stroke 0.3s ease;
+        }
+
+        .timer-status {
+            position: absolute;
+            top: 25%;
             left: 50%;
-            transform-origin: bottom center;
-            border-radius: 50% 50% 0 0;
+            transform: translateX(-50%);
+            font-size: 1.2em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
         }
 
-        .minute-hand {
-            width: 7px;
-            height: 22%;
-            margin-left: -3.5px;
-            background: linear-gradient(180deg, #f39c12 0%, #e67e22 100%);
-            z-index: 101;
-            box-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
+        .time-display {
+            position: absolute;
+            font-size: 4em;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 30px rgba(243, 156, 18, 0.5);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
         }
 
-        .second-hand {
-            width: 5px;
-            height: 26%;
-            margin-left: -2.5px;
-            background: linear-gradient(180deg, #27ae60 0%, #229954 100%);
-            z-index: 102;
-            box-shadow: 0 0 20px rgba(39, 174, 96, 0.6);
+        /* Progress Circle States */
+        .progress-timer.running .progress-ring-fill {
+            stroke: #f39c12;
+            filter: drop-shadow(0 0 20px rgba(243, 156, 18, 0.6));
+            animation: ring-pulse-orange 2s ease-in-out infinite;
+        }
+
+        .progress-timer.warning .progress-ring-fill {
+            stroke: #e67e22;
+            filter: drop-shadow(0 0 20px rgba(230, 126, 34, 0.6));
+            animation: ring-pulse-warning 1.5s ease-in-out infinite;
+        }
+
+        .progress-timer.critical .progress-ring-fill {
+            stroke: #e74c3c;
+            filter: drop-shadow(0 0 25px rgba(231, 76, 60, 0.8));
+            animation: ring-pulse-critical 0.8s ease-in-out infinite;
+        }
+
+        .progress-timer.complete .progress-ring-fill {
+            stroke: #2ecc71;
+            filter: drop-shadow(0 0 30px rgba(46, 204, 113, 0.8));
+        }
+
+        .progress-timer.paused .progress-ring-fill {
+            stroke: rgba(255, 255, 255, 0.4);
+            filter: none;
+            animation: none;
+        }
+
+        @keyframes ring-pulse-orange {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(243, 156, 18, 0.6)); }
+            50% { filter: drop-shadow(0 0 35px rgba(243, 156, 18, 0.9)); }
+        }
+
+        @keyframes ring-pulse-warning {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(230, 126, 34, 0.6)); }
+            50% { filter: drop-shadow(0 0 35px rgba(230, 126, 34, 0.9)); }
+        }
+
+        @keyframes ring-pulse-critical {
+            0%, 100% { filter: drop-shadow(0 0 25px rgba(231, 76, 60, 0.8)); }
+            50% { filter: drop-shadow(0 0 45px rgba(231, 76, 60, 1)); }
         }
 
         .controls-panel {
@@ -917,7 +977,8 @@
 
         @media (max-width: 1024px) {
             .timer-container { flex-direction: column; padding: 40px; }
-            .stopwatch-container { width: 350px; height: 350px; }
+            .progress-timer { width: 350px; height: 350px; }
+            .progress-ring { width: 350px; height: 350px; }
         }
 
         @media (max-width: 768px) {
@@ -925,7 +986,12 @@
             header h1 { font-size: 1.8em; gap: 8px; }
             .logo-icon { width: 35px; height: 35px; }
             header p { display: none; }
-            .stopwatch-container { width: 200px; height: 200px; }
+            .progress-timer { width: 200px; height: 200px; }
+            .progress-ring { width: 200px; height: 200px; }
+            .progress-ring-bg, .progress-ring-fill { cx: 100; cy: 100; r: 85; stroke-width: 10; }
+            .progress-ring-fill { stroke-dasharray: 534.1; }
+            .timer-status { font-size: 0.8em; top: 28%; }
+            .time-display { font-size: 2.2em; }
             .timer-container { padding: 15px; gap: 15px; }
             .controls-panel { gap: 12px; }
             .flip-card { width: 45px; height: 68px; }
@@ -941,7 +1007,12 @@
             body { padding: 8px; }
             header h1 { font-size: 1.5em; gap: 6px; }
             header { margin-bottom: 8px; }
-            .stopwatch-container { width: 160px; height: 160px; }
+            .progress-timer { width: 160px; height: 160px; }
+            .progress-ring { width: 160px; height: 160px; }
+            .progress-ring-bg, .progress-ring-fill { cx: 80; cy: 80; r: 70; stroke-width: 8; }
+            .progress-ring-fill { stroke-dasharray: 439.8; }
+            .timer-status { font-size: 0.7em; top: 28%; }
+            .time-display { font-size: 1.8em; }
             .timer-container { padding: 12px 10px; gap: 12px; border-radius: 15px; }
             .flip-card { width: 40px; height: 60px; }
             .flip-card-inner { font-size: 2.2em; }
@@ -954,7 +1025,12 @@
             header { margin-bottom: 5px; }
             header h1 { font-size: 1.3em; gap: 5px; }
             .logo-icon { width: 25px; height: 25px; }
-            .stopwatch-container { width: 140px; height: 140px; }
+            .progress-timer { width: 140px; height: 140px; }
+            .progress-ring { width: 140px; height: 140px; }
+            .progress-ring-bg, .progress-ring-fill { cx: 70; cy: 70; r: 60; stroke-width: 7; }
+            .progress-ring-fill { stroke-dasharray: 377; }
+            .timer-status { font-size: 0.65em; top: 28%; }
+            .time-display { font-size: 1.5em; }
             .timer-container { padding: 10px 8px; gap: 10px; }
             .flip-card { width: 35px; height: 52px; }
             .flip-card-inner { font-size: 1.8em; }
@@ -1031,6 +1107,22 @@
         }
 
         body.fullscreen-mode .digital-display { display: block !important; margin: 30px 0; }
+
+        body.fullscreen-mode .progress-timer { width: 500px; height: 500px; }
+        body.fullscreen-mode .progress-ring { width: 500px; height: 500px; }
+        body.fullscreen-mode .progress-ring-bg, body.fullscreen-mode .progress-ring-fill { cx: 250; cy: 250; r: 220; stroke-width: 16; }
+        body.fullscreen-mode .progress-ring-fill { stroke-dasharray: 1382.3; }
+        body.fullscreen-mode .timer-status { font-size: 1.5em; top: 25%; }
+        body.fullscreen-mode .time-display { font-size: 6em; }
+
+        @media (max-width: 768px) {
+            body.fullscreen-mode .progress-timer { width: 280px; height: 280px; }
+            body.fullscreen-mode .progress-ring { width: 280px; height: 280px; }
+            body.fullscreen-mode .progress-ring-bg, body.fullscreen-mode .progress-ring-fill { cx: 140; cy: 140; r: 120; stroke-width: 12; }
+            body.fullscreen-mode .progress-ring-fill { stroke-dasharray: 754; }
+            body.fullscreen-mode .timer-status { font-size: 1em; }
+            body.fullscreen-mode .time-display { font-size: 3em; }
+        }
 
         .keyboard-hints { display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap; }
         .keyboard-hint { display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.5); font-size: 0.85em; }
@@ -1574,13 +1666,14 @@
         </div>
 
         <div class="timer-container">
-            <div class="stopwatch-container">
-                <picture>
-                    <source srcset="stopwatch.webp" type="image/webp">
-                    <img src="stopwatch.png" alt="3 minute timer - free online three minute countdown timer with alarm" class="stopwatch-image" width="512" height="512">
-                </picture>
-                <div class="minute-hand hand" id="minuteHand"></div>
-                <div class="second-hand hand" id="secondHand"></div>
+            <div class="progress-timer" id="progressTimer">
+                <svg class="progress-ring" width="350" height="350" viewBox="0 0 350 350" aria-hidden="true">
+                    <circle class="progress-ring-bg" cx="175" cy="175" r="160" />
+                    <circle class="progress-ring-fill" id="progressRing" cx="175" cy="175" r="160"
+                        stroke-dasharray="1005.3" stroke-dashoffset="0" />
+                </svg>
+                <div class="timer-status" id="timerStatus">READY</div>
+                <div class="time-display" id="timeDisplay">03:00</div>
             </div>
 
             <div class="controls-panel">
@@ -1766,8 +1859,11 @@
         const minuteOnesCard = document.getElementById('minuteOnes');
         const secondTensCard = document.getElementById('secondTens');
         const secondOnesCard = document.getElementById('secondOnes');
-        const minuteHand = document.getElementById('minuteHand');
-        const secondHand = document.getElementById('secondHand');
+        const progressTimer = document.getElementById('progressTimer');
+        const progressRing = document.getElementById('progressRing');
+        const timerStatus = document.getElementById('timerStatus');
+        const timeDisplay = document.getElementById('timeDisplay');
+        const CIRCUMFERENCE = 2 * Math.PI * 160; // 1005.3
         const startBtn = document.getElementById('startBtn');
         const pauseBtn = document.getElementById('pauseBtn');
         const resetBtn = document.getElementById('resetBtn');
@@ -1848,6 +1944,46 @@
             }
         }
 
+        function updateProgressRing(progress) {
+            const offset = CIRCUMFERENCE * (1 - progress);
+            progressRing.style.strokeDashoffset = offset;
+        }
+
+        function updateTimerState() {
+            const progress = totalTime > 0 ? (totalTime - timeLeft) / totalTime : 0;
+            const states = ['running', 'warning', 'critical', 'complete', 'paused'];
+            states.forEach(s => progressTimer.classList.remove(s));
+
+            let stateClass = '';
+            let statusText = 'READY';
+
+            if (timeLeft === 0) {
+                stateClass = 'complete';
+                statusText = 'DONE';
+            } else if (!isRunning && timeLeft < totalTime) {
+                stateClass = 'paused';
+                statusText = 'PAUSED';
+            } else if (isRunning) {
+                const remaining = timeLeft / totalTime;
+                if (remaining <= 0.1) {
+                    stateClass = 'critical';
+                    statusText = 'HURRY';
+                } else if (remaining <= 0.25) {
+                    stateClass = 'warning';
+                    statusText = 'ALMOST';
+                } else {
+                    stateClass = 'running';
+                    statusText = 'TIMING';
+                }
+            }
+
+            if (stateClass) {
+                progressTimer.classList.add(stateClass);
+            }
+            timerStatus.textContent = statusText;
+            updateProgressRing(progress);
+        }
+
         function updateDisplay() {
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
@@ -1855,9 +1991,9 @@
             updateFlipCard(minuteOnesCard, minutes % 10);
             updateFlipCard(secondTensCard, Math.floor(seconds / 10));
             updateFlipCard(secondOnesCard, seconds % 10);
-            const elapsedTime = totalTime - timeLeft;
-            minuteHand.style.transform = `rotate(${(elapsedTime / totalTime) * 360}deg)`;
-            secondHand.style.transform = `rotate(${((60 - seconds) / 60) * 360}deg)`;
+            // Update progress circle time display
+            timeDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            updateTimerState();
             updateTabTitle();
         }
 
