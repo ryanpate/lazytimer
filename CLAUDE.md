@@ -817,7 +817,7 @@ Add contextual links between related pages:
 - [x] Standardize all titles/footers to 2026 ✅
 - [ ] Add unique Open Graph images per page (improve social sharing)
 - [ ] Submit sitemap to Bing Webmaster Tools (diversify traffic)
-- [ ] Add hreflang tags for EN (US/GB/AU) audiences
+- [x] Add hreflang tags for EN (US/GB/AU) audiences ✅
 
 ### PRIORITY 7: Long-Tail Keyword Optimization
 Add these phrases to existing content:
@@ -870,7 +870,7 @@ Comprehensive SEO audit completed Jan 4, 2026. Critical issues blocking Google r
 
 #### 4. Indexing Acceleration
 - [ ] Request re-indexing for all 20 submitted URLs in GSC
-- [ ] Add XML sitemap lastmod dates (trigger re-crawl)
+- [x] Add XML sitemap lastmod dates (trigger re-crawl) ✅ Updated to 2026-01-05
 - [ ] Submit sitemap to Bing Webmaster Tools (diversify crawl sources)
 - [ ] Create internal links FROM indexed pages TO non-indexed pages
 - [ ] Monitor "Crawled - currently not indexed" status in GSC
@@ -979,7 +979,7 @@ Target blogs in these niches:
 - [ ] Test with Facebook/Twitter sharing debuggers
 
 #### 14. International SEO
-- [ ] Add hreflang tags for EN-US, EN-GB, EN-AU
+- [x] Add hreflang tags for EN-US, EN-GB, EN-AU ✅
 - [ ] Consider creating localized versions for high-traffic countries
 
 #### 15. Analytics Enhancements
