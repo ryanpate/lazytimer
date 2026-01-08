@@ -1435,23 +1435,33 @@
                 padding: 10px;
             }
 
+            header {
+                margin-bottom: 15px;
+            }
+
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
                 gap: 8px;
             }
 
             .logo-icon {
-                width: 35px;
-                height: 35px;
+                width: 32px;
+                height: 32px;
             }
 
             .logo-icon::before {
-                width: 18px;
-                height: 18px;
+                width: 16px;
+                height: 16px;
             }
 
             header p {
                 display: none;
+            }
+
+            /* Minimize top ad on mobile for faster timer access */
+            .ad-container.top-ad {
+                min-height: 50px;
+                margin-bottom: 15px;
             }
 
             .progress-timer {
@@ -1534,14 +1544,20 @@
             }
 
             .quick-start {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
                 margin: 10px 0;
             }
 
             .quick-btn {
-                padding: 12px 18px;
-                font-size: 0.95em;
-                min-height: 44px;
+                padding: 14px 18px;
+                font-size: 1em;
+                min-height: 52px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .controls {
@@ -1550,8 +1566,8 @@
 
             .control-btn {
                 padding: 16px 28px;
-                font-size: 1.05em;
-                min-height: 50px;
+                font-size: 1.1em;
+                min-height: 56px;
             }
 
             .digital-timer {
@@ -1640,6 +1656,11 @@
                 margin-bottom: 8px;
             }
 
+            /* Hide top ad on small mobile for immediate timer access */
+            .ad-container.top-ad {
+                display: none;
+            }
+
             .timer-container {
                 padding: 15px;
                 gap: 15px;
@@ -1686,15 +1707,18 @@
             }
 
             .quick-start {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
                 margin: 8px 0;
             }
 
             .quick-btn {
-                padding: 10px 16px;
-                font-size: 0.9em;
-                min-height: 44px;
-                display: inline-flex;
+                padding: 12px 14px;
+                font-size: 0.95em;
+                min-height: 50px;
+                width: 100%;
+                display: flex;
                 align-items: center;
                 justify-content: center;
             }
@@ -1706,7 +1730,7 @@
             .control-btn {
                 padding: 14px 24px;
                 font-size: 1em;
-                min-height: 48px;
+                min-height: 52px;
             }
 
             .digital-timer {
@@ -1843,18 +1867,19 @@
             }
 
             .quick-btn {
-                padding: 10px 14px;
-                font-size: 0.85em;
-                min-height: 44px;
-                display: inline-flex;
+                padding: 10px 12px;
+                font-size: 0.9em;
+                min-height: 48px;
+                width: 100%;
+                display: flex;
                 align-items: center;
                 justify-content: center;
             }
 
             .control-btn {
                 padding: 12px 20px;
-                font-size: 0.9em;
-                min-height: 48px;
+                font-size: 0.95em;
+                min-height: 50px;
             }
         }
 

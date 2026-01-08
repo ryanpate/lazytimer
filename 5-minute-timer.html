@@ -1153,46 +1153,55 @@
                 padding: 10px;
             }
 
+            header {
+                margin-bottom: 15px;
+            }
+
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
                 gap: 8px;
             }
 
             .logo-icon {
-                width: 35px;
-                height: 35px;
+                width: 32px;
+                height: 32px;
             }
 
             header p {
                 display: none;
             }
 
+            /* Minimize top ad on mobile for faster timer access */
+            .ad-container.top-ad {
+                min-height: 50px;
+                margin-bottom: 15px;
+            }
+
             .progress-timer {
-                width: 200px;
-                height: 200px;
+                width: 280px;
+                height: 280px;
             }
 
             .progress-ring {
-                width: 200px;
-                height: 200px;
+                width: 280px;
+                height: 280px;
             }
 
             .progress-ring-bg, .progress-ring-fill {
-                cx: 100; cy: 100; r: 85;
-                stroke-width: 10;
+                cx: 140; cy: 140; r: 120;
+                stroke-width: 12;
             }
 
             .progress-ring-fill {
-                stroke-dasharray: 534.1;
+                stroke-dasharray: 754;
             }
 
             .timer-status {
-                font-size: 0.8em;
-                top: 28%;
+                font-size: 1em;
             }
 
             .time-display {
-                font-size: 2.2em;
+                font-size: 3.5em;
             }
 
             .timer-container {
@@ -1223,18 +1232,26 @@
             }
 
             .quick-start {
-                gap: 8px;
-                margin: 8px 0;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin: 10px 0;
             }
 
             .quick-btn {
-                padding: 8px 12px;
-                font-size: 0.85em;
+                padding: 14px 18px;
+                font-size: 1em;
+                min-height: 52px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .control-btn {
-                padding: 12px 20px;
-                font-size: 0.95em;
+                padding: 16px 28px;
+                font-size: 1.1em;
+                min-height: 56px;
             }
 
             .sound-selector {
@@ -1262,32 +1279,36 @@
                 margin-bottom: 8px;
             }
 
+            /* Hide top ad on small mobile for immediate timer access */
+            .ad-container.top-ad {
+                display: none;
+            }
+
             .progress-timer {
-                width: 160px;
-                height: 160px;
+                width: 240px;
+                height: 240px;
             }
 
             .progress-ring {
-                width: 160px;
-                height: 160px;
+                width: 240px;
+                height: 240px;
             }
 
             .progress-ring-bg, .progress-ring-fill {
-                cx: 80; cy: 80; r: 70;
-                stroke-width: 8;
+                cx: 120; cy: 120; r: 100;
+                stroke-width: 10;
             }
 
             .progress-ring-fill {
-                stroke-dasharray: 439.8;
+                stroke-dasharray: 628.3;
             }
 
             .timer-status {
-                font-size: 0.7em;
-                top: 28%;
+                font-size: 0.9em;
             }
 
             .time-display {
-                font-size: 1.8em;
+                font-size: 3em;
             }
 
             .timer-container {
@@ -1318,13 +1339,16 @@
             }
 
             .quick-btn {
-                padding: 6px 10px;
-                font-size: 0.8em;
+                padding: 12px 14px;
+                font-size: 0.95em;
+                min-height: 50px;
+                width: 100%;
             }
 
             .control-btn {
-                padding: 10px 16px;
-                font-size: 0.9em;
+                padding: 14px 24px;
+                font-size: 1em;
+                min-height: 52px;
             }
         }
 

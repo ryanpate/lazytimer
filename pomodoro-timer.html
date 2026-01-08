@@ -1267,18 +1267,28 @@
                 padding: 10px;
             }
 
+            header {
+                margin-bottom: 15px;
+            }
+
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
                 gap: 8px;
             }
 
             .logo-icon {
-                width: 35px;
-                height: 35px;
+                width: 32px;
+                height: 32px;
             }
 
             header p {
                 display: none;
+            }
+
+            /* Minimize top ad on mobile for faster timer access */
+            .ad-container.top-ad {
+                min-height: 50px;
+                margin-bottom: 15px;
             }
 
             .progress-timer {
@@ -1322,20 +1332,26 @@
             }
 
             .quick-start {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
                 margin: 10px 0;
             }
 
             .quick-btn {
-                padding: 12px 18px;
-                font-size: 0.95em;
-                min-height: 44px;
+                padding: 14px 18px;
+                font-size: 1em;
+                min-height: 52px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .control-btn {
                 padding: 16px 28px;
-                font-size: 1.05em;
-                min-height: 50px;
+                font-size: 1.1em;
+                min-height: 56px;
             }
 
             .preset-buttons {
