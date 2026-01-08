@@ -830,11 +830,33 @@ Add these phrases to existing content:
 - [ ] "timer for cooking eggs" → egg-timer.html
 - [ ] "workout timer with rest periods" → workout-timer.html
 
-### PRIORITY 8: Content Expansion
+### PRIORITY 8: Content Expansion ✅ MAJOR PROGRESS
 - [ ] Add FAQ section to breathing-timer (target featured snippets)
-- [ ] Add "use cases" section to high-traffic pages
+- [x] Add "use cases" section to high-traffic pages ✅ (14 pages completed - see Use Cases Status below)
 - [ ] Add comparison content: "Pomodoro vs 50-10 method" on study-timer
 - [ ] Add seasonal content: "New Year's countdown timer" (timely)
+
+#### Use Cases Status (January 2026)
+Added 6 detailed H2 use case sections to each page with H3 subsections, strong tags, and internal links:
+
+| Page | Status | Use Cases Added |
+|------|--------|-----------------|
+| `pomodoro-timer.html` | ✅ Complete | Remote Work, Students, Writers, Developers, ADHD, Teams |
+| `cooking-timer.html` | ✅ Complete | Meal Prep, Baking, Sous Vide, Coffee/Tea, Fermentation, Instant Pot |
+| `workout-timer.html` | ✅ Complete | CrossFit, Yoga/Pilates, Calisthenics, Stretching, Powerlifting, Swimming |
+| `meditation-timer.html` | ✅ Complete | Anxiety Relief, Sleep/Insomnia, Work/Productivity, Athletes, Pain, Spiritual |
+| `study-timer.html` | ✅ Complete | Music Practice, Art/Design, Graduate Research, MOOCs, Group Study, Flashcards |
+| `breathing-timer.html` | ✅ Complete | Sleep/Insomnia, Pain Management, Workplace Stress, Anger, Pregnancy, PTSD |
+| `sleep-timer.html` | ✅ Complete | Shift Workers, Parents, Students, Travel/Jet Lag, Athletes, Audio/Music |
+| `egg-timer.html` | ✅ Complete | Meal Prep, Deviled Eggs, Ramen, Egg Salad, Baking, Kitchen Multitasker |
+| `countdown-timer.html` | ✅ Complete | Product Launches, Classroom, Gaming, Sports, Escape Rooms, Weddings |
+| `stopwatch.html` | ✅ Complete | Swimming, Cooking, Science, Speedcubing, Public Speaking, Gaming/Speedruns |
+| `hiit-timer.html` | ✅ Complete | Beginners, Seniors, Boxing/Martial Arts, Jump Rope, Rowing, Group Fitness |
+| `tabata-timer.html` | ✅ Complete | Core/Abs, Kettlebell, Cycling/Spin, Swimming, Strength, Morning Routines |
+| `classroom-timer.html` | ✅ Complete | Elementary, Middle School, High School, Remote/Hybrid, Substitutes, Music/Art |
+| `presentation-timer.html` | ✅ Complete | TED/TEDx, Toastmasters, Sales Pitches, Academic, Training, Podcast/Video |
+
+**Remaining pages for use cases**: Time-based timer pages (1-min through 2-hour)
 
 ---
 
@@ -923,13 +945,28 @@ A: A Pomodoro timer should be 25 minutes, followed by a 5-minute break. This int
 ```
 
 #### 7. Content Depth Expansion
-Pages needing more content (target: 1,800+ words):
+**Specialty timer pages completed** (14 pages with 6 H2 use case sections each - see PRIORITY 8 above)
+
+**Time-based pages still needing use cases** (target: 1,800+ words):
 - [ ] 1-minute-timer.html - add use cases (teeth brushing, quick stretch)
 - [ ] 2-minute-timer.html - add use cases (hand washing, quick meditation)
 - [ ] 3-minute-timer.html - add use cases (soft-boiled eggs, elevator pitch)
 - [ ] 4-minute-timer.html - add use cases (tabata rest, quick break)
+- [ ] 5-minute-timer.html - add use cases (quick break, meditation intro)
 - [ ] 7-minute-timer.html - add 7-minute workout content
 - [ ] 8-minute-timer.html - add use cases (8-minute abs, quick tasks)
+- [ ] 10-minute-timer.html - add use cases (power breaks, quick workouts)
+- [ ] 15-minute-timer.html - add use cases (short meetings, focused work)
+- [ ] 20-minute-timer.html - add use cases (naps, exercise sessions)
+- [ ] 25-minute-timer.html - add use cases (Pomodoro, focused tasks)
+- [ ] 30-minute-timer.html - add use cases (lunch breaks, workouts)
+- [ ] 40-minute-timer.html - add use cases (class periods, meetings)
+- [ ] 45-minute-timer.html - add use cases (therapy sessions, classes)
+- [ ] 50-minute-timer.html - add use cases (lectures, extended focus)
+- [ ] 60-minute-timer.html - add use cases (hour blocks, deep work)
+- [ ] 1-hour-timer.html - add use cases (meetings, study blocks)
+- [ ] 90-minute-timer.html - add use cases (ultradian rhythms, movies)
+- [ ] 2-hour-timer.html - add use cases (exams, long sessions)
 
 ### MEDIUM: Schema Markup Enhancements
 
@@ -1418,10 +1455,18 @@ Queries appearing in GSC that need content optimization:
 - [ ] Add timer progress in browser tab title
 
 #### 11. Content Expansion
+**✅ Specialty timers complete** (14 pages with 6 H2 use case sections each)
+- [x] pomodoro, cooking, workout, meditation, study, breathing ✅
+- [x] sleep, egg, countdown, stopwatch, hiit, tabata ✅
+- [x] classroom, presentation ✅
+
+**Time-based timers remaining:**
 - [ ] 1-minute-timer: teeth brushing, quick stretch use cases
 - [ ] 2-minute-timer: hand washing, quick meditation
 - [ ] 3-minute-timer: soft-boiled eggs, elevator pitch
+- [ ] 5-minute-timer: quick break, short meditation
 - [ ] 7-minute-timer: 7-minute workout protocol
+- [ ] 10-minute through 2-hour timers: various use cases
 
 #### 12. Backlink Building
 - [ ] Submit to Product Hunt
