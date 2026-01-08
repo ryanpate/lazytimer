@@ -1966,6 +1966,247 @@
             }
         }
 
+        /* Sound Control Popover (New - Reduced Clutter) */
+        .sound-control {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sound-icon-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.15);
+            border: 2px solid rgba(102, 126, 234, 0.4);
+            color: #667eea;
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sound-icon-btn:hover {
+            background: rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .sound-icon-btn.muted {
+            color: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .sound-popover {
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #1a1f3a 0%, #0f1419 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            min-width: 220px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .sound-popover.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sound-popover label {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .sound-popover select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            background: rgba(102, 126, 234, 0.15);
+            color: white;
+            font-size: 0.9em;
+            cursor: pointer;
+            outline: none;
+            margin-bottom: 12px;
+        }
+
+        .sound-popover select option {
+            background: #1a1f3a;
+            color: white;
+        }
+
+        .sound-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .sound-actions .test-sound-btn,
+        .sound-actions .stop-sound-btn {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 0.85em;
+        }
+
+        /* Action Toolbar (Group Sound/Fullscreen/Share) */
+        .action-toolbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .action-toolbar .fullscreen-btn,
+        .action-toolbar .share-btn {
+            margin: 0;
+            padding: 10px 16px;
+            font-size: 0.9em;
+        }
+
+        /* Custom Time Collapsible Panel */
+        .custom-time-panel {
+            margin-top: 10px;
+        }
+
+        .custom-time-panel summary {
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85em;
+            text-align: center;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            list-style: none;
+        }
+
+        .custom-time-panel summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .custom-time-panel summary::before {
+            content: '+ ';
+        }
+
+        .custom-time-panel[open] summary::before {
+            content: '− ';
+        }
+
+        .custom-time-panel summary:hover {
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .custom-time-panel[open] summary {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .custom-time-panel .custom-timer-inputs {
+            justify-content: center;
+            padding: 10px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 8px;
+        }
+
+        /* Secondary Options Row */
+        .secondary-options {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .secondary-options .timer-selector {
+            flex: 0 1 auto;
+            width: auto;
+            margin: 0;
+        }
+
+        .secondary-options .timer-selector label {
+            font-size: 0.8em;
+            margin-bottom: 6px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .secondary-options .timer-select {
+            padding: 8px 12px;
+            font-size: 0.85em;
+            max-width: 200px;
+        }
+
+        /* Make Quick-Start More Prominent */
+        .quick-start.prominent {
+            margin: 25px 0;
+        }
+
+        .quick-start.prominent .quick-btn {
+            padding: 16px 28px;
+            font-size: 1.15em;
+            font-weight: 700;
+            border-width: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .action-toolbar {
+                gap: 10px;
+            }
+
+            .action-toolbar .fullscreen-btn,
+            .action-toolbar .share-btn {
+                padding: 8px 12px;
+                font-size: 0.85em;
+            }
+
+            .secondary-options {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .secondary-options .timer-select {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .sound-popover {
+                left: auto;
+                right: 0;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .action-toolbar {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .sound-icon-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2em;
+            }
+
+            .sound-popover {
+                min-width: 200px;
+                padding: 12px;
+            }
+        }
+
         /* Fullscreen Mode */
         .fullscreen-btn {
             padding: 10px 20px;
@@ -2040,9 +2281,9 @@
         body.fullscreen-mode .seo-content,
         body.fullscreen-mode .premium-section,
         body.fullscreen-mode footer,
-        body.fullscreen-mode .timer-selector,
-        body.fullscreen-mode .custom-timer-section,
-        body.fullscreen-mode .sound-selector,
+        body.fullscreen-mode .secondary-options,
+        body.fullscreen-mode .action-toolbar,
+        body.fullscreen-mode .keyboard-hints,
         body.fullscreen-mode .fullscreen-btn {
             display: none !important;
         }
@@ -2130,11 +2371,6 @@
         body.fullscreen-mode .quick-btn {
             padding: 15px 25px;
             font-size: 1.1em;
-        }
-
-        body.fullscreen-mode .keyboard-hints {
-            display: flex;
-            margin-top: 30px;
         }
 
         @media (max-width: 768px) {
@@ -3053,113 +3289,7 @@
             </div>
 
             <div class="controls-panel">
-                <div class="timer-selector">
-                    <label for="timerSelect">Select a Timer:</label>
-                    <select id="timerSelect" class="timer-select" aria-label="Choose preset timer duration">
-                        <option value="">Choose a preset timer...</option>
-
-                        <optgroup label="🍳 Cooking & Kitchen">
-                            <option value="180">Soft Boiled Eggs - 3 min</option>
-                            <option value="240">Hard Boiled Eggs - 4 min</option>
-                            <option value="300">Coffee Brewing - 5 min</option>
-                            <option value="420">Steamed Vegetables - 7 min</option>
-                            <option value="480">Rice - 8 min</option>
-                            <option value="600">Boiled Pasta - 10 min</option>
-                            <option value="720">Baked Chicken - 12 min</option>
-                            <option value="900">Pizza - 15 min</option>
-                            <option value="1200">Roasted Vegetables - 20 min</option>
-                            <option value="1500">Slow Cook - 25 min</option>
-                            <option value="1800">Bread Baking - 30 min</option>
-                            <option value="2700" data-premium="true">⭐ Slow Roast - 45 min</option>
-                        </optgroup>
-
-                        <optgroup label="💼 Work & Productivity">
-                            <option value="300">Quick Break - 5 min</option>
-                            <option value="600">Short Focus - 10 min</option>
-                            <option value="900">Quarter Hour - 15 min</option>
-                            <option value="1200">Sprint Work - 20 min</option>
-                            <option value="1500">Pomodoro - 25 min</option>
-                            <option value="1800">Half Hour - 30 min</option>
-                            <option value="2700" data-premium="true">⭐ Deep Focus - 45 min</option>
-                            <option value="3600" data-premium="true">⭐ Power Hour - 60 min</option>
-                            <option value="5400" data-premium="true">⭐ Extended Session - 90 min</option>
-                        </optgroup>
-
-                        <optgroup label="💪 Fitness & Exercise">
-                            <option value="60">Quick Stretch - 1 min</option>
-                            <option value="180">Warm Up - 3 min</option>
-                            <option value="300">Core Workout - 5 min</option>
-                            <option value="420">HIIT Round - 7 min</option>
-                            <option value="600">Quick Cardio - 10 min</option>
-                            <option value="900">Full Body - 15 min</option>
-                            <option value="1200">Strength Training - 20 min</option>
-                            <option value="1500">Cardio Session - 25 min</option>
-                            <option value="1800">Full Workout - 30 min</option>
-                            <option value="2400" data-premium="true">⭐ Extended Workout - 40 min</option>
-                            <option value="3000" data-premium="true">⭐ Long Session - 50 min</option>
-                            <option value="3600" data-premium="true">⭐ Marathon Workout - 60 min</option>
-                        </optgroup>
-
-                        <optgroup label="🧘 Wellness & Meditation">
-                            <option value="180">Quick Breathing - 3 min</option>
-                            <option value="300">Short Meditation - 5 min</option>
-                            <option value="600">Morning Meditation - 10 min</option>
-                            <option value="900">Mindfulness - 15 min</option>
-                            <option value="1200">Deep Relaxation - 20 min</option>
-                            <option value="1800">Yoga Session - 30 min</option>
-                            <option value="2700" data-premium="true">⭐ Extended Meditation - 45 min</option>
-                            <option value="3600" data-premium="true">⭐ Full Yoga Practice - 60 min</option>
-                        </optgroup>
-
-                        <optgroup label="📚 Study & Learning">
-                            <option value="300">Flash Cards - 5 min</option>
-                            <option value="600">Quick Review - 10 min</option>
-                            <option value="900">Focused Reading - 15 min</option>
-                            <option value="1200">Practice Problems - 20 min</option>
-                            <option value="1500">Study Block - 25 min</option>
-                            <option value="1800">Deep Study - 30 min</option>
-                            <option value="2700" data-premium="true">⭐ Extended Study - 45 min</option>
-                            <option value="3600" data-premium="true">⭐ Long Study Session - 60 min</option>
-                        </optgroup>
-
-                        <optgroup label="🏠 Daily Activities">
-                            <option value="300">Quick Shower - 5 min</option>
-                            <option value="420">Skincare Routine - 7 min</option>
-                            <option value="600">Morning Routine - 10 min</option>
-                            <option value="900">Cleaning Sprint - 15 min</option>
-                            <option value="1200">Power Clean - 20 min</option>
-                            <option value="1800">Deep Clean - 30 min</option>
-                        </optgroup>
-
-                        <optgroup label="🎮 Breaks & Rest">
-                            <option value="60">Micro Break - 1 min</option>
-                            <option value="180">Quick Rest - 3 min</option>
-                            <option value="300">Coffee Break - 5 min</option>
-                            <option value="600">Screen Break - 10 min</option>
-                            <option value="900">Lunch Prep - 15 min</option>
-                            <option value="1200">Power Nap - 20 min</option>
-                            <option value="1800">Lunch Break - 30 min</option>
-                        </optgroup>
-                    </select>
-                </div>
-
-                <div class="custom-timer-section">
-                    <label>Or Custom:</label>
-                    <div class="custom-timer-inputs">
-                        <div class="time-input-group">
-                            <span>Min</span>
-                            <input type="number" id="customMinutes" class="time-input" min="0" max="999"
-                                placeholder="00" aria-label="Custom minutes">
-                        </div>
-                        <div class="time-input-group">
-                            <span>Sec</span>
-                            <input type="number" id="customSeconds" class="time-input" min="0" max="59" placeholder="00"
-                                aria-label="Custom seconds">
-                        </div>
-                        <button class="set-custom-btn" id="setCustomBtn">Set</button>
-                    </div>
-                </div>
-
+                <!-- Digital Display -->
                 <div class="digital-display">
                     <div class="digital-timer" id="digitalTimer" role="timer" aria-live="polite" aria-atomic="true">
                         <div class="flip-card" id="minuteTens" aria-hidden="true">
@@ -3178,18 +3308,172 @@
                     </div>
                 </div>
 
-                <!-- Quick Start Buttons -->
-                <div class="quick-start">
+                <!-- Quick Start Buttons (PRIMARY - Most Prominent) -->
+                <div class="quick-start prominent">
                     <button class="quick-btn" data-time="60" aria-label="Start 1 minute timer">1 min</button>
                     <button class="quick-btn" data-time="300" aria-label="Start 5 minute timer">5 min</button>
                     <button class="quick-btn" data-time="600" aria-label="Start 10 minute timer">10 min</button>
                     <button class="quick-btn" data-time="1500" aria-label="Start 25 minute timer">25 min</button>
                 </div>
 
+                <!-- Main Controls -->
                 <div class="controls">
                     <button class="control-btn start-btn" id="startBtn" aria-label="Start timer">Start</button>
                     <button class="control-btn pause-btn" id="pauseBtn" aria-label="Pause timer">Pause</button>
                     <button class="control-btn reset-btn" id="resetBtn" aria-label="Reset timer">Reset</button>
+                </div>
+
+                <!-- Secondary Options (Smaller, Less Prominent) -->
+                <div class="secondary-options">
+                    <div class="timer-selector">
+                        <label for="timerSelect">More Presets:</label>
+                        <select id="timerSelect" class="timer-select" aria-label="Choose preset timer duration">
+                            <option value="">50+ presets...</option>
+
+                            <optgroup label="🍳 Cooking & Kitchen">
+                                <option value="180">Soft Boiled Eggs - 3 min</option>
+                                <option value="240">Hard Boiled Eggs - 4 min</option>
+                                <option value="300">Coffee Brewing - 5 min</option>
+                                <option value="420">Steamed Vegetables - 7 min</option>
+                                <option value="480">Rice - 8 min</option>
+                                <option value="600">Boiled Pasta - 10 min</option>
+                                <option value="720">Baked Chicken - 12 min</option>
+                                <option value="900">Pizza - 15 min</option>
+                                <option value="1200">Roasted Vegetables - 20 min</option>
+                                <option value="1500">Slow Cook - 25 min</option>
+                                <option value="1800">Bread Baking - 30 min</option>
+                                <option value="2700" data-premium="true">⭐ Slow Roast - 45 min</option>
+                            </optgroup>
+
+                            <optgroup label="💼 Work & Productivity">
+                                <option value="300">Quick Break - 5 min</option>
+                                <option value="600">Short Focus - 10 min</option>
+                                <option value="900">Quarter Hour - 15 min</option>
+                                <option value="1200">Sprint Work - 20 min</option>
+                                <option value="1500">Pomodoro - 25 min</option>
+                                <option value="1800">Half Hour - 30 min</option>
+                                <option value="2700" data-premium="true">⭐ Deep Focus - 45 min</option>
+                                <option value="3600" data-premium="true">⭐ Power Hour - 60 min</option>
+                                <option value="5400" data-premium="true">⭐ Extended Session - 90 min</option>
+                            </optgroup>
+
+                            <optgroup label="💪 Fitness & Exercise">
+                                <option value="60">Quick Stretch - 1 min</option>
+                                <option value="180">Warm Up - 3 min</option>
+                                <option value="300">Core Workout - 5 min</option>
+                                <option value="420">HIIT Round - 7 min</option>
+                                <option value="600">Quick Cardio - 10 min</option>
+                                <option value="900">Full Body - 15 min</option>
+                                <option value="1200">Strength Training - 20 min</option>
+                                <option value="1500">Cardio Session - 25 min</option>
+                                <option value="1800">Full Workout - 30 min</option>
+                                <option value="2400" data-premium="true">⭐ Extended Workout - 40 min</option>
+                                <option value="3000" data-premium="true">⭐ Long Session - 50 min</option>
+                                <option value="3600" data-premium="true">⭐ Marathon Workout - 60 min</option>
+                            </optgroup>
+
+                            <optgroup label="🧘 Wellness & Meditation">
+                                <option value="180">Quick Breathing - 3 min</option>
+                                <option value="300">Short Meditation - 5 min</option>
+                                <option value="600">Morning Meditation - 10 min</option>
+                                <option value="900">Mindfulness - 15 min</option>
+                                <option value="1200">Deep Relaxation - 20 min</option>
+                                <option value="1800">Yoga Session - 30 min</option>
+                                <option value="2700" data-premium="true">⭐ Extended Meditation - 45 min</option>
+                                <option value="3600" data-premium="true">⭐ Full Yoga Practice - 60 min</option>
+                            </optgroup>
+
+                            <optgroup label="📚 Study & Learning">
+                                <option value="300">Flash Cards - 5 min</option>
+                                <option value="600">Quick Review - 10 min</option>
+                                <option value="900">Focused Reading - 15 min</option>
+                                <option value="1200">Practice Problems - 20 min</option>
+                                <option value="1500">Study Block - 25 min</option>
+                                <option value="1800">Deep Study - 30 min</option>
+                                <option value="2700" data-premium="true">⭐ Extended Study - 45 min</option>
+                                <option value="3600" data-premium="true">⭐ Long Study Session - 60 min</option>
+                            </optgroup>
+
+                            <optgroup label="🏠 Daily Activities">
+                                <option value="300">Quick Shower - 5 min</option>
+                                <option value="420">Skincare Routine - 7 min</option>
+                                <option value="600">Morning Routine - 10 min</option>
+                                <option value="900">Cleaning Sprint - 15 min</option>
+                                <option value="1200">Power Clean - 20 min</option>
+                                <option value="1800">Deep Clean - 30 min</option>
+                            </optgroup>
+
+                            <optgroup label="🎮 Breaks & Rest">
+                                <option value="60">Micro Break - 1 min</option>
+                                <option value="180">Quick Rest - 3 min</option>
+                                <option value="300">Coffee Break - 5 min</option>
+                                <option value="600">Screen Break - 10 min</option>
+                                <option value="900">Lunch Prep - 15 min</option>
+                                <option value="1200">Power Nap - 20 min</option>
+                                <option value="1800">Lunch Break - 30 min</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Custom Time (Collapsible) -->
+                    <details class="custom-time-panel">
+                        <summary>Custom Time</summary>
+                        <div class="custom-timer-inputs">
+                            <div class="time-input-group">
+                                <span>Min</span>
+                                <input type="number" id="customMinutes" class="time-input" min="0" max="999"
+                                    placeholder="00" aria-label="Custom minutes">
+                            </div>
+                            <div class="time-input-group">
+                                <span>Sec</span>
+                                <input type="number" id="customSeconds" class="time-input" min="0" max="59" placeholder="00"
+                                    aria-label="Custom seconds">
+                            </div>
+                            <button class="set-custom-btn" id="setCustomBtn">Set</button>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Action Toolbar (Sound/Fullscreen/Share grouped) -->
+                <div class="action-toolbar">
+                    <!-- Sound Control with Popover -->
+                    <div class="sound-control">
+                        <button class="sound-icon-btn" id="soundToggle" aria-label="Sound settings" title="Sound Settings">
+                            🔔
+                        </button>
+                        <div class="sound-popover" id="soundPopover">
+                            <label for="alarmSound">Alarm Sound</label>
+                            <select id="alarmSound">
+                                <option value="/static/digital-clock-beep.wav">Digital Beep (Default)</option>
+                                <option value="/static/vintage-warning-alarm.wav">Vintage Alarm</option>
+                                <option value="/static/facility-breach-alarm.wav">Facility Alarm</option>
+                            </select>
+                            <div class="sound-actions">
+                                <button class="test-sound-btn" id="testSound">Test</button>
+                                <button class="stop-sound-btn" id="stopSound">Stop</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fullscreen Button -->
+                    <button class="fullscreen-btn" id="fullscreenBtn" aria-label="Enter fullscreen mode">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                        </svg>
+                        Fullscreen
+                    </button>
+
+                    <!-- Share Button -->
+                    <button class="share-btn" id="shareBtn" aria-label="Share this timer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="18" cy="5" r="3"/>
+                            <circle cx="6" cy="12" r="3"/>
+                            <circle cx="18" cy="19" r="3"/>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                        </svg>
+                        Share
+                    </button>
                 </div>
 
                 <!-- Keyboard Shortcuts Hints (hidden on mobile) -->
@@ -3198,37 +3482,6 @@
                     <span class="kbd-hint"><kbd class="kbd">R</kbd> Reset</span>
                     <span class="kbd-hint"><kbd class="kbd">F</kbd> Fullscreen</span>
                 </div>
-
-                <div class="sound-selector">
-                    <label for="alarmSound">Alarm Sound:</label>
-                    <select id="alarmSound">
-                        <option value="/static/digital-clock-beep.wav">Digital Beep (Default)</option>
-                        <option value="/static/vintage-warning-alarm.wav">Vintage Alarm</option>
-                        <option value="/static/facility-breach-alarm.wav">Facility Alarm</option>
-                    </select>
-                    <button class="test-sound-btn" id="testSound">Test</button>
-                    <button class="stop-sound-btn" id="stopSound">Stop</button>
-                </div>
-
-                <!-- Fullscreen Button -->
-                <button class="fullscreen-btn" id="fullscreenBtn" aria-label="Enter fullscreen mode">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-                    </svg>
-                    Fullscreen Mode
-                </button>
-
-                <!-- Share Button -->
-                <button class="share-btn" id="shareBtn" aria-label="Share this timer">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="18" cy="5" r="3"/>
-                        <circle cx="6" cy="12" r="3"/>
-                        <circle cx="18" cy="19" r="3"/>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-                    </svg>
-                    Share Timer
-                </button>
             </div>
         </div>
 
@@ -3477,8 +3730,33 @@
         const setCustomBtn = document.getElementById('setCustomBtn');
         const alarmSelect = document.getElementById('alarmSound');
         const testSoundBtn = document.getElementById('testSound');
+        const soundToggle = document.getElementById('soundToggle');
+        const soundPopover = document.getElementById('soundPopover');
         const originalTitle = document.title;
         const srAnnouncements = document.getElementById('srAnnouncements');
+
+        // Sound popover toggle
+        if (soundToggle && soundPopover) {
+            soundToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                soundPopover.classList.toggle('active');
+            });
+
+            // Close popover when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.sound-control')) {
+                    soundPopover.classList.remove('active');
+                }
+            });
+
+            // Close popover on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && soundPopover.classList.contains('active')) {
+                    soundPopover.classList.remove('active');
+                    soundToggle.focus();
+                }
+            });
+        }
 
         // Screen reader announcement helper
         function announce(message) {
