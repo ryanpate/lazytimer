@@ -656,8 +656,9 @@
             .flip-card { width: 40px; height: 60px; }
             .flip-card-inner { font-size: 2.2em; }
             .colon { font-size: 2.2em; }
-            .quick-btn { padding: 10px 16px; font-size: 0.9em; min-height: 44px; }
-            .control-btn { padding: 14px 24px; font-size: 1em; min-height: 48px; }
+            .quick-btn { padding: 12px 16px; font-size: 0.95em; min-height: 50px; }
+            .control-btn { padding: 14px 24px; font-size: 1em; min-height: 52px; }
+            .ad-container.top-ad { display: none; }
         }
 
         @media (max-width: 360px) {
@@ -1078,9 +1079,10 @@
             .flip-card { width: 45px; height: 68px; }
             .flip-card-inner { font-size: 2.5em; }
             .colon { font-size: 2.5em; }
-            .quick-start { gap: 10px; margin: 10px 0; }
-            .quick-btn { padding: 12px 18px; font-size: 0.95em; min-height: 44px; }
-            .control-btn { padding: 16px 28px; font-size: 1.05em; min-height: 50px; }
+            .quick-start { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 10px 0; }
+            .quick-btn { padding: 14px 18px; font-size: 1em; min-height: 52px; width: 100%; display: flex; align-items: center; justify-content: center; }
+            .control-btn { padding: 16px 28px; font-size: 1.1em; min-height: 56px; }
+            .ad-container.top-ad { min-height: 50px; margin-bottom: 15px; }
         }
 
         @media (hover: none) {
