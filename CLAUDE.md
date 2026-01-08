@@ -1002,13 +1002,21 @@ Target blogs in these niches:
 
 ### MEDIUM: Mobile Experience
 
-#### 12. Mobile Optimization
+#### 12. Mobile Optimization ✅ CSS FIXES COMPLETE (January 2026)
 **Problem**: 0 mobile clicks despite mobile users visiting
-- [ ] Audit touch target sizes (minimum 44x44px)
-- [ ] Test timer usability on small screens (320px width)
-- [ ] Ensure progress circle is readable on mobile
+
+**CSS Fixes Applied** (31 pages updated):
+- [x] Button touch targets: `min-height: 56px` at 768px, `min-height: 52px` at 480px
+- [x] Quick-start 2x2 grid layout: `display: grid; grid-template-columns: repeat(2, 1fr)`
+- [x] Top-ad handling: minimize at 768px (`min-height: 50px`), hide at 480px (`display: none`)
+- [x] Larger quick-btn sizing with flexbox centering
+
+**Still Needed (Testing & Verification)**:
+- [ ] Test on actual mobile devices (iPhone, Android)
+- [ ] Verify timer usability on small screens (320px width)
 - [ ] Test alarm sound on mobile browsers (may require user interaction)
-- [ ] Add mobile-specific meta viewport optimizations
+- [ ] Run Lighthouse mobile audit on top 5 pages
+- [ ] Check mobile SERP appearance in GSC
 
 ### LOW: Additional Optimizations
 
@@ -1035,16 +1043,16 @@ Target blogs in these niches:
 |----------|------|-------------|-------------|
 | ✅ DONE | Image optimization (WebP) | +15% speed | Complete |
 | ✅ DONE | CLS fixes (min-height) | +10% Core Web Vitals | Complete |
+| ✅ DONE | Mobile CSS fixes (touch targets, grid) | +15% mobile traffic | Complete |
 | CRITICAL | Re-submit GSC indexing | +300% indexed pages | 30 min |
 | HIGH | Internal linking additions | +25% page authority | 3 hours |
 | HIGH | Featured snippet optimization | +50% CTR | 4 hours |
 | HIGH | Content depth expansion | +20% rankings | 6 hours |
 | MEDIUM | Schema enhancements | +10% CTR | 2 hours |
 | MEDIUM | Tool directory submissions | +10 backlinks | 3 hours |
-| MEDIUM | Mobile optimization | +15% mobile traffic | 2 hours |
 | LOW | OG images | +5% social traffic | 2 hours |
 
-**Total estimated effort**: ~25 hours for significant ranking improvements
+**Total estimated effort**: ~20 hours for significant ranking improvements (mobile done)
 
 ---
 
@@ -1162,60 +1170,72 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 
 **Problem**: Too many input methods compete (dropdown + custom inputs + quick buttons + sliders)
 
-**Solution**:
-- Use quick-start buttons as primary input method
-- Hide "Custom Time" in expandable panel
-- Consolidate sound controls into single icon with popover
-- Group related controls with clear visual separation
+**TODOs**:
+- [ ] Make quick-start buttons the primary input method (more prominent)
+- [ ] Hide "Custom Time" inputs in expandable/collapsible panel
+- [ ] Consolidate sound controls into single icon with popover menu
+- [ ] Group related controls with clear visual separation (borders/spacing)
+- [ ] Remove or hide preset dropdown on pages with quick-start buttons
 
 ### PRIORITY 3: Simplify Navigation
 
 **Problem**: Multi-level dropdowns with 40+ timer links overwhelm users
 
-**Solution**:
-- Reduce main nav to: Home, Popular Timers, All Timers, About
-- Move full timer list to `/all-timers.html`
-- Use simpler category grouping
+**TODOs**:
+- [ ] Reduce main nav to: Home, Popular Timers, All Timers, About
+- [ ] Ensure full timer list lives on `/all-timers.html`
+- [ ] Use simpler category grouping in nav (max 2 levels deep)
+- [ ] Add mobile hamburger menu with simplified options
+- [ ] Remove redundant nav items (keep 6-8 max in header)
 
-### PRIORITY 4: Improve Mobile Timer Size
+### PRIORITY 4: Improve Mobile Timer Size ✅ PARTIALLY COMPLETE
 
 **Problem**: Flip cards shrink to 35x52px on small screens - hard to read during workouts
 
-**Solution**:
-- Progress circle scales better than stopwatch
-- Minimum 48px font for digital time on mobile
-- Phase label integrated inside progress circle
-- Touch-friendly button sizes (minimum 44x44px)
+**Completed**:
+- [x] Progress circle scales better than stopwatch (all pages migrated)
+- [x] Touch-friendly button sizes (min 44x44px via CSS fixes)
+
+**Remaining TODOs**:
+- [ ] Ensure minimum 48px font for digital time on mobile
+- [ ] Test time display readability on 320px width screens
+- [ ] Verify phase label is readable inside progress circle on mobile
 
 ### PRIORITY 5: Integrate Phase Indicator into Timer
 
-**Problem**: Phase indicator is separate from timer display
+**Problem**: Phase indicator is separate from timer display (HIIT, Tabata, Pomodoro pages)
 
-**Solution**:
-- Put WORK/REST label inside the progress circle
-- Round counter below the time
-- Unified visual hierarchy
+**TODOs**:
+- [ ] Move WORK/REST label inside the progress circle (above time)
+- [ ] Add round counter below the time (inside circle)
+- [ ] Create unified visual hierarchy: Phase → Time → Round
+- [ ] Update CSS for centered phase text within SVG
+- [ ] Apply to: hiit-timer, tabata-timer, pomodoro-timer, workout-timer
 
 ### PRIORITY 6: Collapse SEO Content
 
 **Problem**: 2000+ words of content creates scroll fatigue
 
-**Solution**:
-- Use accordion/collapsible sections
-- "Read More" expansion for detailed content
-- Keep timer above the fold
+**TODOs**:
+- [ ] Add accordion/collapsible sections to SEO content (FAQ, use cases)
+- [ ] Implement "Read More" expansion for detailed content
+- [ ] Ensure timer stays above the fold on all devices
+- [ ] Add CSS for collapse/expand transitions
+- [ ] Start with FAQ sections collapsed, expand on click
+- [ ] Apply to all pages with >1500 words of content
 
-### PRIORITY 7: Remove Duplicate Elements
+### PRIORITY 7: Remove Duplicate Elements ✅ PARTIALLY COMPLETE
 
-**Remove**:
-- Analog stopwatch and rotating hands
-- Minute counter badge (redundant with digital display)
-- Excessive navigation options
+**Problem**: UI has redundant elements taking up space
 
-**Keep**:
-- Digital flip clock display (or simplified digital time)
-- Progress circle (new)
-- Essential controls only
+**Completed**:
+- [x] Analog stopwatch and rotating hands removed (replaced with progress circle)
+
+**Remaining TODOs**:
+- [ ] Remove minute counter badge if redundant with digital display
+- [ ] Audit and remove excessive navigation options
+- [ ] Remove flip clock if simple digital display suffices
+- [ ] Consolidate duplicate time display elements per page
 
 ---
 
