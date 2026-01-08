@@ -967,47 +967,108 @@
             100% { transform: rotateX(0deg); }
         }
 
-        .sound-selector {
+        /* Sound Control Popover */
+        .sound-control {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sound-icon-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(123, 104, 238, 0.15);
+            border: 2px solid rgba(123, 104, 238, 0.4);
+            color: #7b68ee;
+            font-size: 1.4em;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 15px;
-            background: rgba(123, 104, 238, 0.1);
-            padding: 15px 25px;
-            border-radius: 12px;
+            justify-content: center;
+        }
+
+        .sound-icon-btn:hover {
+            background: rgba(123, 104, 238, 0.25);
+            border-color: rgba(123, 104, 238, 0.6);
+            transform: scale(1.05);
+        }
+
+        .sound-popover {
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 31, 58, 0.98);
             border: 1px solid rgba(123, 104, 238, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            min-width: 200px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            z-index: 100;
         }
 
-        .sound-selector label {
-            color: #7b68ee;
-            font-weight: 600;
+        .sound-popover.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .sound-selector select {
-            padding: 10px 15px;
+        .sound-popover::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: rgba(26, 31, 58, 0.98);
+        }
+
+        .sound-popover label {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85em;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .sound-popover select {
+            width: 100%;
+            padding: 10px 12px;
             border-radius: 8px;
-            border: 1px solid rgba(123, 104, 238, 0.4);
+            border: 1px solid rgba(123, 104, 238, 0.3);
             background: rgba(0, 0, 0, 0.3);
             color: white;
-            font-size: 1em;
+            font-size: 0.9em;
             cursor: pointer;
+            margin-bottom: 12px;
         }
 
-        .sound-selector select option {
+        .sound-popover select option {
             background: #2d1b4e;
             color: white;
         }
 
-        .test-sound-btn, .stop-sound-btn {
-            padding: 10px 15px;
-            border-radius: 8px;
-            color: white;
+        .sound-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .sound-actions button {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
         }
 
         .test-sound-btn {
             background: rgba(123, 104, 238, 0.3);
             border: 1px solid rgba(123, 104, 238, 0.5);
+            color: white;
         }
 
         .test-sound-btn:hover {
@@ -1017,10 +1078,25 @@
         .stop-sound-btn {
             background: rgba(231, 76, 60, 0.3);
             border: 1px solid rgba(231, 76, 60, 0.5);
+            color: white;
         }
 
         .stop-sound-btn:hover {
             background: rgba(231, 76, 60, 0.5);
+        }
+
+        /* Action Toolbar */
+        .action-toolbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Fullscreen mode - hide action toolbar */
+        body.fullscreen-mode .action-toolbar {
+            display: none;
         }
 
         .controls {
@@ -1239,7 +1315,6 @@
         body.fullscreen-mode .related-timers,
         body.fullscreen-mode footer,
         body.fullscreen-mode .nap-presets,
-        body.fullscreen-mode .sound-selector,
         body.fullscreen-mode .fullscreen-btn,
         body.fullscreen-mode .share-btn,
         body.fullscreen-mode .share-modal,
@@ -1548,10 +1623,6 @@
             .preset-grid {
                 grid-template-columns: 1fr;
             }
-            .sound-selector {
-                flex-direction: column;
-                gap: 10px;
-            }
             .seo-content, .faq-section {
                 padding: 30px 20px;
             }
@@ -1630,20 +1701,47 @@
             color: #333;
         }
 
-        body.light-mode .sound-selector {
-            background: rgba(123, 104, 238, 0.05);
-            border-color: rgba(123, 104, 238, 0.2);
-        }
-
-        body.light-mode .sound-selector select {
-            background: rgba(255, 255, 255, 0.9);
+        body.light-mode .sound-icon-btn {
+            background: rgba(123, 104, 238, 0.1);
             border-color: rgba(123, 104, 238, 0.3);
-            color: #333;
+            color: #6a5acd;
         }
 
-        body.light-mode .sound-selector select option {
+        body.light-mode .sound-popover {
+            background: rgba(255, 255, 255, 0.98);
+            border-color: rgba(123, 104, 238, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body.light-mode .sound-popover::after {
+            border-top-color: rgba(255, 255, 255, 0.98);
+        }
+
+        body.light-mode .sound-popover label {
+            color: #4a5568;
+        }
+
+        body.light-mode .sound-popover select {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-color: rgba(123, 104, 238, 0.3);
+        }
+
+        body.light-mode .sound-popover select option {
             background: #fff;
             color: #333;
+        }
+
+        body.light-mode .test-sound-btn {
+            background: rgba(123, 104, 238, 0.2);
+            border-color: rgba(123, 104, 238, 0.4);
+            color: #6a5acd;
+        }
+
+        body.light-mode .stop-sound-btn {
+            background: rgba(231, 76, 60, 0.2);
+            border-color: rgba(231, 76, 60, 0.4);
+            color: #c0392b;
         }
 
         body.light-mode .fullscreen-btn,
@@ -2137,34 +2235,25 @@
                     </div>
                 </div>
 
-                <div class="sound-selector">
-                    <label for="alarmSound">Wake-Up Sound:</label>
-                    <select id="alarmSound">
-                        <option value="/static/digital-clock-beep.wav">Digital Beep (Default)</option>
-                        <option value="/static/vintage-warning-alarm.wav">Vintage Alarm</option>
-                        <option value="/static/facility-breach-alarm.wav">Facility Alarm</option>
-                    </select>
-                    <button class="test-sound-btn" id="testSound">Test</button>
-                    <button class="stop-sound-btn" id="stopSound">Stop</button>
+                <div class="action-toolbar">
+                    <div class="sound-control">
+                        <button class="sound-icon-btn" id="soundToggle" aria-label="Sound settings">🔔</button>
+                        <div class="sound-popover" id="soundPopover">
+                            <label for="alarmSound">Alarm Sound</label>
+                            <select id="alarmSound">
+                                <option value="/static/digital-clock-beep.wav">Digital Beep</option>
+                                <option value="/static/vintage-warning-alarm.wav">Vintage Alarm</option>
+                                <option value="/static/facility-breach-alarm.wav">Facility Alarm</option>
+                            </select>
+                            <div class="sound-actions">
+                                <button class="test-sound-btn" id="testSound">Test</button>
+                                <button class="stop-sound-btn" id="stopSound">Stop</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="fullscreen-btn" id="fullscreenBtn">⛶ Fullscreen</button>
+                    <button class="share-btn" id="shareBtn">↗ Share</button>
                 </div>
-
-                <button class="fullscreen-btn" id="fullscreenBtn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-                    </svg>
-                    Fullscreen Mode
-                </button>
-
-                <button class="share-btn" id="shareBtn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="18" cy="5" r="3"></circle>
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="19" r="3"></circle>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                    </svg>
-                    Share Timer
-                </button>
 
                 <div class="controls">
                     <button class="control-btn start-btn" id="startBtn">Start Nap</button>
@@ -2725,6 +2814,8 @@
         const resetBtn = document.getElementById('resetBtn');
         const alarmSelect = document.getElementById('alarmSound');
         const testSoundBtn = document.getElementById('testSound');
+        const soundToggle = document.getElementById('soundToggle');
+        const soundPopover = document.getElementById('soundPopover');
         const buttons = document.querySelectorAll('.preset-btn');
 
         // Load saved sound preference
@@ -2751,6 +2842,25 @@
                 alarmAudio.currentTime = 0;
             }
         });
+
+        // Sound popover toggle
+        if (soundToggle && soundPopover) {
+            soundToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                soundPopover.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.sound-control')) {
+                    soundPopover.classList.remove('active');
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && soundPopover.classList.contains('active')) {
+                    soundPopover.classList.remove('active');
+                    soundToggle.focus();
+                }
+            });
+        }
 
         function playAlarm(isTest = false) {
             if (alarmAudio) {
