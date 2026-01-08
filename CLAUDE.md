@@ -203,6 +203,7 @@ Since this is a static site with no build process:
 ## Current Features (Updated January 2026)
 
 - **Audio alerts**: `playAlarm()` function with selectable alarm sounds (all pages)
+- **Sound popover**: 🔔 icon button with dropdown for sound settings (all pages)
 - **Sound preference**: Saved to localStorage, persists across sessions
 - **40 Landing pages**: See File Structure for complete list including specialty timers (HIIT, Tabata, Classroom, Presentation) and time-based timers (1-90 minutes, 2 hours)
 - **SVG Progress Circle**: Modern progress ring timer on key pages (see Progress Circle Status below)
@@ -1166,37 +1167,30 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - Complete: Green (#2ecc71)
 - Break/Rest: Secondary color (e.g., blue for Pomodoro breaks)
 
-### PRIORITY 2: Reduce Control Clutter ✅ PARTIALLY COMPLETE (January 2026)
+### PRIORITY 2: Reduce Control Clutter ✅ COMPLETE (January 2026)
 
 **Problem**: Too many input methods compete (dropdown + custom inputs + quick buttons + sliders)
 
-**Completed on index.html**:
-- [x] Quick-start buttons now PRIMARY (larger padding, bolder font, moved above controls)
-- [x] Custom time inputs collapsed into `<details>` element (hidden by default)
+**Solution Applied to ALL 40 Pages**:
 - [x] Sound controls consolidated into single 🔔 icon with popover menu
 - [x] Sound/Fullscreen/Share grouped into action-toolbar
-- [x] Preset dropdown moved to secondary position (smaller, below controls)
-- [x] Added CSS for: .sound-control, .sound-popover, .action-toolbar, .custom-time-panel, .secondary-options
+- [x] Added CSS for: .sound-control, .sound-popover, .action-toolbar
 - [x] Added JavaScript for popover toggle (click outside to close, Escape key support)
+- [x] Theme-specific colors preserved per page
 
-**Completed on pomodoro-timer.html**:
-- [x] Sound control popover pattern applied (red theme #e74c3c)
-- [x] Action-toolbar grouping for sound/fullscreen/share
+**Additional Changes on index.html**:
+- [x] Quick-start buttons now PRIMARY (larger padding, bolder font, moved above controls)
+- [x] Custom time inputs collapsed into `<details>` element (hidden by default)
+- [x] Preset dropdown moved to secondary position (smaller, below controls)
 
-**Remaining Pages (31)** - Same pattern needed:
-- [ ] study-timer.html (blue theme)
-- [ ] meditation-timer.html, countdown-timer.html, presentation-timer.html, sleep-timer.html (purple theme)
-- [ ] hiit-timer.html, tabata-timer.html, workout-timer.html (red theme)
-- [ ] cooking-timer.html, egg-timer.html (orange theme)
-- [ ] breathing-timer.html (teal theme)
-- [ ] classroom-timer.html, 60-minute-timer.html (blue theme)
-- [ ] All time-based timers: 1-8 min, 10-50 min, 90 min, 1-hour, 2-hour
-
-**Pattern to apply to each page**:
-1. Add sound-control CSS (adapt theme color)
-2. Replace sound-selector HTML with action-toolbar + sound-control popover
-3. Update fullscreen mode CSS: `.sound-selector` → `.action-toolbar`
-4. Add sound popover JavaScript (toggle, click-outside, Escape key)
+**Theme Colors Applied**:
+- Purple (#667eea, #9b59b6): index, pomodoro, meditation, 15-min, 25-min, 50-min, presentation
+- Red (#e74c3c, #e94560): pomodoro, workout, hiit, tabata, 1-hour, 2-hour
+- Blue (#3498db): study, classroom, 10-min, 60-min
+- Teal (#00b894, #1abc9c): breathing, 30-min
+- Orange (#f39c12, #e67e22, #f4a460): cooking, egg, 40-min
+- Green (#2ecc71): 45-min
+- Gray/Navy (#5d6d7e): 90-min
 
 ### PRIORITY 3: Simplify Navigation
 
