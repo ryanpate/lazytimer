@@ -1166,16 +1166,37 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - Complete: Green (#2ecc71)
 - Break/Rest: Secondary color (e.g., blue for Pomodoro breaks)
 
-### PRIORITY 2: Reduce Control Clutter
+### PRIORITY 2: Reduce Control Clutter ✅ PARTIALLY COMPLETE (January 2026)
 
 **Problem**: Too many input methods compete (dropdown + custom inputs + quick buttons + sliders)
 
-**TODOs**:
-- [ ] Make quick-start buttons the primary input method (more prominent)
-- [ ] Hide "Custom Time" inputs in expandable/collapsible panel
-- [ ] Consolidate sound controls into single icon with popover menu
-- [ ] Group related controls with clear visual separation (borders/spacing)
-- [ ] Remove or hide preset dropdown on pages with quick-start buttons
+**Completed on index.html**:
+- [x] Quick-start buttons now PRIMARY (larger padding, bolder font, moved above controls)
+- [x] Custom time inputs collapsed into `<details>` element (hidden by default)
+- [x] Sound controls consolidated into single 🔔 icon with popover menu
+- [x] Sound/Fullscreen/Share grouped into action-toolbar
+- [x] Preset dropdown moved to secondary position (smaller, below controls)
+- [x] Added CSS for: .sound-control, .sound-popover, .action-toolbar, .custom-time-panel, .secondary-options
+- [x] Added JavaScript for popover toggle (click outside to close, Escape key support)
+
+**Completed on pomodoro-timer.html**:
+- [x] Sound control popover pattern applied (red theme #e74c3c)
+- [x] Action-toolbar grouping for sound/fullscreen/share
+
+**Remaining Pages (31)** - Same pattern needed:
+- [ ] study-timer.html (blue theme)
+- [ ] meditation-timer.html, countdown-timer.html, presentation-timer.html, sleep-timer.html (purple theme)
+- [ ] hiit-timer.html, tabata-timer.html, workout-timer.html (red theme)
+- [ ] cooking-timer.html, egg-timer.html (orange theme)
+- [ ] breathing-timer.html (teal theme)
+- [ ] classroom-timer.html, 60-minute-timer.html (blue theme)
+- [ ] All time-based timers: 1-8 min, 10-50 min, 90 min, 1-hour, 2-hour
+
+**Pattern to apply to each page**:
+1. Add sound-control CSS (adapt theme color)
+2. Replace sound-selector HTML with action-toolbar + sound-control popover
+3. Update fullscreen mode CSS: `.sound-selector` → `.action-toolbar`
+4. Add sound popover JavaScript (toggle, click-outside, Escape key)
 
 ### PRIORITY 3: Simplify Navigation
 
