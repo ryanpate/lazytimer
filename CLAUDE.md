@@ -1203,3 +1203,260 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 │  ▼ About This Timer (collapsed) │  ← SEO content hidden
 └─────────────────────────────────┘
 ```
+
+---
+
+## SEO Analysis: January 8, 2026
+
+### Current Performance Snapshot
+
+#### Google Analytics (Dec 11, 2025 - Jan 7, 2026)
+| Metric | Value | Trend |
+|--------|-------|-------|
+| 30-Day Active Users | 1,202 | 📈 Growing |
+| Peak Daily Users | 166 | Jan 6 |
+| New Users from Organic | 983 (82%) | Strong |
+| Direct Traffic | 169 (14%) | Brand recognition |
+| Referral Traffic | 24 (2%) | Needs improvement |
+| Average Engagement | ~25 seconds | Low |
+
+#### Top Countries by Active Users
+| Country | Users | % of Total |
+|---------|-------|------------|
+| US | 332 | 27.6% |
+| India | 229 | 19.1% |
+| UK | 86 | 7.2% |
+| Germany | 45 | 3.7% |
+| Egypt | 42 | 3.5% |
+| Belgium | 36 | 3.0% |
+| Canada | 36 | 3.0% |
+
+#### Top Pages by Views
+| Page | Views | Notes |
+|------|-------|-------|
+| Study Timer (2026) | 523 | 🏆 Top performer |
+| Study Timer (2025) | 155 | Old title version |
+| 5-minute-timer | 111 | High volume keyword |
+| 10-minute-timer | 97 | High volume keyword |
+| Homepage | 85+83 | Split between titles |
+| 30-minute-timer | 60 | Good traction |
+| 15-minute-timer | 39 | Growing |
+
+### Google Search Console (Dec 31, 2025 - Jan 6, 2026)
+
+#### Overall Performance
+| Metric | Value |
+|--------|-------|
+| Total Clicks | 11 |
+| Total Impressions | 202 |
+| Average CTR | 5.4% |
+| Average Position | 33.7 |
+
+#### Device Breakdown - 🚨 CRITICAL ISSUE
+| Device | Impressions | Clicks | CTR |
+|--------|-------------|--------|-----|
+| Desktop | 172 | 10 | 5.8% |
+| **Mobile** | **29** | **0** | **0%** |
+| Tablet | 1 | 1 | 100% |
+
+**⚠️ ZERO mobile clicks is a critical issue for a timer site.**
+
+#### Top Queries by Impressions
+| Query | Impressions | Clicks | Position | Opportunity |
+|-------|-------------|--------|----------|-------------|
+| lazytimer | 8 | 7 | 1 | ✅ Brand works |
+| lazy timer | 3 | 2 | 1.3 | ✅ Brand works |
+| 2 hour timer | 22 | 0 | 30.5 | 🎯 HIGH |
+| 2 hours timer | 6 | 0 | 37.3 | 🎯 HIGH |
+| two hour timer | 4 | 0 | 37.3 | 🎯 HIGH |
+| 25 minute pomodoro | 4 | 0 | 46.8 | MEDIUM |
+| nap timer | 4 | 0 | 60.8 | MEDIUM |
+| 40 min timer | 3 | 0 | 30.7 | MEDIUM |
+| workout timer | 2 | 0 | 21.5 | 🎯 HIGH |
+| 15 minute timer | 1 | 0 | 7 | 🎯 GREAT POSITION |
+
+#### Top Pages by Impressions
+| Page | Impressions | Clicks | Position | Issue |
+|------|-------------|--------|----------|-------|
+| Homepage | 29 | 11 | 7.1 | ✅ Working |
+| 2-hour-timer | 79 | 0 | 36.8 | 🎯 Page 4 |
+| workout-timer.html | 18 | 0 | 37 | Page 4 |
+| all-timers | 16 | 0 | 5.2 | Good position, bad CTR |
+| about | 15 | 0 | 2.1 | Great position, no clicks |
+| how-to-use | 15 | 0 | 5.5 | Good position, bad CTR |
+| workout-timer | 14 | 0 | 5.3 | Duplicate URL issue |
+| study-timer.html | 13 | 0 | 9.5 | Page 1 potential |
+| pomodoro-timer | 13 | 0 | 12.9 | Page 2 |
+| study-timer | 12 | 0 | 6.8 | Duplicate URL issue |
+
+### Critical Issues Identified
+
+#### 1. 🚨 Mobile CTR Crisis
+- **Problem**: 29 impressions, 0 clicks on mobile
+- **Impact**: Timer users search on phones (cooking, workouts, meditation)
+- **Root Cause**: Needs investigation - could be UX, page speed, or SERP appearance
+
+#### 2. 🚨 URL Canonicalization Confusion
+- **Problem**: GSC shows both `/page` and `/page.html` getting impressions
+- **Examples**:
+  - `workout-timer` (14 impressions) vs `workout-timer.html` (18 impressions)
+  - `study-timer` (12 impressions) vs `study-timer.html` (13 impressions)
+- **Impact**: Ranking signals diluted between two URLs
+- **Fix**: Server-side redirect or consistent canonical tags
+
+#### 3. 🚨 Position 30-40 Plateau
+- **Problem**: Most pages stuck on page 3-4 of Google
+- **Pages affected**: 2-hour-timer, workout-timer, 40-minute-timer, sleep-timer
+- **Impact**: Users rarely click past page 2
+
+#### 4. ⚠️ High-Position Pages with 0 Clicks
+- **Problem**: Pages ranking well but not getting clicks
+- **Examples**:
+  - `all-timers` - Position 5.2, 0 clicks (title/description issue)
+  - `about` - Position 2.1, 0 clicks (navigational, not transactional)
+  - `how-to-use` - Position 5.5, 0 clicks (needs better SERP appearance)
+
+#### 5. ⚠️ GA vs GSC Discrepancy
+- **GA**: 1,198 organic sessions
+- **GSC**: 11 clicks
+- **Possible causes**:
+  - Traffic from Bing/Yahoo not in GSC
+  - Long-tail queries below GSC threshold
+  - Brand searches dominating
+
+---
+
+## TODO: January 2026 SEO Action Plan
+
+### 🔴 CRITICAL - Week 1 (Immediate)
+
+#### 1. Fix Mobile Experience
+- [ ] Test all pages on actual mobile devices (iPhone, Android)
+- [ ] Verify touch targets are 44x44px minimum
+- [ ] Check timer readability on small screens (320px width)
+- [ ] Test alarm sounds on mobile browsers (requires user interaction)
+- [ ] Run Lighthouse mobile audit on top 5 pages
+- [ ] Check mobile SERP appearance in GSC
+
+#### 2. Fix URL Canonicalization
+- [ ] Decide: Use `.html` or no extension URLs
+- [ ] Option A: Set up server redirects `/page.html` → `/page`
+- [ ] Option B: Update all canonical tags to include `.html`
+- [ ] Update sitemap.xml to match chosen URL format
+- [ ] Submit updated sitemap to GSC
+
+#### 3. Optimize 2-Hour Timer Page (79 impressions - biggest opportunity)
+- [ ] Rewrite title: `Free 2 Hour Timer - 120 Min Countdown | Instant Start ⏱️`
+- [ ] Rewrite meta: `Start your free 2 hour timer instantly. Perfect for movies, deep work, study marathons. Loud alarm, no download needed. ⏱️`
+- [ ] Add FAQ Schema targeting:
+  - "How do I set a 2 hour timer?"
+  - "What time will it be in 2 hours?"
+  - "Can I set a timer for 2 hours?"
+- [ ] Add more long-tail keywords: "120 minute timer", "two hour countdown", "2hr timer"
+
+### 🟠 HIGH - Week 2
+
+#### 4. Rewrite Meta Descriptions for 0-Click Pages
+Pages with good positions but no clicks need compelling descriptions:
+
+- [ ] **all-timers.html** (Position 5.2)
+  - Current: "Browse 30+ free online timers..."
+  - New: "⏱️ Instant Timer Collection - 1 to 120 Minutes | One-Click Start, Loud Alarms, No Download"
+
+- [ ] **how-to-use.html** (Position 5.5)
+  - Add action-oriented description with clear benefit
+
+- [ ] **study-timer.html** (Position 9.5)
+  - Emphasize "Free", "No signup", immediate benefit
+
+- [ ] **pomodoro-timer** (Position 12.9)
+  - Add "25-minute focus sessions", "proven technique"
+
+#### 5. Internal Linking from Study Timer (Top Traffic Page)
+Study timer gets 678 views - use it to boost other pages:
+- [ ] Add contextual link to 25-minute-timer in content
+- [ ] Add contextual link to 50-minute-timer (52-17 method)
+- [ ] Add contextual link to pomodoro-timer
+- [ ] Add "Related Timers" section with 5-10-15-30 min options
+
+#### 6. Featured Snippet Optimization
+Rewrite FAQ answers to 40-60 words (optimal for "People Also Ask"):
+- [ ] Audit FAQ answers on top 10 pages
+- [ ] Rewrite to start with direct answer
+- [ ] Keep under 60 words total
+- [ ] Test with Rich Results Test
+
+### 🟡 MEDIUM - Weeks 3-4
+
+#### 7. Target Long-Tail Queries with Impressions
+Queries appearing in GSC that need content optimization:
+- [ ] "timer for 2 hours and 20 minutes" → Add custom timer calculator
+- [ ] "set alarm for 40 minutes from now" → Add "when will timer end" feature
+- [ ] "nap timer" → Optimize sleep-timer.html
+- [ ] "workout timer with rest periods" → Enhance workout-timer.html
+
+#### 8. Submit to Bing Webmaster Tools
+- [ ] Create Bing Webmaster Tools account
+- [ ] Verify lazytimer.com ownership
+- [ ] Submit sitemap.xml
+- [ ] Monitor Bing-specific traffic in GA
+
+#### 9. Workout/Fitness Pages Optimization (Position ~37)
+- [ ] Add long-form HIIT protocol content
+- [ ] Add specific workout routines (7-minute workout, Tabata 4-minute)
+- [ ] Cross-link between workout-timer, hiit-timer, tabata-timer
+- [ ] Add HowTo schema for workout instructions
+
+### 🟢 LOW - Ongoing
+
+#### 10. UI/UX Improvements for Repeat Traffic
+- [ ] Add "Recently Used" timers (localStorage)
+- [ ] Add shareable timer URLs: `?t=7200` for 2 hours
+- [ ] Show keyboard shortcuts on first visit
+- [ ] Add timer progress in browser tab title
+
+#### 11. Content Expansion
+- [ ] 1-minute-timer: teeth brushing, quick stretch use cases
+- [ ] 2-minute-timer: hand washing, quick meditation
+- [ ] 3-minute-timer: soft-boiled eggs, elevator pitch
+- [ ] 7-minute-timer: 7-minute workout protocol
+
+#### 12. Backlink Building
+- [ ] Submit to Product Hunt
+- [ ] Submit to AlternativeTo.net
+- [ ] Reach out to productivity blogs
+- [ ] Create shareable infographics
+
+---
+
+## KPIs & Targets
+
+### 30-Day Targets (by Feb 8, 2026)
+| Metric | Current | Target | Change |
+|--------|---------|--------|--------|
+| Daily Users | 166 peak | 250 | +50% |
+| Organic CTR | 5.4% | 8% | +48% |
+| Mobile Clicks | 0 | 10/day | ∞ |
+| Avg Position | 33.7 | 25 | +26% |
+| 2-hour-timer Position | 36.8 | 15 | +59% |
+
+### 90-Day Targets (by Apr 8, 2026)
+| Metric | Current | Target | Change |
+|--------|---------|--------|--------|
+| Daily Users | 166 | 500 | +200% |
+| Monthly Pageviews | 2,000 | 10,000 | +400% |
+| Pages Indexed | ~15 | 40 | +167% |
+| Avg Position | 33.7 | 15 | +55% |
+| Monthly Revenue | $2 | $20 | +900% |
+
+---
+
+## Weekly Review Checklist
+
+Every Monday, check:
+- [ ] GSC: New queries with impressions
+- [ ] GSC: Position changes for target keywords
+- [ ] GSC: Mobile vs Desktop performance
+- [ ] GA: Top pages by traffic
+- [ ] GA: New vs Returning users ratio
+- [ ] Indexing status of all 40 pages
