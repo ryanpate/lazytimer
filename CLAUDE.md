@@ -967,7 +967,7 @@ A: A Pomodoro timer should be 25 minutes, followed by a 5-minute break. This int
 - [ ] 60-minute-timer.html - add use cases (hour blocks, deep work)
 - [ ] 1-hour-timer.html - add use cases (meetings, study blocks)
 - [ ] 90-minute-timer.html - add use cases (ultradian rhythms, movies)
-- [ ] 2-hour-timer.html - add use cases (exams, long sessions)
+- [x] 2-hour-timer.html - ✅ Has 12 H2 use case sections (deep work, movies, exams, cooking, travel, workshops, study, gaming, cleaning, creative, workouts, music)
 
 ### MEDIUM: Schema Markup Enhancements
 
@@ -1046,6 +1046,8 @@ Target blogs in these niches:
 | ✅ DONE | CLS fixes (min-height) | +10% Core Web Vitals | Complete |
 | ✅ DONE | Mobile CSS fixes (touch targets, grid) | +15% mobile traffic | Complete |
 | ✅ DONE | Mobile testing & verification | Confirmed mobile UX | Complete |
+| ✅ DONE | URL canonicalization (.html) | Consolidate rankings | Complete |
+| ✅ DONE | Meta descriptions (0-click pages) | +20% CTR potential | Complete |
 | CRITICAL | Re-submit GSC indexing | +300% indexed pages | 30 min |
 | HIGH | Internal linking additions | +25% page authority | 3 hours |
 | HIGH | Featured snippet optimization | +50% CTR | 4 hours |
@@ -1402,6 +1404,14 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 ---
 
 ## TODO: January 2026 SEO Action Plan
+
+### ✅ Completed (January 9, 2026)
+| Task | Status | Impact |
+|------|--------|--------|
+| Mobile Experience Testing | ✅ Complete | All devices tested, touch targets verified |
+| URL Canonicalization | ✅ Complete | 38 HTML files + sitemap updated with .html |
+| 2-Hour Timer SEO | ✅ Complete | Already optimized with 12 use case sections |
+| Meta Descriptions (0-click pages) | ✅ Complete | 4 pages rewritten for better CTR |
 
 ### 🔴 CRITICAL - Week 1 (Immediate)
 
