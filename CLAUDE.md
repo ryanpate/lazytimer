@@ -1371,13 +1371,13 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - **Impact**: Timer users search on phones (cooking, workouts, meditation)
 - **Root Cause**: Needs investigation - could be UX, page speed, or SERP appearance
 
-#### 2. 🚨 URL Canonicalization Confusion
-- **Problem**: GSC shows both `/page` and `/page.html` getting impressions
-- **Examples**:
-  - `workout-timer` (14 impressions) vs `workout-timer.html` (18 impressions)
-  - `study-timer` (12 impressions) vs `study-timer.html` (13 impressions)
-- **Impact**: Ranking signals diluted between two URLs
-- **Fix**: Server-side redirect or consistent canonical tags
+#### 2. ✅ URL Canonicalization - FIXED (January 2026)
+- **Problem**: GSC showed both `/page` and `/page.html` getting impressions
+- **Solution**: Updated all URLs to use `.html` extension consistently
+- **Changes made**:
+  - sitemap.xml: All URLs now include `.html`
+  - All HTML files: canonical, hreflang, og:url, schema URLs updated
+- **Next step**: Re-submit sitemap to GSC to consolidate ranking signals
 
 #### 3. 🚨 Position 30-40 Plateau
 - **Problem**: Most pages stuck on page 3-4 of Google
@@ -1413,12 +1413,14 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - [x] Run Lighthouse mobile audit on top 5 pages
 - [x] Check mobile SERP appearance in GSC
 
-#### 2. Fix URL Canonicalization
-- [ ] Decide: Use `.html` or no extension URLs
-- [ ] Option A: Set up server redirects `/page.html` → `/page`
-- [ ] Option B: Update all canonical tags to include `.html`
-- [ ] Update sitemap.xml to match chosen URL format
-- [ ] Submit updated sitemap to GSC
+#### 2. Fix URL Canonicalization ✅ COMPLETE (January 2026)
+- [x] Decision: Use `.html` extension URLs (matches actual file structure)
+- [x] Updated sitemap.xml - all URLs now include `.html`
+- [x] Updated canonical tags in all 38 HTML files
+- [x] Updated hreflang tags in all HTML files
+- [x] Updated og:url meta tags in all HTML files
+- [x] Updated schema.org URLs (WebApplication, BreadcrumbList)
+- [ ] Submit updated sitemap to GSC (manual step)
 
 #### 3. Optimize 2-Hour Timer Page ✅ COMPLETE (January 2026)
 - [x] Title optimized: `Free 2 Hour Timer ⏱️ 120 Minute Countdown | Instant Start`

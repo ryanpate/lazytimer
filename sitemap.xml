@@ -5,7 +5,7 @@
   <!-- Main Homepage -->
   <url>
     <loc>https://lazytimer.com/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,8 +16,8 @@
 
   <!-- Pomodoro Timer Page -->
   <url>
-    <loc>https://lazytimer.com/pomodoro-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/pomodoro-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -28,8 +28,8 @@
 
   <!-- Cooking Timer Page -->
   <url>
-    <loc>https://lazytimer.com/cooking-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/cooking-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -40,8 +40,8 @@
 
   <!-- Workout Timer Page -->
   <url>
-    <loc>https://lazytimer.com/workout-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/workout-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -52,8 +52,8 @@
 
   <!-- Tabata Timer Page -->
   <url>
-    <loc>https://lazytimer.com/tabata-timer</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/tabata-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -64,8 +64,8 @@
 
   <!-- HIIT Timer Page -->
   <url>
-    <loc>https://lazytimer.com/hiit-timer</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/hiit-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -76,8 +76,8 @@
 
   <!-- Classroom Timer Page -->
   <url>
-    <loc>https://lazytimer.com/classroom-timer</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/classroom-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -88,8 +88,8 @@
 
   <!-- Presentation Timer Page -->
   <url>
-    <loc>https://lazytimer.com/presentation-timer</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/presentation-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -100,8 +100,8 @@
 
   <!-- Meditation Timer Page -->
   <url>
-    <loc>https://lazytimer.com/meditation-timer</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/meditation-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -112,8 +112,8 @@
 
   <!-- Study Timer Page -->
   <url>
-    <loc>https://lazytimer.com/study-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/study-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -124,8 +124,8 @@
 
   <!-- 1 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/1-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/1-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -136,8 +136,8 @@
 
   <!-- 2 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/2-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/2-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -148,8 +148,8 @@
 
   <!-- 3 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/3-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/3-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -160,8 +160,8 @@
 
   <!-- 4 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/4-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/4-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -172,8 +172,8 @@
 
   <!-- 7 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/7-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/7-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -184,8 +184,8 @@
 
   <!-- 8 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/8-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/8-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -196,8 +196,8 @@
 
   <!-- 5 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/5-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/5-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -208,8 +208,8 @@
 
   <!-- 10 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/10-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/10-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -220,8 +220,8 @@
 
   <!-- 15 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/15-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/15-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -232,8 +232,8 @@
 
   <!-- 20 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/20-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/20-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -244,8 +244,8 @@
 
   <!-- 25 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/25-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/25-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -256,8 +256,8 @@
 
   <!-- 30 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/30-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/30-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -268,8 +268,8 @@
 
   <!-- 40 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/40-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/40-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -280,8 +280,8 @@
 
   <!-- 45 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/45-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/45-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -292,8 +292,8 @@
 
   <!-- 50 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/50-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/50-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -304,8 +304,8 @@
 
   <!-- Countdown Timer Page -->
   <url>
-    <loc>https://lazytimer.com/countdown-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/countdown-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -316,8 +316,8 @@
 
   <!-- Stopwatch Page -->
   <url>
-    <loc>https://lazytimer.com/stopwatch</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/stopwatch.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -328,8 +328,8 @@
 
   <!-- 1 Hour Timer Page -->
   <url>
-    <loc>https://lazytimer.com/1-hour-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/1-hour-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -340,8 +340,8 @@
 
   <!-- 60 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/60-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/60-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -352,8 +352,8 @@
 
   <!-- 90 Minute Timer Page -->
   <url>
-    <loc>https://lazytimer.com/90-minute-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/90-minute-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -364,8 +364,8 @@
 
   <!-- 2 Hour Timer Page -->
   <url>
-    <loc>https://lazytimer.com/2-hour-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/2-hour-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -376,8 +376,8 @@
 
   <!-- Sleep Timer Page -->
   <url>
-    <loc>https://lazytimer.com/sleep-timer</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/sleep-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -388,8 +388,8 @@
 
   <!-- Egg Timer Page -->
   <url>
-    <loc>https://lazytimer.com/egg-timer</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/egg-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -400,8 +400,8 @@
 
   <!-- Breathing Timer Page -->
   <url>
-    <loc>https://lazytimer.com/breathing-timer</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/breathing-timer.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -412,8 +412,8 @@
 
   <!-- All Timers Hub Page -->
   <url>
-    <loc>https://lazytimer.com/all-timers</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://lazytimer.com/all-timers.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -424,32 +424,32 @@
 
   <!-- About Page -->
   <url>
-    <loc>https://lazytimer.com/about</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/about.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- How to Use Page -->
   <url>
-    <loc>https://lazytimer.com/how-to-use</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/how-to-use.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Privacy Policy -->
   <url>
-    <loc>https://lazytimer.com/privacy-policy</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/privacy-policy.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- Terms of Service -->
   <url>
-    <loc>https://lazytimer.com/terms-of-service</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://lazytimer.com/terms-of-service.html</loc>
+    <lastmod>2026-01-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
