@@ -950,26 +950,26 @@ All other pages (workout-timer, study-timer, pomodoro-timer, 2-hour-timer, etc.)
 #### 7. Content Depth Expansion
 **Specialty timer pages completed** (14 pages with 6 H2 use case sections each - see PRIORITY 8 above)
 
-**Time-based pages still needing use cases** (target: 1,800+ words):
-- [ ] 1-minute-timer.html - add use cases (teeth brushing, quick stretch)
-- [ ] 2-minute-timer.html - add use cases (hand washing, quick meditation)
-- [ ] 3-minute-timer.html - add use cases (soft-boiled eggs, elevator pitch)
-- [ ] 4-minute-timer.html - add use cases (tabata rest, quick break)
-- [ ] 5-minute-timer.html - add use cases (quick break, meditation intro)
-- [ ] 7-minute-timer.html - add 7-minute workout content
-- [ ] 8-minute-timer.html - add use cases (8-minute abs, quick tasks)
-- [ ] 10-minute-timer.html - add use cases (power breaks, quick workouts)
-- [ ] 15-minute-timer.html - add use cases (short meetings, focused work)
-- [ ] 20-minute-timer.html - add use cases (naps, exercise sessions)
-- [ ] 25-minute-timer.html - add use cases (Pomodoro, focused tasks)
-- [ ] 30-minute-timer.html - add use cases (lunch breaks, workouts)
-- [ ] 40-minute-timer.html - add use cases (class periods, meetings)
-- [ ] 45-minute-timer.html - add use cases (therapy sessions, classes)
-- [ ] 50-minute-timer.html - add use cases (lectures, extended focus)
-- [ ] 60-minute-timer.html - add use cases (hour blocks, deep work)
-- [ ] 1-hour-timer.html - add use cases (meetings, study blocks)
-- [ ] 90-minute-timer.html - add use cases (ultradian rhythms, movies)
-- [x] 2-hour-timer.html - ✅ Has 12 H2 use case sections (deep work, movies, exams, cooking, travel, workshops, study, gaming, cleaning, creative, workouts, music)
+**Time-based pages use cases** ✅ ALL COMPLETE (15-20 H2 sections each):
+- [x] 1-minute-timer.html - 16 H2 sections (teeth brushing, quick stretch, plank, elevator pitch, etc.)
+- [x] 2-minute-timer.html - 19 H2 sections
+- [x] 3-minute-timer.html - 19 H2 sections
+- [x] 4-minute-timer.html - 19 H2 sections
+- [x] 5-minute-timer.html - 17 H2 sections (kids, classroom, meditation, workout, cooking, etc.)
+- [x] 7-minute-timer.html - 17 H2 sections (7-minute workout content included)
+- [x] 8-minute-timer.html - 20 H2 sections
+- [x] 10-minute-timer.html - 18 H2 sections
+- [x] 15-minute-timer.html - 15 H2 sections
+- [x] 20-minute-timer.html - 15 H2 sections
+- [x] 25-minute-timer.html - 15 H2 sections
+- [x] 30-minute-timer.html - 15 H2 sections
+- [x] 40-minute-timer.html - 15 H2 sections
+- [x] 45-minute-timer.html - 15 H2 sections
+- [x] 50-minute-timer.html - 15 H2 sections
+- [x] 60-minute-timer.html - 15 H2 sections
+- [x] 1-hour-timer.html - 15 H2 sections
+- [x] 90-minute-timer.html - 15 H2 sections
+- [x] 2-hour-timer.html - 15 H2 sections
 
 ### MEDIUM: Schema Markup Enhancements
 
@@ -1514,13 +1514,8 @@ All 3 fitness pages (workout-timer, hiit-timer, tabata-timer) already optimized:
 - [x] sleep, egg, countdown, stopwatch, hiit, tabata ✅
 - [x] classroom, presentation ✅
 
-**Time-based timers remaining:**
-- [ ] 1-minute-timer: teeth brushing, quick stretch use cases
-- [ ] 2-minute-timer: hand washing, quick meditation
-- [ ] 3-minute-timer: soft-boiled eggs, elevator pitch
-- [ ] 5-minute-timer: quick break, short meditation
-- [ ] 7-minute-timer: 7-minute workout protocol
-- [ ] 10-minute through 2-hour timers: various use cases
+**Time-based timers:** ✅ ALL COMPLETE
+All 19 time-based timer pages now have 15-20 H2 use case sections each.
 
 #### 12. Backlink Building
 - [ ] Submit to Product Hunt
