@@ -46,7 +46,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
-      <image:title>Free Workout Timer - HIIT, Tabata & CrossFit Interval Timer</image:title>
+      <image:title>Free Workout Timer - HIIT, Tabata &amp; CrossFit Interval Timer</image:title>
     </image:image>
   </url>
 
@@ -118,7 +118,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
-      <image:title>Free Study Timer - Pomodoro Focus for Homework & Exams</image:title>
+      <image:title>Free Study Timer - Pomodoro Focus for Homework &amp; Exams</image:title>
     </image:image>
   </url>
 
@@ -382,7 +382,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lazytimer.com/stopwatch.png</image:loc>
-      <image:title>Free Nap Timer - 20-Min Power Nap & 90-Min Sleep Cycle</image:title>
+      <image:title>Free Nap Timer - 20-Min Power Nap &amp; 90-Min Sleep Cycle</image:title>
     </image:image>
   </url>
 
