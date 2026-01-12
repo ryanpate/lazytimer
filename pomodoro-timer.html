@@ -1128,6 +1128,22 @@
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
         }
 
+        /* Time Calculator Styles */
+        .time-calculator {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.15) 0%, rgba(192, 57, 43, 0.15) 100%);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .time-calculator h3 { color: #e74c3c; margin-top: 0; margin-bottom: 20px; font-size: 1.4em; }
+        .time-calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .time-calc-item { background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 20px; }
+        .time-calc-label { font-size: 0.9em; color: rgba(255, 255, 255, 0.6); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .time-calc-value { font-size: 1.8em; font-weight: 700; color: #ffffff; font-family: 'Courier New', monospace; }
+        .time-calc-value.highlight { color: #e74c3c; }
+
         .seo-content h2 {
             font-size: 2.2em;
             color: #ffffff;
@@ -2919,6 +2935,26 @@
                 While the traditional 25-minute work / 5-minute break format works for most people, some tasks benefit from adjustment. Complex creative work might need longer 50-minute sessions, while routine tasks might work better with shorter 15-minute intervals. Our Pomodoro timer lets you customize session lengths to find your optimal productivity rhythm.
             </p>
 
+            <!-- Time Calculator -->
+            <div class="time-calculator">
+                <h3>What Time Will Your Pomodoro End?</h3>
+                <p style="margin-bottom: 15px; color: rgba(255,255,255,0.7);">Plan your focus session - see exactly when your 25 minute Pomodoro will finish</p>
+                <div class="time-calc-grid">
+                    <div class="time-calc-item">
+                        <div class="time-calc-label">Current Time</div>
+                        <div class="time-calc-value" id="calc-current-time">--:--:--</div>
+                    </div>
+                    <div class="time-calc-item">
+                        <div class="time-calc-label">Pomodoro Ends At</div>
+                        <div class="time-calc-value highlight" id="calc-end-time">--:--:--</div>
+                    </div>
+                    <div class="time-calc-item">
+                        <div class="time-calc-label">Duration</div>
+                        <div class="time-calc-value">25:00</div>
+                    </div>
+                </div>
+            </div>
+
             <h3>Pomodoro Timer for Studying</h3>
             <p>
                 The <strong>Pomodoro technique for studying</strong> is incredibly effective because it aligns with how your brain learns best. Research shows that information is better retained when studied in focused bursts rather than marathon cramming sessions. Use this <strong>Pomodoro study timer</strong> to break your study material into 25-minute chunks, reviewing notes, practicing problems, or reading textbooks. The forced breaks give your brain time to consolidate what you've learned. Many students report better grades and less stress after switching to the Pomodoro method. Pair this with our <a href="/study-timer" style="color: #3498db; text-decoration: none;">study timer</a> for more study-specific presets.
@@ -4111,6 +4147,24 @@
                 banner.classList.remove('show');
                 console.log('LazyTimer installed!');
             });
+        })();
+    </script>
+
+    <!-- Time Calculator Script -->
+    <script>
+        (function() {
+            const TIMER_MINUTES = 25;
+            function updateTimeCalculator() {
+                const now = new Date();
+                const endTime = new Date(now.getTime() + TIMER_MINUTES * 60 * 1000);
+                const formatTime = (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+                const currentEl = document.getElementById('calc-current-time');
+                const endEl = document.getElementById('calc-end-time');
+                if (currentEl) currentEl.textContent = formatTime(now);
+                if (endEl) endEl.textContent = formatTime(endTime);
+            }
+            updateTimeCalculator();
+            setInterval(updateTimeCalculator, 1000);
         })();
     </script>
 
