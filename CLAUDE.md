@@ -12,8 +12,11 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 
 ### Technology Stack
 - **Pure HTML/CSS/JavaScript** - No build tools, frameworks, or dependencies
-- **Static hosting** - All pages are standalone HTML files
+- **Static hosting** - All pages are standalone HTML files (Netlify via GitHub)
 - **Google AdSense** - Integrated for monetization (Publisher ID: `pub-5523870768931777`)
+- **Google Analytics 4** - Traffic analytics (ID: `G-DYQTNBBQ22`)
+- **Microsoft Clarity** - Heatmaps & session recordings (Project ID: `v0cm8oz0zc`)
+- **IndexNow API** - Instant Bing/Yandex indexing (Key: `4fca89688be640ca944fae1c4b6740ca`)
 
 ### File Structure
 ```
@@ -210,6 +213,8 @@ Since this is a static site with no build process:
 - **Analog + Digital display**: Legacy stopwatch with rotating hands on remaining pages
 - **50+ presets**: Organized by category (cooking, work, fitness, etc.)
 - **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
+- **Microsoft Clarity**: Heatmaps and session recordings on all pages (Project ID: v0cm8oz0zc)
+- **IndexNow API**: Instant Bing/Yandex indexing (Key: 4fca89688be640ca944fae1c4b6740ca)
 - **Standardized navigation**: All pages share consistent nav (Home, Pomodoro, Study, Workout, Meditation, Cooking, Countdown, Stopwatch)
 - **Keyboard shortcuts**: Space (start/pause), R (reset), number keys 1-9 for quick presets
 - **Quick Start buttons**: One-click buttons for 1, 5, 10, and 25-minute timers on homepage
@@ -641,6 +646,33 @@ gtag('event', 'preset_select', { category: 'Cooking', preset: 'Soft Boiled Eggs'
 ```
 
 This data informs which landing pages to prioritize.
+
+**Microsoft Clarity** (Project ID: `v0cm8oz0zc`):
+```html
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v0cm8oz0zc");
+</script>
+```
+
+**Clarity provides**:
+- Heatmaps showing click density and scroll depth
+- Session recordings to watch user behavior
+- Rage click and dead click detection
+- JavaScript error tracking
+- User engagement metrics
+
+**Dashboard**: https://clarity.microsoft.com (login required)
+
+**IndexNow API** (Key: `4fca89688be640ca944fae1c4b6740ca`):
+- Key file: `/4fca89688be640ca944fae1c4b6740ca.txt`
+- Meta tag added to all pages: `<meta name="indexnow" content="4fca89688be640ca944fae1c4b6740ca">`
+- Enables instant indexing on Bing and Yandex when content changes
+- Submit URLs via POST to: `https://api.indexnow.org/indexnow`
 
 ---
 
