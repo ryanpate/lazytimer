@@ -735,25 +735,23 @@ This data informs which landing pages to prioritize.
 
 ---
 
-## TODO: Google Search Console Indexing
+## TODO: Google Search Console Indexing ✅ COMPLETE
 
-**Status**: 32/40 URLs submitted | **Remaining: 8**
+**Status**: 40/40 URLs indexed | **All pages submitted and indexed!**
 
-Submit these remaining URLs for indexing (ordered by search volume priority):
+### Time-Based Timers ✅
+- [x] `https://lazytimer.com/8-minute-timer.html` (6K/mo) - Indexed Jan 2026
+- [x] `https://lazytimer.com/40-minute-timer.html` (6K/mo) - Indexed Jan 2026
+- [x] `https://lazytimer.com/50-minute-timer.html` (5K/mo) - Indexed Jan 2026
+- [x] `https://lazytimer.com/90-minute-timer.html` (5K/mo) - Indexed Jan 2026
 
-### Time-Based Timers (4 remaining)
-- [ ] `https://lazytimer.com/8-minute-timer` (6K/mo)
-- [ ] `https://lazytimer.com/40-minute-timer` (6K/mo)
-- [ ] `https://lazytimer.com/50-minute-timer` (5K/mo)
-- [ ] `https://lazytimer.com/90-minute-timer` (5K/mo)
+### Informational Pages ✅
+- [x] `https://lazytimer.com/about.html` - Indexed Jan 2026
+- [x] `https://lazytimer.com/how-to-use.html` - Indexed Jan 2026
+- [x] `https://lazytimer.com/privacy-policy.html` - Indexed Jan 2026
+- [x] `https://lazytimer.com/terms-of-service.html` - Indexed Jan 2026
 
-### Informational Pages (4 remaining)
-- [ ] `https://lazytimer.com/about`
-- [ ] `https://lazytimer.com/how-to-use`
-- [ ] `https://lazytimer.com/privacy-policy`
-- [ ] `https://lazytimer.com/terms-of-service`
-
-### Recently Submitted (January 2026)
+### Previously Submitted (January 2026)
 - [x] `https://lazytimer.com/5-minute-timer` (45K/mo)
 - [x] `https://lazytimer.com/10-minute-timer` (40K/mo)
 - [x] `https://lazytimer.com/15-minute-timer` (22K/mo)
@@ -773,13 +771,10 @@ Submit these remaining URLs for indexing (ordered by search volume priority):
 
 ## TODO: SEO Improvements (January 2026)
 
-Based on GSC and GA4 data analysis. Current state: 20/40 pages submitted to GSC, ~97 daily users.
+Based on GSC and GA4 data analysis. Current state: 40/40 pages indexed in GSC.
 
-### PRIORITY 1: Indexing ✅ IN PROGRESS
-See "TODO: Google Search Console Indexing" section above for current status.
-- 32/40 URLs submitted
-- 8 remaining (4 time-based timers + 4 informational pages)
-- Next priority: 8-minute, 40-minute, 50-minute, 90-minute timers
+### PRIORITY 1: Indexing ✅ COMPLETE
+All 40/40 URLs now indexed in Google Search Console (January 2026).
 
 ### PRIORITY 2: Optimize Study Timer (Current Winner - 155 pageviews) ✅ COMPLETED
 - [x] Add long-tail content: "study timer for exams", "homework timer", "focus timer for ADHD" ✅

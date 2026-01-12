@@ -1,0 +1,412 @@
+# ----------------------------------------
+# Reports snapshot
+# Account: ryanpate
+# Property: LazyTimer
+# ----------------------------------------
+#  
+# Start date: 20251211
+# End date: 20260107
+Nth day,Active users
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,3
+0010,7
+0011,8
+0012,22
+0013,15
+0014,46
+0015,52
+0016,40
+0017,47
+0018,66
+0019,76
+0020,97
+0021,76
+0022,75
+0023,109
+0024,125
+0025,116
+0026,166
+0027,110
+
+# Start date: 20251211
+# End date: 20260107
+Nth day,New users
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,3
+0010,7
+0011,8
+0012,20
+0013,14
+0014,46
+0015,50
+0016,40
+0017,46
+0018,62
+0019,75
+0020,92
+0021,72
+0022,70
+0023,101
+0024,118
+0025,112
+0026,156
+0027,101
+
+# Start date: 20251211
+# End date: 20260107
+Nth day,Average engagement time per active user
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,20.333333333333332
+0010,10.571428571428571
+0011,50.75
+0012,10.318181818181818
+0013,21.333333333333332
+0014,35.84782608695652
+0015,16.807692307692307
+0016,49.05
+0017,23.93617021276596
+0018,40.378787878787875
+0019,25.605263157894736
+0020,17.824742268041238
+0021,52.38157894736842
+0022,19.226666666666667
+0023,19.926605504587155
+0024,39.416
+0025,20.57758620689655
+0026,17.69277108433735
+0027,12.827272727272728
+
+# Start date: 20251211
+# End date: 20260107
+Nth day,Total revenue
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+0013,0
+0014,0
+0015,0
+0016,0
+0017,0
+0018,0
+0019,0
+0020,0
+0021,0
+0022,0
+0023,0
+0024,0
+0025,0
+0026,0
+0027,0
+
+# Where do your new users come from?
+# Start date: 20251211
+# End date: 20260107
+First user primary channel group (Default Channel Group),New users
+Organic Search,983
+Direct,169
+Referral,24
+Unassigned,17
+
+#  
+# Start date: 20251211
+# End date: 20260107
+Session primary channel group (Default Channel Group),Sessions
+Organic Search,1198
+Direct,188
+Unassigned,69
+Referral,26
+
+#  
+# Start date: 20251211
+# End date: 20260107
+Country ID,Active users
+AE,5
+AL,2
+AR,1
+AT,2
+AU,20
+AZ,5
+BD,6
+BE,36
+BR,9
+CA,36
+CH,8
+CN,30
+CZ,3
+DE,45
+DO,1
+DZ,10
+EG,42
+ES,10
+FI,1
+FR,19
+GB,86
+GR,11
+GY,1
+HK,2
+HU,5
+ID,13
+IE,3
+IL,4
+IN,229
+IQ,1
+IR,17
+IT,7
+JO,6
+JP,5
+KH,1
+KR,1
+KW,1
+LK,5
+LY,1
+MA,8
+MD,1
+MK,1
+MM,2
+MN,1
+MT,1
+MV,1
+MX,1
+MY,8
+NG,1
+NL,12
+NO,1
+NP,12
+NZ,1
+OM,1
+PH,18
+PK,7
+PL,11
+PT,2
+QA,3
+RO,9
+RU,8
+SA,8
+SE,5
+SG,8
+SI,2
+SK,2
+SY,3
+TH,1
+TN,8
+TR,7
+TT,1
+TW,1
+UA,1
+US,332
+UZ,2
+VI,1
+VN,9
+ZA,2
+
+# Start date: 20251211
+# End date: 20260107
+Country,Active users
+US,332
+IN,229
+GB,86
+DE,45
+EG,42
+BE,36
+CA,36
+
+# How are active users trending?
+# Start date: 20251211
+# End date: 20260107
+Nth day,30 days,7 days,1 day
+0000,0,0,0
+0001,0,0,0
+0002,0,0,0
+0003,0,0,0
+0004,0,0,0
+0005,0,0,0
+0006,0,0,0
+0007,0,0,0
+0008,0,0,0
+0009,3,3,3
+0010,10,10,7
+0011,18,18,8
+0012,39,39,22
+0013,53,53,15
+0014,99,99,46
+0015,150,150,52
+0016,190,187,40
+0017,236,227,47
+0018,298,282,66
+0019,372,335,76
+0020,464,412,97
+0021,537,440,76
+0022,607,460,75
+0023,708,525,109
+0024,827,603,125
+0025,938,657,116
+0026,1097,744,166
+0027,1202,756,110
+
+# How well do you retain your users?
+# Start date: 20251123
+# End date: 20260103
+Date,Week 0,Week 1,Week 2,Week 3,Week 4,Week 5
+Nov 23 - Nov 29,0,0,0,0,0,0
+Nov 30 - Dec 6,0,0,0,0,0,-1
+Dec 7 - Dec 13,0,0,0,0,-1,-1
+Dec 14 - Dec 20,3,0,1,-1,-1,-1
+Dec 21 - Dec 27,185,6,-1,-1,-1,-1
+Dec 28 - Jan 3,517,-1,-1,-1,-1,-1
+
+#  
+# Start date: 20251211
+# End date: 20260107
+Page title and screen class,Views
+Study Timer 2026 ⏱️ Free Focus Timer for Students | Pomodoro Mode,523
+Study Timer 2025 - #1 Free Focus Timer for Students & Homework,155
+05:00 - 5 Min Timer,111
+10 Minute Timer 2026 - Free Online Countdown Timer with Alarm,97
+Online Timer 2026 ⏱️ Free Countdown Timer | 50+ Presets,85
+Online Timer Free 2025 - #1 Countdown Timer with 50+ Presets,83
+05:00 - Countdown Timer,63
+30 Minute Timer 2026 - Free Online Countdown Timer with Alarm,60
+10 Minute Timer - Free Online Countdown Timer with Alarm,42
+15 Minute Timer 2026 - Free Online Countdown Timer with Alarm,39
+Workout Timer 2026 ⏱️ Free HIIT & Interval Timer | Start Instantly,31
+30 Minute Timer - Free Online Countdown Timer with Alarm,30
+Online Stopwatch - Free Timer with Lap Times & Milliseconds,30
+1 Hour Timer 2026 - Free Online 60 Minute Countdown Timer with Alarm,25
+Workout Timer 2025 - #1 Free HIIT & Exercise Interval Timer,25
+15 Minute Timer - Free Online Countdown Timer with Alarm,20
+Countdown Timer - Free Online Custom Countdown with Alarm,20
+All Timers 2026 ⏱️ 30+ Free Online Countdown Timers,17
+5 Minute Timer - Free Online Countdown Timer with Alarm,16
+Online Stopwatch 2026 - Free Timer with Lap Times & Milliseconds,16
+25:00 - Pomodoro,15
+"Cooking Timer 2025 - #1 Free Kitchen Timer for Eggs, Pasta & Baking",14
+2 Hour Timer 2026 - Free Online 120 Minute Countdown Timer with Alarm,13
+Meditation Timer 2026 ⏱️ Free Mindfulness Timer | Start Now,11
+Egg Timer 2025 - Free Online Timer for Perfect Boiled Eggs Every Time,10
+Tabata Timer 2026 ⏱️ Free 20/10 Interval Timer | 4-Minute Workout,9
+03:00 - Egg Timer,8
+HIIT Timer 2026 ⏱️ Free High-Intensity Interval Timer | Customizable,8
+Pomodoro Timer 2025 - #1 Free 25-Minute Focus Timer (Proven Technique),8
+40 Minute Timer 2026 - Free Online Forty Minute Countdown with Alarm,7
+Study Timer ⏱️ Free Focus Timer for Students | Pomodoro Mode,7
+"Cooking Timer 2026 ⏱️ Free Kitchen Timer | Eggs, Pasta & More",6
+45 Minute Timer 2026 - Free Online Countdown Timer with Alarm,5
+90 Minute Timer 2026 - Free Online Countdown Timer with Alarm,5
+Meditation Timer 2025 - #1 Free Mindfulness & Breathing Timer,5
+02:00 - 2 Min Timer,4
+All Online Timers - Complete List of Free Countdown Timers 2025,4
+Breathing Timer 2026 ⏱️ Free 4-7-8 & Box Breathing Exercise,4
+Countdown Timer 2026 - Free Online Custom Countdown with Alarm,4
+08:00 - 8 Min Timer,3
+1 Hour Timer - Free Online 60 Minute Countdown Timer with Alarm,3
+20:00 - Sleep Timer,3
+5 Minute Timer 2026 ⏱️ Free Instant Countdown | Start Now,3
+50 Minute Timer 2026 - Free Online Fifty Minute Countdown with Alarm,3
+60 Minute Timer 2026 - Free Online Sixty Minute Countdown with Alarm,3
+About LazyTimer - Our Mission & Story | Free Online Timer,3
+How to Use LazyTimer - Complete Guide | Online Timer Instructions,3
+Sleep Timer - Free Online Nap Timer & Power Nap Countdown,3
+01:00 - 1 Min Timer,2
+03:00 - 3 Min Timer,2
+3 Minute Timer 2026 - Free Online Countdown Timer with Alarm,2
+4 Minute Timer 2026 - Free Online Tabata Countdown Timer with Alarm,2
+All Timers ⏱️ 20+ Free Online Countdown Timers,2
+Egg Timer 2026 ⏱️ Free Timer for Perfect Boiled Eggs,2
+Presentation Timer 2026 ⏱️ Free Speaker Timer | Large Display,2
+Privacy Policy - LazyTimer | Your Privacy Matters,2
+Sleep Timer 2026 - Free Online Nap Timer & Power Nap Countdown,2
+Terms of Service - LazyTimer | Service Agreement,2
+03:35 - Study Timer,1
+04:06 - Workout Timer,1
+07:00 - 7 Min Timer,1
+1 Minute Timer 2026 - Free Online Countdown Timer with Alarm,1
+10:02 - Study Timer,1
+10:57 - Study Timer,1
+11:11 - Study Timer,1
+12:59 - Study Timer,1
+13:26 - LazyTimer,1
+13:55 - LazyTimer,1
+14:58 - 15 Min Timer,1
+2 Minute Timer - Free Online Countdown Timer with Alarm,1
+20 Minute Timer 2026 - Free Online Countdown Timer with Alarm,1
+20:00 - 20 Min Timer,1
+25:00 - 25 Min Timer,1
+29:33 - Study Timer,1
+30:00 - Sleep Timer,1
+40:41 - Study Timer,1
+44:59 - Study Timer,1
+56:58 - Study Timer,1
+59:52 - Study Timer,1
+All Timers 2026 ⏱️ 20+ Free Online Countdown Timers,1
+Classroom Timer 2026 ⏱️ Free Timer for Teachers | Large Display,1
+Online Timer ⏱️ Free Countdown Timer | 50+ Presets,1
+Pomodoro Timer 2026 ⏱️ Free 25-Min Focus Sessions | No Signup,1
+Time's Up! - Countdown Timer,1
+مؤقت الدراسة 2026 ⏱️ المجاني للتركيز للطلاب | وضع بومودورو,1
+
+#  
+# Start date: 20251211
+# End date: 20260107
+Event name,Event count
+page_view,1709
+session_start,1436
+first_visit,1193
+user_engagement,1068
+scroll,117
+
+# What are your top performing key events?
+# Start date: 20251211
+# End date: 20260107
+Event name,Key events
+
+
+# Where does your average 120d value come from?
+# Start date: 20251211
+# End date: 20260107
+First user primary channel group (Default Channel Group),Average 120d value
+
+
+#  
+# Start date: 20251211
+# End date: 20260107
+Item name,Items purchased
+
+
+# How does activity on your platforms compare?
+# Start date: 20251211
+# End date: 20260107
+Platform,Key events
