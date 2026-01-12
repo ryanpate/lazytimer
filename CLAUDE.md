@@ -916,6 +916,17 @@ Comprehensive SEO audit completed Jan 4, 2026. Critical issues blocking Google r
 - [ ] Add `defer` attribute to non-critical scripts
 - [ ] Minimize inline JavaScript where possible
 
+#### 4. Bing Indexing Fixes ✅ COMPLETE (January 12, 2026)
+**Problem**: Bing showing "Discovered but not crawled" for most pages due to quality threshold issues.
+
+**Fixes Applied**:
+- [x] Removed duplicate BreadcrumbList schema from all 39 HTML pages
+- [x] Added `.html` extension to all internal links (related-timers, footer sections)
+- [x] Removed fake `aggregateRating` schema from 31 pages (unverified reviews violate guidelines)
+- [x] Triggered IndexNow API to notify Bing/Yandex of all 40 URLs
+
+**Impact**: Schema markup now compliant with Bing Webmaster Guidelines. Re-request indexing for priority pages.
+
 ### CRITICAL: Indexing Issues
 
 **Problem**: Only ~7/40 pages indexed despite 20+ submitted to GSC
@@ -1000,8 +1011,13 @@ All other pages (workout-timer, study-timer, pomodoro-timer, 2-hour-timer, etc.)
 
 ### MEDIUM: Schema Markup Enhancements
 
-#### 8. Additional Schema Types
-- [ ] Add AggregateRating schema to high-traffic pages (fake reviews not allowed - use real user feedback)
+#### 8. Schema Cleanup ✅ COMPLETE (January 12, 2026)
+- [x] Removed fake `aggregateRating` from 31 pages (unverified reviews violate Bing/Google guidelines)
+- [x] Removed duplicate BreadcrumbList schemas from all 39 pages
+- [x] All schema now validated and compliant
+
+#### 9. Additional Schema Types (Future)
+- [ ] Add real AggregateRating when genuine user reviews are collected
 - [ ] Add HowTo schema to workout-timer (HIIT instructions)
 - [ ] Add HowTo schema to cooking-timer (egg cooking times)
 - [ ] Add VideoObject schema if tutorial videos are added
@@ -1009,7 +1025,7 @@ All other pages (workout-timer, study-timer, pomodoro-timer, 2-hour-timer, etc.)
 
 ### MEDIUM: Backlink Building Strategy
 
-#### 9. Tool Directory Submissions
+#### 10. Tool Directory Submissions
 - [ ] Submit to Product Hunt (prep: logo, screenshots, description)
 - [ ] Submit to AlternativeTo.net
 - [ ] Submit to SaaSHub.com
@@ -1077,11 +1093,14 @@ Target blogs in these niches:
 | ✅ DONE | Mobile testing & verification | Confirmed mobile UX | Complete |
 | ✅ DONE | URL canonicalization (.html) | Consolidate rankings | Complete |
 | ✅ DONE | Meta descriptions (0-click pages) | +20% CTR potential | Complete |
+| ✅ DONE | Bing schema fixes (Jan 12) | Fix indexing blocks | Complete |
+| ✅ DONE | Remove fake aggregateRating | Avoid penalties | Complete |
+| ✅ DONE | Fix duplicate BreadcrumbList | Schema compliance | Complete |
+| ✅ DONE | Add .html to internal links | URL consistency | Complete |
 | CRITICAL | Re-submit GSC indexing | +300% indexed pages | 30 min |
 | HIGH | Internal linking additions | +25% page authority | 3 hours |
 | HIGH | Featured snippet optimization | +50% CTR | 4 hours |
 | HIGH | Content depth expansion | +20% rankings | 6 hours |
-| MEDIUM | Schema enhancements | +10% CTR | 2 hours |
 | MEDIUM | Tool directory submissions | +10 backlinks | 3 hours |
 | LOW | OG images | +5% social traffic | 2 hours |
 
