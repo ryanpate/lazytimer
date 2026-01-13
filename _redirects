@@ -1,47 +1,47 @@
-# Redirect .html URLs to clean URLs (SEO canonicalization)
-# 301 permanent redirects consolidate ranking signals
+# Netlify Redirects - Fix URL Canonicalization for SEO
+# Redirect clean URLs to .html versions (301 permanent)
+# This matches the canonical tags set in all HTML files
 
-# Main pages
-/index.html             /                       301
-/pomodoro-timer.html    /pomodoro-timer         301
-/cooking-timer.html     /cooking-timer          301
-/workout-timer.html     /workout-timer          301
-/tabata-timer.html      /tabata-timer           301
-/hiit-timer.html        /hiit-timer             301
-/classroom-timer.html   /classroom-timer        301
-/presentation-timer.html /presentation-timer    301
-/meditation-timer.html  /meditation-timer       301
-/study-timer.html       /study-timer            301
-/countdown-timer.html   /countdown-timer        301
-/stopwatch.html         /stopwatch              301
-/sleep-timer.html       /sleep-timer            301
-/egg-timer.html         /egg-timer              301
-/breathing-timer.html   /breathing-timer        301
-/all-timers.html        /all-timers             301
+# Main pages - redirect clean URLs to .html
+/pomodoro-timer         /pomodoro-timer.html         301
+/cooking-timer          /cooking-timer.html          301
+/workout-timer          /workout-timer.html          301
+/tabata-timer           /tabata-timer.html           301
+/hiit-timer             /hiit-timer.html             301
+/classroom-timer        /classroom-timer.html        301
+/presentation-timer     /presentation-timer.html     301
+/meditation-timer       /meditation-timer.html       301
+/study-timer            /study-timer.html            301
+/countdown-timer        /countdown-timer.html        301
+/stopwatch              /stopwatch.html              301
+/sleep-timer            /sleep-timer.html            301
+/egg-timer              /egg-timer.html              301
+/breathing-timer        /breathing-timer.html        301
+/all-timers             /all-timers.html             301
 
 # Time-based timer pages
-/1-minute-timer.html    /1-minute-timer         301
-/2-minute-timer.html    /2-minute-timer         301
-/3-minute-timer.html    /3-minute-timer         301
-/4-minute-timer.html    /4-minute-timer         301
-/5-minute-timer.html    /5-minute-timer         301
-/7-minute-timer.html    /7-minute-timer         301
-/8-minute-timer.html    /8-minute-timer         301
-/10-minute-timer.html   /10-minute-timer        301
-/15-minute-timer.html   /15-minute-timer        301
-/20-minute-timer.html   /20-minute-timer        301
-/25-minute-timer.html   /25-minute-timer        301
-/30-minute-timer.html   /30-minute-timer        301
-/40-minute-timer.html   /40-minute-timer        301
-/45-minute-timer.html   /45-minute-timer        301
-/50-minute-timer.html   /50-minute-timer        301
-/60-minute-timer.html   /60-minute-timer        301
-/90-minute-timer.html   /90-minute-timer        301
-/1-hour-timer.html      /1-hour-timer           301
-/2-hour-timer.html      /2-hour-timer           301
+/1-minute-timer         /1-minute-timer.html         301
+/2-minute-timer         /2-minute-timer.html         301
+/3-minute-timer         /3-minute-timer.html         301
+/4-minute-timer         /4-minute-timer.html         301
+/5-minute-timer         /5-minute-timer.html         301
+/7-minute-timer         /7-minute-timer.html         301
+/8-minute-timer         /8-minute-timer.html         301
+/10-minute-timer        /10-minute-timer.html        301
+/15-minute-timer        /15-minute-timer.html        301
+/20-minute-timer        /20-minute-timer.html        301
+/25-minute-timer        /25-minute-timer.html        301
+/30-minute-timer        /30-minute-timer.html        301
+/40-minute-timer        /40-minute-timer.html        301
+/45-minute-timer        /45-minute-timer.html        301
+/50-minute-timer        /50-minute-timer.html        301
+/60-minute-timer        /60-minute-timer.html        301
+/90-minute-timer        /90-minute-timer.html        301
+/1-hour-timer           /1-hour-timer.html           301
+/2-hour-timer           /2-hour-timer.html           301
 
 # Informational pages
-/about.html             /about                  301
-/how-to-use.html        /how-to-use             301
-/privacy-policy.html    /privacy-policy         301
-/terms-of-service.html  /terms-of-service       301
+/about                  /about.html                  301
+/how-to-use             /how-to-use.html             301
+/privacy-policy         /privacy-policy.html         301
+/terms-of-service       /terms-of-service.html       301
