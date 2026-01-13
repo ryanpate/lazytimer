@@ -1017,8 +1017,8 @@ All other pages (workout-timer, study-timer, pomodoro-timer, 2-hour-timer, etc.)
 
 #### 9. Additional Schema Types (Future)
 - [ ] Add real AggregateRating when genuine user reviews are collected
-- [ ] Add HowTo schema to workout-timer (HIIT instructions)
-- [ ] Add HowTo schema to cooking-timer (egg cooking times)
+- [x] Add HowTo schema to workout-timer ✅ (Already exists - 6 steps for HIIT workout, lines 215-278)
+- [x] Add HowTo schema to cooking-timer ✅ (Already exists - 6 steps for egg cooking, lines 156-212)
 - [ ] Add VideoObject schema if tutorial videos are added
 - [ ] Verify all schema with Google Rich Results Test
 
