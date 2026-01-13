@@ -862,7 +862,6 @@ All long-tail keyword content already exists in target pages:
 - [x] Add FAQ section to breathing-timer ✅ (10 FAQs already exist at line 2885)
 - [x] Add "use cases" section to high-traffic pages ✅ (14 pages completed - see Use Cases Status below)
 - [x] Add comparison content: "Pomodoro vs 50-10 method" on study-timer ✅ (Added Jan 12, 2026 - H2 section with comparison table)
-- [ ] Add seasonal content: "New Year's countdown timer" (timely)
 
 #### Use Cases Status (January 2026)
 Added 6 detailed H2 use case sections to each page with H3 subsections, strong tags, and internal links:
