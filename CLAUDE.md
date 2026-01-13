@@ -209,15 +209,18 @@ Since this is a static site with no build process:
 - **Sound popover**: 🔔 icon button with dropdown for sound settings (all pages)
 - **Sound preference**: Saved to localStorage, persists across sessions
 - **40 Landing pages**: See File Structure for complete list including specialty timers (HIIT, Tabata, Classroom, Presentation) and time-based timers (1-90 minutes, 2 hours)
-- **SVG Progress Circle**: Modern progress ring timer on key pages (see Progress Circle Status below)
-- **Analog + Digital display**: Legacy stopwatch with rotating hands on remaining pages
+- **SVG Progress Circle**: Modern progress ring timer on ALL 34 timer pages with color states (running, warning, critical, complete)
 - **50+ presets**: Organized by category (cooking, work, fitness, etc.)
 - **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
 - **Microsoft Clarity**: Heatmaps and session recordings on all pages (Project ID: v0cm8oz0zc)
 - **IndexNow API**: Instant Bing/Yandex indexing (Key: 4fca89688be640ca944fae1c4b6740ca)
-- **Standardized navigation**: All pages share consistent nav (Home, Pomodoro, Study, Workout, Meditation, Cooking, Countdown, Stopwatch)
+- **Simplified navigation**: 7 direct links (Home, Pomodoro, Study, Workout, Meditation, Stopwatch, All Timers) on 6 high-traffic pages
 - **Keyboard shortcuts**: Space (start/pause), R (reset), number keys 1-9 for quick presets
 - **Quick Start buttons**: One-click buttons for 1, 5, 10, and 25-minute timers on homepage
+- **Collapsible FAQ sections**: Native HTML5 `<details>`/`<summary>` accordions on 5 high-traffic pages (study, pomodoro, 5-min, 10-min, 30-min)
+- **Time calculators**: "What time will it be?" calculator on high-traffic timer pages
+- **Mobile-optimized fonts**: Minimum 48px (3em) digital time display at 360px breakpoint
+- **Social proof**: Testimonials section on study-timer.html
 
 ## SEO Strategy & Implementation
 
@@ -704,12 +707,20 @@ This data informs which landing pages to prioritize.
 15. ✅ Google Analytics 4 added to all pages
 15. ✅ Standardized navigation across all pages
 
-### Phase 3: Advanced Features (Weeks 4-6)
-1. Timer persistence (localStorage)
-2. Fullscreen mode
-3. Timer URL sharing
-4. PWA/Service Worker
-5. Dark/Light mode toggle
+### Phase 3: UI/UX Improvements ✅ MAJOR PROGRESS (January 2026)
+**Completed**:
+1. ✅ Collapsible FAQ sections (5 high-traffic pages: study, pomodoro, 5-min, 10-min, 30-min)
+2. ✅ Simplified navigation (6 pages: index, pomodoro, study, 5-min, 10-min, 30-min)
+3. ✅ Time calculators ("What time will it be?") on high-traffic pages
+4. ✅ Mobile font optimization (48px minimum at 360px breakpoint)
+5. ✅ Testimonials/social proof on study-timer.html
+
+**Remaining**:
+- Timer persistence (localStorage)
+- Fullscreen mode
+- Timer URL sharing
+- PWA/Service Worker
+- Dark/Light mode toggle
 
 ### Phase 4: Growth (Ongoing)
 1. Product Hunt launch
