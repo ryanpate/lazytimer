@@ -1474,14 +1474,59 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - [x] Run Lighthouse mobile audit on top 5 pages
 - [x] Check mobile SERP appearance in GSC
 
-#### 2. Fix URL Canonicalization ✅ COMPLETE (January 2026)
+#### 2. Fix URL Canonicalization ✅ COMPLETE (January 12, 2026)
 - [x] Decision: Use `.html` extension URLs (matches actual file structure)
 - [x] Updated sitemap.xml - all URLs now include `.html`
 - [x] Updated canonical tags in all 38 HTML files
 - [x] Updated hreflang tags in all HTML files
 - [x] Updated og:url meta tags in all HTML files
 - [x] Updated schema.org URLs (WebApplication, BreadcrumbList)
-- [ ] Submit updated sitemap to GSC (manual step)
+- [x] Fixed `_redirects` file - now redirects clean URLs → .html (was backwards!)
+- [x] IndexNow API notified of all 39 pages (HTTP 200)
+
+**GSC Re-Indexing Status (January 12, 2026):**
+Submitted 20 high-priority URLs for re-indexing:
+- [x] 2-hour-timer.html
+- [x] workout-timer.html
+- [x] meditation-timer.html
+- [x] 25-minute-timer.html
+- [x] 45-minute-timer.html
+- [x] study-timer.html
+- [x] 30-minute-timer.html
+- [x] 15-minute-timer.html
+- [x] 10-minute-timer.html
+- [x] 60-minute-timer.html
+- [x] 1-hour-timer.html
+- [x] egg-timer.html
+- [x] 40-minute-timer.html
+- [x] sleep-timer.html
+- [x] breathing-timer.html
+- [x] pomodoro-timer.html
+- [x] all-timers.html
+- [x] how-to-use.html
+- [x] about.html
+- [x] 7-minute-timer.html
+
+**TODO: Submit remaining 19 URLs after GSC quota resets (January 13, 2026):**
+- [ ] cooking-timer.html
+- [ ] tabata-timer.html
+- [ ] hiit-timer.html
+- [ ] classroom-timer.html
+- [ ] presentation-timer.html
+- [ ] countdown-timer.html
+- [ ] stopwatch.html
+- [ ] 1-minute-timer.html
+- [ ] 2-minute-timer.html
+- [ ] 3-minute-timer.html
+- [ ] 4-minute-timer.html
+- [ ] 5-minute-timer.html
+- [ ] 8-minute-timer.html
+- [ ] 20-minute-timer.html
+- [ ] 50-minute-timer.html
+- [ ] 90-minute-timer.html
+- [ ] privacy-policy.html
+- [ ] terms-of-service.html
+- [ ] Submit updated sitemap.xml to GSC
 
 #### 3. Optimize 2-Hour Timer Page ✅ COMPLETE (January 2026)
 - [x] Title optimized: `Free 2 Hour Timer ⏱️ 120 Minute Countdown | Instant Start`
