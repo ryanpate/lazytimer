@@ -214,7 +214,7 @@ Since this is a static site with no build process:
 - **Google Analytics 4**: Tracking enabled on all pages (ID: G-DYQTNBBQ22)
 - **Microsoft Clarity**: Heatmaps and session recordings on all pages (Project ID: v0cm8oz0zc)
 - **IndexNow API**: Instant Bing/Yandex indexing (Key: 4fca89688be640ca944fae1c4b6740ca)
-- **Simplified navigation**: 7 direct links (Home, Pomodoro, Study, Workout, Meditation, Stopwatch, All Timers) on 6 high-traffic pages
+- **Simplified navigation**: 7 direct links (Home, Pomodoro, Study, Workout, Meditation, Stopwatch, All Timers) on all 40 pages
 - **Keyboard shortcuts**: Space (start/pause), R (reset), number keys 1-9 for quick presets
 - **Quick Start buttons**: One-click buttons for 1, 5, 10, and 25-minute timers on homepage
 - **Collapsible FAQ sections**: Native HTML5 `<details>`/`<summary>` accordions on 5 high-traffic pages (study, pomodoro, 5-min, 10-min, 30-min)
@@ -710,7 +710,7 @@ This data informs which landing pages to prioritize.
 ### Phase 3: UI/UX Improvements ✅ MAJOR PROGRESS (January 2026)
 **Completed**:
 1. ✅ Collapsible FAQ sections (5 high-traffic pages: study, pomodoro, 5-min, 10-min, 30-min)
-2. ✅ Simplified navigation (6 pages: index, pomodoro, study, 5-min, 10-min, 30-min)
+2. ✅ Simplified navigation (all 40 pages - completed January 2026)
 3. ✅ Time calculators ("What time will it be?") on high-traffic pages
 4. ✅ Mobile font optimization (48px minimum at 360px breakpoint)
 5. ✅ Testimonials/social proof on study-timer.html
@@ -1253,22 +1253,20 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - Green (#2ecc71): 45-min
 - Gray/Navy (#5d6d7e): 90-min
 
-### PRIORITY 3: Simplify Navigation ✅ PARTIAL (January 2026)
+### PRIORITY 3: Simplify Navigation ✅ COMPLETE (January 2026)
 
 **Problem**: Multi-level dropdowns with 40+ timer links overwhelm users
 
-**Completed** (6 high-traffic pages):
+**Solution Applied to ALL 40 Pages**:
 - [x] Reduced main nav from 5 dropdowns (30+ items) to 7 direct links
 - [x] New nav: Home, Pomodoro, Study, Workout, Meditation, Stopwatch, All Timers
 - [x] Ensure full timer list lives on `/all-timers.html` ✅
 - [x] Remove redundant nav items (keep 6-8 max in header) ✅
+- [x] Updated all 34 timer pages with simplified navigation
+- [x] Updated all 4 informational pages (about, how-to-use, privacy-policy, terms-of-service)
+- [x] Updated all-timers.html hub page
 
-**Pages updated**:
-- index.html, pomodoro-timer.html, study-timer.html
-- 5-minute-timer.html, 10-minute-timer.html, 30-minute-timer.html
-
-**Remaining** (27 pages still have old nav):
-- [ ] Update remaining timer pages with simplified navigation
+**Future Enhancement**:
 - [ ] Add mobile hamburger menu with simplified options
 
 ### PRIORITY 4: Improve Mobile Timer Size ✅ COMPLETE (January 2026)
@@ -1325,7 +1323,7 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 
 **Remaining TODOs**:
 - [ ] Remove minute counter badge if redundant with digital display
-- [ ] Audit and remove excessive navigation options
+- [x] Audit and remove excessive navigation options ✅ (simplified nav on all 40 pages)
 - [ ] Remove flip clock if simple digital display suffices
 - [ ] Consolidate duplicate time display elements per page
 
