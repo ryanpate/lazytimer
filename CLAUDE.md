@@ -224,6 +224,7 @@ Since this is a static site with no build process:
 - **Shareable URLs**: `?t=` parameter support on all pages (e.g., `?t=300` for 5 minutes)
 - **Fullscreen mode**: F key or button toggles distraction-free mode on all pages
 - **Dark/Light mode**: Toggle button + respects system preference on all pages
+- **Timer persistence**: Auto-saves running timer to localStorage, restores on reload within 60 minutes
 
 ## SEO Strategy & Implementation
 
@@ -722,8 +723,9 @@ This data informs which landing pages to prioritize.
 7. ✅ Fullscreen mode (F key or button on all pages)
 8. ✅ Dark/Light mode toggle (all pages respect system preference + manual toggle)
 
+9. ✅ Timer persistence (localStorage - saves running timer state, auto-restores on page reload within 60 minutes)
+
 **Remaining**:
-- Timer persistence (localStorage - save running timer state)
 - PWA/Service Worker (offline functionality)
 
 ### Phase 4: Growth (Ongoing)

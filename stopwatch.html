@@ -2877,6 +2877,55 @@
             };
         }
 
+        // Stopwatch persistence - save state
+        function saveStopwatchState() {
+            if (isRunning || elapsedTime > 0) {
+                localStorage.setItem('lazyStopwatchState', JSON.stringify({
+                    elapsedTime: elapsedTime,
+                    timestamp: Date.now(),
+                    isRunning: isRunning,
+                    laps: laps,
+                    lastLapTime: lastLapTime
+                }));
+            } else {
+                localStorage.removeItem('lazyStopwatchState');
+            }
+        }
+
+        // Stopwatch persistence - restore state
+        function restoreStopwatchState() {
+            const saved = localStorage.getItem('lazyStopwatchState');
+            if (saved) {
+                try {
+                    const state = JSON.parse(saved);
+                    const timeSinceSave = Date.now() - state.timestamp;
+
+                    // Only restore if saved within last 60 minutes
+                    if (timeSinceSave < 3600000) {
+                        laps = state.laps || [];
+                        lastLapTime = state.lastLapTime || 0;
+
+                        if (state.isRunning) {
+                            // Add time elapsed since save
+                            elapsedTime = state.elapsedTime + timeSinceSave;
+                            updateDisplay();
+                            renderLaps();
+                            startStopwatch();
+                        } else {
+                            elapsedTime = state.elapsedTime;
+                            updateDisplay();
+                            renderLaps();
+                        }
+                        return true;
+                    }
+                } catch (e) {
+                    console.log('Could not restore stopwatch state');
+                }
+                localStorage.removeItem('lazyStopwatchState');
+            }
+            return false;
+        }
+
         function updateProgressRing(progress) {
             // Progress is 0 to 1, represents the current second within a minute
             const offset = CIRCUMFERENCE * (1 - progress);
@@ -2933,9 +2982,15 @@
                 announce('Stopwatch started');
 
                 const startTime = Date.now() - elapsedTime;
+                let lastSaveTime = 0;
                 timerInterval = setInterval(() => {
                     elapsedTime = Date.now() - startTime;
                     updateDisplay();
+                    // Save state every second (not every 10ms)
+                    if (elapsedTime - lastSaveTime >= 1000) {
+                        saveStopwatchState();
+                        lastSaveTime = elapsedTime;
+                    }
                 }, 10);
             }
         }
@@ -2947,6 +3002,7 @@
                 startBtn.textContent = 'Start';
                 startBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #229954 100%)';
                 clearInterval(timerInterval);
+                saveStopwatchState();
             }
             if (wasRunning && elapsedTime > 0) {
                 const time = formatTime(elapsedTime);
@@ -2975,6 +3031,7 @@
             updateDisplay();
             renderLaps();
             document.title = originalTitle;
+            localStorage.removeItem('lazyStopwatchState');
             announce('Stopwatch reset');
         }
 
@@ -3037,6 +3094,7 @@
         resetBtn.addEventListener('click', resetStopwatch);
 
         updateDisplay();
+        restoreStopwatchState();
 
         // Mobile Navigation Toggle
         const navToggle = document.getElementById('navToggle');
