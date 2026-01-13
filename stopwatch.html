@@ -935,6 +935,50 @@
             color: white;
         }
 
+        /* Time Calculator */
+        .time-calculator {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .time-calculator h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.1em;
+            color: #e74c3c;
+        }
+
+        .time-calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .time-calc-row:last-child {
+            border-bottom: none;
+        }
+
+        .time-calc-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95em;
+        }
+
+        .time-calc-value {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: white;
+        }
+
+        .time-calc-value.highlight {
+            color: #e74c3c;
+            font-size: 1.2em;
+        }
+
         .lap-times {
             width: 100%;
             max-height: 250px;
@@ -2361,6 +2405,22 @@
                     Share Stopwatch
                 </button>
 
+                <div class="time-calculator">
+                    <h3>⏰ Time Calculator</h3>
+                    <div class="time-calc-row">
+                        <span class="time-calc-label">Current Time</span>
+                        <span class="time-calc-value" id="currentTime">--:--</span>
+                    </div>
+                    <div class="time-calc-row">
+                        <span class="time-calc-label">Elapsed Time</span>
+                        <span class="time-calc-value highlight" id="elapsedTime">00:00:00</span>
+                    </div>
+                    <div class="time-calc-row">
+                        <span class="time-calc-label">In 10 min it will be</span>
+                        <span class="time-calc-value" id="defaultTimeFromNow">--:--</span>
+                    </div>
+                </div>
+
                 <div class="keyboard-hints">
                     <span class="keyboard-hint"><kbd>Space</kbd> Start/Stop</span>
                     <span class="keyboard-hint"><kbd>R</kbd> Reset</span>
@@ -2789,6 +2849,44 @@
                 srAnnouncements.textContent = message;
             }, 50);
         }
+
+        // Time calculator elements
+        const currentTimeEl = document.getElementById('currentTime');
+        const elapsedTimeEl = document.getElementById('elapsedTime');
+        const defaultTimeFromNowEl = document.getElementById('defaultTimeFromNow');
+
+        function formatTime12Hour(date) {
+            let hours = date.getHours();
+            const minutes = date.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            return `${hours}:${String(minutes).padStart(2, '0')} ${ampm}`;
+        }
+
+        function formatElapsedHMS(ms) {
+            const totalSeconds = Math.floor(ms / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function updateTimeCalculator() {
+            const now = new Date();
+            currentTimeEl.textContent = formatTime12Hour(now);
+
+            // Default: 10 minutes from now
+            const defaultLater = new Date(now.getTime() + 600000);
+            defaultTimeFromNowEl.textContent = formatTime12Hour(defaultLater);
+
+            // Elapsed time from stopwatch
+            elapsedTimeEl.textContent = formatElapsedHMS(elapsedTime);
+        }
+
+        // Update time calculator every second
+        setInterval(updateTimeCalculator, 1000);
+        updateTimeCalculator();
 
         const hourTensCard = document.getElementById('hourTens');
         const hourOnesCard = document.getElementById('hourOnes');
