@@ -1224,27 +1224,57 @@
         }
 
         .faq-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(231, 76, 60, 0.05);
         }
 
-        .faq-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
+        .faq-item[open] {
+            background: rgba(231, 76, 60, 0.1);
         }
 
         .faq-question {
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #e74c3c;
-            margin-bottom: 15px;
+            padding: 20px 50px 20px 20px;
             font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #e74c3c;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] .faq-question::after {
+            content: '−';
+        }
+
+        .faq-question:hover {
+            background: rgba(231, 76, 60, 0.1);
         }
 
         .faq-answer {
             font-size: 1.1em;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.85);
+            padding: 0 20px 20px 20px;
         }
 
         .related-timers {
@@ -3338,68 +3368,68 @@
         <section class="faq-section">
             <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em; color: #ffffff;">Pomodoro Timer FAQ</h2>
 
-            <div class="faq-item">
-                <div class="faq-question">What is the Pomodoro Technique?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What is the Pomodoro Technique?</summary>
                 <div class="faq-answer">
                     The Pomodoro Technique is a time management method developed by Francesco Cirillo. It uses a timer to break work into 25-minute focused sessions called "Pomodoros", separated by 5-minute breaks. After 4 Pomodoros, you take a longer 15-30 minute break. This helps maintain focus and prevents burnout.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">How long is a Pomodoro timer?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How long is a Pomodoro timer?</summary>
                 <div class="faq-answer">
                     A standard Pomodoro timer is 25 minutes long for the work session, followed by a 5-minute short break. After completing 4 Pomodoros (100 minutes of work), you take a longer 15-30 minute break. This 25-minute interval was chosen as the optimal time to maintain focus without mental fatigue.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Why is it called Pomodoro?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Why is it called Pomodoro?</summary>
                 <div class="faq-answer">
                     The technique is called "Pomodoro" (Italian for "tomato") because creator Francesco Cirillo used a tomato-shaped kitchen timer when he first developed this method as a university student in the late 1980s.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">How do I use a Pomodoro timer?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How do I use a Pomodoro timer?</summary>
                 <div class="faq-answer">
                     Using a Pomodoro timer is simple: 1) Choose a task to work on, 2) Set the timer for 25 minutes, 3) Work on the task until the timer rings, 4) Take a 5-minute break, 5) Repeat. After 4 Pomodoros, take a longer 15-30 minute break. The key is to eliminate all distractions during the 25-minute work session.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Does the Pomodoro Technique really work?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Does the Pomodoro Technique really work?</summary>
                 <div class="faq-answer">
                     Yes, research shows the Pomodoro Technique is effective for improving focus and productivity. The frequent breaks prevent mental fatigue, while the time pressure of 25-minute sessions helps overcome procrastination. Many users report increased productivity, better time awareness, and reduced burnout when using this method consistently.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Is Pomodoro good for studying?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Is Pomodoro good for studying?</summary>
                 <div class="faq-answer">
                     Yes, the Pomodoro Technique is excellent for studying. The 25-minute focus periods align with research on optimal learning intervals. Breaks help your brain consolidate information. Students who use Pomodoro report better retention, less cramming stress, and more consistent study habits. It's particularly effective for subjects requiring deep focus like math, coding, and essay writing.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Does Pomodoro help with ADHD?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Does Pomodoro help with ADHD?</summary>
                 <div class="faq-answer">
                     Many people with ADHD find the Pomodoro Technique helpful because it breaks work into short, manageable chunks. The timer provides external structure and accountability, while frequent breaks satisfy the need for novelty. If 25 minutes is too long, try starting with 15-minute Pomodoros. The visual countdown can also help maintain focus by making time concrete rather than abstract.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">What is the 52-17 rule?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What is the 52-17 rule?</summary>
                 <div class="faq-answer">
                     The 52-17 rule is an alternative to Pomodoro: work for 52 minutes, then take a 17-minute break. This ratio was discovered by productivity software company DeskTime, who analyzed their most productive users. It's better suited for deep work that requires longer focus periods, while Pomodoro's 25-minute sessions work better for varied tasks or when focus is difficult.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">What should I do during Pomodoro breaks?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What should I do during Pomodoro breaks?</summary>
                 <div class="faq-answer">
                     During 5-minute breaks: stand up, stretch, get water, look out a window, or do <a href="/breathing-timer.html" style="color: #00b894; text-decoration: none;">breathing exercises</a>. Avoid screens and don't check email or social media—these don't provide real mental rest. For 15-30 minute breaks after 4 Pomodoros: take a walk, have a healthy snack, do light exercise, or <a href="/meditation-timer.html" style="color: #9b59b6; text-decoration: none;">meditate</a>. The goal is to rest your brain, not switch to different mental work.
                 </div>
-            </div>
+            </details>
         </section>
 
         <!-- Related Timers Section -->

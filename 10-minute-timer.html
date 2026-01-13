@@ -1162,26 +1162,57 @@
         }
 
         .faq-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(52, 152, 219, 0.05);
         }
 
-        .faq-item:last-child {
-            border-bottom: none;
+        .faq-item[open] {
+            background: rgba(52, 152, 219, 0.1);
         }
 
         .faq-question {
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #3498db;
-            margin-bottom: 15px;
+            padding: 20px 50px 20px 20px;
             font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #3498db;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] .faq-question::after {
+            content: '−';
+        }
+
+        .faq-question:hover {
+            background: rgba(52, 152, 219, 0.1);
         }
 
         .faq-answer {
             font-size: 1.1em;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.85);
+            padding: 0 20px 20px 20px;
         }
 
         .related-timers {
@@ -2953,40 +2984,40 @@
         <section class="faq-section">
             <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">10 Minute Timer FAQ</h2>
 
-            <div class="faq-item">
-                <div class="faq-question">How do I set a 10 minute timer?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How do I set a 10 minute timer?</summary>
                 <div class="faq-answer">
                     Simply click the "Start 10 Min" button on this page. The timer is already set to 10 minutes and will begin counting down immediately. You'll hear an alarm sound when the time is up.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">What can I use a 10 minute timer for?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What can I use a 10 minute timer for?</summary>
                 <div class="faq-answer">
                     A 10 minute timer is perfect for: HIIT workout intervals, meditation and mindfulness sessions, power naps, cooking pasta, quick study sessions, yoga stretching, speed cleaning challenges, and taking breaks from screen time.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">How many seconds is 10 minutes?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How many seconds is 10 minutes?</summary>
                 <div class="faq-answer">
                     10 minutes equals 600 seconds. Our timer displays the countdown in minutes:seconds format (10:00 down to 0:00) and shows visual progress on the analog stopwatch.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Is a 10 minute power nap effective?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Is a 10 minute power nap effective?</summary>
                 <div class="faq-answer">
                     Yes! Research by NASA found that naps of about 10 minutes can significantly boost alertness and cognitive performance. A 10 minute nap is often called a "power nap" because it's long enough to be restorative but short enough to avoid sleep inertia.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Can I use this timer on my phone?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Can I use this timer on my phone?</summary>
                 <div class="faq-answer">
                     Absolutely! This 10 minute timer is fully responsive and works on any device with a web browser. No app download needed - just bookmark this page for quick access.
                 </div>
-            </div>
+            </details>
         </section>
 
         <div class="related-timers">

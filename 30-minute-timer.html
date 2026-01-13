@@ -901,26 +901,57 @@
         }
 
         .faq-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border: 1px solid rgba(26, 188, 156, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(26, 188, 156, 0.05);
         }
 
-        .faq-item:last-child {
-            border-bottom: none;
+        .faq-item[open] {
+            background: rgba(26, 188, 156, 0.1);
         }
 
         .faq-question {
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #1abc9c;
-            margin-bottom: 15px;
+            padding: 20px 50px 20px 20px;
             font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #1abc9c;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] .faq-question::after {
+            content: '−';
+        }
+
+        .faq-question:hover {
+            background: rgba(26, 188, 156, 0.1);
         }
 
         .faq-answer {
             font-size: 1.1em;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.85);
+            padding: 0 20px 20px 20px;
         }
 
         .related-timers {
@@ -2452,40 +2483,40 @@
         <section class="faq-section">
             <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">30 Minute Timer FAQ</h2>
 
-            <div class="faq-item">
-                <div class="faq-question">How do I set a 30 minute timer?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How do I set a 30 minute timer?</summary>
                 <div class="faq-answer">
                     Simply click the "Start 30 Min" button on this page. The timer is already set to 30 minutes and will begin counting down immediately. You'll hear an alarm sound when the time is up.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">What can I use a 30 minute timer for?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What can I use a 30 minute timer for?</summary>
                 <div class="faq-answer">
                     A 30 minute timer is perfect for: workout sessions, focused work blocks, meeting time limits, lunch breaks, cooking and baking, watching TV episodes, laundry cycles, and cleaning sessions. It's one of the most versatile timer durations.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">How many seconds is 30 minutes?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How many seconds is 30 minutes?</summary>
                 <div class="faq-answer">
                     30 minutes equals 1,800 seconds (half of 3,600 seconds in an hour). Our timer displays the countdown in minutes:seconds format (30:00 down to 0:00) and shows visual progress on the analog stopwatch.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Is 30 minutes enough for a good workout?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Is 30 minutes enough for a good workout?</summary>
                 <div class="faq-answer">
                     Absolutely! Health organizations recommend at least 150 minutes of moderate exercise per week, which equals 30 minutes five days a week. A focused 30-minute workout can provide significant cardiovascular and strength benefits.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Can I use this timer on my phone?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Can I use this timer on my phone?</summary>
                 <div class="faq-answer">
                     Yes! This 30 minute timer is fully responsive and works on any device with a web browser. No app download needed - just bookmark this page for quick access whenever you need a half-hour timer.
                 </div>
-            </div>
+            </details>
         </section>
 
         <div class="related-timers">
