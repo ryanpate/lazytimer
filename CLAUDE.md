@@ -221,6 +221,9 @@ Since this is a static site with no build process:
 - **Time calculators**: "What time will it be?" calculator on high-traffic timer pages
 - **Mobile-optimized fonts**: Minimum 48px (3em) digital time display at 360px breakpoint
 - **Social proof**: Testimonials section on study-timer.html
+- **Shareable URLs**: `?t=` parameter support on all pages (e.g., `?t=300` for 5 minutes)
+- **Fullscreen mode**: F key or button toggles distraction-free mode on all pages
+- **Dark/Light mode**: Toggle button + respects system preference on all pages
 
 ## SEO Strategy & Implementation
 
@@ -715,12 +718,13 @@ This data informs which landing pages to prioritize.
 4. ✅ Mobile font optimization (48px minimum at 360px breakpoint)
 5. ✅ Testimonials/social proof on study-timer.html
 
+6. ✅ Timer URL sharing (`?t=` parameter on all pages - generates shareable URLs)
+7. ✅ Fullscreen mode (F key or button on all pages)
+8. ✅ Dark/Light mode toggle (all pages respect system preference + manual toggle)
+
 **Remaining**:
-- Timer persistence (localStorage)
-- Fullscreen mode
-- Timer URL sharing
-- PWA/Service Worker
-- Dark/Light mode toggle
+- Timer persistence (localStorage - save running timer state)
+- PWA/Service Worker (offline functionality)
 
 ### Phase 4: Growth (Ongoing)
 1. Product Hunt launch
