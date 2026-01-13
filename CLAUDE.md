@@ -224,7 +224,8 @@ Since this is a static site with no build process:
 - **Shareable URLs**: `?t=` parameter support on all pages (e.g., `?t=300` for 5 minutes)
 - **Fullscreen mode**: F key or button toggles distraction-free mode on all pages
 - **Dark/Light mode**: Toggle button + respects system preference on all pages
-- **Timer persistence**: Auto-saves running timer to localStorage, restores on reload within 60 minutes
+- **Timer persistence**: localStorage saves running timer state, auto-restores on page reload within 60 minutes
+- **PWA/Service Worker**: Offline functionality with sw.js v16, manifest.json, and service worker registration on all 39 pages
 
 ## SEO Strategy & Implementation
 
@@ -725,8 +726,7 @@ This data informs which landing pages to prioritize.
 
 9. ✅ Timer persistence (localStorage - saves running timer state, auto-restores on page reload within 60 minutes)
 
-**Remaining**:
-- PWA/Service Worker (offline functionality)
+10. ✅ PWA/Service Worker (offline functionality - sw.js v16, manifest.json, service worker registration on all 39 pages)
 
 ### Phase 4: Growth (Ongoing)
 1. Product Hunt launch
