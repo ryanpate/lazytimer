@@ -771,6 +771,52 @@
             color: white;
         }
 
+        /* Time Calculator */
+        .time-calculator {
+            background: rgba(155, 89, 182, 0.1);
+            border: 1px solid rgba(155, 89, 182, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .time-calculator h3 {
+            font-size: 1.1em;
+            color: #9b59b6;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .time-calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .time-calc-row:last-child {
+            border-bottom: none;
+        }
+
+        .time-calc-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95em;
+        }
+
+        .time-calc-value {
+            color: #ffffff;
+            font-size: 1.1em;
+            font-weight: 600;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+        }
+
+        .time-calc-value.highlight {
+            color: #9b59b6;
+            font-size: 1.3em;
+        }
+
         /* Quick Start Buttons */
         .quick-start {
             display: flex;
@@ -2379,6 +2425,22 @@
                     <button class="control-btn reset-btn" id="resetBtn">Reset</button>
                 </div>
 
+                <div class="time-calculator">
+                    <h3>⏰ Time Calculator</h3>
+                    <div class="time-calc-row">
+                        <span class="time-calc-label">Current Time</span>
+                        <span class="time-calc-value" id="currentTime">--:--</span>
+                    </div>
+                    <div class="time-calc-row">
+                        <span class="time-calc-label">Timer Ends At</span>
+                        <span class="time-calc-value highlight" id="endTime">--:--</span>
+                    </div>
+                    <div class="time-calc-row">
+                        <span class="time-calc-label">In 10 min it will be</span>
+                        <span class="time-calc-value" id="defaultTimeFromNow">--:--</span>
+                    </div>
+                </div>
+
                 <!-- Keyboard Shortcuts Hints -->
                 <div class="keyboard-hints">
                     <span class="kbd-hint"><kbd class="kbd">Space</kbd> Start/Pause</span>
@@ -2825,6 +2887,39 @@
         const soundPopover = document.getElementById('soundPopover');
         const originalTitle = document.title;
         const srAnnouncements = document.getElementById('srAnnouncements');
+
+        // Time calculator elements
+        const currentTimeEl = document.getElementById('currentTime');
+        const endTimeEl = document.getElementById('endTime');
+        const defaultTimeFromNowEl = document.getElementById('defaultTimeFromNow');
+
+        // Format time as 12-hour with AM/PM
+        function formatTime12Hour(date) {
+            let hours = date.getHours();
+            const minutes = date.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            return `${hours}:${String(minutes).padStart(2, '0')} ${ampm}`;
+        }
+
+        // Update time calculator display
+        function updateTimeCalculator() {
+            const now = new Date();
+            currentTimeEl.textContent = formatTime12Hour(now);
+
+            // Calculate default time from now (10 min for meditation)
+            const defaultLater = new Date(now.getTime() + 600000);
+            defaultTimeFromNowEl.textContent = formatTime12Hour(defaultLater);
+
+            // Calculate when timer will end based on current timeLeft
+            const endDate = new Date(now.getTime() + timeLeft * 1000);
+            endTimeEl.textContent = formatTime12Hour(endDate);
+        }
+
+        // Update time calculator every second
+        setInterval(updateTimeCalculator, 1000);
+        updateTimeCalculator();
 
         // Screen reader announcement helper
         function announce(message) {
