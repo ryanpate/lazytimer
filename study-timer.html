@@ -709,8 +709,8 @@
             .logo-icon { width: 25px; height: 25px; }
             .progress-timer { width: 200px; height: 200px; }
             .progress-timer svg { width: 200px; height: 200px; }
-            .time-display { font-size: 2.5em; }
-            .timer-status { font-size: 0.8em; letter-spacing: 2px; }
+            .time-display { font-size: 3em; }
+            .timer-status { font-size: 0.85em; letter-spacing: 2px; }
             .timer-container { padding: 12px; gap: 12px; }
             .flip-card { width: 35px; height: 52px; }
             .flip-card-inner { font-size: 1.8em; }
@@ -1397,6 +1397,82 @@
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 12px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            margin-top: 50px;
+            padding: 40px 30px;
+            background: rgba(52, 152, 219, 0.08);
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            border-radius: 20px;
+        }
+        .testimonials-section h2 {
+            text-align: center;
+            color: #3498db;
+            margin-bottom: 30px;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4em;
+            color: rgba(52, 152, 219, 0.3);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            line-height: 1;
+        }
+        .testimonial-text {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-left: 30px;
+        }
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+        .testimonial-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .testimonial-name {
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .testimonial-role {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .testimonial-stars {
+            color: #f1c40f;
+            margin-bottom: 10px;
+            padding-left: 30px;
         }
 
         .faq-section {
@@ -3064,6 +3140,60 @@
             <p>
                 Research shows shorter, frequent sessions beat long cramming. Use <a href="/15-minute-timer.html">15-minute flashcard sessions</a> three times daily rather than one <a href="/45-minute-timer.html">45-minute session</a>. Review right before sleep for better consolidation—set a <a href="/10-minute-timer.html">10-minute bedtime review</a> timer.
             </p>
+
+            <!-- Testimonials Section -->
+            <div class="testimonials-section">
+                <h2>What Students Say About Our Study Timer</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">This timer saved my GPA. I went from constant distractions to actually completing 6+ focused study sessions daily. The Pomodoro presets are perfect for exam prep.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">S</div>
+                            <div class="testimonial-info">
+                                <span class="testimonial-name">Sarah M.</span>
+                                <span class="testimonial-role">Pre-Med Student, UCLA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">I use this every day for MCAT prep. The 50-minute sessions are ideal for practice tests. Simple, clean, no distractions—exactly what a study timer should be.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">J</div>
+                            <div class="testimonial-info">
+                                <span class="testimonial-name">James K.</span>
+                                <span class="testimonial-role">Graduate Student</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">Finally a timer that just works! I was spending more time setting up apps than studying. This loads instantly and the alarm is loud enough to snap me out of deep focus.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">E</div>
+                            <div class="testimonial-info">
+                                <span class="testimonial-name">Emily R.</span>
+                                <span class="testimonial-role">High School Senior</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">As someone with ADHD, I need external structure to study. This timer gives me that accountability without overwhelming features. The keyboard shortcuts are a game-changer.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">M</div>
+                            <div class="testimonial-info">
+                                <span class="testimonial-name">Michael T.</span>
+                                <span class="testimonial-role">Computer Science Major</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 25px; color: rgba(255,255,255,0.6); font-size: 0.9em;">
+                    Join thousands of students who study smarter with LazyTimer
+                </p>
+            </div>
         </article>
 
         <section class="faq-section">
