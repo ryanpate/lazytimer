@@ -1485,26 +1485,57 @@
         }
 
         .faq-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(52, 152, 219, 0.05);
         }
 
-        .faq-item:last-child {
-            border-bottom: none;
+        .faq-item[open] {
+            background: rgba(52, 152, 219, 0.1);
         }
 
         .faq-question {
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #3498db;
-            margin-bottom: 15px;
+            padding: 20px 50px 20px 20px;
             font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #3498db;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] .faq-question::after {
+            content: '−';
+        }
+
+        .faq-question:hover {
+            background: rgba(52, 152, 219, 0.1);
         }
 
         .faq-answer {
             font-size: 1.1em;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.85);
+            padding: 0 20px 20px 20px;
         }
 
         .related-timers {
@@ -3199,75 +3230,75 @@
         <section class="faq-section">
             <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">Study Timer FAQ</h2>
 
-            <div class="faq-item">
-                <div class="faq-question">How long should I study without a break?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How long should I study without a break?</summary>
                 <div class="faq-answer">
                     Research suggests studying for 25-50 minutes followed by a 5-10 minute break is optimal for retention and focus. The Pomodoro Technique (25 min study, 5 min break) is popular among students. After 4 study sessions, take a longer 15-30 minute break to prevent burnout.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">What is the best study timer method?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What is the best study timer method?</summary>
                 <div class="faq-answer">
                     The Pomodoro Technique is the most proven study timer method: study for 25 minutes, then take a 5-minute break. After 4 cycles, take a 15-30 minute break. This prevents mental fatigue, improves focus, and helps you retain more information than marathon study sessions.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">How many hours should I study per day?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How many hours should I study per day?</summary>
                 <div class="faq-answer">
                     Most students benefit from 2-4 hours of focused study per day, broken into sessions. Quality matters more than quantity - four focused 45-minute sessions beats 8 hours of distracted studying. Use a timer to maintain focus and take regular breaks for maximum retention.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Does timed studying improve grades?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Does timed studying improve grades?</summary>
                 <div class="faq-answer">
                     Yes, research shows timed study sessions improve academic performance. Setting a timer creates urgency that reduces procrastination, helps maintain focus, and prevents mental fatigue from over-studying. Students using timed study methods report better grades and less stress.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">How do I study for exams effectively?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How do I study for exams effectively?</summary>
                 <div class="faq-answer">
                     For exam prep, use spaced repetition with timed sessions: study material for 25-45 minutes, take a break, then review. Study in multiple short sessions over days rather than cramming. Use active recall (testing yourself) rather than passive reading. A timer helps you stay on track.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">What is the best study timer for ADHD?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What is the best study timer for ADHD?</summary>
                 <div class="faq-answer">
                     For ADHD students, visual timers work best because they make time concrete and visible. Start with shorter intervals (10-15 minutes) rather than the standard 25-minute Pomodoro. Use a timer on a separate device (tablet or laptop) to avoid phone distractions. The key is experimenting to find your optimal focus duration.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">What is active recall and how do I use it?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What is active recall and how do I use it?</summary>
                 <div class="faq-answer">
                     Active recall means testing yourself on material rather than passively re-reading notes. After studying for 25 minutes, close your notes and write everything you remember. Then check what you missed. This retrieval practice is proven to strengthen memory far more than highlighting or re-reading. Use a timer to structure your active recall sessions.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">What is the 52-17 study method?</div>
+            <details class="faq-item">
+                <summary class="faq-question">What is the 52-17 study method?</summary>
                 <div class="faq-answer">
                     The 52-17 method involves studying for 52 minutes followed by a 17-minute break. This rhythm was discovered through productivity research analyzing the habits of highly productive workers. It's an alternative to the Pomodoro Technique for students who find 25 minutes too short for deep focus work.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">How long should a homework timer be for kids?</div>
+            <details class="faq-item">
+                <summary class="faq-question">How long should a homework timer be for kids?</summary>
                 <div class="faq-answer">
                     For elementary students, start with 10-15 minute sessions. Middle schoolers can handle 15-20 minutes, while high school students can work up to 25-30 minutes. The key is matching timer length to attention span and gradually increasing as focus improves. Always include short breaks between sessions.
                 </div>
-            </div>
+            </details>
 
-            <div class="faq-item">
-                <div class="faq-question">Should I listen to music while studying with a timer?</div>
+            <details class="faq-item">
+                <summary class="faq-question">Should I listen to music while studying with a timer?</summary>
                 <div class="faq-answer">
                     Instrumental music without lyrics can help some students focus, but it depends on the individual. Lo-fi beats, classical music, and nature sounds are popular choices. If you find yourself focusing on the music more than your work, try studying in silence. The timer helps you experiment—test different conditions across sessions.
                 </div>
-            </div>
+            </details>
         </section>
 
         <div class="related-timers">
