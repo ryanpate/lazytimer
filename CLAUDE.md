@@ -812,7 +812,7 @@ All 40/40 URLs now indexed in Google Search Console (January 2026).
 - [x] Add long-tail content: "study timer for exams", "homework timer", "focus timer for ADHD" ✅
 - [x] Add internal links FROM study-timer TO: 25-minute-timer, 50-minute-timer, pomodoro-timer ✅
 - [x] Create "Timer for Students" subsection with exam/homework use cases ✅
-- [ ] Add testimonials/social proof section
+- [x] Add testimonials/social proof section ✅ (Added January 2026 - 4 student testimonials)
 
 ### PRIORITY 3: Fix Breathing Timer Rankings (Position 45-73) ✅ COMPLETED
 Current queries getting impressions but not clicks:
@@ -1242,29 +1242,37 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - Green (#2ecc71): 45-min
 - Gray/Navy (#5d6d7e): 90-min
 
-### PRIORITY 3: Simplify Navigation
+### PRIORITY 3: Simplify Navigation ✅ PARTIAL (January 2026)
 
 **Problem**: Multi-level dropdowns with 40+ timer links overwhelm users
 
-**TODOs**:
-- [ ] Reduce main nav to: Home, Popular Timers, All Timers, About
-- [ ] Ensure full timer list lives on `/all-timers.html`
-- [ ] Use simpler category grouping in nav (max 2 levels deep)
-- [ ] Add mobile hamburger menu with simplified options
-- [ ] Remove redundant nav items (keep 6-8 max in header)
+**Completed** (6 high-traffic pages):
+- [x] Reduced main nav from 5 dropdowns (30+ items) to 7 direct links
+- [x] New nav: Home, Pomodoro, Study, Workout, Meditation, Stopwatch, All Timers
+- [x] Ensure full timer list lives on `/all-timers.html` ✅
+- [x] Remove redundant nav items (keep 6-8 max in header) ✅
 
-### PRIORITY 4: Improve Mobile Timer Size ✅ PARTIALLY COMPLETE
+**Pages updated**:
+- index.html, pomodoro-timer.html, study-timer.html
+- 5-minute-timer.html, 10-minute-timer.html, 30-minute-timer.html
+
+**Remaining** (27 pages still have old nav):
+- [ ] Update remaining timer pages with simplified navigation
+- [ ] Add mobile hamburger menu with simplified options
+
+### PRIORITY 4: Improve Mobile Timer Size ✅ COMPLETE (January 2026)
 
 **Problem**: Flip cards shrink to 35x52px on small screens - hard to read during workouts
 
 **Completed**:
 - [x] Progress circle scales better than stopwatch (all pages migrated)
 - [x] Touch-friendly button sizes (min 44x44px via CSS fixes)
-
-**Remaining TODOs**:
-- [ ] Ensure minimum 48px font for digital time on mobile
-- [ ] Test time display readability on 320px width screens
-- [ ] Verify phase label is readable inside progress circle on mobile
+- [x] Ensure minimum 48px font (3em) for digital time on mobile ✅
+  - Fixed 7 pages: 5-minute, 10-minute, 15-minute, 30-minute, countdown, pomodoro, study
+  - Updated .time-display font-size from 1.5-2.5em to 3em at 360px breakpoint
+  - Increased .progress-timer size from 140px to 200px where needed
+- [x] Test time display readability on 320px width screens ✅
+- [x] Verify phase label is readable inside progress circle on mobile ✅
 
 ### PRIORITY 5: Integrate Phase Indicator into Timer
 
@@ -1277,17 +1285,25 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - [ ] Update CSS for centered phase text within SVG
 - [ ] Apply to: hiit-timer, tabata-timer, pomodoro-timer, workout-timer
 
-### PRIORITY 6: Collapse SEO Content
+### PRIORITY 6: Collapse SEO Content ✅ PARTIALLY COMPLETE
 
 **Problem**: 2000+ words of content creates scroll fatigue
 
-**TODOs**:
-- [ ] Add accordion/collapsible sections to SEO content (FAQ, use cases)
-- [ ] Implement "Read More" expansion for detailed content
+**Completed** (January 2026):
+- [x] Add collapsible FAQ sections using native HTML5 `<details>`/`<summary>` elements
+- [x] Add CSS for collapse/expand transitions with +/- indicators
+- [x] Start with FAQ sections collapsed, expand on click
+- [x] Applied to 5 high-traffic pages:
+  - study-timer.html (blue theme)
+  - pomodoro-timer.html (red theme #e74c3c)
+  - 5-minute-timer.html (purple theme #667eea)
+  - 10-minute-timer.html (blue theme #3498db)
+  - 30-minute-timer.html (teal theme #1abc9c)
+
+**Remaining TODOs**:
+- [ ] Apply collapsible FAQ to remaining 30+ pages
+- [ ] Implement "Read More" expansion for detailed use case content
 - [ ] Ensure timer stays above the fold on all devices
-- [ ] Add CSS for collapse/expand transitions
-- [ ] Start with FAQ sections collapsed, expand on click
-- [ ] Apply to all pages with >1500 words of content
 
 ### PRIORITY 7: Remove Duplicate Elements ✅ PARTIALLY COMPLETE
 
