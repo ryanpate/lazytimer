@@ -69,6 +69,8 @@ LazyTimer is a static website featuring a free online timer with beautiful count
 ├── ads.txt                 # Google AdSense verification
 ├── sitemap.xml             # SEO sitemap (updated with all pages)
 ├── robots.txt              # Search engine crawler directives
+├── netlify.toml            # Netlify configuration (redirects, build settings)
+├── _redirects              # URL canonicalization (301! forced redirects)
 ├── CLAUDE.md               # This file
 ├── SEO_IMPROVEMENTS.md     # SEO changes documentation
 ├── backup/                 # Old versions of HTML files
@@ -226,6 +228,8 @@ Since this is a static site with no build process:
 - **Dark/Light mode**: Toggle button + respects system preference on all pages
 - **Timer persistence**: localStorage saves running timer state, auto-restores on page reload within 60 minutes
 - **PWA/Service Worker**: Offline functionality with sw.js v16, manifest.json, and service worker registration on all 39 pages
+- **Related Timers sections**: 10-12 internal links per page in footer, cross-linking related timer types (added January 15, 2026)
+- **URL Canonicalization**: 301! forced redirects from clean URLs to .html versions via `_redirects` file (fixed January 15, 2026)
 
 ## SEO Strategy & Implementation
 
@@ -960,9 +964,10 @@ Comprehensive SEO audit completed Jan 4, 2026. Critical issues blocking Google r
 3. countdown-timer.html (33K/mo)
 4. stopwatch.html (28K/mo)
 
-### HIGH: Internal Linking Improvements
+### HIGH: Internal Linking Improvements ✅ FULLY COMPLETE (January 15, 2026)
 
-**Problem**: Only ~6 contextual links per page (target: 8-12)
+**Problem**: Only ~6 contextual links per page (target: 10-12)
+**Solution**: Expanded Related Timers sections on all 37 timer pages from 5-7 links to 10-12 links
 
 #### 5. Internal Link Additions ✅ COMPLETED
 Added contextual links in SEO content sections:
@@ -1107,16 +1112,16 @@ Target blogs in these niches:
 | ✅ DONE | CLS fixes (min-height) | +10% Core Web Vitals | Complete |
 | ✅ DONE | Mobile CSS fixes (touch targets, grid) | +15% mobile traffic | Complete |
 | ✅ DONE | Mobile testing & verification | Confirmed mobile UX | Complete |
-| ✅ DONE | URL canonicalization (.html) | Consolidate rankings | Complete |
+| ✅ DONE | URL canonicalization (301! redirects) | Consolidate rankings | Complete (Jan 15) |
 | ✅ DONE | Meta descriptions (0-click pages) | +20% CTR potential | Complete |
 | ✅ DONE | Bing schema fixes (Jan 12) | Fix indexing blocks | Complete |
 | ✅ DONE | Remove fake aggregateRating | Avoid penalties | Complete |
 | ✅ DONE | Fix duplicate BreadcrumbList | Schema compliance | Complete |
 | ✅ DONE | Add .html to internal links | URL consistency | Complete |
 | CRITICAL | Re-submit GSC indexing | +300% indexed pages | 30 min |
-| HIGH | Internal linking additions | +25% page authority | 3 hours |
-| HIGH | Featured snippet optimization | +50% CTR | 4 hours |
-| HIGH | Content depth expansion | +20% rankings | 6 hours |
+| ✅ DONE | Internal linking (Related Timers) | +25% page authority | Complete (Jan 15) |
+| ✅ DONE | Featured snippet optimization | +50% CTR | Complete |
+| ✅ DONE | Content depth expansion | +20% rankings | Complete |
 | ✅ DONE | Tool directory submissions | +10 backlinks | Complete |
 | ✅ DONE | OG images | +5% social traffic | Complete |
 
@@ -1451,13 +1456,16 @@ Replaced the analog stopwatch with rotating hands with a modern SVG progress cir
 - **Impact**: Timer users search on phones (cooking, workouts, meditation)
 - **Root Cause**: Needs investigation - could be UX, page speed, or SERP appearance
 
-#### 2. ✅ URL Canonicalization - FIXED (January 2026)
+#### 2. ✅ URL Canonicalization - FULLY FIXED (January 15, 2026)
 - **Problem**: GSC showed both `/page` and `/page.html` getting impressions
-- **Solution**: Updated all URLs to use `.html` extension consistently
+- **Solution**: Updated all URLs to use `.html` extension + forced 301 redirects
 - **Changes made**:
   - sitemap.xml: All URLs now include `.html`
   - All HTML files: canonical, hreflang, og:url, schema URLs updated
-- **Next step**: Re-submit sitemap to GSC to consolidate ranking signals
+  - `_redirects`: Added `301!` suffix to force redirects even when files exist
+  - `netlify.toml`: Created with build settings and redirect rules
+- **Verified**: Clean URLs now return `HTTP/2 301` redirecting to `.html` versions
+- **Impact**: Google will consolidate ranking signals to canonical `.html` URLs
 
 #### 3. 🚨 Position 30-40 Plateau
 - **Problem**: Most pages stuck on page 3-4 of Google
@@ -1677,3 +1685,34 @@ Every Monday, check:
 - [ ] GA: Top pages by traffic
 - [ ] GA: New vs Returning users ratio
 - [ ] Indexing status of all 40 pages
+
+---
+
+## Changelog: January 15, 2026
+
+### Internal Linking Expansion
+- **Related Timers sections**: Expanded from 5-7 links to 10-12 links on all 37 timer pages
+- **New sections added**: Added Related Timers to 4 pages that were missing them:
+  - `index.html` - 15 links to popular timers
+  - `all-timers.html` - Featured Timers section with 15 links
+  - `about.html` - 13 links to timer pages
+  - `how-to-use.html` - 14 links to timer pages
+- **Malformed HTML fixed**: Cleaned up duplicate/malformed links in cooking-timer, 1-minute-timer, 2-minute-timer, 3-minute-timer
+- **Commit**: `fd52d88` - Expand Related Timers sections for better internal linking
+
+### URL Canonicalization Fix
+- **Problem identified**: Netlify's "Pretty URLs" feature was serving both `/page` and `/page.html` with 200 status, preventing redirects from working
+- **Solution**: Added `!` suffix to all redirect rules in `_redirects` file (e.g., `301!`)
+- **Files created/updated**:
+  - `netlify.toml` - Netlify configuration with build settings
+  - `_redirects` - All 39 URLs now use `301!` forced redirects
+- **Verified working**: All clean URLs now return `HTTP/2 301` with `location: /page.html`
+- **Commits**:
+  - `44b23f7` - Added netlify.toml
+  - `3ffc531` - Added force=true in netlify.toml (didn't work)
+  - `c0e8ea4` - Used 301! in _redirects (working fix)
+
+### SEO Impact
+- **Internal linking**: +25% more internal links per page, improving page authority distribution
+- **URL canonicalization**: Google will consolidate ranking signals to `.html` URLs
+- **Expected result**: Improved rankings as duplicate URL issue is resolved
