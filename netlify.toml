@@ -1,5 +1,5 @@
 # Netlify Configuration for lazytimer.com
-# Disable Pretty URLs to allow _redirects to handle URL canonicalization
+# Force redirects to .html versions for URL canonicalization
 
 [build]
   publish = "."
@@ -9,3 +9,235 @@
 
 [build.processing.html]
   pretty_urls = false
+
+# Force redirects - these override Netlify's default pretty URL behavior
+# Main pages
+[[redirects]]
+  from = "/pomodoro-timer"
+  to = "/pomodoro-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cooking-timer"
+  to = "/cooking-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workout-timer"
+  to = "/workout-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tabata-timer"
+  to = "/tabata-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hiit-timer"
+  to = "/hiit-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/classroom-timer"
+  to = "/classroom-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/presentation-timer"
+  to = "/presentation-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/meditation-timer"
+  to = "/meditation-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/study-timer"
+  to = "/study-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/countdown-timer"
+  to = "/countdown-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stopwatch"
+  to = "/stopwatch.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sleep-timer"
+  to = "/sleep-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/egg-timer"
+  to = "/egg-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/breathing-timer"
+  to = "/breathing-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/all-timers"
+  to = "/all-timers.html"
+  status = 301
+  force = true
+
+# Time-based timer pages
+[[redirects]]
+  from = "/1-minute-timer"
+  to = "/1-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2-minute-timer"
+  to = "/2-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/3-minute-timer"
+  to = "/3-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/4-minute-timer"
+  to = "/4-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/5-minute-timer"
+  to = "/5-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/7-minute-timer"
+  to = "/7-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/8-minute-timer"
+  to = "/8-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/10-minute-timer"
+  to = "/10-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/15-minute-timer"
+  to = "/15-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/20-minute-timer"
+  to = "/20-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/25-minute-timer"
+  to = "/25-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/30-minute-timer"
+  to = "/30-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/40-minute-timer"
+  to = "/40-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/45-minute-timer"
+  to = "/45-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/50-minute-timer"
+  to = "/50-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/60-minute-timer"
+  to = "/60-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/90-minute-timer"
+  to = "/90-minute-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/1-hour-timer"
+  to = "/1-hour-timer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2-hour-timer"
+  to = "/2-hour-timer.html"
+  status = 301
+  force = true
+
+# Informational pages
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-use"
+  to = "/how-to-use.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-of-service"
+  to = "/terms-of-service.html"
+  status = 301
+  force = true
