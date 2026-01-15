@@ -1118,7 +1118,7 @@ Target blogs in these niches:
 | ✅ DONE | Remove fake aggregateRating | Avoid penalties | Complete |
 | ✅ DONE | Fix duplicate BreadcrumbList | Schema compliance | Complete |
 | ✅ DONE | Add .html to internal links | URL consistency | Complete |
-| CRITICAL | Re-submit GSC indexing | +300% indexed pages | 30 min |
+| ✅ DONE | Re-submit GSC indexing (39 URLs) | +300% indexed pages | Complete (Jan 15) |
 | ✅ DONE | Internal linking (Related Timers) | +25% page authority | Complete (Jan 15) |
 | ✅ DONE | Featured snippet optimization | +50% CTR | Complete |
 | ✅ DONE | Content depth expansion | +20% rankings | Complete |
@@ -1546,26 +1546,28 @@ Submitted 20 high-priority URLs for re-indexing:
 - [x] about.html
 - [x] 7-minute-timer.html
 
-**TODO: Submit remaining 19 URLs after GSC quota resets (January 13, 2026):**
-- [ ] cooking-timer.html
-- [ ] tabata-timer.html
-- [ ] hiit-timer.html
-- [ ] classroom-timer.html
-- [ ] presentation-timer.html
-- [ ] countdown-timer.html
-- [ ] stopwatch.html
-- [ ] 1-minute-timer.html
-- [ ] 2-minute-timer.html
-- [ ] 3-minute-timer.html
-- [ ] 4-minute-timer.html
-- [ ] 5-minute-timer.html
-- [ ] 8-minute-timer.html
-- [ ] 20-minute-timer.html
-- [ ] 50-minute-timer.html
-- [ ] 90-minute-timer.html
-- [ ] privacy-policy.html
-- [ ] terms-of-service.html
-- [ ] Submit updated sitemap.xml to GSC
+**Remaining 19 URLs submitted (January 15, 2026):** ✅ COMPLETE
+- [x] cooking-timer.html
+- [x] tabata-timer.html
+- [x] hiit-timer.html
+- [x] classroom-timer.html
+- [x] presentation-timer.html
+- [x] countdown-timer.html
+- [x] stopwatch.html
+- [x] 1-minute-timer.html
+- [x] 2-minute-timer.html
+- [x] 3-minute-timer.html
+- [x] 4-minute-timer.html
+- [x] 5-minute-timer.html
+- [x] 8-minute-timer.html
+- [x] 20-minute-timer.html
+- [x] 50-minute-timer.html
+- [x] 90-minute-timer.html
+- [x] privacy-policy.html
+- [x] terms-of-service.html
+- [x] Submit updated sitemap.xml to GSC
+
+**All 39 URLs now submitted to GSC for indexing.**
 
 #### 3. Optimize 2-Hour Timer Page ✅ COMPLETE (January 2026)
 - [x] Title optimized: `Free 2 Hour Timer ⏱️ 120 Minute Countdown | Instant Start`
