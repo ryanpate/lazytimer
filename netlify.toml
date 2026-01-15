@@ -1,0 +1,11 @@
+# Netlify Configuration for lazytimer.com
+# Disable Pretty URLs to allow _redirects to handle URL canonicalization
+
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = false
