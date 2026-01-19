@@ -1388,6 +1388,63 @@
             transform: translateY(-2px);
         }
 
+        /* Recently Used Timers Section */
+        .recent-timers {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 700px;
+            text-align: center;
+            display: none;
+        }
+
+        .recent-timers.has-timers {
+            display: block;
+        }
+
+        .recent-timers h4 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .recent-timers-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .recent-timer-btn {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            border-radius: 12px;
+            padding: 12px 20px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .recent-timer-btn:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.4), rgba(118, 75, 162, 0.4));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .recent-timer-btn .timer-name {
+            font-weight: 600;
+        }
+
+        .recent-timer-btn .timer-duration {
+            opacity: 0.7;
+            font-size: 0.85em;
+            margin-left: 5px;
+        }
+
         footer {
             text-align: center;
             color: rgba(255, 255, 255, 0.5);
@@ -2886,6 +2943,25 @@
             background: rgba(102, 126, 234, 0.1);
         }
 
+        body.light-mode .recent-timers {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        body.light-mode .recent-timers h4 {
+            color: #1a202c;
+        }
+
+        body.light-mode .recent-timer-btn {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #1a202c;
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        body.light-mode .recent-timer-btn:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+        }
+
         body.light-mode footer {
             color: rgba(45, 55, 72, 0.7);
         }
@@ -3656,6 +3732,14 @@
             <button class="subscribe-btn" id="subscribeBtn">Get Premium Now</button>
         </section>
 
+        <!-- Recently Used Timers Section -->
+        <div class="recent-timers" id="recentTimersContainer">
+            <h4>Your Recent Timers</h4>
+            <div class="recent-timers-list" id="recentTimersList">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
         <!-- Related Timers Section for Internal Linking -->
         <div class="related-timers">
             <h3>Popular Timers</h3>
@@ -3664,11 +3748,19 @@
             <a href="/workout-timer.html">Workout Timer</a>
             <a href="/meditation-timer.html">Meditation Timer</a>
             <a href="/cooking-timer.html">Cooking Timer</a>
+            <a href="/sleep-timer.html">Sleep Timer</a>
+            <a href="/hiit-timer.html">HIIT Timer</a>
+            <a href="/tabata-timer.html">Tabata Timer</a>
+            <a href="/breathing-timer.html">Breathing Timer</a>
+            <a href="/egg-timer.html">Egg Timer</a>
+            <a href="/classroom-timer.html">Classroom Timer</a>
+            <a href="/presentation-timer.html">Presentation Timer</a>
             <a href="/5-minute-timer.html">5 Minute Timer</a>
             <a href="/10-minute-timer.html">10 Minute Timer</a>
             <a href="/15-minute-timer.html">15 Minute Timer</a>
             <a href="/25-minute-timer.html">25 Minute Timer</a>
             <a href="/30-minute-timer.html">30 Minute Timer</a>
+            <a href="/45-minute-timer.html">45 Minute Timer</a>
             <a href="/1-hour-timer.html">1 Hour Timer</a>
             <a href="/2-hour-timer.html">2 Hour Timer</a>
             <a href="/stopwatch.html">Stopwatch</a>
@@ -4162,6 +4254,87 @@
 
         // Restore timer state on page load (if user refreshed during active timer)
         restoreTimerState();
+
+        // ===== Recently Used Timers Feature =====
+        function formatDuration(seconds) {
+            if (seconds >= 3600) {
+                const hours = Math.floor(seconds / 3600);
+                const mins = Math.floor((seconds % 3600) / 60);
+                return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
+            }
+            return `${Math.floor(seconds / 60)}m`;
+        }
+
+        function saveRecentTimer(name, duration) {
+            try {
+                const recent = JSON.parse(localStorage.getItem('recentTimers') || '[]');
+                const entry = { name, duration, timestamp: Date.now() };
+                // Remove duplicate if exists
+                const filtered = recent.filter(t => t.duration !== duration);
+                filtered.unshift(entry);
+                // Keep only last 5 timers
+                if (filtered.length > 5) filtered.pop();
+                localStorage.setItem('recentTimers', JSON.stringify(filtered));
+                loadRecentTimers();
+            } catch (e) {
+                console.log('Could not save recent timer:', e);
+            }
+        }
+
+        function loadRecentTimers() {
+            try {
+                const container = document.getElementById('recentTimersContainer');
+                const list = document.getElementById('recentTimersList');
+                const recent = JSON.parse(localStorage.getItem('recentTimers') || '[]');
+
+                if (recent.length === 0) {
+                    container.classList.remove('has-timers');
+                    return;
+                }
+
+                list.innerHTML = '';
+                recent.forEach(timer => {
+                    const btn = document.createElement('button');
+                    btn.className = 'recent-timer-btn';
+                    btn.innerHTML = `<span class="timer-name">${timer.name}</span><span class="timer-duration">${formatDuration(timer.duration)}</span>`;
+                    btn.addEventListener('click', () => {
+                        pauseTimer();
+                        timeLeft = timer.duration;
+                        totalTime = timer.duration;
+                        updateProgressRing(0);
+                        timerStatus.textContent = 'READY';
+                        progressTimer.classList.remove('running', 'warning', 'critical', 'complete');
+                        timerSelect.value = '';
+                        updateDisplay();
+                        startTimer();
+                    });
+                    list.appendChild(btn);
+                });
+                container.classList.add('has-timers');
+            } catch (e) {
+                console.log('Could not load recent timers:', e);
+            }
+        }
+
+        // Load recent timers on page load
+        loadRecentTimers();
+
+        // Override startTimer to save recent timer
+        const originalStartTimer = startTimer;
+        startTimer = function() {
+            if (totalTime > 0 && !isRunning) {
+                // Get timer name from select or generate one
+                let timerName;
+                const selectedOption = timerSelect.options[timerSelect.selectedIndex];
+                if (selectedOption && selectedOption.value && selectedOption.text) {
+                    timerName = selectedOption.text.split(' - ')[0].trim();
+                } else {
+                    timerName = formatDuration(totalTime) + ' Timer';
+                }
+                saveRecentTimer(timerName, totalTime);
+            }
+            originalStartTimer();
+        };
 
         // Mobile Navigation Toggle
         const navToggle = document.getElementById('navToggle');
